@@ -1,4 +1,4 @@
-baseurl: https://example.com
+baseurl: https://miiitomi.github.io
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 5
@@ -14,7 +14,7 @@ googleAnalytics:
 
 # Theme i18n support
 # Available values: en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk
-DefaultContentLanguage: ja
+DefaultContentLanguage: en
 
 # Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
 # This will make .Summary and .WordCount behave correctly for CJK languages.
@@ -41,22 +41,22 @@ params:
 
     sidebar:
         emoji: 
-        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        subtitle: みーとみです.
         avatar:
             enabled: true
             local: true
             src: img/avatar.png
 
     article:
-        math: false
+        math: true
         toc: true
         readingTime: false
         license:
-            enabled: true
+            enabled: false
             default: Licensed under CC BY-NC-SA 4.0
 
     comments:
-        enabled: true
+        enabled: false
         provider: disqus
 
         disqusjs:
@@ -178,7 +178,7 @@ menu:
           weight: -100
           params:
               ### For demonstration purpose, the home link will be open in a new tab
-              newTab: true
+              newTab: false
               icon: home
     
     social:

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>miiitomi</title>
-        <link>https://example.com/</link>
+        <link>https://miiitomi.github.io/</link>
         <description>Recent content on miiitomi</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 08 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 08 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>テスト</title>
-        <link>https://example.com/p/test/</link>
+        <link>https://miiitomi.github.io/p/test/</link>
         <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/test/</guid>
-        <description>&lt;p&gt;テスト.&lt;/p&gt;
+        <guid>https://miiitomi.github.io/p/test/</guid>
+        <description>&lt;p&gt;できた.&lt;/p&gt;
 </description>
         </item>
         

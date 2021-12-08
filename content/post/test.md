@@ -7,4 +7,4 @@ categories:
     - test
 ---
 
-テスト.
+できた.
