@@ -1,12 +1,7 @@
 ---
 title: About
-description: about
+description: 自己紹介
 date: '2021-12-08'
-aliases:
-  - about-us
-  - about-hugo
-  - contact
-license: CC BY-NC-ND
 lastmod: '2021-12-08'
 menu:
     main: 
@@ -15,4 +10,4 @@ menu:
             icon: user
 ---
 
-About.
+渋谷のIT系メガベンチャーで、リサーチサイエンティストとしてマーケットデザインの研究と社会実装をしています。  
