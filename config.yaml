@@ -29,7 +29,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon:
+    favicon: true
 
     footer:
         since: 2021
@@ -49,7 +49,7 @@ params:
 
     article:
         math: true
-        toc: true
+        toc: false
         readingTime: false
         license:
             enabled: false
