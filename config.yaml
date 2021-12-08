@@ -56,11 +56,11 @@ params:
             default: Licensed under CC BY-NC-SA 4.0
 
     comments:
-        enabled: true
+        enabled: false
         provider: disqus
 
         disqusjs:
-            shortname: miiitomi
+            shortname:
             apiUrl:
             apiKey:
             admin:
