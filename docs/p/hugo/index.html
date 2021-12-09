@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='自己紹介'><title>About</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='このブログを開設するまでの手順の備忘録'><title>非エンジニアの初心者がHugo(テーマStack)&#43;GitHub Pagesでブログを開設するまで</title>
 
-<link rel='canonical' href='https://miiitomi.github.io/about/'>
+<link rel='canonical' href='https://miiitomi.github.io/p/hugo/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='About'>
-<meta property='og:description' content='自己紹介'>
-<meta property='og:url' content='https://miiitomi.github.io/about/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='非エンジニアの初心者がHugo(テーマStack)&#43;GitHub Pagesでブログを開設するまで'>
+<meta property='og:description' content='このブログを開設するまでの手順の備忘録'>
+<meta property='og:url' content='https://miiitomi.github.io/p/hugo/'>
 <meta property='og:site_name' content='miiitomi'>
-<meta property='og:type' content='article'><meta property='article:section' content='Page' /><meta property='article:published_time' content='2021-12-08T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-12-08T00:00:00&#43;00:00'/><meta property='og:image' content='https://miiitomi.github.io/img/avatar.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-12-09T21:30:20&#43;09:00'/><meta property='article:modified_time' content='2021-12-09T21:30:20&#43;09:00'/><meta property='og:image' content='https://miiitomi.github.io/img/avatar.png' />
 <meta name="twitter:site" content="@miiitomi">
-    <meta name="twitter:creator" content="@miiitomi"><meta name="twitter:title" content="About">
-<meta name="twitter:description" content="自己紹介"><meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@miiitomi"><meta name="twitter:title" content="非エンジニアの初心者がHugo(テーマStack)&#43;GitHub Pagesでブログを開設するまで">
+<meta name="twitter:description" content="このブログを開設するまでの手順の備忘録"><meta name="twitter:card" content="summary">
     <meta name="twitter:image" content='https://miiitomi.github.io/img/avatar.png' />
     <link rel="shortcut icon" href="/images/favicon.ico" />
 
@@ -137,7 +137,7 @@
         
         
 
-        <li  class='current' >
+        <li >
             <a href='/about/' >
                 
                 
@@ -228,14 +228,26 @@
 
     <div class="article-details">
     
+    <header class="article-category">
+        
+            <a href="/categories/hugo/" >
+                Hugo
+            </a>
+        
+            <a href="/categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/" >
+                プログラミング
+            </a>
+        
+    </header>
+    
 
     <h2 class="article-title">
-        <a href="/about/">About</a>
+        <a href="/p/hugo/">非エンジニアの初心者がHugo(テーマStack)&#43;GitHub Pagesでブログを開設するまで</a>
     </h2>
 
     
     <h3 class="article-subtitle">
-        自己紹介
+        このブログを開設するまでの手順の備忘録
     </h3>
     
 
@@ -252,7 +264,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Dec 08, 2021</time>
+                <time class="article-time--published">Dec 09, 2021</time>
             </div>
         
 
@@ -263,7 +275,96 @@
 </header>
 
     <section class="article-content">
-    <p>渋谷のIT系メガベンチャーで、リサーチサイエンティストとしてマーケットデザインの研究と社会実装をしています。</p>
+    <h1 id="はじめに">はじめに</h1>
+<p>タイトルの通りです。
+このブログを開設するまでにやったことを備忘録としてまとめておきます。
+わざわざ僕が新たに書き記すまでもなく似たような記事はたくさんあるのですが、1本目に書く内容としてちょうどいい感じのものな気がしたので。</p>
+<p>ちなみにタイトルに「非エンジニアの初心者が」と書きましたが、すごく広い意味で捉えればエンジニアと言えなくもないかも。
+でも自己認識としてはエンジニアを名乗れるほど技術力はない（し肩書きもリサーチャーな）ので嘘ではないでしょう。
+Git/GitHubの使い方とかをわかってることは仮定します。</p>
+<h1 id="使ったもの環境">使ったもの・環境</h1>
+<ul>
+<li>macBook Pro/macOS Big Sur v11.1</li>
+<li>Homebrew v3.3.7</li>
+<li><a class="link" href="https://gohugo.io"  target="_blank" rel="noopener"
+    >Hugo</a> v0.89.4</li>
+<li><a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack"  target="_blank" rel="noopener"
+    >Hugo Theme Stack</a></li>
+<li>Git/GitHub</li>
+</ul>
+<h1 id="hugoのインストールスタート">Hugoのインストール・スタート</h1>
+<p>とりあえずHomebrewを使って、ターミナルで <code>brew install hugo</code> でHugoをインストールします。
+<code>hubo version</code> と打ってバージョン確認すると</p>
+<pre tabindex="0"><code>$ hugo version
+hugo v0.89.4+extended darwin/amd64 BuildDate=unknown
+</code></pre><p>と出るので入ったっぽい。</p>
+<p>ブログ用のディレクトリを作るところで <code>hugo new site sitename</code> (sitenameのところは適当に) とすると、</p>
+<pre tabindex="0"><code>$ hugo new site sitename
+Congratulations! Your new Hugo site is created in ***/***/sitename.
+
+Just a few more steps and you're ready to go:
+
+1. Download a theme into the same-named folder.
+   Choose a theme from https://themes.gohugo.io/ or
+   create your own with the &quot;hugo new theme &lt;THEMENAME&gt;&quot; command.
+2. Perhaps you want to add some content. You can add single files
+   with &quot;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&quot;.
+3. Start the built-in live server via &quot;hugo server&quot;.
+
+Visit https://gohugo.io/ for quickstart guide and full documentation.
+</code></pre><p>と出てきて、<code>sitename</code>ディレクトリができ、色々入ってます。</p>
+<h1 id="テーマ">テーマ</h1>
+<p>テーマを入れちゃいましょう。今回は<a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack"  target="_blank" rel="noopener"
+    >Stack</a>にしました。
+HugoのdocumentationのQuick Startではgit submoduleに追加してたり、他の方はテーマをfolkしてから使ってたりしてますが、手っ取り早くクローンしちゃいました（あまり良くないかも。</p>
+<pre tabindex="0"><code>cd sitename
+cd themes
+git clone git@github.com:...
+</code></pre><p>&hellip;は使うテーマに合わせて。</p>
+<h1 id="config">config</h1>
+<p>Stackは<a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack/tree/master/exampleSite"  target="_blank" rel="noopener"
+    >例</a>を提供してくれてます。<code>sitename/themes/hugo-theme-stack/exampleSite</code>内の<code>config.yaml</code>と<code>content/</code>を<code>sitename</code>直下に移し(<code>content/</code>は置き換え)、<code>config.toml</code>を削除します。</p>
+<p>そして <code>hugo server -D</code> と打つと、</p>
+<pre tabindex="0"><code>$ hugo server -D
+Start building sites … 
+hugo v0.89.4+extended darwin/amd64 BuildDate=unknown
+WARN 2021/12/09 22:20:52 The &quot;twitter_simple&quot; shortcode will soon require two named parameters: user and id. See &quot;***/***/sitename/content/post/rich-content/index.md:26:1&quot;
+
+                   | EN  
+-------------------+-----
+  Pages            | 49  
+  Paginator pages  |  3  
+  Non-page files   |  8  
+  Static files     |  0  
+  Processed images | 29  
+  Aliases          | 23  
+  Sitemaps         |  1  
+  Cleaned          |  0  
+
+Built in 241 ms
+Watching for changes in ***/***/sitename/{archetypes,content,data,layouts,static,themes}
+Watching for config changes in ***/***/sitename/config.yaml, ***/***/sitename/themes/hugo-theme-stack/config.yaml
+Environment: &quot;development&quot;
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+</code></pre><p>と出てくるので、<code>localhost:1313</code>をブラウザで開いてみると、
+<figure 
+	>
+	<a href="/img2021-12-09-22.25.36.png" >
+		<img src="/img2021-12-09-22.25.36.png"
+			
+			
+			
+			loading="lazy"
+			alt="image1">
+	</a>
+	
+	<figcaption>image1</figcaption>
+	
+</figure>
+できた！！！（できてない）</p>
 
 </section>
 

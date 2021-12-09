@@ -29,7 +29,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon: true
+    favicon: /images/favicon.ico
 
     footer:
         since: 2021
@@ -44,8 +44,8 @@ params:
         subtitle: みーとみです.
         avatar:
             enabled: true
-            local: true
-            src: img/avatar.png
+            local: false
+            src: /images/avatar.png
 
     article:
         math: true
@@ -151,8 +151,8 @@ params:
     defaultImage:
         opengraph:
             enabled: true
-            local: true
-            src: img/avatar.png
+            local: false
+            src: images/avatar.png
 
     colorScheme:
         # Display toggle

@@ -6,7 +6,105 @@
         <description>Recent content on miiitomi</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Wed, 08 Dec 2021 19:25:34 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 09 Dec 2021 21:30:20 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>非エンジニアの初心者がHugo(テーマStack)&#43;GitHub Pagesでブログを開設するまで</title>
+        <link>https://miiitomi.github.io/p/hugo/</link>
+        <pubDate>Thu, 09 Dec 2021 21:30:20 +0900</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/hugo/</guid>
+        <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+&lt;p&gt;タイトルの通りです。
+このブログを開設するまでにやったことを備忘録としてまとめておきます。
+わざわざ僕が新たに書き記すまでもなく似たような記事はたくさんあるのですが、1本目に書く内容としてちょうどいい感じのものな気がしたので。&lt;/p&gt;
+&lt;p&gt;ちなみにタイトルに「非エンジニアの初心者が」と書きましたが、すごく広い意味で捉えればエンジニアと言えなくもないかも。
+でも自己認識としてはエンジニアを名乗れるほど技術力はない（し肩書きもリサーチャーな）ので嘘ではないでしょう。
+Git/GitHubの使い方とかをわかってることは仮定します。&lt;/p&gt;
+&lt;h1 id=&#34;使ったもの環境&#34;&gt;使ったもの・環境&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;macBook Pro/macOS Big Sur v11.1&lt;/li&gt;
+&lt;li&gt;Homebrew v3.3.7&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugo&lt;/a&gt; v0.89.4&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugo Theme Stack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Git/GitHub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;hugoのインストールスタート&#34;&gt;Hugoのインストール・スタート&lt;/h1&gt;
+&lt;p&gt;とりあえずHomebrewを使って、ターミナルで &lt;code&gt;brew install hugo&lt;/code&gt; でHugoをインストールします。
+&lt;code&gt;hubo version&lt;/code&gt; と打ってバージョン確認すると&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ hugo version
+hugo v0.89.4+extended darwin/amd64 BuildDate=unknown
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;と出るので入ったっぽい。&lt;/p&gt;
+&lt;p&gt;ブログ用のディレクトリを作るところで &lt;code&gt;hugo new site sitename&lt;/code&gt; (sitenameのところは適当に) とすると、&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ hugo new site sitename
+Congratulations! Your new Hugo site is created in ***/***/sitename.
+
+Just a few more steps and you&#39;re ready to go:
+
+1. Download a theme into the same-named folder.
+   Choose a theme from https://themes.gohugo.io/ or
+   create your own with the &amp;quot;hugo new theme &amp;lt;THEMENAME&amp;gt;&amp;quot; command.
+2. Perhaps you want to add some content. You can add single files
+   with &amp;quot;hugo new &amp;lt;SECTIONNAME&amp;gt;/&amp;lt;FILENAME&amp;gt;.&amp;lt;FORMAT&amp;gt;&amp;quot;.
+3. Start the built-in live server via &amp;quot;hugo server&amp;quot;.
+
+Visit https://gohugo.io/ for quickstart guide and full documentation.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;と出てきて、&lt;code&gt;sitename&lt;/code&gt;ディレクトリができ、色々入ってます。&lt;/p&gt;
+&lt;h1 id=&#34;テーマ&#34;&gt;テーマ&lt;/h1&gt;
+&lt;p&gt;テーマを入れちゃいましょう。今回は&lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Stack&lt;/a&gt;にしました。
+HugoのdocumentationのQuick Startではgit submoduleに追加してたり、他の方はテーマをfolkしてから使ってたりしてますが、手っ取り早くクローンしちゃいました（あまり良くないかも。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd sitename
+cd themes
+git clone git@github.com:...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;hellip;は使うテーマに合わせて。&lt;/p&gt;
+&lt;h1 id=&#34;config&#34;&gt;config&lt;/h1&gt;
+&lt;p&gt;Stackは&lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack/tree/master/exampleSite&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;例&lt;/a&gt;を提供してくれてます。&lt;code&gt;sitename/themes/hugo-theme-stack/exampleSite&lt;/code&gt;内の&lt;code&gt;config.yaml&lt;/code&gt;と&lt;code&gt;content/&lt;/code&gt;を&lt;code&gt;sitename&lt;/code&gt;直下に移し(&lt;code&gt;content/&lt;/code&gt;は置き換え)、&lt;code&gt;config.toml&lt;/code&gt;を削除します。&lt;/p&gt;
+&lt;p&gt;そして &lt;code&gt;hugo server -D&lt;/code&gt; と打つと、&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ hugo server -D
+Start building sites … 
+hugo v0.89.4+extended darwin/amd64 BuildDate=unknown
+WARN 2021/12/09 22:20:52 The &amp;quot;twitter_simple&amp;quot; shortcode will soon require two named parameters: user and id. See &amp;quot;***/***/sitename/content/post/rich-content/index.md:26:1&amp;quot;
+
+                   | EN  
+-------------------+-----
+  Pages            | 49  
+  Paginator pages  |  3  
+  Non-page files   |  8  
+  Static files     |  0  
+  Processed images | 29  
+  Aliases          | 23  
+  Sitemaps         |  1  
+  Cleaned          |  0  
+
+Built in 241 ms
+Watching for changes in ***/***/sitename/{archetypes,content,data,layouts,static,themes}
+Watching for config changes in ***/***/sitename/config.yaml, ***/***/sitename/themes/hugo-theme-stack/config.yaml
+Environment: &amp;quot;development&amp;quot;
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;と出てくるので、&lt;code&gt;localhost:1313&lt;/code&gt;をブラウザで開いてみると、
+&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://miiitomi.github.io/img2021-12-09-22.25.36.png&#34; &gt;
+		&lt;img src=&#34;https://miiitomi.github.io/img2021-12-09-22.25.36.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;image1&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;image1&lt;/figcaption&gt;
+	
+&lt;/figure&gt;
+できた！！！（できてない）&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>できた</title>
         <link>https://miiitomi.github.io/p/dekita/</link>
         <pubDate>Wed, 08 Dec 2021 19:25:34 +0900</pubDate>
