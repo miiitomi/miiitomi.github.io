@@ -9,11 +9,11 @@
 <meta property='og:description' content='このブログを開設するまでの手順の備忘録'>
 <meta property='og:url' content='https://miiitomi.github.io/p/hugo/'>
 <meta property='og:site_name' content='miiitomi'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-12-09T21:30:20&#43;09:00'/><meta property='article:modified_time' content='2021-12-09T21:30:20&#43;09:00'/><meta property='og:image' content='https://miiitomi.github.io/img/avatar.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-12-09T21:30:20&#43;09:00'/><meta property='article:modified_time' content='2021-12-09T21:30:20&#43;09:00'/><meta property='og:image' content='https://miiitomi.github.io/images/avatar.png' />
 <meta name="twitter:site" content="@miiitomi">
     <meta name="twitter:creator" content="@miiitomi"><meta name="twitter:title" content="非エンジニアの初心者がHugo(テーマStack)&#43;GitHub Pagesでブログを開設するまで">
 <meta name="twitter:description" content="このブログを開設するまでの手順の備忘録"><meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content='https://miiitomi.github.io/img/avatar.png' />
+    <meta name="twitter:image" content='https://miiitomi.github.io/images/avatar.png' />
     <link rel="shortcut icon" href="/images/favicon.ico" />
 
     </head>
@@ -278,10 +278,11 @@
     <h1 id="はじめに">はじめに</h1>
 <p>タイトルの通りです。
 このブログを開設するまでにやったことを備忘録としてまとめておきます。
-わざわざ僕が新たに書き記すまでもなく似たような記事はたくさんあるのですが、1本目に書く内容としてちょうどいい感じのものな気がしたので。</p>
+わざわざ僕が新たに書き記すまでもなく似たような記事はたくさんあるのですが、1本目に書く内容としてちょうどいい感じのものな気がしたので。
+分かってる人からしたらそりゃそうってことしか書いてないと思うけど、僕みたいな初心者が見たら1ミリくらい参考になるかもしれない（ならないかもしれない）。</p>
 <p>ちなみにタイトルに「非エンジニアの初心者が」と書きましたが、すごく広い意味で捉えればエンジニアと言えなくもないかも。
 でも自己認識としてはエンジニアを名乗れるほど技術力はない（し肩書きもリサーチャーな）ので嘘ではないでしょう。
-Git/GitHubの使い方とかをわかってることは仮定します。</p>
+Git/GitHubの使い方とかは一応わかってることは仮定します。</p>
 <h1 id="使ったもの環境">使ったもの・環境</h1>
 <ul>
 <li>macBook Pro/macOS Big Sur v11.1</li>
@@ -316,14 +317,13 @@ Visit https://gohugo.io/ for quickstart guide and full documentation.
 <h1 id="テーマ">テーマ</h1>
 <p>テーマを入れちゃいましょう。今回は<a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack"  target="_blank" rel="noopener"
     >Stack</a>にしました。
-HugoのdocumentationのQuick Startではgit submoduleに追加してたり、他の方はテーマをfolkしてから使ってたりしてますが、手っ取り早くクローンしちゃいました（あまり良くないかも。</p>
+HugoのdocumentationのQuick Startではgit submoduleに追加してたり、他の方はテーマをfolkしてから使ってたりしてますが、手っ取り早くクローンしちゃいました（ちゃんとfolkした方が本当は良いかも）。</p>
 <pre tabindex="0"><code>cd sitename
 cd themes
 git clone git@github.com:...
-</code></pre><p>&hellip;は使うテーマに合わせて。</p>
-<h1 id="config">config</h1>
+</code></pre><p><code>...</code>の部分は使うテーマに合わせて。</p>
 <p>Stackは<a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack/tree/master/exampleSite"  target="_blank" rel="noopener"
-    >例</a>を提供してくれてます。<code>sitename/themes/hugo-theme-stack/exampleSite</code>内の<code>config.yaml</code>と<code>content/</code>を<code>sitename</code>直下に移し(<code>content/</code>は置き換え)、<code>config.toml</code>を削除します。</p>
+    >例</a>を提供してくれてるので、それをベースに作っていきます。<code>sitename/themes/hugo-theme-stack/exampleSite</code>内の<code>config.yaml</code>と<code>content/</code>を<code>sitename</code>直下に移し(<code>content/</code>は置き換え)、<code>config.toml</code>を削除します。</p>
 <p>そして <code>hugo server -D</code> と打つと、</p>
 <pre tabindex="0"><code>$ hugo server -D
 Start building sites … 
@@ -349,22 +349,145 @@ Serving pages from memory
 Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
-</code></pre><p>と出てくるので、<code>localhost:1313</code>をブラウザで開いてみると、
-<figure 
+</code></pre><p>と出てくるので、<code>localhost:1313</code>をブラウザで開いてみると、</p>
+<p><figure 
 	>
-	<a href="/img2021-12-09-22.25.36.png" >
-		<img src="/img2021-12-09-22.25.36.png"
+	<a href="/images/img20211209222536.png" >
+		<img src="/images/img20211209222536.png"
 			
 			
 			
 			loading="lazy"
-			alt="image1">
+			>
 	</a>
 	
-	<figcaption>image1</figcaption>
+</figure></p>
+<p>できた！！！（できてない）</p>
+<h1 id="config">config</h1>
+<p>あとは <code>config.yaml</code> を少し変えていきます。
+書き換えた箇所は大体こんな感じだっけ？(忘れてるとこもあるかも)</p>
+<ul>
+<li><code>baseurl: https://&lt;GithubAccount&gt;.github.io</code></li>
+<li><code>languageCode: ja</code></li>
+<li><code>title: &lt;Sitename&gt;</code></li>
+<li><code>publishDir: docs</code> を追加.
+<ul>
+<li>Hugoでビルドするとデフォルトでは<code>public/</code>にビルドされるのですが、Github Pagesでホストするためには<code>docs/</code>にビルドしたいので。</li>
+</ul>
+</li>
+<li><code>favicon: /images/favicon.ico</code>
+<ul>
+<li>ファビコンに使いたいicoファイル(<code>favicon.ico</code>)は<code>static/images/</code>に入れておく.</li>
+</ul>
+</li>
+<li><code>sidebar</code>
+<ul>
+<li><code>emoji: </code></li>
+<li><code>subtitle: ***</code>：適当に.</li>
+<li><code>avatar:</code>
+<ul>
+<li><code>local: false</code></li>
+<li><code>src: /images/avatar.png</code>：アバター用の画像は<code>static/images/</code>内に。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>article:</code>
+<ul>
+<li><code>math: true</code>：自分は今後数式を使った記事を書くことも多分あるので。</li>
+<li><code>toc: false</code>：目次を表示させたくなければ。</li>
+<li><code>readingTime: false</code>：各記事のreading timeを表示させたくなければ。</li>
+<li><code>comments:</code>
+<ul>
+<li><code>enabled: false</code>：コメント設定面倒そうだったし、そもそもあまり必要ないと思ったので。</li>
+</ul>
+</li>
+<li><code>opengraph:</code>
+<ul>
+<li><code>twitter:</code>
+<ul>
+<li><code>card: summary</code> ツイッターカードのスタイル。お好みで。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>defaultImage:</code>
+<ul>
+<li><code>opengraph:</code>
+<ul>
+<li><code>enabled: true</code></li>
+<li><code>local: false</code></li>
+<li><code>src: images/avatar.png</code>：OGP用のデフォルト画像、とりあえずアバターでいいか。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>menu:</code>
+<ul>
+<li><code>main:</code>
+<ul>
+<li><code>params:</code>
+<ul>
+<li><code>hewTab: false</code>：homeボタン押したときに新規タブにしたくない。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>social:</code>
+<ul>
+<li>github, twitterは設定.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="日本語フォント">日本語フォント</h1>
+<p>この辺りで漢字が中国語フォントになってることに気付く。これは<code>themes/hugo-theme-stack/assets/scss/variables.scss</code> 内の、</p>
+<pre tabindex="0"><code>--zh-font-family: ...`
+--base-font-family: &quot;Lato&quot;, var(--sys-font-family), var(--zh-font-family), sans-serif;
+</code></pre><p>を</p>
+<pre tabindex="0"><code>--ja-font-family: &quot;游ゴシック体&quot;, &quot;Yu Gothic&quot;, YuGothic, &quot;ヒラギノ角ゴ Pro&quot;, &quot;Hiragino Kaku Gothic Pro&quot;, &quot;メイリオ&quot;, &quot;Meiryo&quot;;`
+--base-font-family: &quot;Lato&quot;, var(--sys-font-family), var(--ja-font-family), sans-serif;
+</code></pre><p>みたいな感じに変更したら日本語フォントになった、たしか（うろ覚え）。</p>
+<h1 id="コンテンツ">コンテンツ</h1>
+<p><code>categories</code>, <code>post</code>内のテストカテゴリー・ポストは消して、必要あれば例参考に作る。また <code>page/about.md</code> は最初から何らか必要だと思うので適当に書き換える。
+Hugoでは <code>hugo new post/XXX.md</code> と打つと <code>content/post/</code> に <code>XXX.md</code> ができるのだがそのデフォルトは <code>archetypes/default.md</code> になっている。これも必要に応じて書き換えとこう。自分の場合は</p>
+<pre tabindex="0"><code>---
+title: {{ replace .Name &quot;-&quot; &quot; &quot; | title }}
+description: 
+slug: {{ .Name }}
+date: {{ .Date }}
+categories:
+    - 
+tags: []
+---
+
+</code></pre><p>とこんな感じにとりあえずしといた。</p>
+<h1 id="ビルド">ビルド</h1>
+<p>ビルドは<code>sitename</code>直下で <code>hugo</code> でOK。<code>docs/</code>(<code>config.yaml</code>内で<code>publishDir</code>を設定してなければ<code>public/</code>)内にビルドされるはず。</p>
+<h1 id="プッシュgithub-pagesでホスト">プッシュ・Github Pagesでホスト。</h1>
+<p>GitHubで自分のレポジトリとして <code>&lt;GitHubAccount&gt;.github.io</code> を作り、これまで作ってきたものをプッシュ。</p>
+<p>Settings/Pagesから, Sourceをmainブランチの<code>docs/</code>とします。
+<figure 
+	>
+	<a href="/images/20211209231722.png" >
+		<img src="/images/20211209231722.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
 	
 </figure>
-できた！！！（できてない）</p>
+今度こそできた！</p>
+<h1 id="記事の書き方">記事の書き方</h1>
+<p>新規のブログ記事を書くときはとりあえず <code>hugo new post/XXX.md</code> したと、<code>hugo server -D</code>で確認しながら執筆し、書けたら <code>hugo</code> でビルド、GithubにプッシュすればOKという感じ。自動デプロイとかもやればできるんだろうけど大したことないしとりあえずいいや。そのうち気が向いたらやろう。</p>
+<h1 id="まとめ">まとめ</h1>
+<p>今日やったことじゃないので忘れてるとことかあるかも。最後記事書くの疲れて適当になってきたし。</p>
+<p>まあでも大体こんな感じ。これからどんどん記事書いてこう！</p>
 
 </section>
 
