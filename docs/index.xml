@@ -19,7 +19,7 @@
 分かってる人からしたらそりゃそうってことしか書いてないと思うけど、僕みたいな初心者が見たら1ミリくらい参考になるかもしれない（ならないかもしれない）。&lt;/p&gt;
 &lt;p&gt;ちなみにタイトルに「非エンジニアの初心者が」と書きましたが、すごく広い意味で捉えればエンジニアと言えなくもないかも。
 でも自己認識としてはエンジニアを名乗れるほど技術力はない（し肩書きもリサーチャーな）ので嘘ではないでしょう。
-Git/GitHubの使い方とかは一応わかってることは仮定します。&lt;/p&gt;
+Git/GitHubの使い方とかは一応わかってることを仮定します。&lt;/p&gt;
 &lt;h1 id=&#34;使ったもの環境&#34;&gt;使ったもの・環境&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;macBook Pro/macOS Big Sur v11.1&lt;/li&gt;
@@ -206,7 +206,7 @@ tags: []
 &lt;p&gt;ビルドは&lt;code&gt;sitename&lt;/code&gt;直下で &lt;code&gt;hugo&lt;/code&gt; でOK。&lt;code&gt;docs/&lt;/code&gt;(&lt;code&gt;config.yaml&lt;/code&gt;内で&lt;code&gt;publishDir&lt;/code&gt;を設定してなければ&lt;code&gt;public/&lt;/code&gt;)内にビルドされるはず。&lt;/p&gt;
 &lt;h1 id=&#34;プッシュgithub-pagesでホスト&#34;&gt;プッシュ・Github Pagesでホスト。&lt;/h1&gt;
 &lt;p&gt;GitHubで自分のレポジトリとして &lt;code&gt;&amp;lt;GitHubAccount&amp;gt;.github.io&lt;/code&gt; を作り、これまで作ってきたものをプッシュ。&lt;/p&gt;
-&lt;p&gt;Settings/Pagesから, Sourceをmainブランチの&lt;code&gt;docs/&lt;/code&gt;とします。
+&lt;p&gt;Settings/Pagesから, Sourceをmainブランチの&lt;code&gt;docs/&lt;/code&gt;とする。ホストされるまでちょっと待つと、
 &lt;figure 
 	&gt;
 	&lt;a href=&#34;https://miiitomi.github.io/images/20211209231722.png&#34; &gt;
@@ -221,10 +221,10 @@ tags: []
 &lt;/figure&gt;
 今度こそできた！&lt;/p&gt;
 &lt;h1 id=&#34;記事の書き方&#34;&gt;記事の書き方&lt;/h1&gt;
-&lt;p&gt;新規のブログ記事を書くときはとりあえず &lt;code&gt;hugo new post/XXX.md&lt;/code&gt; したと、&lt;code&gt;hugo server -D&lt;/code&gt;で確認しながら執筆し、書けたら &lt;code&gt;hugo&lt;/code&gt; でビルド、GithubにプッシュすればOKという感じ。自動デプロイとかもやればできるんだろうけど大したことないしとりあえずいいや。そのうち気が向いたらやろう。&lt;/p&gt;
+&lt;p&gt;新規のブログ記事を書くときはとりあえず &lt;code&gt;hugo new post/XXX.md&lt;/code&gt; したあと、&lt;code&gt;hugo server -D&lt;/code&gt;で確認しながら執筆し、書けたら &lt;code&gt;hugo&lt;/code&gt; でビルド、GithubにプッシュすればOKという感じ。自動デプロイとかもやればできるんだろうけど大したことないしとりあえずいいや。そのうち気が向いたらやろう。&lt;/p&gt;
 &lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
-&lt;p&gt;今日やったことじゃないので忘れてるとことかあるかも。最後記事書くの疲れて適当になってきたし。&lt;/p&gt;
-&lt;p&gt;まあでも大体こんな感じ。これからどんどん記事書いてこう！&lt;/p&gt;
+&lt;p&gt;今日やったことじゃないので忘れてるとことかあるかもだけど、大体こんな感じ。&lt;/p&gt;
+&lt;p&gt;これからどんどん記事書いてこう！！&lt;/p&gt;
 </description>
         </item>
         <item>
