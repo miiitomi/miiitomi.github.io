@@ -7,7 +7,7 @@ image: images/oregawatashininarumade/oregawatashininarumade4.jpg
 categories:
     - 漫画
     - シリアスTSF
-tags: []
+tags: [漫画, シリアスTSF]
 ---
 # 「シリアスTSF」とは
 
@@ -25,7 +25,7 @@ tags: []
 # 『オレが私になるまで』
 1回目の今回は、シリアスTSFの王道作品である(と僕が勝手に思っている)この作品だ。
 >{{< figure
-    src="http://images-jp.amazon.com/images/P/4046809892.09.LZZZZZZZ"
+    src="/images/oregawatashininarumade/oregawatashininarumade4.jpg"
     title="オレが私になるまで 4 (MFC)"
     link="https://www.amazon.co.jp/gp/product/4046809892/"
 >}}
