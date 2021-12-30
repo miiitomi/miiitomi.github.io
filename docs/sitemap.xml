@@ -2,25 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://miiitomi.github.io/categories/</loc>
+    <lastmod>2021-12-30T11:09:50+09:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/</loc>
+    <lastmod>2021-12-30T11:09:50+09:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/post/</loc>
+    <lastmod>2021-12-30T11:09:50+09:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/p/oregawatashininarumade/</loc>
+    <lastmod>2021-12-30T11:09:50+09:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/categories/%E3%82%B7%E3%83%AA%E3%82%A2%E3%82%B9tsf/</loc>
+    <lastmod>2021-12-30T11:09:50+09:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/categories/%E6%BC%AB%E7%94%BB/</loc>
+    <lastmod>2021-12-30T11:09:50+09:00</lastmod>
+  </url><url>
     <loc>https://miiitomi.github.io/tags/algorithm/</loc>
     <lastmod>2021-12-25T10:53:40+09:00</lastmod>
   </url><url>
     <loc>https://miiitomi.github.io/categories/algorithm/</loc>
     <lastmod>2021-12-25T10:53:40+09:00</lastmod>
   </url><url>
-    <loc>https://miiitomi.github.io/categories/</loc>
-    <lastmod>2021-12-25T10:53:40+09:00</lastmod>
-  </url><url>
     <loc>https://miiitomi.github.io/tags/market-design/</loc>
     <lastmod>2021-12-25T10:53:40+09:00</lastmod>
   </url><url>
     <loc>https://miiitomi.github.io/categories/market-design/</loc>
-    <lastmod>2021-12-25T10:53:40+09:00</lastmod>
-  </url><url>
-    <loc>https://miiitomi.github.io/</loc>
-    <lastmod>2021-12-25T10:53:40+09:00</lastmod>
-  </url><url>
-    <loc>https://miiitomi.github.io/post/</loc>
     <lastmod>2021-12-25T10:53:40+09:00</lastmod>
   </url><url>
     <loc>https://miiitomi.github.io/p/scarf/</loc>

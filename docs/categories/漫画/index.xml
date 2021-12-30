@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on miiitomi</title>
-    <link>https://miiitomi.github.io/post/</link>
-    <description>Recent content in Posts on miiitomi</description>
+    <title>漫画 on miiitomi</title>
+    <link>https://miiitomi.github.io/categories/%E6%BC%AB%E7%94%BB/</link>
+    <description>Recent content in 漫画 on miiitomi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 30 Dec 2021 11:09:50 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Dec 2021 11:09:50 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/categories/%E6%BC%AB%E7%94%BB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>『オレが私になるまで』</title>
       <link>https://miiitomi.github.io/p/oregawatashininarumade/</link>
@@ -32,41 +32,6 @@
 最初、明は2度と男に戻れないという事実を受け入れられず、女の子らしくすることを一切拒否しようとする。 だが瑠海を中心にクラスで女子として受け入れられていくとともに、 明も少しずつ自ら女の子らしい格好をしようという意図が芽生えてくる。
 しかし、明が男の子だった頃を当然知っており、当初女の子らしい格好をすることを全力で拒否していた明を見ている母親は、 明が女の子らしい格好をしていることを友達付き合いで仕方なく嫌々やっているものだと思い、明に無理しなくていいと伝えようとする。
   『オレが私になるまで』1巻第10話より    これだけなら転換後の性別を葛藤しながらも徐々に受け入れつつある子と、 子のために元の性別のまま生きていけるようにと願う親とのすれ違いと、 それを乗り越えようとする本人というシリアスTSFにありがちな（というほどシリアスTSF作品は多くないが、少なくともこの設定において素直な）展開なのだが、 ただ母親に伝えづらいというだけでなく、明本人の中にもそれを伝えづらい理由があり……。</description>
-    </item>
-    
-    <item>
-      <title>Scarf&#39;s lemmaとその実装</title>
-      <link>https://miiitomi.github.io/p/scarf/</link>
-      <pubDate>Sat, 25 Dec 2021 10:53:40 +0900</pubDate>
-      
-      <guid>https://miiitomi.github.io/p/scarf/</guid>
-      <description>はじめに 誰しも普通に生きていると一度くらいScarf&amp;rsquo;s lemmaを実装する場面に遭遇すると思いますが、意外と日本語の情報が出てこなくて困ったことのある人もいるかもしれません。 Scarf’s lemma完全理解して実装完了したらqiitaかzennかにでも誰得記事書いてやろうかな
-&amp;mdash; みーとみ (@miiitomi) November 19, 2021  というツイートを前にしましたが、せっかくブログ作ったのでここに勉強記録としてまとめてみようと思います。 お気持ち整理みたいな感じなので証明はちゃんとしないし、数学的・ゲーム理論的に厳密でない書き方してるとこも多々あるかも。
-Scarf&amp;rsquo;s lemma とは Scarf&amp;rsquo;s lemmaとは Scarf (1967) で示されたコアを求めるための補題です。 応用としては、例えばマッチング理論の文脈で Nguyen and Vohra (2018) で安定マッチングを求めるために使用されています。
-命題 $A, C$ は $n\times m$ $(n &amp;lt; m)$ の行列で $$ \begin{align*} A &amp;amp;= \begin{bmatrix} 1 &amp;amp; \dots &amp;amp; 0 &amp;amp; a_{1,n+1} &amp;amp; \dots &amp;amp; a_{1,m} \cr \vdots &amp;amp;\ddots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; &amp;amp; \vdots \cr 0 &amp;amp; \dots &amp;amp; 1 &amp;amp; a_{n,n+1} &amp;amp; \dots &amp;amp; a_{n,m} \end{bmatrix},\cr C &amp;amp;= \begin{bmatrix} c_{1,1} &amp;amp; \dots &amp;amp; c_{n,1} &amp;amp; c_{1,n+1} &amp;amp; \dots &amp;amp; c_{1,m} \cr \vdots &amp;amp;\ddots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; &amp;amp; \vdots \cr c_{n,1} &amp;amp; \dots &amp;amp; c_{n,n} &amp;amp; c_{n,n+1} &amp;amp; \dots &amp;amp; c_{n,m} \end{bmatrix} \end{align*} $$ の形のもので、$C$ は以下を満たすとします（これを標準形（standard form）と呼ぶことにします）：</description>
-    </item>
-    
-    <item>
-      <title>非エンジニアの初心者がHugo(テーマStack)&#43;GitHub Pagesでブログを開設するまで</title>
-      <link>https://miiitomi.github.io/p/hugo/</link>
-      <pubDate>Thu, 09 Dec 2021 21:30:20 +0900</pubDate>
-      
-      <guid>https://miiitomi.github.io/p/hugo/</guid>
-      <description>はじめに タイトルの通りです。 このブログを開設するまでにやったことを備忘録としてまとめておきます。 わざわざ僕が新たに書き記すまでもなく似たような記事はたくさんあるのですが、1本目に書く内容としてちょうどいい感じのものな気がしたので。 分かってる人からしたらそりゃそうってことしか書いてないと思うけど、僕みたいな初心者が見たら1ミリくらい参考になるかもしれない（ならないかもしれない）。
-ちなみにタイトルに「非エンジニアの初心者が」と書きましたが、すごく広い意味で捉えればエンジニアと言えなくもないかも。 でも自己認識としてはエンジニアを名乗れるほど技術力はない（し肩書きもリサーチャーな）ので嘘ではないでしょう。 Git/GitHubの使い方とかは一応わかってることを仮定します。
-使ったもの・環境  macBook Pro/macOS Big Sur v11.1 Homebrew v3.3.7 Hugo v0.89.4 Hugo Theme Stack Git/GitHub  Hugoのインストール・スタート とりあえずHomebrewを使って、ターミナルで brew install hugo でHugoをインストールします。 hubo version と打ってバージョン確認すると
-$ hugo version hugo v0.89.4+extended darwin/amd64 BuildDate=unknown と出るので入ったっぽい。
-ブログ用のディレクトリを作るところで hugo new site sitename (sitenameのところは適当に) とすると、
-$ hugo new site sitename Congratulations! Your new Hugo site is created in ***/***/sitename. Just a few more steps and you&#39;re ready to go: 1.</description>
-    </item>
-    
-    <item>
-      <title>できた</title>
-      <link>https://miiitomi.github.io/p/dekita/</link>
-      <pubDate>Wed, 08 Dec 2021 19:25:34 +0900</pubDate>
-      
-      <guid>https://miiitomi.github.io/p/dekita/</guid>
-      <description>できた。</description>
     </item>
     
   </channel>
