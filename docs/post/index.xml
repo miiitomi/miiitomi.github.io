@@ -60,14 +60,5 @@ $ hugo version hugo v0.89.4+extended darwin/amd64 BuildDate=unknown と出るの
 $ hugo new site sitename Congratulations! Your new Hugo site is created in ***/***/sitename. Just a few more steps and you&#39;re ready to go: 1.</description>
     </item>
     
-    <item>
-      <title>できた</title>
-      <link>https://miiitomi.github.io/p/dekita/</link>
-      <pubDate>Wed, 08 Dec 2021 19:25:34 +0900</pubDate>
-      
-      <guid>https://miiitomi.github.io/p/dekita/</guid>
-      <description>できた。</description>
-    </item>
-    
   </channel>
 </rss>

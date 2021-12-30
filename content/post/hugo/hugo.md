@@ -5,8 +5,7 @@ slug: hugo
 date: 2021-12-09T21:30:20+09:00
 categories:
     - Hugo
-    - プログラミング
-tags: []
+tags: [Hugo, ]
 ---
 # はじめに
 タイトルの通りです。

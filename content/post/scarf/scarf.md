@@ -6,7 +6,8 @@ date: 2021-12-25T10:53:40+09:00
 categories:
     - Algorithm
     - Market Design
-tags: [Algorithm, Market Design]
+    - Python
+tags: [Algorithm, Market Design, Python]
 ---
 # はじめに
 誰しも普通に生きていると一度くらいScarf's lemmaを実装する場面に遭遇すると思いますが、意外と日本語の情報が出てこなくて困ったことのある人もいるかもしれません。
