@@ -28,6 +28,7 @@ tags: [漫画, シリアスTSF]
     src="/images/oregawatashininarumade/oregawatashininarumade4.jpg"
     title="オレが私になるまで 4 (MFC)"
     link="https://www.amazon.co.jp/gp/product/4046809892/"
+    width=400
 >}}
 
 『オレが私になるまで』（[佐藤はつき](https://twitter.com/hatukisu?s=20)作）、[ComicWalker](https://comic-walker.com/contents/detail/KDCW_MF00000120010000_68/)にて連載しており、単行本は2021年12月現在でMFコミックスから4巻が刊行されている。
