@@ -6,7 +6,140 @@
         <description>Recent content on miiitomi</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Thu, 30 Dec 2021 11:09:50 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 01 Jan 2022 16:50:04 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>2021年の振り返りと2022年にやりたいこと</title>
+        <link>https://miiitomi.github.io/p/20220101/</link>
+        <pubDate>Sat, 01 Jan 2022 16:50:04 +0900</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/20220101/</guid>
+        <description>&lt;img src="https://miiitomi.github.io/images/20220101/fig2.jpeg" alt="Featured image of post 2021年の振り返りと2022年にやりたいこと" /&gt;&lt;p&gt;せっかくこんなブログ作ってみたりしたので、2021年の振り返りでもしてみようかと思います。&lt;/p&gt;
+&lt;h1 id=&#34;マーケットデザインの共同研究社会実装プロジェクトの開始&#34;&gt;マーケットデザインの共同研究・社会実装プロジェクトの開始&lt;/h1&gt;
+&lt;p&gt;今年一年何をやっていたかと言うと、色々やっていたのですが大きなものだと主にこれをやってました。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;＼プレスリリース／&lt;br&gt;AI Lab、GovTech開発センター、東京大学マーケットデザインセンター (&lt;a href=&#34;https://twitter.com/UTokyoMD?ref_src=twsrc%5Etfw&#34;&gt;@UTokyoMD&lt;/a&gt;) にて、共同研究を開始いたします。&lt;br&gt;&lt;br&gt;官公庁・自治体のDXを &lt;a href=&#34;https://twitter.com/hashtag/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#マーケットデザイン&lt;/a&gt; で推進。 &lt;br&gt;経済学者の小島武仁氏、鎌田雄一郎氏と共に、社会課題の解決を目指します。&lt;a href=&#34;https://twitter.com/hashtag/UTMD?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#UTMD&lt;/a&gt;&lt;a href=&#34;https://t.co/I8aFFVcfeu&#34;&gt;https://t.co/I8aFFVcfeu&lt;/a&gt;&lt;/p&gt;&amp;mdash; サイバーエージェント　広報＆IR担当 (@CyberAgent_PR) &lt;a href=&#34;https://twitter.com/CyberAgent_PR/status/1371705325443641345?ref_src=twsrc%5Etfw&#34;&gt;March 16, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;具体的には、&lt;a class=&#34;link&#34; href=&#34;https://adventar.org/calendars/6839&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Advent Calendar&lt;/a&gt; で自分が書かせていただいた「保育所利用調整マッチングの実証実験」に取り組んでいます。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;🎄&lt;a href=&#34;https://twitter.com/hashtag/CyberAgentAdventCalendar2021?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#CyberAgentAdventCalendar2021&lt;/a&gt;🎄&lt;br&gt;9日目は &lt;a href=&#34;https://twitter.com/hashtag/AILab?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#AILab&lt;/a&gt; が東京大学マーケットデザインセンター（UTMD）との共同研究の1つとして取り組んでいる「保育所マッチングプロジェクト」についてご紹介しています。ぜひご覧ください。&lt;a href=&#34;https://t.co/EhfDpZ7rO6&#34;&gt;https://t.co/EhfDpZ7rO6&lt;/a&gt;&lt;/p&gt;&amp;mdash; CyberAgentDevelopers (@ca_developers) &lt;a href=&#34;https://twitter.com/ca_developers/status/1468732125511880707?ref_src=twsrc%5Etfw&#34;&gt;December 9, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;自分はこのプロジェクトで、経済学・CS分野で研究されているマッチングアルゴリズムを現実の問題に即した形で実装し、どういったアルゴリズムを使うべきかと言う議論と新アルゴリズムの開発を行なっています。&lt;/p&gt;
+&lt;p&gt;学生時代自分は研究でもプライベートでもプログラミングをすることはほとんどなかったため、
+実装に手間取ったりすることも多々あり自分の力不足を感じることも多いのですが、
+大学で学んできたマーケットデザインを実際に活用していくための社会実装プロジェクトということでとてもやりがいを持って取り組めています。&lt;/p&gt;
+&lt;p&gt;またこれ以外にもマッチング・マーケットデザイン関連の研究や社内での応用・社会実装プロジェクトをいくつか進めています。&lt;/p&gt;
+&lt;h1 id=&#34;広報登壇&#34;&gt;広報・登壇&lt;/h1&gt;
+&lt;p&gt;社内外向けの広報活動・登壇も色々させていただいた1年でした。&lt;/p&gt;
+&lt;p&gt;前述のプロジェクトでご一緒させていただいている鎌田先生と会社のオウンドメディアのFeaturesで対談させてもらったり、&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;―マーケットデザインと、その有用性を知ってもらいたい&lt;br&gt;&lt;br&gt;近年注目が高まる、新しい研究領域「マーケットデザイン」&lt;br&gt;より良い社会の設計、共同研究での利点、両者の見据える未来についてなど、世界で活躍する経済学者 鎌田准教授と、AI Lab研究員冨田が対談を実施しました。&lt;a href=&#34;https://t.co/c1JCH1Wjkt&#34;&gt;https://t.co/c1JCH1Wjkt&lt;/a&gt;&lt;/p&gt;&amp;mdash; サイバーエージェント　広報＆IR担当 (@CyberAgent_PR) &lt;a href=&#34;https://twitter.com/CyberAgent_PR/status/1440162624084201474?ref_src=twsrc%5Etfw&#34;&gt;September 21, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;また、&lt;a class=&#34;link&#34; href=&#34;https://sansan.connpass.com/event/203771/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EconFiesta2&lt;/a&gt;や日経学会秋季大会の&lt;a class=&#34;link&#34; href=&#34;https://confit.atlas.jp/guide/event/jeaf2021/session/1G01-01/category&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;企画セッション&lt;/a&gt;、企業研究のカンファレンス&lt;a class=&#34;link&#34; href=&#34;https://ccse.jp/2021/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CCSE&lt;/a&gt;などでもお話しさせていただきました。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;A会場では12:00から、&lt;a href=&#34;https://twitter.com/hashtag/%E7%B5%8C%E6%B8%88%E5%AD%A6?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#経済学&lt;/a&gt; に関する個人セッションがスタートします！&lt;br&gt;メルカリから柳沼慎哉氏、サイバーエージェントから冨田 燿志氏が登壇します😀&lt;br&gt;&lt;br&gt;▼タイムテーブル&lt;a href=&#34;https://t.co/g30pR8GSef&#34;&gt;https://t.co/g30pR8GSef&lt;/a&gt;&lt;br&gt; &lt;a href=&#34;https://twitter.com/hashtag/CCSE2021?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#CCSE2021&lt;/a&gt; &lt;a href=&#34;https://t.co/TAzgnVcFvw&#34;&gt;pic.twitter.com/TAzgnVcFvw&lt;/a&gt;&lt;/p&gt;&amp;mdash; CCSE2021_企業による合同研究カンファレンス (@ccse_comitee) &lt;a href=&#34;https://twitter.com/ccse_comitee/status/1471676259017293824?ref_src=twsrc%5Etfw&#34;&gt;December 17, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;ca-awards&#34;&gt;CA AWARDS&lt;/h1&gt;
+&lt;p&gt;そんなこんなしていたら、9月の全社表彰では20新卒入社対象のBest Rookie Awardとして表彰していただいちゃいました。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure&gt;&lt;img src=&#34;https://miiitomi.github.io/images/20220101/fig1.jpg&#34; width=&#34;600&#34;/&gt;
+&lt;/figure&gt;
+
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;じゃーん✌️ &lt;a href=&#34;https://t.co/b8zhxbB23W&#34;&gt;pic.twitter.com/b8zhxbB23W&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1473490171643703305?ref_src=twsrc%5Etfw&#34;&gt;December 22, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;まさか自分が表彰していただけるなんて全く思ってもいなかったので驚いたのですが、気持ちとしてはこのツイートに書いた通りで、&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;自分が新人賞ノミネートしていただいたこと自体も嬉しいんだけど、経済学・マーケットデザインの取り組みで全社表彰にノミネートしてもらえるくらい自分たちのプロジェクトが評価されてるんだってことが正直ちょっと驚いたし嬉しい&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1445755691130445827?ref_src=twsrc%5Etfw&#34;&gt;October 6, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;経済学・マーケットデザインの研究・実装に取り組ませてもらえ、しかもその取り組みで評価してもらえるなんて、本当に恵まれた環境にいさせてもらっているなと思います。&lt;/p&gt;
+&lt;p&gt;なんかこう書くと今年は色々頑張って取り組んできて、充実した1年を過ごせてたような気がしてきました(？)
+2021年はマーケットデザインの社内外での活用・社会実装を進めるための準備の年だったと言えるでしょうか。
+そう言えるようにこれから成果を出していきたいです。&lt;/p&gt;
+&lt;h1 id=&#34;仕事以外&#34;&gt;仕事以外&lt;/h1&gt;
+&lt;p&gt;仕事以外の面ではそんなに変わりのない一年だったような気もしますが、
+今年は昨年よりはサッカーを現地に見に行って横浜F・マリノスの応援をしたり、&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;逆転勝ち！ &lt;a href=&#34;https://t.co/Mq4p4Kayik&#34;&gt;pic.twitter.com/Mq4p4Kayik&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1449344498778066948?ref_src=twsrc%5Etfw&#34;&gt;October 16, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;狩りをしたり、&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;これからしばらくの間の自由時間が生け贄に捧げられた &lt;a href=&#34;https://t.co/Wn1ZXesSKj&#34;&gt;pic.twitter.com/Wn1ZXesSKj&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1375698606640955393?ref_src=twsrc%5Etfw&#34;&gt;March 27, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;してました。&lt;/p&gt;
+&lt;p&gt;あと学生時代の友人とほぼ週1でやってる&lt;a class=&#34;link&#34; href=&#34;https://github.com/CSReading&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;勉強会&lt;/a&gt;は、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.oreilly.co.jp/books/9784873119335/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;計算理論&lt;/a&gt;（1月〜）&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://bookclub.kodansha.co.jp/product?item=0000275430&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;アルゴリズムとデータ構造&lt;/a&gt;（6月〜）&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.shoeisha.co.jp/book/detail/9784798167930&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;コンピュータアーキテクチャ&lt;/a&gt;（10月〜, 12月で中断）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;と続けてきました。
+社会人になってもこういう勉強会を一緒にしてくれる友人の存在、めちゃくちゃありがたい。&lt;/p&gt;
+&lt;p&gt;ただ、年始にこう言ってたのは、&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;今年は小説・漫画・映画問わず昨年より多くの物語を摂取して日々現実逃避を楽しんでいきたい&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1344667204067815427?ref_src=twsrc%5Etfw&#34;&gt;December 31, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;漫画は（&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/p/oregawatashininarumade/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;シリアスTSF&lt;/a&gt;とか）多少読んだけど、小説・映画はあまり沢山読んだり見たりできなかった気がする。
+そのあたりは2022年の課題としたい(？)&lt;/p&gt;
+&lt;h1 id=&#34;2022年にやりたいこと&#34;&gt;2022年にやりたいこと&lt;/h1&gt;
+&lt;p&gt;2022年の目標・やりたいことを思いつくままに書き殴っていくコーナーです。
+仕事面は会社で目標設定するので、それ以外のプライベート面で。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;小説をたくさん読む。
+&lt;ul&gt;
+&lt;li&gt;2020年にやってたこれができるくらい。&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;こんなのでどうだ(ネタ切れしたらごめんなさい) &lt;a href=&#34;https://twitter.com/hashtag/%E3%81%84%E3%81%84%E3%81%AD%E3%81%95%E3%82%8C%E3%81%9F%E6%95%B0%E3%81%A0%E3%81%91%E4%BB%8A%E5%B9%B4%E8%AA%AD%E3%82%93%E3%81%A7%E8%89%AF%E3%81%8B%E3%81%A3%E3%81%9F%E5%B0%8F%E8%AA%AC%E3%82%92%E7%B4%B9%E4%BB%8B%E3%81%99%E3%82%8B?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#いいねされた数だけ今年読んで良かった小説を紹介する&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1342441247080759296?ref_src=twsrc%5Etfw&#34;&gt;December 25, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;読むだけじゃなくショートショート1つくらい自分でも書く。&lt;/li&gt;
+&lt;li&gt;映画もたくさん映画館に観に行く。&lt;/li&gt;
+&lt;li&gt;面倒だと先延ばしにし続けてないでいい加減そろそろ引っ越す。&lt;/li&gt;
+&lt;li&gt;部屋の片付け・掃除など家事を滞らせないようにする。&lt;/li&gt;
+&lt;li&gt;横浜F・マリノスの試合をもっと見に行く。&lt;/li&gt;
+&lt;li&gt;スノボに複数回行く。&lt;/li&gt;
+&lt;li&gt;ダイビングライセンス(OW)をとる。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mezamee.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Mezamee&lt;/a&gt;を使ってまともな時間に就寝・起床する生活を一年間維持する。&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;メザミーで目覚め率100%のまま20回目覚めた(1回解除しそびれたと思ったらそもそも設定してなかったことあったけど) &lt;a href=&#34;https://t.co/6gmlOvLwkM&#34;&gt;pic.twitter.com/6gmlOvLwkM&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1471638850158346241?ref_src=twsrc%5Etfw&#34;&gt;December 17, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;コーヒーを自分で淹れる習慣を作る。&lt;/li&gt;
+&lt;li&gt;香水にチャレンジする。&lt;/li&gt;
+&lt;li&gt;緑のままずっと低迷してる&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/users/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AtCoder&lt;/a&gt;をもうちょっと本腰入れてやって水色になる。&lt;/li&gt;
+&lt;li&gt;GitHubの&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;草&lt;/a&gt;を一年間生やし続ける。&lt;/li&gt;
+&lt;li&gt;ずっと受けようかなーどうしようかなーと言い続けてる基本情報技術者試験を受ける。&lt;/li&gt;
+&lt;li&gt;このブログの更新を滞らせないように何かしら投稿し続ける。&lt;/li&gt;
+&lt;li&gt;全身脱毛をする。&lt;/li&gt;
+&lt;li&gt;一年間楽しく過ごす。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これくらいでいいか。&lt;/p&gt;
+&lt;p&gt;興味あるもの、自分もこれやってみたいと思ってた！ってものある人いたら良かったら声かけてください！&lt;/p&gt;
+&lt;p&gt;2022年もよろしくお願いします！！&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>『オレが私になるまで』</title>
         <link>https://miiitomi.github.io/p/oregawatashininarumade/</link>
         <pubDate>Thu, 30 Dec 2021 11:09:50 +0900</pubDate>
