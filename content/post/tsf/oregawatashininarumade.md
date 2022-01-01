@@ -3,7 +3,7 @@ title: 『オレが私になるまで』
 description: おすすめシリアスTSFその1
 slug: oregawatashininarumade
 date: 2021-12-30T11:09:50+09:00
-image: images/oregawatashininarumade/oregawatashininarumade4.jpg
+image: images/oregawatashininarumade/fig4.jpg
 categories:
     - 漫画
     - シリアスTSF
