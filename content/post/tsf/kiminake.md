@@ -4,7 +4,7 @@ description: おすすめシリアスTSFその2
 slug: kiminake
 date: 2022-01-17
 draft: True
-image: images/kiminake/image.png
+image: images/kiminake/kiminake_top.png
 categories:
     - シリアスTSF
     - 小説
