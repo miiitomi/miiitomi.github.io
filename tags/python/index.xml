@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on miiitomi</title>
+    <link>https://miiitomi.github.io/tags/python/</link>
+    <description>Recent content in Python on miiitomi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 25 Dec 2021 10:53:40 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scarf&#39;s lemmaとその実装</title>
+      <link>https://miiitomi.github.io/p/scarf/</link>
+      <pubDate>Sat, 25 Dec 2021 10:53:40 +0900</pubDate>
+      
+      <guid>https://miiitomi.github.io/p/scarf/</guid>
+      <description>はじめに 誰しも普通に生きていると一度くらいScarf&amp;rsquo;s lemmaを実装する場面に遭遇すると思いますが、意外と日本語の情報が出てこなくて困ったことのある人もいるかもしれません。 Scarf’s lemma完全理解して実装完了したらqiitaかzennかにでも誰得記事書いてやろうかな
+&amp;mdash; みーとみ (@miiitomi) November 19, 2021  というツイートを前にしましたが、せっかくブログ作ったのでここに勉強記録としてまとめてみようと思います。 お気持ち整理みたいな感じなので証明はちゃんとしないし、数学的・ゲーム理論的に厳密でない書き方してるとこも多々あるかも。
+Scarf&amp;rsquo;s lemma とは Scarf&amp;rsquo;s lemmaとは Scarf (1967) で示されたコアを求めるための補題です。 応用としては、例えばマッチング理論の文脈で Nguyen and Vohra (2018) で安定マッチングを求めるために使用されています。
+命題 $A, C$ は $n\times m$ $(n &amp;lt; m)$ の行列で $$ \begin{align*} A &amp;amp;= \begin{bmatrix} 1 &amp;amp; \dots &amp;amp; 0 &amp;amp; a_{1,n+1} &amp;amp; \dots &amp;amp; a_{1,m} \cr \vdots &amp;amp;\ddots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; &amp;amp; \vdots \cr 0 &amp;amp; \dots &amp;amp; 1 &amp;amp; a_{n,n+1} &amp;amp; \dots &amp;amp; a_{n,m} \end{bmatrix},\cr C &amp;amp;= \begin{bmatrix} c_{1,1} &amp;amp; \dots &amp;amp; c_{n,1} &amp;amp; c_{1,n+1} &amp;amp; \dots &amp;amp; c_{1,m} \cr \vdots &amp;amp;\ddots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; &amp;amp; \vdots \cr c_{n,1} &amp;amp; \dots &amp;amp; c_{n,n} &amp;amp; c_{n,n+1} &amp;amp; \dots &amp;amp; c_{n,m} \end{bmatrix} \end{align*} $$ の形のもので、$C$ は以下を満たすとします（これを標準形（standard form）と呼ぶことにします）：</description>
+    </item>
+    
+  </channel>
+</rss>
