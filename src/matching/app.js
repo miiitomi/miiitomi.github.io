@@ -7,25 +7,28 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      man_number: 1,
-      woman_number: 1,
+      man_number: 3,
+      woman_number: 3,
       determinate_number: false,
       number_error: false,
       man_name_list: [],
       woman_name_list: [],
       determinate_man_name: false,
       determinate_woman_name: false,
-      man_name_error: false,
-      woman_name_error: false,
+      man_name_error: 0,
+      woman_name_error: 0,
     };
 
     this.handleChangeManNumber = this.handleChangeManNumber.bind(this);
     this.handleChangeWomanNumber = this.handleChangeWomanNumber.bind(this);
     this.determinateNumber = this.determinateNumber.bind(this);
+    this.reverseToNumber = this.reverseToNumber.bind(this);
     this.handleChangeManName = this.handleChangeManName.bind(this);
     this.determinateManName = this.determinateManName.bind(this);
+    this.reverseToManName = this.reverseToManName.bind(this);
     this.handleChangeWomanName = this.handleChangeWomanName.bind(this);
     this.determinateWomanName = this.determinateWomanName.bind(this);
+    this.reverseToWomanName = this.reverseToWomanName.bind(this);
   }
 
   handleChangeManNumber(event) {
@@ -49,6 +52,19 @@ export default class App extends React.Component {
     }
   }
 
+  reverseToNumber() {
+    this.setState({
+      determinate_number: false,
+      number_error: false,
+      man_name_list: [],
+      woman_name_list: [],
+      determinate_man_name: false,
+      determinate_woman_name: false,
+      man_name_error: false,
+      woman_name_error: false,
+    })
+  }
+
   handleChangeManName(event) {
     let man_name_list = this.state.man_name_list;
     let i = parseInt(event.target.name, 10);
@@ -57,11 +73,25 @@ export default class App extends React.Component {
   }
 
   determinateManName() {
-    if (nameListValidation(this.state.man_name_list)) {
-      this.setState({determinate_man_name: true, man_name_error: false});
+    let error_code = nameListValidation(this.state.man_name_list);
+    if (error_code === 0) {
+      this.setState({
+        determinate_man_name: true,
+        man_name_error: error_code
+      });
     } else {
-      this.setState({man_name_error: true});
+      this.setState({man_name_error: error_code});
     }
+  }
+
+  reverseToManName() {
+    this.setState({
+      woman_name_list: Array(parseInt(this.state.woman_number, 10)).fill(""),
+      determinate_man_name: false,
+      determinate_woman_name: false,
+      man_name_error: false,
+      woman_name_error: false,
+    });
   }
 
   handleChangeWomanName(event) {
@@ -72,11 +102,21 @@ export default class App extends React.Component {
   }
 
   determinateWomanName() {
-    if (nameListValidation(this.state.woman_name_list)) {
-      this.setState({determinate_woman_name: true});
+    let error_code = nameListValidation(this.state.woman_name_list)
+    if (error_code === 0) {
+      this.setState({
+        determinate_woman_name: true,
+        woman_name_error: error_code,
+      });
     } else {
-      this.setState({woman_name_error: true});
+      this.setState({woman_name_error: error_code});
     }
+  }
+
+  reverseToWomanName() {
+    this.setState({
+      determinate_woman_name: false,
+    });
   }
 
   render() {
@@ -90,6 +130,7 @@ export default class App extends React.Component {
           handleChangeManNumber={this.handleChangeManNumber}
           handleChangeWomanNumber={this.handleChangeWomanNumber}
           determinateNumber={this.determinateNumber}
+          reverseToNumber={this.reverseToNumber}
         />
         {
           this.state.determinate_number && 
@@ -101,6 +142,7 @@ export default class App extends React.Component {
               handleChangeManName={this.handleChangeManName}
               determinateManName={this.determinateManName}
               man_name_error={this.state.man_name_error}
+              reverseToManName={this.reverseToManName}
             />
           </>
         }
@@ -114,6 +156,7 @@ export default class App extends React.Component {
               handleChangeWomanName={this.handleChangeWomanName}
               determinateWomanName={this.determinateWomanName}
               woman_name_error={this.state.woman_name_error}
+              reverseToWomanName={this.reverseToWomanName}
             />
           </>
         }
@@ -124,15 +167,19 @@ export default class App extends React.Component {
 
 function nameValidation(str) {
   let reg = /^[a-zA-Zａ-ｚＡ-Ｚぁ-んーァ-ヶｰｱ-ﾝﾞﾟｰ\u4E00-\u9FFF\u3005-\u3007]+$/i;
-  return reg.test(str);
+  if (!reg.test(str)) return false;
+  return (str.length <= 10);
 }
 
 function nameListValidation(list) {
   for (let str of list) {
     if (!nameValidation(str)) {
-      return false;
+      return 1;
     }
   }
   let name_set = new Set(list);
-  return list.length === name_set.size;
+  if (list.length != name_set.size) {
+    return 2;
+  }
+  return 0;
 }

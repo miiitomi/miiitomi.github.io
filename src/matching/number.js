@@ -34,6 +34,10 @@ export default class Number extends React.Component {
         >
           確定
         </Button>
+        {
+          this.props.determinate_number &&
+          <Button variant='secondary' onClick={this.props.reverseToNumber}>ここからやり直す</Button>
+        }
         {this.props.number_error && <ul><li>男性側・女性側人数はどちらも 1 以上にしてください。</li></ul>}
       </div>
     );

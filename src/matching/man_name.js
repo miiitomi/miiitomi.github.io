@@ -33,7 +33,7 @@ export default class ManName extends React.Component {
                 />);
         return (
         <div id="man_name">
-            <p>各男性の名前またはニックネームを記入してください。</p>
+            <p>各男性の名前またはニックネームを入力してください。</p>
             <p/>
             {form_list}
             <p/>
@@ -44,9 +44,19 @@ export default class ManName extends React.Component {
             disabled={this.props.determinate_man_name}
             >確定</Button>
             {
-                this.props.man_name_error && 
+                this.props.determinate_man_name && 
+                <Button variant='secondary' onClick={this.props.reverseToManName}>ここからやり直す</Button>
+            }
+            {
+                this.props.man_name_error === 1 && 
                 <ul>
-                    <li>名前は記号・数字・空白を含まず、かつ重複のないようにしてください。</li>
+                    <li>名前は記号・数字・空白を含まない10文字以下の文字列にしてください。</li>
+                </ul>
+            }
+            {
+                this.props.man_name_error === 2 && 
+                <ul>
+                    <li>名前は重複のないようにしてください。</li>
                 </ul>
             }
         </div>
