@@ -33,7 +33,7 @@ export default class WomanName extends React.Component {
                 />);
         return (
         <div id="woman_name">
-            <p>女性陣の名前を記入してください。</p>
+            <p>各女性の名前またはニックネームを記入してください。</p>
             <p/>
             {form_list}
             <p/>

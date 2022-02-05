@@ -33,7 +33,7 @@ export default class ManName extends React.Component {
                 />);
         return (
         <div id="man_name">
-            <p>男性陣の名前を記入してください。</p>
+            <p>各男性の名前またはニックネームを記入してください。</p>
             <p/>
             {form_list}
             <p/>

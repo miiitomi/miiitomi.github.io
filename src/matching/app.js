@@ -123,7 +123,7 @@ export default class App extends React.Component {
 }
 
 function nameValidation(str) {
-  let reg = /^[a-zA-Zａ-ｚＡ-Ｚぁ-んァ-ヶｱ-ﾝﾞﾟー\u4E00-\u9FFF\u3005-\u3007]+$/i;
+  let reg = /^[a-zA-Zａ-ｚＡ-Ｚぁ-んーァ-ヶｰｱ-ﾝﾞﾟｰ\u4E00-\u9FFF\u3005-\u3007]+$/i;
   return reg.test(str);
 }
 
