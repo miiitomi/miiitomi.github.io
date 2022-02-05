@@ -59,6 +59,12 @@ export default class WomanName extends React.Component {
                 <li>名前は重複のないようにしてください。</li>
             </ul>
         }
+        {
+            this.props.woman_name_error === 3 && 
+            <ul>
+                <li>名前は男性・女性通じて重複のないようにしてください。</li>
+            </ul>
+        }
         </div>
         );
     }

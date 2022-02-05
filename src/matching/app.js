@@ -73,7 +73,7 @@ export default class App extends React.Component {
   }
 
   determinateManName() {
-    let error_code = nameListValidation(this.state.man_name_list);
+    let error_code = manNameListValidation(this.state.man_name_list);
     if (error_code === 0) {
       this.setState({
         determinate_man_name: true,
@@ -86,7 +86,6 @@ export default class App extends React.Component {
 
   reverseToManName() {
     this.setState({
-      woman_name_list: Array(parseInt(this.state.woman_number, 10)).fill(""),
       determinate_man_name: false,
       determinate_woman_name: false,
       man_name_error: false,
@@ -102,7 +101,7 @@ export default class App extends React.Component {
   }
 
   determinateWomanName() {
-    let error_code = nameListValidation(this.state.woman_name_list)
+    let error_code = womanNameListValidation(this.state.man_name_list, this.state.woman_name_list)
     if (error_code === 0) {
       this.setState({
         determinate_woman_name: true,
@@ -171,15 +170,35 @@ function nameValidation(str) {
   return (str.length <= 10);
 }
 
-function nameListValidation(list) {
-  for (let str of list) {
+function manNameListValidation(man_name_list) {
+  for (let str of man_name_list) {
     if (!nameValidation(str)) {
       return 1;
     }
   }
-  let name_set = new Set(list);
-  if (list.length != name_set.size) {
+  let name_set = new Set(man_name_list);
+  if (man_name_list.length != name_set.size) {
     return 2;
+  }
+  return 0;
+}
+
+function womanNameListValidation(man_name_list, woman_name_list) {
+  for (let str of woman_name_list) {
+    if (!nameValidation(str)) {
+      return 1;
+    }
+  }
+  let name_set = new Set(woman_name_list);
+  if (woman_name_list.length != name_set.size) {
+    return 2;
+  }
+
+  for (let man_name of man_name_list) {
+    name_set.add(man_name);
+  }
+  if (name_set.size != man_name_list.length + woman_name_list.length) {
+    return 3;
   }
   return 0;
 }
