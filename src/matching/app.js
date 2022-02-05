@@ -1,78 +1,7 @@
 import React from 'react';
-import FormControl from 'react-bootstrap/FormControl';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Button from 'react-bootstrap/Button';
-
-class Number extends React.Component {
-  render() {
-    return (
-      <div id='number'>
-        <p>男性側・女性側それぞれの人数を入力してください。</p>
-        <InputGroup size="lg">
-          <InputGroup.Text>男性側人数</InputGroup.Text>
-          <FormControl
-            type="number"
-            value={this.props.man_number}
-            onChange={this.props.handleChangeManNumber}
-            disabled={this.props.determinate_number}
-          />
-        </InputGroup>
-        <InputGroup size="lg">
-          <InputGroup.Text>女性側人数</InputGroup.Text>
-          <FormControl
-            type="number"
-            value={this.props.woman_number}
-            onChange={this.props.handleChangeWomanNumber}
-            disabled={this.props.determinate_number}
-          />
-        </InputGroup>
-        <p/>
-        <Button
-          variant="primary"
-          onClick={this.props.determinateNumber}
-          disabled={this.props.determinate_number}
-        >
-          確定
-        </Button>
-        {this.props.number_error && <ul><li>男性側・女性側人数はどちらも 1 以上にしてください。</li></ul>}
-      </div>
-    );
-  }
-}
-
-class ManNameForm extends React.Component {
-  render() {
-    return (
-      <FormControl
-        type='text'
-        name={this.props.i}
-        value={this.props.man_name}
-        placeholder={1 + this.props.i + "人目の男性の名前"}
-        onChange={this.props.handleChangeManName}
-        size='lg'
-      />
-    );
-  }
-}
-
-class ManName extends React.Component {
-  render() {
-    const form_list = this.props.man_name_list.map((man_name, idx) =>
-            <ManNameForm
-              key={idx}
-              man_name={man_name}
-              i={idx}
-              handleChangeManName={this.props.handleChangeManName}
-            />);
-    return (
-      <div id="man_name">
-        <p>男性陣の名前を記入してください。</p>
-        <p/>
-        {form_list}
-      </div>
-    );
-  }
-}
+import Number from './number';
+import ManName from './man_name';
+import WomanName from './woman_name';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -84,12 +13,19 @@ export default class App extends React.Component {
       number_error: false,
       man_name_list: [],
       woman_name_list: [],
+      determinate_man_name: false,
+      determinate_woman_name: false,
+      man_name_error: false,
+      woman_name_error: false,
     };
 
     this.handleChangeManNumber = this.handleChangeManNumber.bind(this);
     this.handleChangeWomanNumber = this.handleChangeWomanNumber.bind(this);
     this.determinateNumber = this.determinateNumber.bind(this);
     this.handleChangeManName = this.handleChangeManName.bind(this);
+    this.determinateManName = this.determinateManName.bind(this);
+    this.handleChangeWomanName = this.handleChangeWomanName.bind(this);
+    this.determinateWomanName = this.determinateWomanName.bind(this);
   }
 
   handleChangeManNumber(event) {
@@ -120,8 +56,30 @@ export default class App extends React.Component {
     this.setState({man_name_list: man_name_list});
   }
 
+  determinateManName() {
+    if (nameListValidation(this.state.man_name_list)) {
+      this.setState({determinate_man_name: true, man_name_error: false});
+    } else {
+      this.setState({man_name_error: true});
+    }
+  }
+
+  handleChangeWomanName(event) {
+    let woman_name_list = this.state.woman_name_list;
+    let i = parseInt(event.target.name, 10);
+    woman_name_list[i] = event.target.value;
+    this.setState({woman_name_list: woman_name_list});
+  }
+
+  determinateWomanName() {
+    if (nameListValidation(this.state.woman_name_list)) {
+      this.setState({determinate_woman_name: true});
+    } else {
+      this.setState({woman_name_error: true});
+    }
+  }
+
   render() {
-    console.log(this.state);
     return (
       <>
         <Number
@@ -139,11 +97,42 @@ export default class App extends React.Component {
           <br/>
             <ManName
               man_name_list={this.state.man_name_list}
+              determinate_man_name={this.state.determinate_man_name}
               handleChangeManName={this.handleChangeManName}
+              determinateManName={this.determinateManName}
+              man_name_error={this.state.man_name_error}
+            />
+          </>
+        }
+        {
+          this.state.determinate_man_name && 
+          <>
+          <br/>
+            <WomanName
+              woman_name_list={this.state.woman_name_list}
+              determinate_woman_name={this.state.determinate_woman_name}
+              handleChangeWomanName={this.handleChangeWomanName}
+              determinateWomanName={this.determinateWomanName}
+              woman_name_error={this.state.woman_name_error}
             />
           </>
         }
       </>
     );
   }
+}
+
+function nameValidation(str) {
+  let reg = /^[a-zA-Zａ-ｚＡ-Ｚぁ-んァ-ヶｱ-ﾝﾞﾟー\u4E00-\u9FFF\u3005-\u3007]+$/i;
+  return reg.test(str);
+}
+
+function nameListValidation(list) {
+  for (let str of list) {
+    if (!nameValidation(str)) {
+      return false;
+    }
+  }
+  let name_set = new Set(list);
+  return list.length === name_set.size;
 }
