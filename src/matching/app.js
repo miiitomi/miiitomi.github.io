@@ -20,6 +20,9 @@ export default class App extends React.Component {
       woman_name_error: 0,
       man_pref_state: [],
       woman_pref_state: [],
+      man_pref_list: [],
+      woman_pref_list: [],
+      determinate_pref: false,
     };
 
     this.handleChangeManNumber = this.handleChangeManNumber.bind(this);
@@ -32,7 +35,12 @@ export default class App extends React.Component {
     this.handleChangeWomanName = this.handleChangeWomanName.bind(this);
     this.determinateWomanName = this.determinateWomanName.bind(this);
     this.reverseToWomanName = this.reverseToWomanName.bind(this);
-    this.onClickManPref = this.onClickManPref.bind(this);
+    this.onClickPref = this.onClickPref.bind(this);
+    this.addPref = this.addPref.bind(this);
+    this.backPref = this.backPref.bind(this);
+    this.confirmPref = this.confirmPref.bind(this);
+    this.determinatePref = this.determinatePref.bind(this);
+    this.reverseToPref = this.reverseToPref.bind(this);
   }
 
   handleChangeManNumber(event) {
@@ -50,8 +58,6 @@ export default class App extends React.Component {
         number_error: false,
         man_name_list: Array(parseInt(this.state.man_number, 10)).fill(""),
         woman_name_list: Array(parseInt(this.state.woman_number, 10)).fill(""),
-        man_pref_state: Array(parseInt(this.state.man_number, 10)).fill(0),
-        woman_pref_state: Array(parseInt(this.state.woman_number, 10)).fill(0),
       });
     } else {
       this.setState({number_error: true});
@@ -109,9 +115,22 @@ export default class App extends React.Component {
   determinateWomanName() {
     let error_code = womanNameListValidation(this.state.man_name_list, this.state.woman_name_list)
     if (error_code === 0) {
+      const man_pref_list_copy = [];
+      const woman_pref_list_copy = [];
+      for (let i = 0; i < this.state.man_number; i++) {
+        man_pref_list_copy.push([]);
+      }
+      for (let i = 0; i < this.state.woman_number; i++) {
+        woman_pref_list_copy.push([]);
+      }
       this.setState({
         determinate_woman_name: true,
         woman_name_error: error_code,
+        man_pref_list: man_pref_list_copy,
+        woman_pref_list: woman_pref_list_copy,
+        man_pref_state: Array(parseInt(this.state.man_number, 10)).fill(0),
+        woman_pref_state: Array(parseInt(this.state.woman_number, 10)).fill(0),
+        determinate_pref: false,
       });
     } else {
       this.setState({woman_name_error: error_code});
@@ -124,19 +143,108 @@ export default class App extends React.Component {
     });
   }
 
-  onClickManPref(i) {
-    if (this.state.man_pref_state[i] === 0) {
+  onClickPref(self_idx, is_man) {
+    if (is_man) {
       const man_pref_state_copy = this.state.man_pref_state.slice();
-      man_pref_state_copy[i] = 2;
+      man_pref_state_copy[self_idx] = 1;
       this.setState({man_pref_state: man_pref_state_copy});
+      if (this.state.man_pref_state[self_idx] == 2) {
+        const man_pref_list_copy = this.state.man_pref_list.slice();
+        man_pref_list_copy[self_idx] = [];
+        this.setState({man_pref_list: man_pref_list_copy});
+      }
     } else {
-      const man_pref_state_copy = this.state.man_pref_state.slice();
-      man_pref_state_copy[i] = 0;
-      this.setState({man_pref_state: man_pref_state_copy});
+      const woman_pref_state_copy = this.state.woman_pref_state.slice();
+      woman_pref_state_copy[self_idx] = 1;
+      this.setState({woman_pref_state: woman_pref_state_copy});
+      if (this.state.woman_pref_state[self_idx] == 2) {
+        const woman_pref_list_copy = this.state.woman_pref_list.slice();
+        woman_pref_list_copy[self_idx] = [];
+        this.setState({woman_pref_list: woman_pref_list_copy});
+      }
     }
   }
 
+  addPref(self_idx, choose_idx, is_man) {
+    if (is_man) {
+      if (choose_idx === -1) {
+        const man_pref_state_copy = this.state.man_pref_state.slice();
+        man_pref_state_copy[self_idx] = 3;
+        this.setState({man_pref_state: man_pref_state_copy});    
+      } else {
+        const man_pref_list_copy = this.state.man_pref_list.slice();
+        man_pref_list_copy[self_idx].push(choose_idx);
+        this.setState({man_pref_list: man_pref_list_copy});
+        if (man_pref_list_copy[self_idx].length == this.state.woman_number) {
+          const man_pref_state_copy = this.state.man_pref_state.slice();
+          man_pref_state_copy[self_idx] = 3;
+          this.setState({man_pref_state: man_pref_state_copy});
+        }
+      }
+    } else {
+      if (choose_idx === -1) {
+        const woman_pref_state_copy = this.state.woman_pref_state.slice();
+        woman_pref_state_copy[self_idx] = 3;
+        this.setState({woman_pref_state: woman_pref_state_copy});
+      } else {
+        const woman_pref_list_copy = this.state.woman_pref_list.slice();
+        woman_pref_list_copy[self_idx].push(choose_idx);
+        this.setState({woman_pref_list: woman_pref_list_copy});
+        if (woman_pref_list_copy[self_idx].length == this.state.man_number) {
+          const woman_pref_state_copy = this.state.woman_pref_state.slice();
+          woman_pref_state_copy[self_idx] = 3;
+          this.setState({woman_pref_state: woman_pref_state_copy});
+        }
+      }
+    }
+  }
+
+  backPref(self_idx, is_man) {
+    if (is_man) {
+      if (this.state.man_pref_list[self_idx].length >= 1) {
+        const man_pref_list_copy = this.state.man_pref_list.slice();
+        man_pref_list_copy[self_idx].pop();
+        this.setState({man_pref_list: man_pref_list_copy});
+      }
+      const man_pref_state_copy = this.state.man_pref_state.slice();
+      man_pref_state_copy[self_idx] = 1;
+      this.setState({man_pref_state: man_pref_state_copy});
+    } else {
+      if (this.state.woman_pref_list[self_idx].length >= 1) {
+        const woman_pref_list_copy = this.state.woman_pref_list.slice();
+        woman_pref_list_copy[self_idx].pop();
+        this.setState({woman_pref_list: woman_pref_list_copy});
+      }
+      const woman_pref_state_copy = this.state.woman_pref_state.slice();
+      woman_pref_state_copy[self_idx] = 1;
+      this.setState({woman_pref_state: woman_pref_state_copy});
+    }
+  }
+
+  confirmPref(self_idx, is_man) {
+    if (is_man) {
+      const man_pref_state_copy = this.state.man_pref_state.slice();
+      man_pref_state_copy[self_idx] = 2;
+      this.setState({man_pref_state: man_pref_state_copy});
+    } else {
+      const woman_pref_state_copy = this.state.woman_pref_state.slice();
+      woman_pref_state_copy[self_idx] = 2;
+      this.setState({woman_pref_state: woman_pref_state_copy});
+    }
+  }
+
+  determinatePref() {
+    this.setState({determinate_pref: true});
+  }
+
+  reverseToPref() {
+    this.setState({determinate_pref: false});
+  }
+
   render() {
+    let able_pref = ablePref(this.state.man_pref_state, this.state.woman_pref_state);
+    let able_determinate_pref = ableDeterminatePref(this.state.man_pref_state, this.state.woman_pref_state);
+
     return (
       <>
         <Number
@@ -186,7 +294,26 @@ export default class App extends React.Component {
               woman_name_list={this.state.woman_name_list}
               man_pref_state={this.state.man_pref_state}
               woman_pref_state={this.state.woman_pref_state}
-              onClickManPref={(i) => this.onClickManPref(i)}
+              man_pref_list={this.state.man_pref_list}
+              woman_pref_list={this.state.woman_pref_list}
+              onClickPref={(self_idx, is_man) => this.onClickPref(self_idx, is_man)}
+              able_pref={able_pref}
+              addPref={
+                (self_idx, choose_idx, is_man) =>
+                this.addPref(self_idx, choose_idx, is_man)
+              }
+              backPref={
+                (self_idx, is_man) =>
+                this.backPref(self_idx, is_man)
+              }
+              confirmPref={
+                (self_idx, is_man) =>
+                this.confirmPref(self_idx, is_man)
+              }
+              determinatePref={() => this.determinatePref()}
+              reverseToPref={() => this.reverseToPref()}
+              determinate_pref={this.state.determinate_pref}
+              able_determinate_pref={able_determinate_pref}
             />
           </>
         }
@@ -232,4 +359,26 @@ function womanNameListValidation(man_name_list, woman_name_list) {
     return 3;
   }
   return 0;
+}
+
+function ablePref(man_pref_state, woman_pref_state) {
+  if (man_pref_state.length === 0 && woman_pref_state === 0) return false;
+  for (let s of man_pref_state) {
+    if (s != 0 && s != 2) return false;
+  }
+  for (let s of woman_pref_state) {
+    if (s != 0 && s != 2) return false;
+  }
+  return true;
+}
+
+function ableDeterminatePref(man_pref_state, woman_pref_state) {
+  if (man_pref_state.length === 0 && woman_pref_state === 0) return false;
+  for (let s of man_pref_state) {
+    if (s != 2) return false;
+  }
+  for (let s of woman_pref_state) {
+    if (s != 2) return false;
+  }
+  return true;
 }

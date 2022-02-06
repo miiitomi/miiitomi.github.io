@@ -7,9 +7,9 @@ export default class Number extends React.Component {
   render() {
     return (
       <div id='number'>
-        <p>男性側・女性側それぞれの人数を入力してください。</p>
+        <p>参加する男性・女性の人数をそれぞれ入力してください。</p>
         <InputGroup size="lg">
-          <InputGroup.Text>男性側人数</InputGroup.Text>
+        <InputGroup.Text>男性の人数</InputGroup.Text>
           <FormControl
             type="number"
             value={this.props.man_number}
@@ -18,7 +18,7 @@ export default class Number extends React.Component {
           />
         </InputGroup>
         <InputGroup size="lg">
-          <InputGroup.Text>女性側人数</InputGroup.Text>
+          <InputGroup.Text>女性の人数</InputGroup.Text>
           <FormControl
             type="number"
             value={this.props.woman_number}
@@ -36,7 +36,7 @@ export default class Number extends React.Component {
         </Button>
         {
           this.props.determinate_number &&
-          <Button variant='secondary' onClick={this.props.reverseToNumber}>ここからやり直す</Button>
+          <Button variant='success' onClick={this.props.reverseToNumber}>ここからやり直す</Button>
         }
         {this.props.number_error && <ul><li>男性側・女性側人数はどちらも 1 以上にしてください。</li></ul>}
       </div>

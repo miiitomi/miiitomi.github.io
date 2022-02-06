@@ -12,7 +12,7 @@ class ManNameForm extends React.Component {
             type='text'
             name={this.props.i}
             value={this.props.man_name}
-            placeholder={1 + this.props.i + "人目の男性の名前"}
+            placeholder={"男性"+ (1+ this.props.i) + "人目の名前"}
             onChange={this.props.handleChangeManName}
             disabled={this.props.disabled}
             />
@@ -45,7 +45,7 @@ export default class ManName extends React.Component {
             >確定</Button>
             {
                 this.props.determinate_man_name && 
-                <Button variant='secondary' onClick={this.props.reverseToManName}>ここからやり直す</Button>
+                <Button variant='success' onClick={this.props.reverseToManName}>ここからやり直す</Button>
             }
             {
                 this.props.man_name_error === 1 && 
