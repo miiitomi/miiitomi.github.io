@@ -2,13 +2,14 @@ import React from 'react';
 import Number from './number';
 import ManName from './man_name';
 import WomanName from './woman_name';
+import Pref from './pref';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      man_number: 3,
-      woman_number: 3,
+      man_number: 1,
+      woman_number: 1,
       determinate_number: false,
       number_error: false,
       man_name_list: [],
@@ -17,6 +18,8 @@ export default class App extends React.Component {
       determinate_woman_name: false,
       man_name_error: 0,
       woman_name_error: 0,
+      man_pref_state: [],
+      woman_pref_state: [],
     };
 
     this.handleChangeManNumber = this.handleChangeManNumber.bind(this);
@@ -29,6 +32,7 @@ export default class App extends React.Component {
     this.handleChangeWomanName = this.handleChangeWomanName.bind(this);
     this.determinateWomanName = this.determinateWomanName.bind(this);
     this.reverseToWomanName = this.reverseToWomanName.bind(this);
+    this.onClickManPref = this.onClickManPref.bind(this);
   }
 
   handleChangeManNumber(event) {
@@ -45,7 +49,9 @@ export default class App extends React.Component {
         determinate_number: true,
         number_error: false,
         man_name_list: Array(parseInt(this.state.man_number, 10)).fill(""),
-        woman_name_list: Array(parseInt(this.state.woman_number, 10)).fill("")
+        woman_name_list: Array(parseInt(this.state.woman_number, 10)).fill(""),
+        man_pref_state: Array(parseInt(this.state.man_number, 10)).fill(0),
+        woman_pref_state: Array(parseInt(this.state.woman_number, 10)).fill(0),
       });
     } else {
       this.setState({number_error: true});
@@ -118,6 +124,18 @@ export default class App extends React.Component {
     });
   }
 
+  onClickManPref(i) {
+    if (this.state.man_pref_state[i] === 0) {
+      const man_pref_state_copy = this.state.man_pref_state.slice();
+      man_pref_state_copy[i] = 2;
+      this.setState({man_pref_state: man_pref_state_copy});
+    } else {
+      const man_pref_state_copy = this.state.man_pref_state.slice();
+      man_pref_state_copy[i] = 0;
+      this.setState({man_pref_state: man_pref_state_copy});
+    }
+  }
+
   render() {
     return (
       <>
@@ -156,6 +174,19 @@ export default class App extends React.Component {
               determinateWomanName={this.determinateWomanName}
               woman_name_error={this.state.woman_name_error}
               reverseToWomanName={this.reverseToWomanName}
+            />
+          </>
+        }
+        {
+          this.state.determinate_woman_name &&
+          <>
+            <br/>
+            <Pref
+              man_name_list={this.state.man_name_list}
+              woman_name_list={this.state.woman_name_list}
+              man_pref_state={this.state.man_pref_state}
+              woman_pref_state={this.state.woman_pref_state}
+              onClickManPref={(i) => this.onClickManPref(i)}
             />
           </>
         }
