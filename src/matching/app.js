@@ -3,6 +3,7 @@ import Number from './number';
 import ManName from './man_name';
 import WomanName from './woman_name';
 import Pref from './pref';
+import Option from './option';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -23,6 +24,8 @@ export default class App extends React.Component {
       man_pref_list: [],
       woman_pref_list: [],
       determinate_pref: false,
+      man_proposing: true,
+      determinate_option: false,
     };
 
     this.handleChangeManNumber = this.handleChangeManNumber.bind(this);
@@ -41,6 +44,9 @@ export default class App extends React.Component {
     this.confirmPref = this.confirmPref.bind(this);
     this.determinatePref = this.determinatePref.bind(this);
     this.reverseToPref = this.reverseToPref.bind(this);
+    this.onClickOption = this.onClickOption.bind(this);
+    this.determinateOption = this.determinateOption.bind(this);
+    this.reverseToOption = this.reverseToOption.bind(this);
   }
 
   handleChangeManNumber(event) {
@@ -67,11 +73,13 @@ export default class App extends React.Component {
   reverseToNumber() {
     this.setState({
       determinate_number: false,
+      determinate_man_name: false,
+      determinate_woman_name: false,
+      determinate_pref: false,
+      determinate_option: false,
       number_error: false,
       man_name_list: [],
       woman_name_list: [],
-      determinate_man_name: false,
-      determinate_woman_name: false,
       man_name_error: false,
       woman_name_error: false,
     })
@@ -100,6 +108,8 @@ export default class App extends React.Component {
     this.setState({
       determinate_man_name: false,
       determinate_woman_name: false,
+      determinate_pref: false,
+      determinate_option: false,
       man_name_error: false,
       woman_name_error: false,
     });
@@ -140,6 +150,8 @@ export default class App extends React.Component {
   reverseToWomanName() {
     this.setState({
       determinate_woman_name: false,
+      determinate_pref: false,
+      determinate_option: false,
     });
   }
 
@@ -238,10 +250,26 @@ export default class App extends React.Component {
   }
 
   reverseToPref() {
-    this.setState({determinate_pref: false});
+    this.setState({
+      determinate_pref: false,
+      determinate_option: false,
+    });
+  }
+
+  onClickOption(is_man) {
+    this.setState({man_proposing: is_man});
+  };
+
+  determinateOption() {
+    this.setState({determinate_option: true});
+  }
+
+  reverseToOption() {
+    this.setState({determinate_option: false});
   }
 
   render() {
+    console.log(this.state);
     let able_pref = ablePref(this.state.man_pref_state, this.state.woman_pref_state);
     let able_determinate_pref = ableDeterminatePref(this.state.man_pref_state, this.state.woman_pref_state);
 
@@ -314,6 +342,20 @@ export default class App extends React.Component {
               reverseToPref={() => this.reverseToPref()}
               determinate_pref={this.state.determinate_pref}
               able_determinate_pref={able_determinate_pref}
+            />
+          </>
+        }
+        {
+          this.state.determinate_pref && 
+          <>
+            <br/>
+            <br/>
+            <Option
+            man_proposing={this.state.man_proposing}
+            onClickOption={(is_man) => this.onClickOption(is_man)}
+            determinate_option={this.state.determinate_option}
+            determinateOption={this.determinateOption}
+            reverseToOption={this.reverseToOption}
             />
           </>
         }
