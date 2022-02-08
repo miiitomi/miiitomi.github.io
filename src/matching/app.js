@@ -1,7 +1,6 @@
 import React from 'react';
 import Number from './number';
-import ManName from './man_name';
-import WomanName from './woman_name';
+import Name from './name';
 import Pref from './pref';
 import Option from './option';
 
@@ -15,10 +14,8 @@ export default class App extends React.Component {
       number_error: false,
       man_name_list: [],
       woman_name_list: [],
-      determinate_man_name: false,
-      determinate_woman_name: false,
-      man_name_error: 0,
-      woman_name_error: 0,
+      determinate_name: false,
+      name_error: 0,
       man_pref_state: [],
       woman_pref_state: [],
       man_pref_list: [],
@@ -32,12 +29,9 @@ export default class App extends React.Component {
     this.handleChangeWomanNumber = this.handleChangeWomanNumber.bind(this);
     this.determinateNumber = this.determinateNumber.bind(this);
     this.reverseToNumber = this.reverseToNumber.bind(this);
-    this.handleChangeManName = this.handleChangeManName.bind(this);
-    this.determinateManName = this.determinateManName.bind(this);
-    this.reverseToManName = this.reverseToManName.bind(this);
-    this.handleChangeWomanName = this.handleChangeWomanName.bind(this);
-    this.determinateWomanName = this.determinateWomanName.bind(this);
-    this.reverseToWomanName = this.reverseToWomanName.bind(this);
+    this.handleChangeName = this.handleChangeName.bind(this);
+    this.determinateName = this.determinateName.bind(this);
+    this.reverseToName = this.reverseToName.bind(this);
     this.onClickPref = this.onClickPref.bind(this);
     this.addPref = this.addPref.bind(this);
     this.backPref = this.backPref.bind(this);
@@ -73,8 +67,7 @@ export default class App extends React.Component {
   reverseToNumber() {
     this.setState({
       determinate_number: false,
-      determinate_man_name: false,
-      determinate_woman_name: false,
+      determinate_name: false,
       determinate_pref: false,
       determinate_option: false,
       number_error: false,
@@ -85,45 +78,22 @@ export default class App extends React.Component {
     })
   }
 
-  handleChangeManName(event) {
-    let man_name_list = this.state.man_name_list;
-    let i = parseInt(event.target.name, 10);
-    man_name_list[i] = event.target.value;
-    this.setState({man_name_list: man_name_list});
-  }
-
-  determinateManName() {
-    let error_code = manNameListValidation(this.state.man_name_list);
-    if (error_code === 0) {
-      this.setState({
-        determinate_man_name: true,
-        man_name_error: error_code
-      });
+  handleChangeName(event, is_man) {
+    if (is_man) {
+      const man_name_list = this.state.man_name_list;
+      const i = parseInt(event.target.name, 10);
+      man_name_list[i] = event.target.value;
+      this.setState({man_name_list: man_name_list});
     } else {
-      this.setState({man_name_error: error_code});
+      const woman_name_list = this.state.woman_name_list;
+      const i = parseInt(event.target.name, 10);
+      woman_name_list[i] = event.target.value;
+      this.setState({woman_name_list: woman_name_list});
     }
   }
 
-  reverseToManName() {
-    this.setState({
-      determinate_man_name: false,
-      determinate_woman_name: false,
-      determinate_pref: false,
-      determinate_option: false,
-      man_name_error: false,
-      woman_name_error: false,
-    });
-  }
-
-  handleChangeWomanName(event) {
-    let woman_name_list = this.state.woman_name_list;
-    let i = parseInt(event.target.name, 10);
-    woman_name_list[i] = event.target.value;
-    this.setState({woman_name_list: woman_name_list});
-  }
-
-  determinateWomanName() {
-    let error_code = womanNameListValidation(this.state.man_name_list, this.state.woman_name_list)
+  determinateName() {
+    let error_code = nameListValidation(this.state.man_name_list, this.state.woman_name_list);
     if (error_code === 0) {
       const man_pref_list_copy = [];
       const woman_pref_list_copy = [];
@@ -134,8 +104,8 @@ export default class App extends React.Component {
         woman_pref_list_copy.push([]);
       }
       this.setState({
-        determinate_woman_name: true,
-        woman_name_error: error_code,
+        determinate_name: true,
+        name_error: error_code,
         man_pref_list: man_pref_list_copy,
         woman_pref_list: woman_pref_list_copy,
         man_pref_state: Array(parseInt(this.state.man_number, 10)).fill(0),
@@ -143,13 +113,13 @@ export default class App extends React.Component {
         determinate_pref: false,
       });
     } else {
-      this.setState({woman_name_error: error_code});
+      this.setState({name_error: error_code});
     }
   }
 
-  reverseToWomanName() {
+  reverseToName() {
     this.setState({
-      determinate_woman_name: false,
+      determinate_name: false,
       determinate_pref: false,
       determinate_option: false,
     });
@@ -289,32 +259,19 @@ export default class App extends React.Component {
           this.state.determinate_number && 
           <>
           <br/>
-            <ManName
+            <Name
               man_name_list={this.state.man_name_list}
-              determinate_man_name={this.state.determinate_man_name}
-              handleChangeManName={this.handleChangeManName}
-              determinateManName={this.determinateManName}
-              man_name_error={this.state.man_name_error}
-              reverseToManName={this.reverseToManName}
-            />
-          </>
-        }
-        {
-          this.state.determinate_man_name && 
-          <>
-          <br/>
-            <WomanName
               woman_name_list={this.state.woman_name_list}
-              determinate_woman_name={this.state.determinate_woman_name}
-              handleChangeWomanName={this.handleChangeWomanName}
-              determinateWomanName={this.determinateWomanName}
-              woman_name_error={this.state.woman_name_error}
-              reverseToWomanName={this.reverseToWomanName}
+              determinate_name={this.state.determinate_name}
+              handleChangeName={(event, is_man) => this.handleChangeName(event, is_man)}
+              determinateName={this.determinateName}
+              name_error={this.state.name_error}
+              reverseToName={this.reverseToName}
             />
           </>
         }
         {
-          this.state.determinate_woman_name &&
+          this.state.determinate_name &&
           <>
             <br/>
             <Pref
@@ -365,40 +322,28 @@ export default class App extends React.Component {
 }
 
 function nameValidation(str) {
-  let reg = /^[a-zA-Zａ-ｚＡ-Ｚぁ-んーァ-ヶｰｱ-ﾝﾞﾟｰ\u4E00-\u9FFF\u3005-\u3007]+$/i;
+  const reg = /^[a-zA-Zａ-ｚＡ-Ｚぁ-んーァ-ヶｰｱ-ﾝﾞﾟｰ\u4E00-\u9FFF\u3005-\u3007]+$/i;
   if (!reg.test(str)) return false;
   return (str.length <= 10);
 }
 
-function manNameListValidation(man_name_list) {
-  for (let str of man_name_list) {
+function nameListValidation(man_name_list, woman_name_list) {
+  for (const str of man_name_list) {
     if (!nameValidation(str)) {
       return 1;
     }
   }
-  let name_set = new Set(man_name_list);
-  if (man_name_list.length != name_set.size) {
-    return 2;
-  }
-  return 0;
-}
-
-function womanNameListValidation(man_name_list, woman_name_list) {
-  for (let str of woman_name_list) {
+  for (const str of woman_name_list) {
     if (!nameValidation(str)) {
       return 1;
     }
   }
-  let name_set = new Set(woman_name_list);
-  if (woman_name_list.length != name_set.size) {
-    return 2;
-  }
-
-  for (let man_name of man_name_list) {
-    name_set.add(man_name);
-  }
+  const name_set = new Set(man_name_list);
+  woman_name_list.map((woman_name) => {
+    name_set.add(woman_name);
+  })
   if (name_set.size != man_name_list.length + woman_name_list.length) {
-    return 3;
+    return 2;
   }
   return 0;
 }

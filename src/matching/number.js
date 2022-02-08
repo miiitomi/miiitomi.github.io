@@ -27,6 +27,8 @@ export default class Number extends React.Component {
           />
         </InputGroup>
         <p/>
+        {
+          !this.props.determinate_number &&
         <Button
           variant="primary"
           onClick={this.props.determinateNumber}
@@ -34,6 +36,7 @@ export default class Number extends React.Component {
         >
           確定
         </Button>
+        }
         {
           this.props.determinate_number &&
           <Button variant='success' onClick={this.props.reverseToNumber}>ここからやり直す</Button>
