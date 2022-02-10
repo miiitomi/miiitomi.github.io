@@ -3,6 +3,9 @@ import Number from './number';
 import Name from './name';
 import Pref from './pref';
 import Option from './option';
+import Button from 'react-bootstrap/Button';
+import daAlgorithm from './da_algorithm';
+import Result from './result';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -23,6 +26,8 @@ export default class App extends React.Component {
       determinate_pref: false,
       man_proposing: true,
       determinate_option: false,
+      matching: [],
+      done_matching: false,
     };
 
     this.handleChangeManNumber = this.handleChangeManNumber.bind(this);
@@ -41,6 +46,7 @@ export default class App extends React.Component {
     this.onClickOption = this.onClickOption.bind(this);
     this.determinateOption = this.determinateOption.bind(this);
     this.reverseToOption = this.reverseToOption.bind(this);
+    this.runAlgorithm = this.runAlgorithm.bind(this);
   }
 
   handleChangeManNumber(event) {
@@ -70,6 +76,7 @@ export default class App extends React.Component {
       determinate_name: false,
       determinate_pref: false,
       determinate_option: false,
+      done_matching: false,
       number_error: false,
       man_name_list: [],
       woman_name_list: [],
@@ -122,6 +129,7 @@ export default class App extends React.Component {
       determinate_name: false,
       determinate_pref: false,
       determinate_option: false,
+      done_matching: false,
     });
   }
 
@@ -223,6 +231,7 @@ export default class App extends React.Component {
     this.setState({
       determinate_pref: false,
       determinate_option: false,
+      done_matching: false,
     });
   }
 
@@ -235,11 +244,25 @@ export default class App extends React.Component {
   }
 
   reverseToOption() {
-    this.setState({determinate_option: false});
+    this.setState({
+      determinate_option: false,
+      done_matching: false,
+    });
+  }
+
+  runAlgorithm() {
+    const _matching = daAlgorithm(
+      this.state.man_pref_list,
+      this.state.woman_pref_list,
+      this.state.man_proposing
+    );
+    this.setState({
+      done_matching: true,
+      matching: _matching
+    });
   }
 
   render() {
-    console.log(this.state);
     let able_pref = ablePref(this.state.man_pref_state, this.state.woman_pref_state);
     let able_determinate_pref = ableDeterminatePref(this.state.man_pref_state, this.state.woman_pref_state);
 
@@ -313,6 +336,34 @@ export default class App extends React.Component {
             determinate_option={this.state.determinate_option}
             determinateOption={this.determinateOption}
             reverseToOption={this.reverseToOption}
+            />
+          </>
+        }
+        {
+          this.state.determinate_option &&
+          <>
+            <br/>
+            <br/>
+            <div className="d-grid gap-2">
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={this.runAlgorithm}
+                disabled={this.state.done_matching}
+              >
+                マッチングを実行する
+              </Button>
+            </div>
+          </>
+        }
+        {
+          this.state.done_matching &&
+          <>
+            <br/>
+            <Result
+            matching={this.state.matching}
+            man_name_list={this.state.man_name_list}
+            woman_name_list={this.state.woman_name_list}
             />
           </>
         }

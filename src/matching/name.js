@@ -51,12 +51,15 @@ export default class Name extends React.Component {
             <p/>
             {woman_name_form_list}
             <p/>
-            <Button
-            variant='primary'
-            onClick={this.props.determinateName}
-            size='lg'
-            disabled={this.props.determinate_name}
-            >確定</Button>
+            {
+                !this.props.determinate_name &&
+                <Button
+                variant='primary'
+                onClick={this.props.determinateName}
+                size='lg'
+                disabled={this.props.determinate_name}
+                >確定</Button>
+            }
             {
                 this.props.determinate_name && 
                 <Button variant='success' onClick={this.props.reverseToName}>ここからやり直す</Button>

@@ -168,13 +168,16 @@ export default class Pref extends React.Component {
                         {woman_pref_form_list}
                     </tbody>
                 </Table>
-                <Button
-                variant='primary'
-                onClick={() => this.props.determinatePref()}
-                disabled={!this.props.able_determinate_pref || this.props.determinate_pref}
-                >
-                    確定
-                </Button>
+                {
+                    !this.props.determinate_pref &&
+                    <Button
+                    variant='primary'
+                    onClick={() => this.props.determinatePref()}
+                    disabled={!this.props.able_determinate_pref || this.props.determinate_pref}
+                    >
+                        確定
+                    </Button>
+                }
                 {
                     this.props.determinate_pref && 
                     <Button

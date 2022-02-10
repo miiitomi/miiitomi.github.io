@@ -21,13 +21,16 @@ export default class Option extends React.Component {
             onChange={() => this.props.onClickOption(false)}
             disabled={this.props.determinate_option}
             />
-            <Button
-            variant='primary'
-            onClick={this.props.determinateOption}
-            disabled={this.props.determinate_option}
-            >
-                確定
-            </Button>
+            {
+                !this.props.determinate_option &&
+                    <Button
+                    variant='primary'
+                    onClick={this.props.determinateOption}
+                    disabled={this.props.determinate_option}
+                    >
+                        確定
+                    </Button>
+            }
             {
                 this.props.determinate_option &&
                 <Button variant='success' onClick={this.props.reverseToOption}>
