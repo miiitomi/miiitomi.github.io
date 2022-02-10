@@ -1,6 +1,7 @@
 import React from 'react';
 import Number from './number';
 import Name from './name';
+import AvailableNobody from './available-nobody';
 import Pref from './pref';
 import Option from './option';
 import Button from 'react-bootstrap/Button';
@@ -19,6 +20,8 @@ export default class App extends React.Component {
       woman_name_list: [],
       determinate_name: false,
       name_error: 0,
+      available_nobody: true,
+      determinate_available_nobody: false,
       man_pref_state: [],
       woman_pref_state: [],
       man_pref_list: [],
@@ -37,6 +40,9 @@ export default class App extends React.Component {
     this.handleChangeName = this.handleChangeName.bind(this);
     this.determinateName = this.determinateName.bind(this);
     this.reverseToName = this.reverseToName.bind(this);
+    this.onClickAvailableNobody = this.onClickAvailableNobody.bind(this);
+    this.determinateAvailableNobody = this.determinateAvailableNobody.bind(this);
+    this.reverseToAvailableNobody = this.reverseToAvailableNobody.bind(this);
     this.onClickPref = this.onClickPref.bind(this);
     this.addPref = this.addPref.bind(this);
     this.backPref = this.backPref.bind(this);
@@ -50,11 +56,11 @@ export default class App extends React.Component {
   }
 
   handleChangeManNumber(event) {
-    this.setState({man_number: event.target.value});
+    this.setState({man_number: parseInt(event.target.value, 10)});
   }
 
   handleChangeWomanNumber(event) {
-    this.setState({woman_number: event.target.value});
+    this.setState({woman_number: parseInt(event.target.value, 10)});
   }
 
   determinateNumber() {
@@ -74,14 +80,14 @@ export default class App extends React.Component {
     this.setState({
       determinate_number: false,
       determinate_name: false,
+      determinate_available_nobody: false,
       determinate_pref: false,
       determinate_option: false,
       done_matching: false,
       number_error: false,
       man_name_list: [],
       woman_name_list: [],
-      man_name_error: false,
-      woman_name_error: false,
+      name_error: 0,
     })
   }
 
@@ -102,22 +108,9 @@ export default class App extends React.Component {
   determinateName() {
     let error_code = nameListValidation(this.state.man_name_list, this.state.woman_name_list);
     if (error_code === 0) {
-      const man_pref_list_copy = [];
-      const woman_pref_list_copy = [];
-      for (let i = 0; i < this.state.man_number; i++) {
-        man_pref_list_copy.push([]);
-      }
-      for (let i = 0; i < this.state.woman_number; i++) {
-        woman_pref_list_copy.push([]);
-      }
       this.setState({
-        determinate_name: true,
-        name_error: error_code,
-        man_pref_list: man_pref_list_copy,
-        woman_pref_list: woman_pref_list_copy,
-        man_pref_state: Array(parseInt(this.state.man_number, 10)).fill(0),
-        woman_pref_state: Array(parseInt(this.state.woman_number, 10)).fill(0),
-        determinate_pref: false,
+        name_error: 0,
+        determinate_name: true
       });
     } else {
       this.setState({name_error: error_code});
@@ -127,10 +120,39 @@ export default class App extends React.Component {
   reverseToName() {
     this.setState({
       determinate_name: false,
+      determinate_available_nobody: false,
       determinate_pref: false,
       determinate_option: false,
       done_matching: false,
     });
+  }
+
+  onClickAvailableNobody(is_available) {
+    this.setState({available_nobody: is_available});
+  }
+
+  determinateAvailableNobody() {
+    const man_pref_list_copy = [];
+    for (let i = 0; i < this.state.man_number; i++) man_pref_list_copy.push([]);
+    const woman_pref_list_copy = [];
+    for (let i = 0; i < this.state.woman_number; i++) woman_pref_list_copy.push([]);
+    this.setState({
+      determinate_available_nobody: true,
+      man_pref_list: man_pref_list_copy,
+      woman_pref_list: woman_pref_list_copy,
+      man_pref_state: Array(parseInt(this.state.man_number, 10)).fill(0),
+      woman_pref_state: Array(parseInt(this.state.woman_number, 10)).fill(0),
+      determinate_pref: false,
+    });
+  }
+
+  reverseToAvailableNobody() {
+    this.setState({
+      determinate_available_nobody: false,
+      determinate_pref: false,
+      determinate_option: false,
+      done_matching: false,
+    })
   }
 
   onClickPref(self_idx, is_man) {
@@ -263,6 +285,7 @@ export default class App extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     let able_pref = ablePref(this.state.man_pref_state, this.state.woman_pref_state);
     let able_determinate_pref = ableDeterminatePref(this.state.man_pref_state, this.state.woman_pref_state);
 
@@ -296,10 +319,27 @@ export default class App extends React.Component {
         {
           this.state.determinate_name &&
           <>
+          <br/>
+          <AvailableNobody
+          man_number={this.state.man_number}
+          woman_number={this.state.woman_number}
+          available_nobody={this.state.available_nobody}
+          determinate_available_nobody={this.state.determinate_available_nobody}
+          onClickAvailableNobody={this.onClickAvailableNobody}
+          determinateAvailableNobody={this.determinateAvailableNobody}
+          reverseToAvailableNobody={this.reverseToAvailableNobody}
+          />
+          </>
+        }
+        {
+          this.state.determinate_available_nobody &&
+          <>
+            <br/>
             <br/>
             <Pref
               man_name_list={this.state.man_name_list}
               woman_name_list={this.state.woman_name_list}
+              available_nobody={this.state.available_nobody}
               man_pref_state={this.state.man_pref_state}
               woman_pref_state={this.state.woman_pref_state}
               man_pref_list={this.state.man_pref_list}

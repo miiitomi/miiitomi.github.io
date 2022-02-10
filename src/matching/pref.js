@@ -35,15 +35,17 @@ class PrefForm extends React.Component {
                     );
                 }
             });
-            buttons.push(
-                <Button
-                key='pref-button-none'
-                variant='primary'
-                onClick={() => this.props.addPref(-1)}
-                >
-                    誰も希望しない
-                </Button>
-            );
+            if (this.props.available_nobody) {
+                buttons.push(
+                    <Button
+                    key='pref-button-none'
+                    variant='primary'
+                    onClick={() => this.props.addPref(-1)}
+                    >
+                        誰も希望しない
+                    </Button>
+                );
+            }
         } else {
             buttons.push(
                 <Button
@@ -80,7 +82,7 @@ class PrefForm extends React.Component {
         return (
             <>
                 <tr>
-                    <td>{this.props.name}さん</td>
+                    <td><p>{this.props.name}さん</p></td>
                     { this.props.state === 0 &&
                         <td>
                             <Button
@@ -126,6 +128,7 @@ export default class Pref extends React.Component {
                 i={idx}
                 name={man_name}
                 state={this.props.man_pref_state[idx]}
+                available_nobody={this.props.available_nobody}
                 onClickPref={(self_idx) => this.props.onClickPref(self_idx, true)}
                 able_pref={this.props.able_pref}
                 available_name_list={this.props.woman_name_list}
@@ -144,6 +147,7 @@ export default class Pref extends React.Component {
                 i={idx}
                 name={woman_name}
                 state={this.props.woman_pref_state[idx]}
+                available_nobody={this.props.available_nobody}
                 onClickPref={(self_idx) => this.props.onClickPref(self_idx, false)}
                 able_pref={this.props.able_pref}
                 available_name_list={this.props.man_name_list}
