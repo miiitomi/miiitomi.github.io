@@ -2,8 +2,8 @@
 title: Matching
 description: 男性と女性のマッチングを行うDAアルゴリズムの実行ができます。
 slug: "matching"
-date: '2022-02-04'
-draft: true
+date: '2022-02-11'
+draft: false
 menu:
     main: 
         weight: -90

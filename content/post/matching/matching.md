@@ -2,8 +2,8 @@
 title: マッチングアルゴリズムの解説
 description: DAアルゴリズムの解説をします。
 slug: "matching"
-date: 2022-02-10
-draft: true
+date: '2022-02-11'
+draft: false
 categories:
     - Market Design
     - Matching Theory

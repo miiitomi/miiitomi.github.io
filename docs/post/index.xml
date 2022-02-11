@@ -6,7 +6,22 @@
     <description>Recent content in Posts on miiitomi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 01 Jan 2022 16:50:04 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>マッチングアルゴリズムの解説</title>
+      <link>https://miiitomi.github.io/p/matching/</link>
+      <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://miiitomi.github.io/p/matching/</guid>
+      <description>こちらに男性と女性をマッチさせるDAアルゴリズム（Gale-Shapleyアルゴリズム）の実行ができるウェブアプリを公開しました。 このページでは、実装したDAアルゴリズムの解説を行います。
+安定結婚問題 　DAアルゴリズムは、「安定結婚問題」と呼ばれる問題を解くアルゴリズムとして知られています。 安定結婚問題とは、以下のようなものです：
+ 男性と女性がそれぞれ複数人いる。 各男性はマッチしたい女性の希望順位表を、各女性はマッチしたい男性の希望順位表を提出する。 参加者に不満の残らないようなマッチのさせ方はどのようなものか。  例 　男性は A、B、C の3人、女性は X、Y、Z の3人とし、提出された希望表は以下の通りであったとします。
+    A B C X Y Z     第1希望 X X Y C A B   第2希望 Z Y Z A B A   第3希望 Y Z X B C     ここで Z さんの第3希望が空白となっているのは、「第2希望までの相手とマッチできなかった場合、それ以外の相手とマッチするよりは誰ともマッチしない方が良い」という意味です。1
+安定マッチング 　安定結婚問題の目標は、不満の残らないマッチを見つけることです。では、まずどのようなマッチでは参加者に不満が残るでしょうか。
+　上記の例において、次のようなマッチを考えてみましょう。
+ A さん &amp;ndash; X さん B さん &amp;ndash; Y さん C さん &amp;ndash; Z さん  この例において、Z さんは自身が希望表に書いていない C さんとマッチしています。 この場合、Z さんは希望しない相手と無理矢理マッチさせられているという点で不満を持つでしょう。 したがって、安定結婚問題におけるマッチはまず次の条件を満たすことが望まれます。</description>
+    </item>
+    
     <item>
       <title>2021年の振り返りと2022年にやりたいこと</title>
       <link>https://miiitomi.github.io/p/20220101/</link>
