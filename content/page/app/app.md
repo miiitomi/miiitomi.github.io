@@ -2,8 +2,8 @@
 title: App
 description: 作ったウェブアプリを置いていきます。
 slug: "app"
-date: '2022-02-04'
-draft: true
+date: '2022-02-11'
+draft: false
 menu:
     main: 
         weight: -90
