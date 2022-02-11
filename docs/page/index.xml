@@ -6,7 +6,28 @@
     <description>Recent content in Pages on miiitomi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 08 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>App</title>
+      <link>https://miiitomi.github.io/app/</link>
+      <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://miiitomi.github.io/app/</guid>
+      <description> Matching  男性と女性のマッチングを行うDAアルゴリズムの実行ができます。 DAアルゴリズムの解説はこちら。    </description>
+    </item>
+    
+    <item>
+      <title>Matching</title>
+      <link>https://miiitomi.github.io/matching/</link>
+      <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://miiitomi.github.io/matching/</guid>
+      <description>このページでは、男性と女性のマッチングを行うDAアルゴリズムの実行ができます。
+合コンにおける席決め・ゲームなどにお使いください。
+実装したDAアルゴリズム（Gale-Shapleyアルゴリズム）の解説はこちら。
+  </description>
+    </item>
+    
     <item>
       <title>About</title>
       <link>https://miiitomi.github.io/about/</link>
