@@ -1,156 +1,1184 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>miiitomi</title>
-    <link>https://miiitomi.github.io/</link>
-    <description>Recent content on miiitomi</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <lastBuildDate>Fri, 11 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>App</title>
-      <link>https://miiitomi.github.io/app/</link>
-      <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://miiitomi.github.io/app/</guid>
-      <description> Matching  男性と女性のマッチングを行うDAアルゴリズムの実行ができます。 DAアルゴリズムの解説はこちら。    </description>
-    </item>
-    
-    <item>
-      <title>Matching</title>
-      <link>https://miiitomi.github.io/matching/</link>
-      <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://miiitomi.github.io/matching/</guid>
-      <description>このページでは、男性と女性のマッチングを行うDAアルゴリズムの実行ができます。
-合コンにおける席決め・ゲームなどにお使いください。
-実装したDAアルゴリズム（Gale-Shapleyアルゴリズム）の解説はこちら。
-  </description>
-    </item>
-    
-    <item>
-      <title>マッチングアルゴリズムの解説</title>
-      <link>https://miiitomi.github.io/p/matching/</link>
-      <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://miiitomi.github.io/p/matching/</guid>
-      <description>こちらに男性と女性をマッチさせるDAアルゴリズム（Gale-Shapleyアルゴリズム）の実行ができるウェブアプリを公開しました。 このページでは、実装したDAアルゴリズムの解説を行います。
-安定結婚問題 　DAアルゴリズムは、「安定結婚問題」と呼ばれる問題を解くアルゴリズムとして知られています。 安定結婚問題とは、以下のようなものです：
- 男性と女性がそれぞれ複数人いる。 各男性はマッチしたい女性の希望順位表を、各女性はマッチしたい男性の希望順位表を提出する。 参加者に不満の残らないようなマッチのさせ方はどのようなものか。  例 　男性は A、B、C の3人、女性は X、Y、Z の3人とし、提出された希望表は以下の通りであったとします。
-    A B C X Y Z     第1希望 X X Y C A B   第2希望 Z Y Z A B A   第3希望 Y Z X B C     ここで Z さんの第3希望が空白となっているのは、「第2希望までの相手とマッチできなかった場合、それ以外の相手とマッチするよりは誰ともマッチしない方が良い」という意味です。1
-安定マッチング 　安定結婚問題の目標は、不満の残らないマッチを見つけることです。では、まずどのようなマッチでは参加者に不満が残るでしょうか。
-　上記の例において、次のようなマッチを考えてみましょう。
- A さん &amp;ndash; X さん B さん &amp;ndash; Y さん C さん &amp;ndash; Z さん  この例において、Z さんは自身が希望表に書いていない C さんとマッチしています。 この場合、Z さんは希望しない相手と無理矢理マッチさせられているという点で不満を持つでしょう。 したがって、安定結婚問題におけるマッチはまず次の条件を満たすことが望まれます。</description>
-    </item>
-    
-    <item>
-      <title>2021年の振り返りと2022年にやりたいこと</title>
-      <link>https://miiitomi.github.io/p/20220101/</link>
-      <pubDate>Sat, 01 Jan 2022 16:50:04 +0900</pubDate>
-      
-      <guid>https://miiitomi.github.io/p/20220101/</guid>
-      <description>せっかくこんなブログ作ってみたりしたので、2021年の振り返りでもしてみようかと思います。
-マーケットデザインの共同研究・社会実装プロジェクトの開始 今年一年何をやっていたかと言うと、色々やっていたのですが大きなものだと主にこれをやってました。
- ＼プレスリリース／
-AI Lab、GovTech開発センター、東京大学マーケットデザインセンター (@UTokyoMD) にて、共同研究を開始いたします。
-官公庁・自治体のDXを #マーケットデザイン で推進。 経済学者の小島武仁氏、鎌田雄一郎氏と共に、社会課題の解決を目指します。#UTMDhttps://t.co/I8aFFVcfeu
-&amp;mdash; サイバーエージェント　広報＆IR担当 (@CyberAgent_PR) March 16, 2021   具体的には、Advent Calendar で自分が書かせていただいた「保育所利用調整マッチングの実証実験」に取り組んでいます。
- 🎄#CyberAgentAdventCalendar2021🎄
-9日目は #AILab が東京大学マーケットデザインセンター（UTMD）との共同研究の1つとして取り組んでいる「保育所マッチングプロジェクト」についてご紹介しています。ぜひご覧ください。https://t.co/EhfDpZ7rO6
-&amp;mdash; CyberAgentDevelopers (@ca_developers) December 9, 2021   自分はこのプロジェクトで、経済学・CS分野で研究されているマッチングアルゴリズムを現実の問題に即した形で実装し、どういったアルゴリズムを使うべきかと言う議論と新アルゴリズムの開発を行なっています。
-学生時代自分は研究でもプライベートでもプログラミングをすることはほとんどなかったため、 実装に手間取ったりすることも多々あり自分の力不足を感じることも多いのですが、 大学で学んできたマーケットデザインを実際に活用していくための社会実装プロジェクトということでとてもやりがいを持って取り組めています。
-またこれ以外にもマッチング・マーケットデザイン関連の研究や社内での応用・社会実装プロジェクトをいくつか進めています。
-広報・登壇 社内外向けの広報活動・登壇も色々させていただいた1年でした。
-前述のプロジェクトでご一緒させていただいている鎌田先生と会社のオウンドメディアのFeaturesで対談させてもらったり、
- ―マーケットデザインと、その有用性を知ってもらいたい
-近年注目が高まる、新しい研究領域「マーケットデザイン」
-より良い社会の設計、共同研究での利点、両者の見据える未来についてなど、世界で活躍する経済学者 鎌田准教授と、AI Lab研究員冨田が対談を実施しました。https://t.co/c1JCH1Wjkt
-&amp;mdash; サイバーエージェント　広報＆IR担当 (@CyberAgent_PR) September 21, 2021   また、EconFiesta2や日経学会秋季大会の企画セッション、企業研究のカンファレンスCCSEなどでもお話しさせていただきました。
- A会場では12:00から、#経済学 に関する個人セッションがスタートします！
-メルカリから柳沼慎哉氏、サイバーエージェントから冨田 燿志氏が登壇します😀
-▼タイムテーブルhttps://t.co/g30pR8GSef
-#CCSE2021 pic.twitter.com/TAzgnVcFvw</description>
-    </item>
-    
-    <item>
-      <title>『オレが私になるまで』</title>
-      <link>https://miiitomi.github.io/p/oregawatashininarumade/</link>
-      <pubDate>Thu, 30 Dec 2021 11:09:50 +0900</pubDate>
-      
-      <guid>https://miiitomi.github.io/p/oregawatashininarumade/</guid>
-      <description>「シリアスTSF」とは 「シリアスTSF」というジャンルをご存知だろうか。
-いやご存知だろうかと言ってみたが、最近僕が勝手にそう呼び始めただけなので、そういう言葉があるのかどうか僕も知らないのだけど。
-僕なりに定義してみると、シリアスTSFとは「ギャグ要素やエロ要素ではなく、TSに伴う登場人物の内面の葛藤や周りの人間関係の変化といったシリアス要素に物語の重きを置いた、ヒューマンドラマとしてのTSF（Trans-Sexual Fiction/性転換もの）」である。
-ギャグでもエロでもないシリアスめなTSFが好きって話したことありましたっけ？
-&amp;mdash; みーとみ (@miiitomi) October 24, 2021  現実にはあり得ない状況における少年・少女たちの戸惑い、葛藤が魅力のこのジャンルの作品を、 これから1つずつ僕が飽きるまで紹介していきたいと思う。
-『オレが私になるまで』 1回目の今回は、シリアスTSFの王道作品である(と僕が勝手に思っている)この作品だ。
-  オレが私になるまで 4 (MFC)    『オレが私になるまで』（佐藤はつき作）、ComicWalkerにて連載しており、単行本は2021年12月現在でMFコミックスから4巻が刊行されている。
-あらすじ やんちゃな小2男子の藤宮明(あきら)は、クラスの女の子に対ししょっちゅういたずらを働き、特に幼馴染の奈々に対してはスカートめくりの対象にするなどしていた。 ある夜、熱を出して一晩寝込むと、翌朝には髪が伸び女の子になっている。 病院での診断は「突発性性転換症候群」。 ある日突然性別が変わってしまう病気で、原因は不明、治療法もなく、女子として生きていかなければならなくなった。
-男子に戻れないという事実を受け入れられず、女の子らしくすることを拒否し、これまで通りに元の学校に行こうとする明。 しかし周りの男子には受け入れられず服を脱がされるといったいじめを受け、一方かつて酷いことをし続けた女子たちには助けを求めることもできない。 さらにクラスメイトの保護者にはこの病気が感染性のものなのではないかと忌避され（実際には他の子にうつることはない）、元の学校には馴染めないまま、明は離れた祖母の家から別の小学校に女の子として通うことになった。
-転校先の学校でも初めは女の子として上手く振る舞うことができない明だったが、そこで優しく友人として接してくれる渡井瑠海(るみ)に出会って……。
- CAUTION!!
-以下未読者の楽しみを奪わないように注意してこの作品の魅力を述べていくつもりですが、作品を読む前にネタバレや他者の感想を見たくない方は以下注意して、自己責任で読んでください！
- 瑠海と奈々 この物語で明にとって最重要人物になると言えるのが、転校先で出会い親友となる渡井瑠海だ。 転校先で男子が苦手になり、だが女子としても上手く振る舞えず女子に混ざることに恐怖心を抱く明を、瑠海は女子として優しく普通に接し、やがて明も心を開いて唯一無二の親友と呼べる存在になっていく。 そうしてやがて他の女子とも打ち解けていくのだが、ここで思い出すのが転校前の学校でひどいことをしてきたクラスメイトの女子たち、とりわけ幼馴染の奈々だ。
-  『オレが私になるまで』1巻第7話より    自分が女子として周りに受け入れられていくごとに奈々たちの視線を思い出すとともに、 元男子で女子をいじめてきた自分が女子として受け入れられてしまうことへの申し訳さと、 いつか元男子であったことが分かって気持ち悪がられるのではないかという恐怖心に明は苛まれることになる……。
-この明と瑠海を中心とした周りの人間関係と、前の学校の奈々らとの関係性の中に生まれる、TSF独特の要素が絡んだヒューマンドラマがこの作品の魅力の一つだ。 瑠海との関係性がこの後どのように変化していくかと、転校後関わることはないが明の心の中に深く潜んでいる奈々との関係性がどのように精算されるのか、今後の展開のキーの一つになるだろう。
-女の子としての自分の受け入れ 前項の話が人間関係から生まれる外向きのヒューマンドラマとしたら、 「明が女の子としての自分を受け入れる過程での葛藤」は明の内面の話になるだろうか（もちろんその二つは深く関連しあっているので簡単に外向き・内面と二項的に対置できるものではないが）。
-最初、明は2度と男に戻れないという事実を受け入れられず、女の子らしくすることを一切拒否しようとする。 だが瑠海を中心にクラスで女子として受け入れられていくとともに、 明も少しずつ自ら女の子らしい格好をしようという意図が芽生えてくる。
-しかし、明が男の子だった頃を当然知っており、当初女の子らしい格好をすることを全力で拒否していた明を見ている母親は、 明が女の子らしい格好をしていることを友達付き合いで仕方なく嫌々やっているものだと思い、明に無理しなくていいと伝えようとする。
-  『オレが私になるまで』1巻第10話より    これだけなら転換後の性別を葛藤しながらも徐々に受け入れつつある子と、 子のために元の性別のまま生きていけるようにと願う親とのすれ違いと、 それを乗り越えようとする本人というシリアスTSFにありがちな（というほどシリアスTSF作品は多くないが、少なくともこの設定において素直な）展開なのだが、 ただ母親に伝えづらいというだけでなく、明本人の中にもそれを伝えづらい理由があり……。</description>
-    </item>
-    
-    <item>
-      <title>Scarf&#39;s lemmaとその実装</title>
-      <link>https://miiitomi.github.io/p/scarf/</link>
-      <pubDate>Sat, 25 Dec 2021 10:53:40 +0900</pubDate>
-      
-      <guid>https://miiitomi.github.io/p/scarf/</guid>
-      <description>はじめに 誰しも普通に生きていると一度くらいScarf&amp;rsquo;s lemmaを実装する場面に遭遇すると思いますが、意外と日本語の情報が出てこなくて困ったことのある人もいるかもしれません。 Scarf’s lemma完全理解して実装完了したらqiitaかzennかにでも誰得記事書いてやろうかな
-&amp;mdash; みーとみ (@miiitomi) November 19, 2021  というツイートを前にしましたが、せっかくブログ作ったのでここに勉強記録としてまとめてみようと思います。 お気持ち整理みたいな感じなので証明はちゃんとしないし、数学的・ゲーム理論的に厳密でない書き方してるとこも多々あるかも。
-Scarf&amp;rsquo;s lemma とは Scarf&amp;rsquo;s lemmaとは Scarf (1967) で示されたコアを求めるための補題です。 応用としては、例えばマッチング理論の文脈で Nguyen and Vohra (2018) で安定マッチングを求めるために使用されています。
-命題 $A, C$ は $n\times m$ $(n &amp;lt; m)$ の行列で $$ \begin{align*} A &amp;amp;= \begin{bmatrix} 1 &amp;amp; \dots &amp;amp; 0 &amp;amp; a_{1,n+1} &amp;amp; \dots &amp;amp; a_{1,m} \cr \vdots &amp;amp;\ddots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; &amp;amp; \vdots \cr 0 &amp;amp; \dots &amp;amp; 1 &amp;amp; a_{n,n+1} &amp;amp; \dots &amp;amp; a_{n,m} \end{bmatrix},\cr C &amp;amp;= \begin{bmatrix} c_{1,1} &amp;amp; \dots &amp;amp; c_{n,1} &amp;amp; c_{1,n+1} &amp;amp; \dots &amp;amp; c_{1,m} \cr \vdots &amp;amp;\ddots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; &amp;amp; \vdots \cr c_{n,1} &amp;amp; \dots &amp;amp; c_{n,n} &amp;amp; c_{n,n+1} &amp;amp; \dots &amp;amp; c_{n,m} \end{bmatrix} \end{align*} $$ の形のもので、$C$ は以下を満たすとします（これを標準形（standard form）と呼ぶことにします）：</description>
-    </item>
-    
-    <item>
-      <title>非エンジニアの初心者がHugo(テーマStack)&#43;GitHub Pagesでブログを開設するまで</title>
-      <link>https://miiitomi.github.io/p/hugo/</link>
-      <pubDate>Thu, 09 Dec 2021 21:30:20 +0900</pubDate>
-      
-      <guid>https://miiitomi.github.io/p/hugo/</guid>
-      <description>はじめに タイトルの通りです。 このブログを開設するまでにやったことを備忘録としてまとめておきます。 わざわざ僕が新たに書き記すまでもなく似たような記事はたくさんあるのですが、1本目に書く内容としてちょうどいい感じのものな気がしたので。 分かってる人からしたらそりゃそうってことしか書いてないと思うけど、僕みたいな初心者が見たら1ミリくらい参考になるかもしれない（ならないかもしれない）。
-ちなみにタイトルに「非エンジニアの初心者が」と書きましたが、すごく広い意味で捉えればエンジニアと言えなくもないかも。 でも自己認識としてはエンジニアを名乗れるほど技術力はない（し肩書きもリサーチャーな）ので嘘ではないでしょう。 Git/GitHubの使い方とかは一応わかってることを仮定します。
-使ったもの・環境  macBook Pro/macOS Big Sur v11.1 Homebrew v3.3.7 Hugo v0.89.4 Hugo Theme Stack Git/GitHub  Hugoのインストール・スタート とりあえずHomebrewを使って、ターミナルで brew install hugo でHugoをインストールします。 hubo version と打ってバージョン確認すると
-$ hugo version hugo v0.89.4+extended darwin/amd64 BuildDate=unknown と出るので入ったっぽい。
-ブログ用のディレクトリを作るところで hugo new site sitename (sitenameのところは適当に) とすると、
-$ hugo new site sitename Congratulations! Your new Hugo site is created in ***/***/sitename. Just a few more steps and you&#39;re ready to go: 1.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://miiitomi.github.io/about/</link>
-      <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://miiitomi.github.io/about/</guid>
-      <description>渋谷のIT系メガベンチャーで、リサーチサイエンティストとしてマーケットデザインの研究と社会実装をしています。</description>
-    </item>
-    
-    <item>
-      <title>Archives</title>
-      <link>https://miiitomi.github.io/archives/</link>
-      <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://miiitomi.github.io/archives/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Search</title>
-      <link>https://miiitomi.github.io/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://miiitomi.github.io/search/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>miiitomi</title>
+        <link>https://miiitomi.github.io/</link>
+        <description>Recent content on miiitomi</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>ja</language>
+        <lastBuildDate>Fri, 11 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>マッチングアルゴリズムの解説</title>
+        <link>https://miiitomi.github.io/p/matching/</link>
+        <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/matching/</guid>
+        <description>&lt;p&gt;　&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/matching&#34; &gt;こちら&lt;/a&gt;に男性と女性をマッチさせるDAアルゴリズム（Gale-Shapleyアルゴリズム）の実行ができるウェブアプリを公開しました。
+このページでは、実装したDAアルゴリズムの解説を行います。&lt;/p&gt;
+&lt;h1 id=&#34;安定結婚問題&#34;&gt;安定結婚問題&lt;/h1&gt;
+&lt;p&gt;　DAアルゴリズムは、「安定結婚問題」と呼ばれる問題を解くアルゴリズムとして知られています。
+安定結婚問題とは、以下のようなものです：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;男性と女性がそれぞれ複数人いる。&lt;/li&gt;
+&lt;li&gt;各男性はマッチしたい女性の希望順位表を、各女性はマッチしたい男性の希望順位表を提出する。&lt;/li&gt;
+&lt;li&gt;参加者に不満の残らないようなマッチのさせ方はどのようなものか。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;例&#34;&gt;例&lt;/h2&gt;
+&lt;p&gt;　男性は A、B、C の3人、女性は X、Y、Z の3人とし、提出された希望表は以下の通りであったとします。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;A&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;B&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;C&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;X&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Y&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Z&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第1希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;X&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;X&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Y&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;C&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第2希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Y&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;B&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第3希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Y&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;X&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;B&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;C&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;ここで Z さんの第3希望が空白となっているのは、「第2希望までの相手とマッチできなかった場合、それ以外の相手とマッチするよりは誰ともマッチしない方が良い」という意味です。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h1 id=&#34;安定マッチング&#34;&gt;安定マッチング&lt;/h1&gt;
+&lt;p&gt;　安定結婚問題の目標は、不満の残らないマッチを見つけることです。では、まずどのようなマッチでは参加者に不満が残るでしょうか。&lt;/p&gt;
+&lt;p&gt;　上記の例において、次のようなマッチを考えてみましょう。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A さん &amp;ndash; X さん&lt;/li&gt;
+&lt;li&gt;B さん &amp;ndash; Y さん&lt;/li&gt;
+&lt;li&gt;C さん &amp;ndash; Z さん&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;この例において、Z さんは自身が希望表に書いていない C さんとマッチしています。
+この場合、Z さんは希望しない相手と無理矢理マッチさせられているという点で不満を持つでしょう。
+したがって、安定結婚問題におけるマッチはまず次の条件を満たすことが望まれます。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;条件 1.&lt;/strong&gt;　誰も希望表に書いていない相手とはマッチしない。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;　では次に、以下のようなマッチではどうでしょうか。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A さん &amp;ndash; X さん&lt;/li&gt;
+&lt;li&gt;B さん &amp;ndash; Z さん&lt;/li&gt;
+&lt;li&gt;C さん &amp;ndash; Y さん&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;B さんと Y さんに着目します。今 B さんは第3希望の Z さんとマッチしていますが、Y さんとのマッチをより希望しています。
+一方、Y さんも今マッチしている C さんより、B さんとのマッチをより希望しています。
+この場合、B さんと Y さんは抜け駆けして2人でマッチし直すと2人とも得できるため、このマッチ結果には納得しないでしょう。
+したがって、次の条件も望まれます。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;条件 2.&lt;/strong&gt;　抜け駆けして2人でマッチし直すことで2人とも得できてしまうようなペアがない。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;　上の条件1.と2.を満たすマッチならば、参加者は納得できるでしょう。
+なぜなら、条件1.から今マッチした人がいるならその人は自分が希望表に書いた人であり、また条件2.から自分が今の結果より望んでいる人は、自分を希望していないか、またはその人にとってより望ましい人マッチしているからです。
+よって、安定結婚問題におけるマッチ結果は、次の安定マッチングであることが望ましいと考えられます。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;定義 1.&lt;/strong&gt;　安定マッチングとは、条件1. と条件2. を満たすようなマッチングである。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;daアルゴリズム&#34;&gt;DAアルゴリズム&lt;/h1&gt;
+&lt;p&gt;　では、その安定マッチングはどのようにして見つけたら良いのでしょうか。
+それはDavid GaleとLloyd Shapleyによって提案されたDAアルゴリズムによって見つけることができると知られています。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;（男性側提案）DAアルゴリズム&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;各男性は、最も希望順位の高い女性に申し込む。各女性は、申し込んできた男性の中に希望表に書いた人がいれば、そのうち最も希望順位の高い男性1人を保留し、それ以外の男性を断る。&lt;/li&gt;
+&lt;li&gt;全ての男性が誰かに保留されるか、申し込める女性がいない状態になるまで、以下を繰り返す。&lt;br&gt;
+&amp;ndash; 保留されされていない男性は、希望表に書いていてまだ申し込んでいない女性のうち、最も希望順位の高い女性に申し込む。&lt;br&gt;
+&amp;ndash; 各女性は、前ステップで保留した男性と新たに申し込んできた男性のうち、希望表に書いた人がいればその中で最も希望順位の高い男性1人を保留とし、それ以外の男性を断る。&lt;/li&gt;
+&lt;li&gt;繰り返し終了時点において、誰かに保留されている男性は、その男性を保留している女性とマッチ成立とする。誰にも保留されていない男性と、誰も保留していない女性は、誰ともマッチしなかったという結果とする。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;例-1&#34;&gt;例&lt;/h2&gt;
+&lt;p&gt;　冒頭の例にこの（男性側提案）DAアルゴリズムを適用すると、以下のようになります。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;男性 A、B、C はそれぞれ第1希望の女性 X、X、Y に申し込みます。
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;A&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;B&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;C&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;X&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Y&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Z&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第1希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;X&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;X&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Y&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;C&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第2希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Y&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;A&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;B&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第3希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Y&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;X&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;B&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;　女性 X は申し込んできた A と B を比較して、A を保留し B を断ります。女性 Y は申し込んできた C を保留します。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;前ステップで断られた男性 B は、女性 Y に申し込みます。
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;A&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;B&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;C&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;X&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Y&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Z&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第1希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;X&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;X&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Y&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;C&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第2希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Y&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;A&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;B&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第3希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Y&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;X&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;B&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;　女性 Y は、保留している C と新たに申し込んできた B を比較して、B を新たに保留し C を断ります。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;前ステップで断られた男性 C は、女性 Z に申し込みます。
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;A&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;B&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;C&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;X&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Y&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Z&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第1希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;X&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;X&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;Y&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;C&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第2希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Y&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Z&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;A&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;B&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第3希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Y&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;X&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;B&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;C&lt;/del&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;　女性 Z は、申し込んできた男性 C とのマッチは希望していないので、C を断ります。&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;前ステップで断られた男性 C は、女性 X に申し込みます。
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;A&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;B&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;C&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;X&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Y&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Z&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第1希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;X&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;X&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;Y&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第2希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Y&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;Z&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;A&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;B&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第3希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Y&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;X&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;B&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;C&lt;/del&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;　女性 X は、保留している男性 A と新たに申し込んできた C を比較して、A を新たに保留し A を断ります。&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;前ステップで断られた男性 A は、女性 Z に申し込みます。
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;A&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;B&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;C&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;X&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Y&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Z&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第1希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;X&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;X&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;Y&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第2希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Z&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Y&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;Z&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;A&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;B&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;A&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第3希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Y&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;X&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;B&lt;/del&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;del&gt;C&lt;/del&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;　女性 Z は、新たに申し込んできた A を希望表に書いているので、A を保留します。&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;全ての男性が保留されたのでアルゴリズムが終了します。結果として得られるマッチングは以下の通りです。
+&lt;ul&gt;
+&lt;li&gt;A さん &amp;ndash; Z さん&lt;/li&gt;
+&lt;li&gt;B さん &amp;ndash; Y さん&lt;/li&gt;
+&lt;li&gt;C さん &amp;ndash; X さん&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;　このマッチ結果では、全員が希望表に書いた相手とマッチしています（条件 1.）。
+また、A、B さんが今の結果より望む X さんは、X さんにとってより望ましい C さんとマッチしており、また C さんが今の結果より望む Y、Z さんは、C さんより望ましい相手とマッチしているか、C さんとのマッチを希望していないため、抜け駆けして2人とも得するペアもありません（条件 2.）。&lt;br&gt;
+　よってこの例で（男性側提案）DAアルゴリズムによって得られた上記のマッチングは、安定マッチングとなっています。&lt;/p&gt;
+&lt;h2 id=&#34;daアルゴリズムの安定性&#34;&gt;DAアルゴリズムの安定性&lt;/h2&gt;
+&lt;p&gt;　上の例に限らず、DAアルゴリズムは常に安定マッチングを返します。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;命題 1.&lt;/strong&gt; 安定結婚問題において、DAアルゴリズムによって得られるマッチングは、常に安定マッチングである。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;証明.&lt;/strong&gt;&lt;br&gt;
+（条件 1.）DAアルゴリズムにおいて、男性は希望表に書かれていない女性には申し込みません。
+また女性は、希望表に書かれていない男性に申し込まれても保留することはありません。
+したがって、男性も女性も希望表に書かれていない相手とマッチすることはないため、DAアルゴリズムによって得られるマッチングは条件1.を満たします。&lt;br&gt;
+（条件 2.）背理法によって示します。ある男性 m と女性 w がいて、DAアルゴリズムによって得られたマッチングにおいて、m を w が抜け駆けして2人とも得できるようなペアになっているとします（仮定A）。
+m は w とマッチするよりも不本意な結果となっているので、DAアルゴリズムのどこかのステップで w に申し込み、w は m を断っています。
+w は m を希望表に書いているので、断った時点で m よりも望ましい相手（m&amp;rsquo;とする）を保留しているはずです。
+その次のステップで、w は m&#39; を保留しているので、w はこのステップで m&#39; かあるいは m&#39; より望ましい人を保留します。
+さらにその後のどのステップでも、w は m&#39; かあるいは m&#39; より望ましい人を保留するはずです。
+したがって、最終的に w にとって m とマッチするより不本意な結果となることはあり得ません。これは仮定Aに矛盾するため、DAアルゴリズムによって得られるマッチングは条件2.を満たします。（証明終わり）&lt;/p&gt;
+&lt;p&gt;　よって安定結婚問題問題において安定マッチングを得るためには、DAアルゴリズムを用いれば良いことがわかりました。&lt;/p&gt;
+&lt;h1 id=&#34;男性側提案と女性側提案&#34;&gt;男性側提案と女性側提案&lt;/h1&gt;
+&lt;p&gt;　これまでは男性側が申し込む形のDAアルゴリズムを説明してきました。
+もちろん女性側が申し込む形の女性側提案DAアルゴリズムを考えることもでき、女性側提案DAアルゴリズムによっても安定マッチングを得ることができます。
+男性側提案と女性側提案で、結果として得られるマッチングはどのように異なるのでしょうか。&lt;/p&gt;
+&lt;h2 id=&#34;例-2&#34;&gt;例&lt;/h2&gt;
+&lt;p&gt;　もう一度冒頭の男性 A、B、C 3人、女性 X、Y、Z 3人の例を考えます。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;A&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;B&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;C&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;X&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Y&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Z&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第1希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;X&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;X&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Y&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;C&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第2希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Y&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;B&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;第3希望&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Y&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;X&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;B&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;C&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;この例において、男性側提案DAアルゴリズムによって得られるマッチングは以下の通りでした。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A さん &amp;ndash; Z さん&lt;/li&gt;
+&lt;li&gt;B さん &amp;ndash; Y さん&lt;/li&gt;
+&lt;li&gt;C さん &amp;ndash; X さん&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一方、女性側提案DAアルゴリズムを行うと、全ての女性が第1希望の男性に受け入れられ、結果は以下の通りとなります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A さん &amp;ndash; Y さん&lt;/li&gt;
+&lt;li&gt;B さん &amp;ndash; Z さん&lt;/li&gt;
+&lt;li&gt;C さん &amp;ndash; X さん&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;この2つのマッチ結果を比較してみましょう。
+C さんと X さんの2人についてはどちらのアルゴリズムでも結果が変わりません。
+残りの4人のうち、男性の A さんと B さんについては、男性側提案DAアルゴリズムによって得られるマッチング結果の方が望ましいことがわかります。
+一方、女性の Y さんと Z さんについては、女性側提案DAアルゴリズムによって得られるマッチング結果の方が望ましくなっています。&lt;/p&gt;
+&lt;h2 id=&#34;男性側最適女性側最適安定マッチング&#34;&gt;男性側最適/女性側最適安定マッチング&lt;/h2&gt;
+&lt;p&gt;　上記の例では、男性側提案DAアルゴリズムによって得られるマッチングは男性側にとって望ましく、女性側提案DAアルゴリズムによって得られるマッチングは女性側にとって望ましいものとなっていました。&lt;br&gt;
+この結果は上記の例に限らず一般に成り立つことが知られています。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;定義 2.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;男性 m にとって女性 w が&lt;strong&gt;達成可能である&lt;/strong&gt;とは、ある安定マッチングが存在して、男性 m は女性 w とマッチしていることをいう。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;男性側最適安定マッチング&lt;/strong&gt;とは、全ての男性が達成可能な女性のうち最も望ましい女性とマッチするような安定マッチングのことをいう。&lt;/li&gt;
+&lt;li&gt;女性側についても同様に定義する。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;命題 2.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;男性側提案DAアルゴリズムによって得られるマッチングは、男性側最適安定マッチングである。&lt;/li&gt;
+&lt;li&gt;女性側提案DAアルゴリズムによって得られるマッチングは、女性側最適安定マッチングである。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;証明.&lt;/strong&gt;&lt;br&gt;
+　男性側についてのみ考えます。
+男性が達成可能な女性に断られることはない、ということを示せばいいため、これを背理法によって示します。&lt;br&gt;
+　男性側提案DAアルゴリズムにおいて、達成可能な女性に断られる男性がいると仮定し、そのうち最も早いステップで断られる男性を $m$ とし（複数いる場合はそのうちの1人）、その時に $m$ が断られる達成可能な女性を $w$ と呼ぶ（仮定B）ことにします。
+また $w$ は $m$ にとって達成可能なので、$m$ と $w$ がマッチする安定マッチングが存在するはずであり、そのうちの1つを $\mu$ とします。&lt;br&gt;
+　男性側提案DAにおいて $m$ が $w$ に断られる際、 $w$ が $m$ より望ましいとして保留した男性（$m&#39;$とする）がいます（$*$）。
+ここで、μ における m&#39; のマッチ結果は、m&#39; にとって w とマッチするより望ましくない（$**$）はずです。
+なぜなら、まず $\mu$ おいて $w$ は $m$ とマッチするため、$m&#39;$ のマッチ相手は $w$ ではありえません。
+また $w$ より望ましい相手とマッチするのであれば、男性側提案DAのステップにおいて $m&#39;$ は $w$ に申し込む以前にその相手に断られているはずですが、その相手は $m&#39;$ にとって達成可能なので「男性 $m$ が最も早いステップで達成可能な女性に断られる男性である」という仮定Bに反するからです。&lt;br&gt;
+　したがって、（$*$）より $w$ にとって $\mu$ でマッチする $m$ より $m&#39;$ の方が望ましく、また、（$**$）より $m&#39;$ にとっても $\mu$ でのマッチ結果より $w$ の方が望ましいということになります。
+よって、マッチング $\mu$ において $m&#39;$ と $w$ は条件 2.における「抜け駆けして2人も得をするペア」になっており、これは $\mu$ が安定マッチングであることに矛盾します。（証明終わり）&lt;/p&gt;
+&lt;p&gt;　したがって、男性側提案DAアルゴリズムでは男性にとって望ましい安定マッチングとなり、女性側提案DAアルゴリズムでは女性にとって望ましい安定マッチングとなります。&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h1 id=&#34;おわりに&#34;&gt;おわりに&lt;/h1&gt;
+&lt;p&gt;　ここで紹介したDAアルゴリズムは、男性と女性のマッチングだけでなく、2つのグループをマッチさせる多くの状況で使うことができ、例えば公立学校と入学させる学生のマッチングや、研修医と病院とのマッチングなどで応用されています。
+また、安定結婚問題・DAアルゴリズム以外にも興味深いマッチング問題・マッチングアルゴリズムはたくさんあります。そうした問題の研究を行う「マッチング理論」や、その知見を用いて実際の市場・制度設計を行う「マーケットデザイン」と呼ばれる分野の研究がいま経済学やコンピュータサイエンスの世界で盛んに行われています。
+もし興味を持った方がいたら、「マッチング理論」「マーケットデザイン」で調べてみてください。&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;このような希望が許容されるかどうかは状況によると思います。私のアプリではそのような希望を許容するかどうかを幹事が選択できるようにしました。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;DA(Deferred Acceptance)アルゴリズム（日本語では受入留保アルゴリズム）、提案者の名前からGale-Shapleyアルゴリズムとも呼ばれます。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;私のアプリでは、実行前に男性側提案か女性側提案か選択できるようにしました。実際に使うときは、主催者が決めるか、くじ引きや男性女性代表のジャンケンで決めるかなどして使ってください。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+        </item>
+        <item>
+        <title>2021年の振り返りと2022年にやりたいこと</title>
+        <link>https://miiitomi.github.io/p/20220101/</link>
+        <pubDate>Sat, 01 Jan 2022 16:50:04 +0900</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/20220101/</guid>
+        <description>&lt;img src="https://miiitomi.github.io/images/20220101/fig2.jpeg" alt="Featured image of post 2021年の振り返りと2022年にやりたいこと" /&gt;&lt;p&gt;せっかくこんなブログ作ってみたりしたので、2021年の振り返りでもしてみようかと思います。&lt;/p&gt;
+&lt;h1 id=&#34;マーケットデザインの共同研究社会実装プロジェクトの開始&#34;&gt;マーケットデザインの共同研究・社会実装プロジェクトの開始&lt;/h1&gt;
+&lt;p&gt;今年一年何をやっていたかと言うと、色々やっていたのですが大きなものだと主にこれをやってました。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;＼プレスリリース／&lt;br&gt;AI Lab、GovTech開発センター、東京大学マーケットデザインセンター (&lt;a href=&#34;https://twitter.com/UTokyoMD?ref_src=twsrc%5Etfw&#34;&gt;@UTokyoMD&lt;/a&gt;) にて、共同研究を開始いたします。&lt;br&gt;&lt;br&gt;官公庁・自治体のDXを &lt;a href=&#34;https://twitter.com/hashtag/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#マーケットデザイン&lt;/a&gt; で推進。 &lt;br&gt;経済学者の小島武仁氏、鎌田雄一郎氏と共に、社会課題の解決を目指します。&lt;a href=&#34;https://twitter.com/hashtag/UTMD?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#UTMD&lt;/a&gt;&lt;a href=&#34;https://t.co/I8aFFVcfeu&#34;&gt;https://t.co/I8aFFVcfeu&lt;/a&gt;&lt;/p&gt;&amp;mdash; サイバーエージェント　広報＆IR担当 (@CyberAgent_PR) &lt;a href=&#34;https://twitter.com/CyberAgent_PR/status/1371705325443641345?ref_src=twsrc%5Etfw&#34;&gt;March 16, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;具体的には、&lt;a class=&#34;link&#34; href=&#34;https://adventar.org/calendars/6839&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Advent Calendar&lt;/a&gt; で自分が書かせていただいた「保育所利用調整マッチングの実証実験」に取り組んでいます。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;🎄&lt;a href=&#34;https://twitter.com/hashtag/CyberAgentAdventCalendar2021?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#CyberAgentAdventCalendar2021&lt;/a&gt;🎄&lt;br&gt;9日目は &lt;a href=&#34;https://twitter.com/hashtag/AILab?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#AILab&lt;/a&gt; が東京大学マーケットデザインセンター（UTMD）との共同研究の1つとして取り組んでいる「保育所マッチングプロジェクト」についてご紹介しています。ぜひご覧ください。&lt;a href=&#34;https://t.co/EhfDpZ7rO6&#34;&gt;https://t.co/EhfDpZ7rO6&lt;/a&gt;&lt;/p&gt;&amp;mdash; CyberAgentDevelopers (@ca_developers) &lt;a href=&#34;https://twitter.com/ca_developers/status/1468732125511880707?ref_src=twsrc%5Etfw&#34;&gt;December 9, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;自分はこのプロジェクトで、経済学・CS分野で研究されているマッチングアルゴリズムを現実の問題に即した形で実装し、どういったアルゴリズムを使うべきかと言う議論と新アルゴリズムの開発を行なっています。&lt;/p&gt;
+&lt;p&gt;学生時代自分は研究でもプライベートでもプログラミングをすることはほとんどなかったため、
+実装に手間取ったりすることも多々あり自分の力不足を感じることも多いのですが、
+大学で学んできたマーケットデザインを実際に活用していくための社会実装プロジェクトということでとてもやりがいを持って取り組めています。&lt;/p&gt;
+&lt;p&gt;またこれ以外にもマッチング・マーケットデザイン関連の研究や社内での応用・社会実装プロジェクトをいくつか進めています。&lt;/p&gt;
+&lt;h1 id=&#34;広報登壇&#34;&gt;広報・登壇&lt;/h1&gt;
+&lt;p&gt;社内外向けの広報活動・登壇も色々させていただいた1年でした。&lt;/p&gt;
+&lt;p&gt;前述のプロジェクトでご一緒させていただいている鎌田先生と会社のオウンドメディアのFeaturesで対談させてもらったり、&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;―マーケットデザインと、その有用性を知ってもらいたい&lt;br&gt;&lt;br&gt;近年注目が高まる、新しい研究領域「マーケットデザイン」&lt;br&gt;より良い社会の設計、共同研究での利点、両者の見据える未来についてなど、世界で活躍する経済学者 鎌田准教授と、AI Lab研究員冨田が対談を実施しました。&lt;a href=&#34;https://t.co/c1JCH1Wjkt&#34;&gt;https://t.co/c1JCH1Wjkt&lt;/a&gt;&lt;/p&gt;&amp;mdash; サイバーエージェント　広報＆IR担当 (@CyberAgent_PR) &lt;a href=&#34;https://twitter.com/CyberAgent_PR/status/1440162624084201474?ref_src=twsrc%5Etfw&#34;&gt;September 21, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;また、&lt;a class=&#34;link&#34; href=&#34;https://sansan.connpass.com/event/203771/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EconFiesta2&lt;/a&gt;や日経学会秋季大会の&lt;a class=&#34;link&#34; href=&#34;https://confit.atlas.jp/guide/event/jeaf2021/session/1G01-01/category&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;企画セッション&lt;/a&gt;、企業研究のカンファレンス&lt;a class=&#34;link&#34; href=&#34;https://ccse.jp/2021/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CCSE&lt;/a&gt;などでもお話しさせていただきました。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;A会場では12:00から、&lt;a href=&#34;https://twitter.com/hashtag/%E7%B5%8C%E6%B8%88%E5%AD%A6?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#経済学&lt;/a&gt; に関する個人セッションがスタートします！&lt;br&gt;メルカリから柳沼慎哉氏、サイバーエージェントから冨田 燿志氏が登壇します😀&lt;br&gt;&lt;br&gt;▼タイムテーブル&lt;a href=&#34;https://t.co/g30pR8GSef&#34;&gt;https://t.co/g30pR8GSef&lt;/a&gt;&lt;br&gt; &lt;a href=&#34;https://twitter.com/hashtag/CCSE2021?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#CCSE2021&lt;/a&gt; &lt;a href=&#34;https://t.co/TAzgnVcFvw&#34;&gt;pic.twitter.com/TAzgnVcFvw&lt;/a&gt;&lt;/p&gt;&amp;mdash; CCSE2021_企業による合同研究カンファレンス (@ccse_comitee) &lt;a href=&#34;https://twitter.com/ccse_comitee/status/1471676259017293824?ref_src=twsrc%5Etfw&#34;&gt;December 17, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;ca-awards&#34;&gt;CA AWARDS&lt;/h1&gt;
+&lt;p&gt;そんなこんなしていたら、9月の全社表彰では20新卒入社対象のBest Rookie Awardとして表彰していただいちゃいました。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure&gt;&lt;img src=&#34;https://miiitomi.github.io/images/20220101/fig1.jpg&#34; width=&#34;600&#34;/&gt;
+&lt;/figure&gt;
+
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;じゃーん✌️ &lt;a href=&#34;https://t.co/b8zhxbB23W&#34;&gt;pic.twitter.com/b8zhxbB23W&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1473490171643703305?ref_src=twsrc%5Etfw&#34;&gt;December 22, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;まさか自分が表彰していただけるなんて全く思ってもいなかったので驚いたのですが、気持ちとしてはこのツイートに書いた通りで、&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;自分が新人賞ノミネートしていただいたこと自体も嬉しいんだけど、経済学・マーケットデザインの取り組みで全社表彰にノミネートしてもらえるくらい自分たちのプロジェクトが評価されてるんだってことが正直ちょっと驚いたし嬉しい&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1445755691130445827?ref_src=twsrc%5Etfw&#34;&gt;October 6, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;経済学・マーケットデザインの研究・実装に取り組ませてもらえ、しかもその取り組みで評価してもらえるなんて、本当に恵まれた環境にいさせてもらっているなと思います。&lt;/p&gt;
+&lt;p&gt;なんかこう書くと今年は色々頑張って取り組んできて、充実した1年を過ごせてたような気がしてきました(？)
+2021年はマーケットデザインの社内外での活用・社会実装を進めるための準備の年だったと言えるでしょうか。
+そう言えるようにこれから成果を出していきたいです。&lt;/p&gt;
+&lt;h1 id=&#34;仕事以外&#34;&gt;仕事以外&lt;/h1&gt;
+&lt;p&gt;仕事以外の面ではそんなに変わりのない一年だったような気もしますが、
+今年は昨年よりはサッカーを現地に見に行って横浜F・マリノスの応援をしたり、&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;逆転勝ち！ &lt;a href=&#34;https://t.co/Mq4p4Kayik&#34;&gt;pic.twitter.com/Mq4p4Kayik&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1449344498778066948?ref_src=twsrc%5Etfw&#34;&gt;October 16, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;狩りをしたり、&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;これからしばらくの間の自由時間が生け贄に捧げられた &lt;a href=&#34;https://t.co/Wn1ZXesSKj&#34;&gt;pic.twitter.com/Wn1ZXesSKj&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1375698606640955393?ref_src=twsrc%5Etfw&#34;&gt;March 27, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;してました。&lt;/p&gt;
+&lt;p&gt;あと学生の頃からの友人とほぼ週1でやってる&lt;a class=&#34;link&#34; href=&#34;https://github.com/CSReading&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;勉強会&lt;/a&gt;は、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.oreilly.co.jp/books/9784873119335/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;計算理論&lt;/a&gt;（1月〜）&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://bookclub.kodansha.co.jp/product?item=0000275430&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;アルゴリズムとデータ構造&lt;/a&gt;（6月〜）&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.shoeisha.co.jp/book/detail/9784798167930&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;コンピュータアーキテクチャ&lt;/a&gt;（10月〜, 12月で中断）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;と続けてきました。
+社会人になってもこういう勉強会を一緒にしてくれる友人の存在、めちゃくちゃありがたい。&lt;/p&gt;
+&lt;p&gt;ただ、年始にこう言ってたのは、&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;今年は小説・漫画・映画問わず昨年より多くの物語を摂取して日々現実逃避を楽しんでいきたい&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1344667204067815427?ref_src=twsrc%5Etfw&#34;&gt;December 31, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;漫画は（&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/p/oregawatashininarumade/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;シリアスTSF&lt;/a&gt;とか）多少読んだけど、小説・映画はあまり沢山読んだり見たりできなかった気がする。
+そのあたりは2022年の課題としたい(？)&lt;/p&gt;
+&lt;h1 id=&#34;2022年にやりたいこと&#34;&gt;2022年にやりたいこと&lt;/h1&gt;
+&lt;p&gt;2022年の目標・やりたいことを思いつくままに書き殴っていくコーナーです。
+仕事面は会社で目標設定するので、それ以外のプライベート面で。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;小説をたくさん読む。
+&lt;ul&gt;
+&lt;li&gt;2020年にやってたこれができるくらい。&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;こんなのでどうだ(ネタ切れしたらごめんなさい) &lt;a href=&#34;https://twitter.com/hashtag/%E3%81%84%E3%81%84%E3%81%AD%E3%81%95%E3%82%8C%E3%81%9F%E6%95%B0%E3%81%A0%E3%81%91%E4%BB%8A%E5%B9%B4%E8%AA%AD%E3%82%93%E3%81%A7%E8%89%AF%E3%81%8B%E3%81%A3%E3%81%9F%E5%B0%8F%E8%AA%AC%E3%82%92%E7%B4%B9%E4%BB%8B%E3%81%99%E3%82%8B?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#いいねされた数だけ今年読んで良かった小説を紹介する&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1342441247080759296?ref_src=twsrc%5Etfw&#34;&gt;December 25, 2020&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;読むだけじゃなくショートショート1つくらい自分でも書く。&lt;/li&gt;
+&lt;li&gt;映画もたくさん映画館に観に行く。&lt;/li&gt;
+&lt;li&gt;面倒だと先延ばしにし続けてないでいい加減そろそろ引っ越す。&lt;/li&gt;
+&lt;li&gt;部屋の片付け・掃除など家事を滞らせないようにする。&lt;/li&gt;
+&lt;li&gt;横浜F・マリノスの試合をもっと見に行く。&lt;/li&gt;
+&lt;li&gt;スノボに複数回行く。&lt;/li&gt;
+&lt;li&gt;ダイビングライセンス(OW)をとる。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mezamee.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Mezamee&lt;/a&gt;を使ってまともな時間に就寝・起床する生活を一年間維持する。&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;メザミーで目覚め率100%のまま20回目覚めた(1回解除しそびれたと思ったらそもそも設定してなかったことあったけど) &lt;a href=&#34;https://t.co/6gmlOvLwkM&#34;&gt;pic.twitter.com/6gmlOvLwkM&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1471638850158346241?ref_src=twsrc%5Etfw&#34;&gt;December 17, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;コーヒーを自分で淹れる習慣を作る。&lt;/li&gt;
+&lt;li&gt;香水にチャレンジする。&lt;/li&gt;
+&lt;li&gt;資産運用・投資を始める。&lt;/li&gt;
+&lt;li&gt;LINE・Slack・メールなどすぐに返せる人になる。&lt;/li&gt;
+&lt;li&gt;緑のままずっと低迷してる&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/users/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AtCoder&lt;/a&gt;をもうちょっと本腰入れてやって水色になる。&lt;/li&gt;
+&lt;li&gt;GitHubの&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;草&lt;/a&gt;を一年間生やし続ける。&lt;/li&gt;
+&lt;li&gt;ずっと受けようかなーどうしようかなーと言い続けてる基本情報技術者試験を受ける。&lt;/li&gt;
+&lt;li&gt;このブログの更新を滞らせないように何かしら投稿し続ける。&lt;/li&gt;
+&lt;li&gt;全身脱毛をする。&lt;/li&gt;
+&lt;li&gt;一年間楽しく過ごす。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これくらいでいいか。&lt;/p&gt;
+&lt;p&gt;興味あるもの、自分もこれやってみたいと思ってた！ってものある人いたら良かったら声かけてください！&lt;/p&gt;
+&lt;p&gt;2022年もよろしくお願いします！！&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>『オレが私になるまで』</title>
+        <link>https://miiitomi.github.io/p/oregawatashininarumade/</link>
+        <pubDate>Thu, 30 Dec 2021 11:09:50 +0900</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/oregawatashininarumade/</guid>
+        <description>&lt;img src="https://miiitomi.github.io/images/oregawatashininarumade/fig4.jpg" alt="Featured image of post 『オレが私になるまで』" /&gt;&lt;h1 id=&#34;シリアスtsfとは&#34;&gt;「シリアスTSF」とは&lt;/h1&gt;
+&lt;p&gt;「シリアスTSF」というジャンルをご存知だろうか。&lt;/p&gt;
+&lt;p&gt;いやご存知だろうかと言ってみたが、最近僕が勝手にそう呼び始めただけなので、そういう言葉があるのかどうか僕も知らないのだけど。&lt;/p&gt;
+&lt;p&gt;僕なりに定義してみると、シリアスTSFとは「ギャグ要素やエロ要素ではなく、TSに伴う登場人物の内面の葛藤や周りの人間関係の変化といったシリアス要素に物語の重きを置いた、ヒューマンドラマとしてのTSF（Trans-Sexual Fiction/性転換もの）」である。&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;ギャグでもエロでもないシリアスめなTSFが好きって話したことありましたっけ？&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1452270640241672198?ref_src=twsrc%5Etfw&#34;&gt;October 24, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;現実にはあり得ない状況における少年・少女たちの戸惑い、葛藤が魅力のこのジャンルの作品を、
+これから1つずつ&lt;del&gt;僕が飽きるまで&lt;/del&gt;紹介していきたいと思う。&lt;/p&gt;
+&lt;h1 id=&#34;オレが私になるまで&#34;&gt;『オレが私になるまで』&lt;/h1&gt;
+&lt;p&gt;1回目の今回は、シリアスTSFの王道作品である(と僕が勝手に思っている)この作品だ。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/4046809892/&#34;&gt;&lt;img src=&#34;https://miiitomi.github.io/images/oregawatashininarumade/oregawatashininarumade4.jpg&#34; width=&#34;400&#34;/&gt;&lt;/a&gt;&lt;figcaption&gt;
+            &lt;h4&gt;オレが私になるまで 4 (MFC)&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;『オレが私になるまで』（&lt;a class=&#34;link&#34; href=&#34;https://twitter.com/hatukisu?s=20&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;佐藤はつき&lt;/a&gt;作）、&lt;a class=&#34;link&#34; href=&#34;https://comic-walker.com/contents/detail/KDCW_MF00000120010000_68/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ComicWalker&lt;/a&gt;にて連載しており、単行本は2021年12月現在でMFコミックスから4巻が刊行されている。&lt;/p&gt;
+&lt;h1 id=&#34;あらすじ&#34;&gt;あらすじ&lt;/h1&gt;
+&lt;p&gt;やんちゃな小2男子の藤宮明(あきら)は、クラスの女の子に対ししょっちゅういたずらを働き、特に幼馴染の奈々に対してはスカートめくりの対象にするなどしていた。
+ある夜、熱を出して一晩寝込むと、翌朝には髪が伸び女の子になっている。
+病院での診断は「突発性性転換症候群」。
+ある日突然性別が変わってしまう病気で、原因は不明、治療法もなく、女子として生きていかなければならなくなった。&lt;/p&gt;
+&lt;p&gt;男子に戻れないという事実を受け入れられず、女の子らしくすることを拒否し、これまで通りに元の学校に行こうとする明。
+しかし周りの男子には受け入れられず服を脱がされるといったいじめを受け、一方かつて酷いことをし続けた女子たちには助けを求めることもできない。
+さらにクラスメイトの保護者にはこの病気が感染性のものなのではないかと忌避され（実際には他の子にうつることはない）、元の学校には馴染めないまま、明は離れた祖母の家から別の小学校に女の子として通うことになった。&lt;/p&gt;
+&lt;p&gt;転校先の学校でも初めは女の子として上手く振る舞うことができない明だったが、そこで優しく友人として接してくれる渡井瑠海(るみ)に出会って……。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;CAUTION!!&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;以下未読者の楽しみを奪わないように注意してこの作品の魅力を述べていくつもりですが、作品を読む前にネタバレや他者の感想を見たくない方は以下注意して、自己責任で読んでください！&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;瑠海と奈々&#34;&gt;瑠海と奈々&lt;/h1&gt;
+&lt;p&gt;この物語で明にとって最重要人物になると言えるのが、転校先で出会い親友となる渡井瑠海だ。
+転校先で男子が苦手になり、だが女子としても上手く振る舞えず女子に混ざることに恐怖心を抱く明を、瑠海は女子として優しく普通に接し、やがて明も心を開いて唯一無二の親友と呼べる存在になっていく。
+そうしてやがて他の女子とも打ち解けていくのだが、ここで思い出すのが転校前の学校でひどいことをしてきたクラスメイトの女子たち、とりわけ幼馴染の奈々だ。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure&gt;&lt;img src=&#34;https://miiitomi.github.io/images/oregawatashininarumade/fig1.jpg&#34; width=&#34;600&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;『オレが私になるまで』1巻第7話より&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;自分が女子として周りに受け入れられていくごとに奈々たちの視線を思い出すとともに、
+元男子で女子をいじめてきた自分が女子として受け入れられてしまうことへの申し訳さと、
+いつか元男子であったことが分かって気持ち悪がられるのではないかという恐怖心に明は苛まれることになる……。&lt;/p&gt;
+&lt;p&gt;この明と瑠海を中心とした周りの人間関係と、前の学校の奈々らとの関係性の中に生まれる、TSF独特の要素が絡んだヒューマンドラマがこの作品の魅力の一つだ。
+瑠海との関係性がこの後どのように変化していくかと、転校後関わることはないが明の心の中に深く潜んでいる奈々との関係性がどのように精算されるのか、今後の展開のキーの一つになるだろう。&lt;/p&gt;
+&lt;h1 id=&#34;女の子としての自分の受け入れ&#34;&gt;女の子としての自分の受け入れ&lt;/h1&gt;
+&lt;p&gt;前項の話が人間関係から生まれる外向きのヒューマンドラマとしたら、
+「明が女の子としての自分を受け入れる過程での葛藤」は明の内面の話になるだろうか（もちろんその二つは深く関連しあっているので簡単に外向き・内面と二項的に対置できるものではないが）。&lt;/p&gt;
+&lt;p&gt;最初、明は2度と男に戻れないという事実を受け入れられず、女の子らしくすることを一切拒否しようとする。
+だが瑠海を中心にクラスで女子として受け入れられていくとともに、
+明も少しずつ自ら女の子らしい格好をしようという意図が芽生えてくる。&lt;/p&gt;
+&lt;p&gt;しかし、明が男の子だった頃を当然知っており、当初女の子らしい格好をすることを全力で拒否していた明を見ている母親は、
+明が女の子らしい格好をしていることを友達付き合いで仕方なく嫌々やっているものだと思い、明に無理しなくていいと伝えようとする。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure&gt;&lt;img src=&#34;https://miiitomi.github.io/images/oregawatashininarumade/fig2.jpg&#34; width=&#34;600&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;『オレが私になるまで』1巻第10話より&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;これだけなら転換後の性別を葛藤しながらも徐々に受け入れつつある子と、
+子のために元の性別のまま生きていけるようにと願う親とのすれ違いと、
+それを乗り越えようとする本人というシリアスTSFにありがちな（というほどシリアスTSF作品は多くないが、少なくともこの設定において素直な）展開なのだが、
+ただ母親に伝えづらいというだけでなく、明本人の中にもそれを伝えづらい理由があり……。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure&gt;&lt;img src=&#34;https://miiitomi.github.io/images/oregawatashininarumade/fig3.jpg&#34; width=&#34;600&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;『オレが私になるまで』4巻第41話より&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;可愛い格好をしたいけど、元の性別としての自分もまだあって、
+生まれた時から自分を一番身近で見てきた母親にそれを伝えたら、それこそ本当に自分が変わってしまうんじゃないかという恐怖感。&lt;/p&gt;
+&lt;p&gt;もちろん僕自身がこれと全く同じような経験をしたことはないのだが、
+でもそれを一番身近な人に口に出してしまうことで何かが決定的に変わってしまうような怖さは、自分にもわかるような気がする。
+そういう微妙な心境をうまく表している良いシーンだと思った。&lt;/p&gt;
+&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
+&lt;p&gt;ここで紹介しなかったが物語上重要な役割を果たしている要素・登場人物はまだまだ沢山ある。
+TSFと言われるとちょっとマニアックなジャンルに思われて手を伸ばしづらく感じている人もいるかもしれないが、人間の内面の葛藤と人間関係を描くヒューマンドラマが好きな人なら楽しめるシリアスTSF作品はあると思う。
+その中でも王道的な(と僕が思う)この作品を、もし興味を持った方がいれば手に取ってみてもらえたらとても嬉しい。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;12月22日発売の「オレが私になるまで」4巻の書店特典一覧です。&lt;br&gt;12月22日！！12月22日！！！12月22日です！！！！&lt;br&gt;よろしくお願いします！！！！&lt;a href=&#34;https://twitter.com/hashtag/%E3%82%AA%E3%83%AC%E3%81%8C%E7%A7%81%E3%81%AB%E3%81%AA%E3%82%8B%E3%81%BE%E3%81%A7?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#オレが私になるまで&lt;/a&gt; &lt;a href=&#34;https://t.co/Kl01mWH7Yh&#34;&gt;pic.twitter.com/Kl01mWH7Yh&lt;/a&gt;&lt;/p&gt;&amp;mdash; 佐藤はつき@4巻12月22日発売 (@hatukisu) &lt;a href=&#34;https://twitter.com/hatukisu/status/1472860090965577728?ref_src=twsrc%5Etfw&#34;&gt;December 20, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
+        <title>Scarf&#39;s lemmaとその実装</title>
+        <link>https://miiitomi.github.io/p/scarf/</link>
+        <pubDate>Sat, 25 Dec 2021 10:53:40 +0900</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/scarf/</guid>
+        <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+&lt;p&gt;誰しも普通に生きていると一度くらいScarf&amp;rsquo;s lemmaを実装する場面に遭遇すると思いますが、意外と日本語の情報が出てこなくて困ったことのある人もいるかもしれません。
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;Scarf’s lemma完全理解して実装完了したらqiitaかzennかにでも誰得記事書いてやろうかな&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1461662490350145539?ref_src=twsrc%5Etfw&#34;&gt;November 19, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+というツイートを前にしましたが、せっかくブログ作ったのでここに勉強記録としてまとめてみようと思います。
+お気持ち整理みたいな感じなので証明はちゃんとしないし、数学的・ゲーム理論的に厳密でない書き方してるとこも多々あるかも。&lt;/p&gt;
+&lt;h1 id=&#34;scarfs-lemma-とは&#34;&gt;Scarf&amp;rsquo;s lemma とは&lt;/h1&gt;
+&lt;p&gt;Scarf&amp;rsquo;s lemmaとは &lt;a class=&#34;link&#34; href=&#34;https://www.jstor.org/stable/1909383?casa_token=9WwcS1dTUpgAAAAA%3AAnwe0DoOPRBU5bVCHE4lRlozpVQ6CgtZq_JHCkav8vZ6x_iAM0gIgIHpJTyZTomEwm2Z1VAC36UpOsXcYEfTpAW2xCdjy7WyToYxAfZ51VFbX5FThlNQvQ&amp;amp;seq=1#metadata_info_tab_contents&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Scarf (1967)&lt;/a&gt; で示されたコアを求めるための補題です。
+応用としては、例えばマッチング理論の文脈で &lt;a class=&#34;link&#34; href=&#34;https://www.aeaweb.org/articles?id=10.1257/aer.20141188&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Nguyen and Vohra (2018)&lt;/a&gt; で安定マッチングを求めるために使用されています。&lt;/p&gt;
+&lt;h1 id=&#34;命題&#34;&gt;命題&lt;/h1&gt;
+&lt;p&gt;$A, C$ は $n\times m$ $(n &amp;lt; m)$ の行列で
+$$
+\begin{align*}
+A &amp;amp;= \begin{bmatrix}
+1 &amp;amp; \dots &amp;amp; 0 &amp;amp; a_{1,n+1} &amp;amp; \dots &amp;amp; a_{1,m} \cr
+\vdots &amp;amp;\ddots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; &amp;amp; \vdots \cr
+0 &amp;amp; \dots &amp;amp; 1 &amp;amp; a_{n,n+1} &amp;amp; \dots &amp;amp; a_{n,m}
+\end{bmatrix},\cr
+C &amp;amp;= \begin{bmatrix}
+c_{1,1} &amp;amp; \dots &amp;amp; c_{n,1} &amp;amp; c_{1,n+1} &amp;amp; \dots &amp;amp; c_{1,m} \cr
+\vdots &amp;amp;\ddots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; &amp;amp; \vdots \cr
+c_{n,1} &amp;amp; \dots &amp;amp; c_{n,n} &amp;amp; c_{n,n+1} &amp;amp; \dots &amp;amp; c_{n,m}
+\end{bmatrix}
+\end{align*}
+$$
+の形のもので、$C$ は以下を満たすとします（これを標準形（standard form）と呼ぶことにします）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;各行 $i$ について、同じ数は含まれない（$C_{ij}\ne C_{ij&#39;}$ $\forall j \ne j&#39;$）。&lt;/li&gt;
+&lt;li&gt;各行 $i$ について対角成分はその行のうち最も小さい（$c_{ii} &amp;lt; \min_{j \ne i}c_{ij}$）。&lt;/li&gt;
+&lt;li&gt;各行 $i$ の最初の $n$ 要素のうちの非対角成分は、後ろの $m-n$ の全ての要素より大きい（$\min_{j:1\le j \le n, j\ne i} c_{ij} &amp;gt; \max_{k:n+1\le k \le m}c_{ik}$）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;また、非負ベクトル $b \in \mathbb{R}^n$ に対し、集合 $\lbrace x \in \mathbb{R}^m_+ \mid Ax = b \rbrace$ は有界であるとします。&lt;/p&gt;
+&lt;p&gt;このとき、$Ax = b$ の基底解 $x \in \mathbb{R}_+^m$ であって、以下を満たすものが存在します：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基底に含まれる列の集合を $a$ とし、各行 $i$ に対し $u_i = \min_{j\in a}c_{ij}$ とする。&lt;/li&gt;
+&lt;li&gt;任意の列 $k$ に対し、ある行 $i$ が存在して、$u_i \ge C_{ik}$ が成り立つ。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;命題のお気持ち&#34;&gt;命題のお気持ち&lt;/h1&gt;
+&lt;p&gt;$A, C$ の各行はプレイヤー、各列はそのプレイヤーから構成されるグループを表し、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$A_{ij}$ はプレイヤー $i$ がグループ $j$ に属すかどうか（属さないなら $0$, 属すなら所属量を表す分量？（典型的には常に $1$））
+&lt;ul&gt;
+&lt;li&gt;対角成分は自分1人からなるグループなので $A_{ii} = 1$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;$x$ は ($0, 1$ なら)そのグループのうちどれが実際に構成されるか（$0,1$以外ならどれくらいの強さで構成されるか）.&lt;/li&gt;
+&lt;li&gt;$A_{i\cdot}x = b_{i}$ は $i$ が参加できるグループ数の制約.&lt;/li&gt;
+&lt;li&gt;$C_{ij}$ はプレイヤー $i$ がグループ $j$ から得られる利得.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;というイメージ。
+$u_i = \min_{j\in a}C_{ij}$ は今のグループの形成の仕方 $x$ から $i$ が得られている利得で、 「任意の列 $k$ に対し、ある行 $i$ が存在して、$u_i \ge C_{ik}$ 」というのは「グループ $k$ を構成しようとしても、あるプレイヤー $i$ がいて今の利得の方が少なくとも同等以上に良いので、グループ $k$ はブロックできませんよ」という感じ。
+つまりこの命題は、標準形のもとではブロックするグループ $k$ が生じない良い感じのグループの形成の仕方 $x$ が作れますよ、と言ってる。&lt;/p&gt;
+&lt;h1 id=&#34;基数的基底と序数的基底&#34;&gt;基数的基底と序数的基底&lt;/h1&gt;
+&lt;p&gt;この $x$ を構成するアルゴリズムを考えるのですが、その前にまず基数的基底(cardinal basis)と序数的基底（ordinal basis）を導入します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$A$ の基数的基底解 $x$ とは $Ax = b$ の解で、$m$ 個の変数のうち $n$ 個を基底変数、$m-n$ 個を非基底変数とし、非基底変数については $x_j = 0$ となっているようなもの。（この基数的基底変数の添字の集合を $a$ と書く）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;線形計画とかで出てくる普通の基底解。一方、序数的基底は、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$C$ の序数的基底解 $x$ とは、$n$ 個の基底変数の添字集合を $c = \lbrace j_1, \dots, j_n\rbrace$ としたときに、各行 $i$ について $u_i = \min_{j \in c}{C_{ij}}$ とおくと、任意の列 $k$ に対しある行 $i$ が存在して $u_i \ge c_{ik}$ となるもの。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$A$ の基数的基底解であり、かつ $C$の序数的基底解であるような $x$ を、以下の基数的ピボットと序数的ピボットを使って求めることが以下の目標になります。&lt;/p&gt;
+&lt;h2 id=&#34;基数的ピボット&#34;&gt;基数的ピボット&lt;/h2&gt;
+&lt;p&gt;基数的基底 $a = \lbrace j_1, j_2, \dots, j_n\rbrace$ があり、$a$ に含まれない別の基底 $j^*$ をとります。
+このとき（問題が非退化なら）ある $j&#39; \in a$ が一意に存在して、$ \lbrace j^* \rbrace \cup a \setminus \lbrace j&#39;\rbrace$ も基底変数になる（シンプレックス法とかの普通のピボット）。&lt;/p&gt;
+&lt;h2 id=&#34;序数的ピボット&#34;&gt;序数的ピボット&lt;/h2&gt;
+&lt;p&gt;序数的基底 $c = \lbrace j_1, \dots, j_n \rbrace$ があり、そのうち任意の1つをとり（$j_1$とする）、残りの $c\setminus \lbrace j_1\rbrace$ は全てが $n$ 以下というわけではないとします。
+$C$ の各 $i$ 行に対し $c\setminus\lbrace i_1 \rbrace$ 内で最小にする列（$\min_{j \in c\setminus\lbrace i_1 \rbrace}C_{ij}$） を求めると、ある列 $j&#39;$ について $j&#39;$ で最小値をとるような行が $2$ つ存在し、そのうち $1$ つは元の $i_1$ を含んだ $c$ 内でも $j&#39;$ で最小値を取るような行、もう一方は $i_1$ を除いた結果新たに $j&#39;$ で最小値を取るようになった行です。
+前者を $i^*$ とします。
+任意の行 $i \ne i^*$ で $c_{ik} &amp;gt; \min_{j \in c\setminus\lbrace j_1\rbrace}c_{ij}$ となるような $c$ 外の列の集合
+$$
+K = \left\lbrace k \notin c \mid c_{ik} &amp;gt; \min_{j \in c\setminus\lbrace j_1\rbrace}c_{ij}\ \forall i \ne i^*  \right\rbrace
+$$
+を求め、そのうち $i^*$ 行で最大にする列
+$$
+j^* = \arg\max_{j \in K} c_{i^*j}
+$$
+を求め、$j^*$ を $j_1$ の代わりに入れて $c^{new} = \lbrace j^*\rbrace\cup c \setminus \lbrace j_1 \rbrace$
+とすると、$c^{new}$ も $C$ の序数的基底になります。&lt;/p&gt;
+&lt;h1 id=&#34;アルゴリズム&#34;&gt;アルゴリズム&lt;/h1&gt;
+&lt;p&gt;上記の基数的ピボットと序数的ピボットを繰り返すと、求めたい $x$ が求まります。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$a = \lbrace 1,2, \dots, n \rbrace$、$c = \lbrace 2, \dots, n\rbrace \cup \arg\max_{j \ge n+1}\lbrace C_{1j}\rbrace$ と $A, C$ の基底を初期化する。&lt;/li&gt;
+&lt;li&gt;$a \ne c$ である限り以下を繰り返す：
+&lt;ul&gt;
+&lt;li&gt;$c$ に含まれていて $a$ に含まれていない列 $j$ を、$A$ の基数的ピボットにより $a$ に入れるように $a$ を更新する。&lt;/li&gt;
+&lt;li&gt;$a$ から出された列 $j&#39;$ について、$C$ の序数的ピボットにより $c$ から除いて $c$ を更新する。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;実装&#34;&gt;実装&lt;/h1&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.aeaweb.org/articles?id=10.1257/aer.20141188&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Nguyen and Vohra (2018)&lt;/a&gt;がadditional materialとして提供しているMATLABコードを参考に、このアルゴリズムをPythonで実装してみるとこんな感じになる（&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/scarf_lemma/blob/main/scarf_lemma.py&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;）。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;numpy&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;np&lt;/span&gt;
+
+
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;scarf_lemma&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arange&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arange&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argmax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:]))&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;setdiff1d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;assume_unique&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;step&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sa&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Step &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;step&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;: a = &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;, c = &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# index 0 スタートを 1 スタートに直して出力&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cardinal_pivot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;all&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;break&lt;/span&gt;
+
+        &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ordinal_pivot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;all&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;break&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;step&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+
+    &lt;span class=&#34;c1&#34;&gt;# index 0 スタートを 1 スタートに直してreturn&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+
+
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;cardinal_pivot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shape&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;ratio&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([])&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;row&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.01&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ratio&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;size&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;ratio&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;ratio&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vstack&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ratio&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])])&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ratio&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;size&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;raise&lt;/span&gt; &lt;span class=&#34;ne&#34;&gt;ValueError&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;i can not be a basis column.&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;elif&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ratio&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;size&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+         &lt;span class=&#34;n&#34;&gt;pivot_row&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ratio&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;astype&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;idx&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argmin&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ratio&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;pivot_row&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ratio&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;idx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;astype&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;basis&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[:,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;basis_col&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argmax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basis&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pivot_row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:])&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;pivot&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basis_col&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pivot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;A_new&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;zeros&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shape&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;b_new&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;zeros&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shape&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;A_new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pivot_row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pivot_row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pivot_row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;b_new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pivot_row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pivot_row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pivot_row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pivot_row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;A_new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A_new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pivot_row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:]&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;b_new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b_new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pivot_row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A_new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b_new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pivot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;ordinal_pivot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;c_bar&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;setdiff1d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arange&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;assume_unique&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[:,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c_bar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;basis&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[:,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;c_remains&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;setdiff1d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;assume_unique&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;basis2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[:,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c_remains&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;original_argmins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argmin&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basis&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;original_argmins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;original_argmins&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;new_mins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basis2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;new_argmins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argmin&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basis2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;new_argmins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c_remains&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new_argmins&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;unique&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;counts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unique&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new_argmins&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;return_counts&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;unique&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;counts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;size&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;raise&lt;/span&gt; &lt;span class=&#34;ne&#34;&gt;ValueError&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Two columns with two row minimizer.&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;idx&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;original_argmins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;row_of_idx&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;idx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:]&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;delete&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;idx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;new_mins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;delete&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new_mins&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;idx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;all_mins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new_mins&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;reshape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new_mins&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)),&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;cols&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;all_mins&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;all&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;new_col&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cols&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argmax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;row_of_idx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cols&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])]&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;new_c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c_bar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new_col&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;new_c&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;new_c&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;元論文にある例を使って&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1e-6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;2e-6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;3e-6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;M&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arange&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;87&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]],&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;scarf_lemma&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;を実行してみると、&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/scarf_lemma/blob/main/example.ipynb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;結果&lt;/a&gt;は以下の通り。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;Step&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;Step&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;Step&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;Step&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;Step&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;論文に書かれてる通り実行されている。&lt;/p&gt;
+&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.jstor.org/stable/1909383?casa_token=9WwcS1dTUpgAAAAA%3AAnwe0DoOPRBU5bVCHE4lRlozpVQ6CgtZq_JHCkav8vZ6x_iAM0gIgIHpJTyZTomEwm2Z1VAC36UpOsXcYEfTpAW2xCdjy7WyToYxAfZ51VFbX5FThlNQvQ&amp;amp;seq=1#metadata_info_tab_contents&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Scarf (1967)&lt;/a&gt;のScarf&amp;rsquo;s lemmaを実装してみた。
+みんなこれからどんどんコアを計算していこうな！
+（もし記述・実装に間違いや変なとこあったら教えてください！！）&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>非エンジニアの初心者がHugo(テーマStack)&#43;GitHub Pagesでブログを開設するまで</title>
+        <link>https://miiitomi.github.io/p/hugo/</link>
+        <pubDate>Thu, 09 Dec 2021 21:30:20 +0900</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/hugo/</guid>
+        <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+&lt;p&gt;タイトルの通りです。
+このブログを開設するまでにやったことを備忘録としてまとめておきます。
+わざわざ僕が新たに書き記すまでもなく似たような記事はたくさんあるのですが、1本目に書く内容としてちょうどいい感じのものな気がしたので。
+分かってる人からしたらそりゃそうってことしか書いてないと思うけど、僕みたいな初心者が見たら1ミリくらい参考になるかもしれない（ならないかもしれない）。&lt;/p&gt;
+&lt;p&gt;ちなみにタイトルに「非エンジニアの初心者が」と書きましたが、すごく広い意味で捉えればエンジニアと言えなくもないかも。
+でも自己認識としてはエンジニアを名乗れるほど技術力はない（し肩書きもリサーチャーな）ので嘘ではないでしょう。
+Git/GitHubの使い方とかは一応わかってることを仮定します。&lt;/p&gt;
+&lt;h1 id=&#34;使ったもの環境&#34;&gt;使ったもの・環境&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;macBook Pro/macOS Big Sur v11.1&lt;/li&gt;
+&lt;li&gt;Homebrew v3.3.7&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugo&lt;/a&gt; v0.89.4&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugo Theme Stack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Git/GitHub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;hugoのインストールスタート&#34;&gt;Hugoのインストール・スタート&lt;/h1&gt;
+&lt;p&gt;とりあえずHomebrewを使って、ターミナルで &lt;code&gt;brew install hugo&lt;/code&gt; でHugoをインストールします。
+&lt;code&gt;hubo version&lt;/code&gt; と打ってバージョン確認すると&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ hugo version
+hugo v0.89.4+extended darwin/amd64 BuildDate=unknown
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;と出るので入ったっぽい。&lt;/p&gt;
+&lt;p&gt;ブログ用のディレクトリを作るところで &lt;code&gt;hugo new site sitename&lt;/code&gt; (sitenameのところは適当に) とすると、&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ hugo new site sitename
+Congratulations! Your new Hugo site is created in ***/***/sitename.
+
+Just a few more steps and you&#39;re ready to go:
+
+1. Download a theme into the same-named folder.
+   Choose a theme from https://themes.gohugo.io/ or
+   create your own with the &amp;quot;hugo new theme &amp;lt;THEMENAME&amp;gt;&amp;quot; command.
+2. Perhaps you want to add some content. You can add single files
+   with &amp;quot;hugo new &amp;lt;SECTIONNAME&amp;gt;/&amp;lt;FILENAME&amp;gt;.&amp;lt;FORMAT&amp;gt;&amp;quot;.
+3. Start the built-in live server via &amp;quot;hugo server&amp;quot;.
+
+Visit https://gohugo.io/ for quickstart guide and full documentation.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;と出てきて、&lt;code&gt;sitename&lt;/code&gt;ディレクトリができ、色々入ってます。&lt;/p&gt;
+&lt;h1 id=&#34;テーマ&#34;&gt;テーマ&lt;/h1&gt;
+&lt;p&gt;テーマを入れちゃいましょう。今回は&lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Stack&lt;/a&gt;にしました。
+HugoのdocumentationのQuick Startではgit submoduleに追加してたり、他の方はテーマをfolkしてから使ってたりしてますが、手っ取り早くクローンしちゃいました（ちゃんとfolkした方が本当は良いかも）。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd sitename
+cd themes
+git clone git@github.com:...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;...&lt;/code&gt;の部分は使うテーマに合わせて。&lt;/p&gt;
+&lt;p&gt;Stackは&lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack/tree/master/exampleSite&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;例&lt;/a&gt;を提供してくれてるので、それをベースに作っていきます。&lt;code&gt;sitename/themes/hugo-theme-stack/exampleSite&lt;/code&gt;内の&lt;code&gt;config.yaml&lt;/code&gt;と&lt;code&gt;content/&lt;/code&gt;を&lt;code&gt;sitename&lt;/code&gt;直下に移し(&lt;code&gt;content/&lt;/code&gt;は置き換え)、&lt;code&gt;config.toml&lt;/code&gt;を削除します。&lt;/p&gt;
+&lt;p&gt;そして &lt;code&gt;hugo server -D&lt;/code&gt; と打つと、&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ hugo server -D
+Start building sites … 
+hugo v0.89.4+extended darwin/amd64 BuildDate=unknown
+WARN 2021/12/09 22:20:52 The &amp;quot;twitter_simple&amp;quot; shortcode will soon require two named parameters: user and id. See &amp;quot;***/***/sitename/content/post/rich-content/index.md:26:1&amp;quot;
+
+                   | EN  
+-------------------+-----
+  Pages            | 49  
+  Paginator pages  |  3  
+  Non-page files   |  8  
+  Static files     |  0  
+  Processed images | 29  
+  Aliases          | 23  
+  Sitemaps         |  1  
+  Cleaned          |  0  
+
+Built in 241 ms
+Watching for changes in ***/***/sitename/{archetypes,content,data,layouts,static,themes}
+Watching for config changes in ***/***/sitename/config.yaml, ***/***/sitename/themes/hugo-theme-stack/config.yaml
+Environment: &amp;quot;development&amp;quot;
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;と出てくるので、&lt;code&gt;localhost:1313&lt;/code&gt;をブラウザで開いてみると、&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://miiitomi.github.io/images/img20211209222536.png&#34; &gt;
+		&lt;img src=&#34;https://miiitomi.github.io/images/img20211209222536.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;できた！！！（できてない）&lt;/p&gt;
+&lt;h1 id=&#34;config&#34;&gt;config&lt;/h1&gt;
+&lt;p&gt;あとは &lt;code&gt;config.yaml&lt;/code&gt; を少し変えていきます。
+書き換えた箇所は大体こんな感じだっけ？(忘れてるとこもあるかも)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;baseurl: https://&amp;lt;GithubAccount&amp;gt;.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;languageCode: ja&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;title: &amp;lt;Sitename&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;publishDir: docs&lt;/code&gt; を追加.
+&lt;ul&gt;
+&lt;li&gt;Hugoでビルドするとデフォルトでは&lt;code&gt;public/&lt;/code&gt;にビルドされるのですが、Github Pagesでホストするためには&lt;code&gt;docs/&lt;/code&gt;にビルドしたいので。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;favicon: /images/favicon.ico&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;ファビコンに使いたいicoファイル(&lt;code&gt;favicon.ico&lt;/code&gt;)は&lt;code&gt;static/images/&lt;/code&gt;に入れておく.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sidebar&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;emoji: &lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;subtitle: ***&lt;/code&gt;：適当に.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;avatar:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;local: false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;src: /images/avatar.png&lt;/code&gt;：アバター用の画像は&lt;code&gt;static/images/&lt;/code&gt;内に。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;article:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;math: true&lt;/code&gt;：自分は今後数式を使った記事を書くことも多分あるので。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;toc: false&lt;/code&gt;：目次を表示させたくなければ。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;readingTime: false&lt;/code&gt;：各記事のreading timeを表示させたくなければ。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;comments:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;enabled: false&lt;/code&gt;：コメント設定面倒そうだったし、そもそもあまり必要ないと思ったので。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;opengraph:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;twitter:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;card: summary&lt;/code&gt; ツイッターカードのスタイル。お好みで。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;defaultImage:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;opengraph:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;enabled: true&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;local: false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;src: images/avatar.png&lt;/code&gt;：OGP用のデフォルト画像、とりあえずアバターでいいか。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;menu:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;main:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;params:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;hewTab: false&lt;/code&gt;：homeボタン押したときに新規タブにしたくない。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;social:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;github, twitterは設定.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;日本語フォント&#34;&gt;日本語フォント&lt;/h1&gt;
+&lt;p&gt;この辺りで漢字が中国語フォントになってることに気付く。これは&lt;code&gt;themes/hugo-theme-stack/assets/scss/variables.scss&lt;/code&gt; 内の、&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;--zh-font-family: ...`
+--base-font-family: &amp;quot;Lato&amp;quot;, var(--sys-font-family), var(--zh-font-family), sans-serif;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;を&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;--ja-font-family: &amp;quot;游ゴシック体&amp;quot;, &amp;quot;Yu Gothic&amp;quot;, YuGothic, &amp;quot;ヒラギノ角ゴ Pro&amp;quot;, &amp;quot;Hiragino Kaku Gothic Pro&amp;quot;, &amp;quot;メイリオ&amp;quot;, &amp;quot;Meiryo&amp;quot;;`
+--base-font-family: &amp;quot;Lato&amp;quot;, var(--sys-font-family), var(--ja-font-family), sans-serif;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;みたいな感じに変更したら日本語フォントになった、たしか（うろ覚え）。&lt;/p&gt;
+&lt;h1 id=&#34;コンテンツ&#34;&gt;コンテンツ&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;categories&lt;/code&gt;, &lt;code&gt;post&lt;/code&gt;内のテストカテゴリー・ポストは消して、必要あれば例参考に作る。また &lt;code&gt;page/about.md&lt;/code&gt; は最初から何らか必要だと思うので適当に書き換える。
+Hugoでは &lt;code&gt;hugo new post/XXX.md&lt;/code&gt; と打つと &lt;code&gt;content/post/&lt;/code&gt; に &lt;code&gt;XXX.md&lt;/code&gt; ができるのだがそのデフォルトは &lt;code&gt;archetypes/default.md&lt;/code&gt; になっている。これも必要に応じて書き換えとこう。自分の場合は&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;---
+title: {{ replace .Name &amp;quot;-&amp;quot; &amp;quot; &amp;quot; | title }}
+description: 
+slug: {{ .Name }}
+date: {{ .Date }}
+categories:
+    - 
+tags: []
+---
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;とこんな感じにとりあえずしといた。&lt;/p&gt;
+&lt;h1 id=&#34;ビルド&#34;&gt;ビルド&lt;/h1&gt;
+&lt;p&gt;ビルドは&lt;code&gt;sitename&lt;/code&gt;直下で &lt;code&gt;hugo&lt;/code&gt; でOK。&lt;code&gt;docs/&lt;/code&gt;(&lt;code&gt;config.yaml&lt;/code&gt;内で&lt;code&gt;publishDir&lt;/code&gt;を設定してなければ&lt;code&gt;public/&lt;/code&gt;)内にビルドされるはず。&lt;/p&gt;
+&lt;h1 id=&#34;プッシュgithub-pagesでホスト&#34;&gt;プッシュ・Github Pagesでホスト。&lt;/h1&gt;
+&lt;p&gt;GitHubで自分のレポジトリとして &lt;code&gt;&amp;lt;GitHubAccount&amp;gt;.github.io&lt;/code&gt; を作り、これまで作ってきたものをプッシュ。&lt;/p&gt;
+&lt;p&gt;Settings/Pagesから, Sourceをmainブランチの&lt;code&gt;docs/&lt;/code&gt;とする。ホストされるまでちょっと待つと、
+&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://miiitomi.github.io/images/20211209231722.png&#34; &gt;
+		&lt;img src=&#34;https://miiitomi.github.io/images/20211209231722.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;
+今度こそできた！&lt;/p&gt;
+&lt;h1 id=&#34;記事の書き方&#34;&gt;記事の書き方&lt;/h1&gt;
+&lt;p&gt;新規のブログ記事を書くときはとりあえず &lt;code&gt;hugo new post/XXX.md&lt;/code&gt; したあと、&lt;code&gt;hugo server -D&lt;/code&gt;で確認しながら執筆し、書けたら &lt;code&gt;hugo&lt;/code&gt; でビルド、GithubにプッシュすればOKという感じ。自動デプロイとかもやればできるんだろうけど大したことないしとりあえずいいや。そのうち気が向いたらやろう。&lt;/p&gt;
+&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
+&lt;p&gt;今日やったことじゃないので忘れてるとことかあるかもだけど、大体こんな感じ。&lt;/p&gt;
+&lt;p&gt;これからどんどん記事書いてこう！！&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>
