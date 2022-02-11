@@ -285,7 +285,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     let able_pref = ablePref(this.state.man_pref_state, this.state.woman_pref_state);
     let able_determinate_pref = ableDeterminatePref(this.state.man_pref_state, this.state.woman_pref_state);
 
