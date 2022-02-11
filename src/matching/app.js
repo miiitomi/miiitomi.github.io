@@ -56,16 +56,21 @@ export default class App extends React.Component {
   }
 
   handleChangeManNumber(event) {
-    this.setState({man_number: parseInt(event.target.value, 10)});
+    this.setState({man_number: event.target.value});
   }
 
   handleChangeWomanNumber(event) {
-    this.setState({woman_number: parseInt(event.target.value, 10)});
+    this.setState({woman_number: event.target.value});
   }
 
   determinateNumber() {
-    if (this.state.man_number >= 1 && this.state.woman_number >= 1) {
+    if (1 <= this.state.man_number
+        && this.state.man_number<= 1000
+        && 1 <= this.state.woman_number
+        && this.state.woman_number <= 1000) {
       this.setState({
+        man_number: parseInt(this.state.man_number, 10),
+        woman_number: parseInt(this.state.woman_number, 10),
         determinate_number: true,
         number_error: false,
         man_name_list: Array(parseInt(this.state.man_number, 10)).fill(""),
