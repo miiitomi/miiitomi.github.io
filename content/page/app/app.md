@@ -16,4 +16,4 @@ tags:
 ---
 - [Matching](/matching)
     - 男性と女性のマッチングを行うDAアルゴリズムの実行ができます。
-    - DAアルゴリズムの解説は[こちら](/p/matching)。
+    - DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説は[こちら](/p/matching)。

@@ -19,6 +19,6 @@ tags:
 
 このページでは、男性と女性のマッチングを行うDAアルゴリズムの実行ができます。  
 合コンにおける席決め・ゲームなどにお使いください。  
-実装したDAアルゴリズム（Gale-Shapleyアルゴリズム）の解説は[こちら](/p/matching)。
+DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説は[こちら](/p/matching)。
 
 {{<react src="/js/matching.js" >}}
