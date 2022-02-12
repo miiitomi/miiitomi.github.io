@@ -6,7 +6,7 @@ export default class AvailableNobody extends React.Component {
     render() {
         return (
             <>
-                <p>「誰も希望しない」という選択肢を無効にしますか。（無効にした場合、男性は {this.props.woman_number} 番目まで、女性は {this.props.man_number} 番目まで希望順位を入力する必要があります。）</p>
+                <p>「誰も希望しない」という選択肢を有効にしますか。（無効にした場合、男性は {this.props.woman_number} 番目まで、女性は {this.props.man_number} 番目まで希望順位を入力する必要があります。）</p>
                 <FormCheck
                 id='man_proposing_check'
                 label='有効にする'
