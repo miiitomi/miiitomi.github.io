@@ -13,7 +13,7 @@
       <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://miiitomi.github.io/app/</guid>
-      <description> Matching  男性と女性のマッチングを行うDAアルゴリズムの実行ができます。 DAアルゴリズムの解説はこちら。    </description>
+      <description> Matching  男性と女性のマッチングを行うDAアルゴリズムの実行ができます。 DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説はこちら。    </description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <guid>https://miiitomi.github.io/matching/</guid>
       <description>このページでは、男性と女性のマッチングを行うDAアルゴリズムの実行ができます。
 合コンにおける席決め・ゲームなどにお使いください。
-実装したDAアルゴリズム（Gale-Shapleyアルゴリズム）の解説はこちら。
+DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説はこちら。
   </description>
     </item>
     
