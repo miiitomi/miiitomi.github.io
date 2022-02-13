@@ -26,6 +26,8 @@ export default class App extends React.Component {
       woman_pref_state: [],
       man_pref_list: [],
       woman_pref_list: [],
+      tmp_pref: [],
+      tmp_state: 0,
       determinate_pref: false,
       man_proposing: true,
       determinate_option: false,
@@ -47,6 +49,7 @@ export default class App extends React.Component {
     this.addPref = this.addPref.bind(this);
     this.backPref = this.backPref.bind(this);
     this.confirmPref = this.confirmPref.bind(this);
+    this.cancelPref = this.cancelPref.bind(this);
     this.determinatePref = this.determinatePref.bind(this);
     this.reverseToPref = this.reverseToPref.bind(this);
     this.onClickOption = this.onClickOption.bind(this);
@@ -162,23 +165,23 @@ export default class App extends React.Component {
 
   onClickPref(self_idx, is_man) {
     if (is_man) {
+      const tmp_state_copy = this.state.man_pref_state[self_idx];
       const man_pref_state_copy = this.state.man_pref_state.slice();
       man_pref_state_copy[self_idx] = 1;
-      this.setState({man_pref_state: man_pref_state_copy});
-      if (this.state.man_pref_state[self_idx] == 2) {
-        const man_pref_list_copy = this.state.man_pref_list.slice();
-        man_pref_list_copy[self_idx] = [];
-        this.setState({man_pref_list: man_pref_list_copy});
-      }
+      this.setState({
+        man_pref_state: man_pref_state_copy,
+        tmp_pref: [],
+        tmp_state: tmp_state_copy
+      });
     } else {
+      const tmp_state_copy = this.state.woman_pref_state[self_idx];
       const woman_pref_state_copy = this.state.woman_pref_state.slice();
       woman_pref_state_copy[self_idx] = 1;
-      this.setState({woman_pref_state: woman_pref_state_copy});
-      if (this.state.woman_pref_state[self_idx] == 2) {
-        const woman_pref_list_copy = this.state.woman_pref_list.slice();
-        woman_pref_list_copy[self_idx] = [];
-        this.setState({woman_pref_list: woman_pref_list_copy});
-      }
+      this.setState({
+        woman_pref_state: woman_pref_state_copy,
+        tmp_pref: [],
+        tmp_state: tmp_state_copy
+      });
     }
   }
 
@@ -187,12 +190,12 @@ export default class App extends React.Component {
       if (choose_idx === -1) {
         const man_pref_state_copy = this.state.man_pref_state.slice();
         man_pref_state_copy[self_idx] = 3;
-        this.setState({man_pref_state: man_pref_state_copy});    
+        this.setState({man_pref_state: man_pref_state_copy});
       } else {
-        const man_pref_list_copy = this.state.man_pref_list.slice();
-        man_pref_list_copy[self_idx].push(choose_idx);
-        this.setState({man_pref_list: man_pref_list_copy});
-        if (man_pref_list_copy[self_idx].length == this.state.woman_number) {
+        const tmp_pref_copy = this.state.tmp_pref.slice();
+        tmp_pref_copy.push(choose_idx);
+        this.setState({tmp_pref: tmp_pref_copy})
+        if (tmp_pref_copy.length == this.state.woman_number) {
           const man_pref_state_copy = this.state.man_pref_state.slice();
           man_pref_state_copy[self_idx] = 3;
           this.setState({man_pref_state: man_pref_state_copy});
@@ -204,10 +207,10 @@ export default class App extends React.Component {
         woman_pref_state_copy[self_idx] = 3;
         this.setState({woman_pref_state: woman_pref_state_copy});
       } else {
-        const woman_pref_list_copy = this.state.woman_pref_list.slice();
-        woman_pref_list_copy[self_idx].push(choose_idx);
-        this.setState({woman_pref_list: woman_pref_list_copy});
-        if (woman_pref_list_copy[self_idx].length == this.state.man_number) {
+        const tmp_pref_copy = this.state.tmp_pref.slice();
+        tmp_pref_copy.push(choose_idx);
+        this.setState({tmp_pref: tmp_pref_copy})
+        if (tmp_pref_copy.length == this.state.man_number) {
           const woman_pref_state_copy = this.state.woman_pref_state.slice();
           woman_pref_state_copy[self_idx] = 3;
           this.setState({woman_pref_state: woman_pref_state_copy});
@@ -217,35 +220,57 @@ export default class App extends React.Component {
   }
 
   backPref(self_idx, is_man) {
+    if (this.state.tmp_pref.length > 0) {
+      const tmp_pref_copy = this.state.tmp_pref.slice();
+      tmp_pref_copy.pop();
+      this.setState({tmp_pref: tmp_pref_copy});
+    }
+
     if (is_man) {
-      if (this.state.man_pref_list[self_idx].length >= 1) {
-        const man_pref_list_copy = this.state.man_pref_list.slice();
-        man_pref_list_copy[self_idx].pop();
-        this.setState({man_pref_list: man_pref_list_copy});
+      if (this.state.man_pref_state[self_idx] != 1) {
+        const man_pref_state_copy = this.state.man_pref_state.slice();
+        man_pref_state_copy[self_idx] = 1;
+        this.setState({man_pref_state: man_pref_state_copy});
       }
-      const man_pref_state_copy = this.state.man_pref_state.slice();
-      man_pref_state_copy[self_idx] = 1;
-      this.setState({man_pref_state: man_pref_state_copy});
     } else {
-      if (this.state.woman_pref_list[self_idx].length >= 1) {
-        const woman_pref_list_copy = this.state.woman_pref_list.slice();
-        woman_pref_list_copy[self_idx].pop();
-        this.setState({woman_pref_list: woman_pref_list_copy});
+      if (this.state.woman_pref_state[self_idx] != 1) {
+        const woman_pref_state_copy = this.state.woman_pref_state.slice();
+        woman_pref_state_copy[self_idx] = 1;
+        this.setState({woman_pref_state: woman_pref_state_copy});
       }
-      const woman_pref_state_copy = this.state.woman_pref_state.slice();
-      woman_pref_state_copy[self_idx] = 1;
-      this.setState({woman_pref_state: woman_pref_state_copy});
     }
   }
 
   confirmPref(self_idx, is_man) {
     if (is_man) {
+      const man_pref_list_copy = this.state.man_pref_list.slice();
+      man_pref_list_copy[self_idx] = this.state.tmp_pref.slice();
       const man_pref_state_copy = this.state.man_pref_state.slice();
       man_pref_state_copy[self_idx] = 2;
+      this.setState({
+        man_pref_list: man_pref_list_copy,
+        man_pref_state: man_pref_state_copy,
+      });
+    } else {
+      const woman_pref_list_copy = this.state.woman_pref_list.slice();
+      woman_pref_list_copy[self_idx] = this.state.tmp_pref.slice();
+      const woman_pref_state_copy = this.state.woman_pref_state.slice();
+      woman_pref_state_copy[self_idx] = 2;
+      this.setState({
+        woman_pref_list: woman_pref_list_copy,
+        woman_pref_state: woman_pref_state_copy,
+      });
+    }
+  }
+
+  cancelPref(self_idx, is_man) {
+    if (is_man) {
+      const man_pref_state_copy = this.state.man_pref_state.slice();
+      man_pref_state_copy[self_idx] = this.state.tmp_state;
       this.setState({man_pref_state: man_pref_state_copy});
     } else {
       const woman_pref_state_copy = this.state.woman_pref_state.slice();
-      woman_pref_state_copy[self_idx] = 2;
+      woman_pref_state_copy[self_idx] = this.state.tmp_state;
       this.setState({woman_pref_state: woman_pref_state_copy});
     }
   }
@@ -346,8 +371,7 @@ export default class App extends React.Component {
               available_nobody={this.state.available_nobody}
               man_pref_state={this.state.man_pref_state}
               woman_pref_state={this.state.woman_pref_state}
-              man_pref_list={this.state.man_pref_list}
-              woman_pref_list={this.state.woman_pref_list}
+              tmp_pref={this.state.tmp_pref}
               onClickPref={(self_idx, is_man) => this.onClickPref(self_idx, is_man)}
               able_pref={able_pref}
               addPref={
@@ -362,6 +386,7 @@ export default class App extends React.Component {
                 (self_idx, is_man) =>
                 this.confirmPref(self_idx, is_man)
               }
+              cancelPref={(self_idx, is_man) => this.cancelPref(self_idx, is_man)}
               determinatePref={() => this.determinatePref()}
               reverseToPref={() => this.reverseToPref()}
               determinate_pref={this.state.determinate_pref}
