@@ -94,6 +94,16 @@ class PrefForm extends React.Component {
                             </Button>
                         </td>
                     }
+                    {
+                        this.props.state === 1 &&
+                        <td>
+                            <Button
+                            variant='success'
+                            onClick={() => this.props.cancelPref()}>
+                                キャンセル
+                            </Button>
+                        </td>
+                    }
                     { this.props.state === 2 &&
                         <td>
                             <Button
@@ -132,10 +142,11 @@ export default class Pref extends React.Component {
                 onClickPref={(self_idx) => this.props.onClickPref(self_idx, true)}
                 able_pref={this.props.able_pref}
                 available_name_list={this.props.woman_name_list}
-                pref_list={this.props.man_pref_list[idx]}
+                pref_list={this.props.tmp_pref}
                 addPref={(choose_idx) => this.props.addPref(idx, choose_idx, true)}
                 backPref={() => this.props.backPref(idx, true)}
                 confirmPref={() => this.props.confirmPref(idx, true)}
+                cancelPref={() => this.props.cancelPref(idx, true)}
                 determinate_pref={this.props.determinate_pref}
             />
         );
@@ -151,10 +162,11 @@ export default class Pref extends React.Component {
                 onClickPref={(self_idx) => this.props.onClickPref(self_idx, false)}
                 able_pref={this.props.able_pref}
                 available_name_list={this.props.man_name_list}
-                pref_list={this.props.woman_pref_list[idx]}
+                pref_list={this.props.tmp_pref}
                 addPref={(choose_idx) => this.props.addPref(idx, choose_idx, false)}
                 backPref={() => this.props.backPref(idx, false)}
                 confirmPref={() => this.props.confirmPref(idx, false)}
+                cancelPref={() => this.props.cancelPref(idx, false)}
                 determinate_pref={this.props.determinate_pref}
             />
         );
