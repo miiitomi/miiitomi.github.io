@@ -1,8 +1,7 @@
 ---
 title: About
 description: 自己紹介
-date: '2021-12-08'
-lastmod: '2021-12-08'
+lastmod: '2022-12-14'
 menu:
     main: 
         weight: -90
