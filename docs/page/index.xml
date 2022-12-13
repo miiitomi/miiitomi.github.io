@@ -6,7 +6,23 @@
     <description>Recent content in Pages on miiitomi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 11 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://miiitomi.github.io/about/</link>
+      <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://miiitomi.github.io/about/</guid>
+      <description>氏名
+冨田 燿志（とみた ようじ）／みーとみ 所属
+サイバーエージェント AI Lab 経済学社会実装チーム リサーチサイエンティスト（公式プロフィール） 専門分野
+マーケットデザイン、マッチング理論、ゲーム理論、ミクロ経済学理論、それらのWEBサービスへの応用・社会実装。 趣味
+サッカー観戦（特にJリーグ、横浜F・マリノス） 小説・漫画 スキューバダイビング ネイル プログラミング言語
+Python（Djangoなど）、C++、Javascript（React）、SQL、LaTeX 経歴
+2013年3月 東京都立小山台高等学校（全日制課程）卒業 2013年4月 東京大学文科2類入学 2013年4月-2014年3月 特別休学（初年次長期自主活動プログラム/FLYプログラム1期生） 2018年3月 東京大学経済学部経済学科卒業 経済学部卒業生総代 経済学部特選論文 2019年3月 東京大学大学院経済学研究科経済理論コース修士課程修了 経済学研究科修了生総代 卓越プログラム（早期修了プログラム） 2019年4月 東京大学経済学研究科博士課程進学 2020年4月〜 休学中 2020年4月 サイバーエージェント新卒入社、AI Lab配属 研究
+Publication Yoji Tomita, Riku Togashi and Daisuke Moriwaki. 2022. Matching Theory-based Recommender Systems in Online Dating. RecSys &amp;lsquo;22 (Industrial Track) Zhaohong Sun, Daisuke Moriwaki, Yoshihiro Takenami, Yoji Tomita, Makoto Yokoo.</description>
+    </item>
+    
     <item>
       <title>App</title>
       <link>https://miiitomi.github.io/app/</link>
@@ -25,22 +41,6 @@
       <description>このページでは、男性と女性のマッチングを行うDAアルゴリズムの実行ができます。
 合コンにおける席決め・ゲームなどにお使いください。
 DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説はこちら。</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://miiitomi.github.io/about/</link>
-      <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://miiitomi.github.io/about/</guid>
-      <description>氏名
-冨田 燿志（とみた ようじ）／みーとみ 所属
-サイバーエージェント AI Lab 経済学社会実装チーム リサーチサイエンティスト（公式プロフィール） 専門分野
-マーケットデザイン、マッチング理論、ゲーム理論、ミクロ経済学理論、それらのWEBサービスへの応用・社会実装。 趣味
-サッカー観戦（特にJリーグ、横浜F・マリノス） 小説・漫画 スキューバダイビング ネイル プログラミング言語
-Python（Djangoなど）、C++、Javascript（React）、SQL、LaTeX 経歴
-2013年3月 東京都立小山台高等学校（全日制課程）卒業 2013年4月 東京大学文科2類入学 2013年4月-2014年3月 特別休学（初年次長期自主活動プログラム/FLYプログラム1期生） 2018年3月 東京大学経済学部経済学科卒業 経済学部卒業生総代 経済学部特選論文 2019年3月 東京大学大学院経済学研究科経済理論コース修士課程修了 経済学研究科修了生総代 卓越プログラム（早期修了プログラム） 2019年4月 東京大学経済学研究科博士課程進学 2020年4月〜 休学中 2020年4月 サイバーエージェント新卒入社、AI Lab配属 研究
-Publication Yoji Tomita, Riku Togashi and Daisuke Moriwaki. 2022. Matching Theory-based Recommender Systems in Online Dating. RecSys &amp;lsquo;22 (Industrial Track) Zhaohong Sun, Daisuke Moriwaki, Yoshihiro Takenami, Yoji Tomita, Makoto Yokoo.</description>
     </item>
     
     <item>
