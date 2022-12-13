@@ -15,10 +15,10 @@
       <guid>https://miiitomi.github.io/p/hugo/</guid>
       <description>はじめに タイトルの通りです。 このブログを開設するまでにやったことを備忘録としてまとめておきます。 わざわざ僕が新たに書き記すまでもなく似たような記事はたくさんあるのですが、1本目に書く内容としてちょうどいい感じのものな気がしたので。 分かってる人からしたらそりゃそうってことしか書いてないと思うけど、僕みたいな初心者が見たら1ミリくらい参考になるかもしれない（ならないかもしれない）。
 ちなみにタイトルに「非エンジニアの初心者が」と書きましたが、すごく広い意味で捉えればエンジニアと言えなくもないかも。 でも自己認識としてはエンジニアを名乗れるほど技術力はない（し肩書きもリサーチャーな）ので嘘ではないでしょう。 Git/GitHubの使い方とかは一応わかってることを仮定します。
-使ったもの・環境  macBook Pro/macOS Big Sur v11.1 Homebrew v3.3.7 Hugo v0.89.4 Hugo Theme Stack Git/GitHub  Hugoのインストール・スタート とりあえずHomebrewを使って、ターミナルで brew install hugo でHugoをインストールします。 hubo version と打ってバージョン確認すると
+使ったもの・環境 macBook Pro/macOS Big Sur v11.1 Homebrew v3.3.7 Hugo v0.89.4 Hugo Theme Stack Git/GitHub Hugoのインストール・スタート とりあえずHomebrewを使って、ターミナルで brew install hugo でHugoをインストールします。 hubo version と打ってバージョン確認すると
 $ hugo version hugo v0.89.4+extended darwin/amd64 BuildDate=unknown と出るので入ったっぽい。
 ブログ用のディレクトリを作るところで hugo new site sitename (sitenameのところは適当に) とすると、
-$ hugo new site sitename Congratulations! Your new Hugo site is created in ***/***/sitename. Just a few more steps and you&#39;re ready to go: 1.</description>
+$ hugo new site sitename Congratulations! Your new Hugo site is created in ***/***/sitename. Just a few more steps and you&amp;#39;re ready to go: 1.</description>
     </item>
     
   </channel>
