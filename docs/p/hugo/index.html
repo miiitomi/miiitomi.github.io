@@ -355,14 +355,14 @@ hugo v0.89.4+extended darwin/amd64 BuildDate=unknown
 <pre tabindex="0"><code>$ hugo new site sitename
 Congratulations! Your new Hugo site is created in ***/***/sitename.
 
-Just a few more steps and you're ready to go:
+Just a few more steps and you&#39;re ready to go:
 
 1. Download a theme into the same-named folder.
    Choose a theme from https://themes.gohugo.io/ or
-   create your own with the &quot;hugo new theme &lt;THEMENAME&gt;&quot; command.
+   create your own with the &#34;hugo new theme &lt;THEMENAME&gt;&#34; command.
 2. Perhaps you want to add some content. You can add single files
-   with &quot;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&quot;.
-3. Start the built-in live server via &quot;hugo server&quot;.
+   with &#34;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&#34;.
+3. Start the built-in live server via &#34;hugo server&#34;.
 
 Visit https://gohugo.io/ for quickstart guide and full documentation.
 </code></pre><p>と出てきて、<code>sitename</code>ディレクトリができ、色々入ってます。</p>
@@ -380,7 +380,7 @@ git clone git@github.com:...
 <pre tabindex="0"><code>$ hugo server -D
 Start building sites … 
 hugo v0.89.4+extended darwin/amd64 BuildDate=unknown
-WARN 2021/12/09 22:20:52 The &quot;twitter_simple&quot; shortcode will soon require two named parameters: user and id. See &quot;***/***/sitename/content/post/rich-content/index.md:26:1&quot;
+WARN 2021/12/09 22:20:52 The &#34;twitter_simple&#34; shortcode will soon require two named parameters: user and id. See &#34;***/***/sitename/content/post/rich-content/index.md:26:1&#34;
 
                    | EN  
 -------------------+-----
@@ -396,7 +396,7 @@ WARN 2021/12/09 22:20:52 The &quot;twitter_simple&quot; shortcode will soon requ
 Built in 241 ms
 Watching for changes in ***/***/sitename/{archetypes,content,data,layouts,static,themes}
 Watching for config changes in ***/***/sitename/config.yaml, ***/***/sitename/themes/hugo-theme-stack/config.yaml
-Environment: &quot;development&quot;
+Environment: &#34;development&#34;
 Serving pages from memory
 Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
@@ -498,16 +498,16 @@ Press Ctrl+C to stop
 <h1 id="日本語フォント">日本語フォント</h1>
 <p>この辺りで漢字が中国語フォントになってることに気付く。これは<code>themes/hugo-theme-stack/assets/scss/variables.scss</code> 内の、</p>
 <pre tabindex="0"><code>--zh-font-family: ...`
---base-font-family: &quot;Lato&quot;, var(--sys-font-family), var(--zh-font-family), sans-serif;
+--base-font-family: &#34;Lato&#34;, var(--sys-font-family), var(--zh-font-family), sans-serif;
 </code></pre><p>を</p>
-<pre tabindex="0"><code>--ja-font-family: &quot;游ゴシック体&quot;, &quot;Yu Gothic&quot;, YuGothic, &quot;ヒラギノ角ゴ Pro&quot;, &quot;Hiragino Kaku Gothic Pro&quot;, &quot;メイリオ&quot;, &quot;Meiryo&quot;;`
---base-font-family: &quot;Lato&quot;, var(--sys-font-family), var(--ja-font-family), sans-serif;
+<pre tabindex="0"><code>--ja-font-family: &#34;游ゴシック体&#34;, &#34;Yu Gothic&#34;, YuGothic, &#34;ヒラギノ角ゴ Pro&#34;, &#34;Hiragino Kaku Gothic Pro&#34;, &#34;メイリオ&#34;, &#34;Meiryo&#34;;`
+--base-font-family: &#34;Lato&#34;, var(--sys-font-family), var(--ja-font-family), sans-serif;
 </code></pre><p>みたいな感じに変更したら日本語フォントになった、たしか（うろ覚え）。</p>
 <h1 id="コンテンツ">コンテンツ</h1>
 <p><code>categories</code>, <code>post</code>内のテストカテゴリー・ポストは消して、必要あれば例参考に作る。また <code>page/about.md</code> は最初から何らか必要だと思うので適当に書き換える。
 Hugoでは <code>hugo new post/XXX.md</code> と打つと <code>content/post/</code> に <code>XXX.md</code> ができるのだがそのデフォルトは <code>archetypes/default.md</code> になっている。これも必要に応じて書き換えとこう。自分の場合は</p>
 <pre tabindex="0"><code>---
-title: {{ replace .Name &quot;-&quot; &quot; &quot; | title }}
+title: {{ replace .Name &#34;-&#34; &#34; &#34; | title }}
 description: 
 slug: {{ .Name }}
 date: {{ .Date }}
@@ -515,7 +515,6 @@ categories:
     - 
 tags: []
 ---
-
 </code></pre><p>とこんな感じにとりあえずしといた。</p>
 <h1 id="ビルド">ビルド</h1>
 <p>ビルドは<code>sitename</code>直下で <code>hugo</code> でOK。<code>docs/</code>(<code>config.yaml</code>内で<code>publishDir</code>を設定してなければ<code>public/</code>)内にビルドされるはず。</p>
