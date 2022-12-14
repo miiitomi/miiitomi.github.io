@@ -50,6 +50,7 @@ menu:
 **登壇**
  - 2021年3月5日 [身近なところからはじめるマーケットデザイン](https://www.slideshare.net/YojiTomita/ss-244201005) at [Econ Fiesta 2](https://sansan.connpass.com/event/203771/)
  - 2021年10月9日 「経済学のビジネス活用をめぐって ①民間企業の立場から」with 森脇大輔さん at 日本経済学会秋季大会企画セッション
+ - 2021年11月24日 「マーケットデザインで一歩先の自治体DXを」 at [エンジニアリング・研究両面から考えるDXを推進するためのデータサイエンス](https://techplay.jp/event/835479)
  - 2021年12月17日 「保育所利用調整におけるマーケットデザインの社会実装」at [CCSE2021](https://ccse.jp/2021/)
  - 2022年7月28日 [なぜテック企業で「マーケットデザイン」が必要なのか](https://ca-base-next.cyberagent.co.jp/2022/sessions/market-design/) at [CA BASE NEXT 2022](https://ca-base-next.cyberagent.co.jp/2022/)
  - 2022年8月30日 [マッチング理論に基づく推薦とそれを支えるMLOps開発](https://developers.cyberagent.co.jp/blog/archives/37354/) with 松月大輔さん at [メディアサービスにおけるデータ・AIの活用事例](https://cyberagent.connpass.com/event/255813/)
@@ -65,7 +66,9 @@ menu:
  - 2022年12月14日公開 「[皆が幸せになるマッチングプラットフォームを目指して。「マッチング理論に基づく相互推薦システム」](https://developers.cyberagent.co.jp/blog/archives/39706/)」 （[CA Advent Calendar 2022](https://adventar.org/calendars/7806) 14日目）
 
 **連絡先・SNS**
- - Email: tomita_yoji[at]cyberagent.co.jp （[at] は @ に変えてください）
+ - Email: tomita_yoji@cyberagent.co.jp
  - Twitter: [@miiitomi](https://twitter.com/miiitomi/)
  - GitHub: [@miiitomi](https://github.com/miiitomi/)
  - LinkedIn: [Yoji Tomita](https://www.linkedin.com/in/yoji-tomita/)
+ - Facebook: [yoji.tomita.9](https://www.facebook.com/yoji.tomita.9/)
+ - Instagram: [miiitomi](https://www.instagram.com/miiitomi/)
