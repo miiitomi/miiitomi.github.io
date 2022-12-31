@@ -1,6 +1,6 @@
 ---
 title: 2022年の振り返りと2023年にやりたいこと
-description: 
+description: みーとみの2022年の一年を振り返り、2023年にやりたいことを記録しておきます。
 slug: 2022furikaeri
 date: 2022-12-31
 image: images/2022furikaeri/marinos_2022_lastgame.jpeg
