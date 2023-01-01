@@ -1,5 +1,5 @@
 ---
-title: 『薔薇の中の蛇』恩田陸
+title: 『薔薇のなかの蛇』恩田陸
 description: 
 slug: baranonakanohebi
 date: 2023-01-01T18:24:42+09:00
