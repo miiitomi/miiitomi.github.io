@@ -1,5 +1,5 @@
 ---
-title: 綿矢りさ『生のみ生のままで〈上〉』
+title: 『生のみ生のままで〈上〉』綿矢りさ
 description: 
 slug: kinomikinomamade
 date: 2023-01-07
