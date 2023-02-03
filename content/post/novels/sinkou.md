@@ -1,5 +1,5 @@
 ---
-title: 村田沙耶香『信仰』村田沙耶香
+title: 『信仰』村田沙耶香
 description: 
 slug: sinkou
 date: 2023-02-03
