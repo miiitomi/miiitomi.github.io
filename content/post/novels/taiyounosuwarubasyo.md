@@ -4,7 +4,7 @@ slug: taiyounosuwarubasyo
 date: 2023-03-27
 image: /images/novels/taiyounosuwarubasyo.jpeg
 categories:
-    - 小説
+    - 読書記録
     - 小説
 tags: [読書記録,小説]
 ---
