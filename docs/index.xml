@@ -83,7 +83,7 @@
 &lt;ul&gt;
 &lt;li&gt;各 $s \in S^{(k)}\setminus S^{(k-1)}$ について，以下のように定める．&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt;
 &lt;ul&gt;
-&lt;li&gt;$E = \{ g(s&amp;rsquo;) \mid s&amp;rsquo; \in T(s)\}$ として，
+&lt;li&gt;$E = \{ g(s&amp;rsquo;) \mid s&amp;rsquo; \in T(s)\}$ （つまり，$s$ からの遷移先状態におけるgrundy数の集合）として，
 $$ g(s) := \mathrm{mex} ~ E $$
 とする（$ \mathrm{mex} $ は最小非除外数，つまり $\mathrm{mex} ~ E = \min \mathbb{Z}_{\ge 0}\setminus E$）．&lt;/li&gt;
 &lt;/ul&gt;
