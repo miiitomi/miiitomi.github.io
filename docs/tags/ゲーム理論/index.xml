@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ゲーム理論 on miiitomi</title>
+    <link>https://miiitomi.github.io/tags/%E3%82%B2%E3%83%BC%E3%83%A0%E7%90%86%E8%AB%96/</link>
+    <description>Recent content in ゲーム理論 on miiitomi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Thu, 23 Nov 2023 11:35:53 +0900</lastBuildDate>
+    <atom:link href="https://miiitomi.github.io/tags/%E3%82%B2%E3%83%BC%E3%83%A0%E7%90%86%E8%AB%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Grundy数とSprague-Grundy定理と私</title>
+      <link>https://miiitomi.github.io/p/grundy/</link>
+      <pubDate>Thu, 23 Nov 2023 11:35:53 +0900</pubDate>
+      <guid>https://miiitomi.github.io/p/grundy/</guid>
+      <description>はじめに 先日参加していた競技プログラミングコンテスト，ARC（AtCoder Regular Contest）でGrundy数に関する問題が出ました． この記事では私自身の勉強とまとめのため，Grundy数とSprague-Grundy定理について説明していきます．12
+最初は一般の不偏ゲームについて述べて，後で上記の具体的な問題の設定を例にあげます．具体例を先に確認したい方は後半から読まれても良いかもしれません．(疲れたのでいったん一般の不偏ゲームについての議論のみで公開しちゃいます．その問題設定を用いた具体例の説明はやる気が出たら多分週末に書きます．)．
+不偏ゲーム（Impartial Game） ここでとりあげる 不偏ゲーム（Impartial Game）3 とは，次のような特徴をもつゲームのことを呼びます：
+2人のプレイヤーがおり，交互に手番プレイヤーとなって行動を行う． 生じうるゲーム状態，および可能な行動の数は有限． ゲーム状態ごとに可能な行動が定められ，手番プレイヤーの操作によって別のゲーム状態に遷移し，相手の手番となる． 初期状態，および先手プレイヤー（最初に行動を選択する人）が定められている． 可能な行動のない状態（終了状態）がある． 終了状態に至ったときに手番プレイヤーであったプレイヤーの負け（自身のの行動によって終了状態に遷移したプレイヤーの勝ち）， ゲームの状態や行動は両者間ですべて確認され（完全情報），また状態遷移に不確実性を含まない． どのような行動が取られても必ず有限回の行動で終了状態に至る．4 モデル この不偏ゲームは，以下のようにフォーマルな数理モデルで定式化できます．
+定義 1． 不偏ゲーム：$I = (S, s_0, T)$ は
+$S$：とりうる全てのゲーム状態からなる有限集合． $s_0 \in S$：初期状態． $T:S \to 2^S$：状態 $s$ から手番プレイヤーの行動によって遷移できる状態の集合 $T(s) \subseteq S$ をあらわす写像． で表される．
+戦略 ここでプレイヤーにとっての戦略（Strategy）を定義します．
+定義 2． 不偏ゲーム$I = (S, s_0, T)$におけるプレイヤー$i$の戦略とは，与えられた状態から遷移先状態をしめす写像 $ \beta_i:S \to S\cup \{ \emptyset \} $ で，
+もし $T(s) \ne \emptyset$ （終了状態でない）なら，$\beta_i(s) \in T(s)$． もし $T(s) = \emptyset$（終了状態）なら，$\beta_i(s) = \emptyset$． を満たすもののことをいう．</description>
+    </item>
+  </channel>
+</rss>

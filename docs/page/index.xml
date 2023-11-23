@@ -6,12 +6,12 @@
     <description>Recent content in Pages on miiitomi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 08 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://miiitomi.github.io/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://miiitomi.github.io/about/</link>
       <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://miiitomi.github.io/about/</guid>
       <description>氏名
 冨田 燿志（とみた ようじ）／ みーとみ 所属
@@ -20,44 +20,35 @@
 2018年3月 東京大学経済学部経済学科卒業 2013年4月-2014年3月 特別休学（初年次長期自主活動/FLYプログラム1期生） 経済学部卒業生総代 経済学部特選論文 2019年3月 東京大学大学院経済学研究科経済理論コース修士課程修了 卓越プログラム（早期修了プログラム）により1年で短縮修了 経済学研究科修了生総代 2019年4月 東京大学経済学研究科博士課程進学 2020年4月-2023年3月 休学, 2023年3月退学 2020年4月- サイバーエージェント新卒入社、AI Lab配属 研究
 Publications Yoji Tomita, Riku Togashi, Yuriko Hashizume, and Naoto Ohsaka. 2023. Fast and Examination-agnostic Reciprocal Recommendation in Matching Markets. RecSys&#39;23 (Full Research Paper). Zhaohong Sun, Daisuke Moriwaki, Yoshihiro Takenami, Yoji Tomita, and Makoto Yokoo. 2023. Daycare Matching in Japan: Transfers and Siblings.</description>
     </item>
-    
     <item>
       <title>App</title>
       <link>https://miiitomi.github.io/app/</link>
       <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://miiitomi.github.io/app/</guid>
       <description> Matching 男性と女性のマッチングを行うDAアルゴリズムの実行ができます。 DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説はこちら。 </description>
     </item>
-    
     <item>
       <title>Matching</title>
       <link>https://miiitomi.github.io/matching/</link>
       <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://miiitomi.github.io/matching/</guid>
       <description>このページでは、男性と女性のマッチングを行うDAアルゴリズムの実行ができます。
 合コンにおける席決め・ゲームなどにお使いください。
 DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説はこちら。</description>
     </item>
-    
     <item>
       <title>Archives</title>
       <link>https://miiitomi.github.io/archives/</link>
       <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://miiitomi.github.io/archives/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Search</title>
       <link>https://miiitomi.github.io/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://miiitomi.github.io/search/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
