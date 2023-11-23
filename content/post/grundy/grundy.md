@@ -102,7 +102,7 @@ $$ W(\beta_i^*, \beta_j) = i, ~ \forall \beta_j $$
  - $S^{(0)} = \\{s \in S \mid T(s) = \emptyset \\}$ （終了状態の集合）．
  - 各 $k = 0, 1, 2, \dots $ について, 以下を繰り返し行う．
     - 各 $s \in S^{(k)}\setminus S^{(k-1)}$ について，以下のように定める．[^7]
-        - $E = \\{ g(s') \mid s' \in T(s)\\}$ として，
+        - $E = \\{ g(s') \mid s' \in T(s)\\}$ （つまり，$s$ からの遷移先状態におけるgrundy数の集合）として，
             $$ g(s) := \mathrm{mex} ~ E $$
         とする（$ \mathrm{mex} $ は最小非除外数，つまり $\mathrm{mex} ~ E = \min \mathbb{Z}_{\ge 0}\setminus E$）．
     - $S^{k} = S$ なら終了．そうでないなら $S^{(k+1)} = \\{s \in S \mid T(s) \subseteq S^{(k)} \\}$ として次の $k$ に進む．
