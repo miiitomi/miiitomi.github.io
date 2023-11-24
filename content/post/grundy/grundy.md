@@ -104,7 +104,7 @@ $$ W(\beta_i^*, \beta_j) = i, ~ \forall \beta_j $$
     - 各 $s \in S^{(k)}\setminus S^{(k-1)}$ について，以下のように定める．[^7]
         - $E = \\{ g(s') \mid s' \in T(s)\\}$ （つまり，$s$ からの遷移先状態におけるgrundy数の集合）として，
             $$ g(s) := \mathrm{mex} ~ E $$
-        とする（$ \mathrm{mex} $ は最小非除外数，つまり $\mathrm{mex} ~ E = \min \mathbb{Z}_{\ge 0}\setminus E$）．
+        とする（$ \mathrm{mex} $ は最小除外数（the minimum excluded value），つまり $\mathrm{mex} ~ E = \min \mathbb{Z}_{\ge 0}\setminus E$）．
     - $S^{k} = S$ なら終了．そうでないなら $S^{(k+1)} = \\{s \in S \mid T(s) \subseteq S^{(k)} \\}$ として次の $k$ に進む．
 
 不偏ゲームは有限回の行動で必ず終了するので，終了状態から遡ることで必ず全ての状態にGrundy数を定めることができます．
