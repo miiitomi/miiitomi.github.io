@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='ABC159のF問題について、解説にある公式解説・ユーザー解説のどれとも発想が異なりそうな解法を思い付いたので、解法解説らしきものを書いてみます。
+問題 問題リンクはこちら。 問題：$N$ 項の正整数からなる数列 $A = (A_1, A_2, \dots, A_N)$ と正整数 $S$ について、$f(L, R)$ を $L$ 項目から $R$ 項目までの（連続とは限らない）部分列のうち和が $S$ であるものの数、つまり $$ f(L, R) = \left|\left\lbrace (x_1, \dots, x_k) ~ \Big|~ L \le x_{1} &amp;lt; \dots &amp;lt; x_{k} \le R,~\mathrm{and}~ \sum_{j=1}^k A_{x_j} = S \right\rbrace\right| $$ とします。与えられる数列 $A$ と正整数 $S$ について $$ \sum_{L = 1}^{N}\sum_{R = L}^{N}f(L, R) $$ を$998244353$で割ったあまりを求めてください。 制約： $1 \le N \le 3000$ $1 \le S \le 3000$ $1 \le A_i \le 3000$ for each $i=1,\dots,N$ 解説 まず $\Theta(N^2S)$ の愚直解法を説明し、後でそれを $\Theta(NS)$ に高速化する解法を示します（以下「998244353で割ったあまりを」の部分は無視して説明します）。'><title>ABC159 F - Knapsack for All Segments：別解</title>
+
+<link rel='canonical' href='https://miiitomi.github.io/p/abc159f/'>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/scss/style.min.d43579348960a57d5117b521bb1d6e306d4bdff5d9249f3968385a5cefe7b925.css"><meta property='og:title' content='ABC159 F - Knapsack for All Segments：別解'>
+<meta property='og:description' content='ABC159のF問題について、解説にある公式解説・ユーザー解説のどれとも発想が異なりそうな解法を思い付いたので、解法解説らしきものを書いてみます。
+問題 問題リンクはこちら。 問題：$N$ 項の正整数からなる数列 $A = (A_1, A_2, \dots, A_N)$ と正整数 $S$ について、$f(L, R)$ を $L$ 項目から $R$ 項目までの（連続とは限らない）部分列のうち和が $S$ であるものの数、つまり $$ f(L, R) = \left|\left\lbrace (x_1, \dots, x_k) ~ \Big|~ L \le x_{1} &amp;lt; \dots &amp;lt; x_{k} \le R,~\mathrm{and}~ \sum_{j=1}^k A_{x_j} = S \right\rbrace\right| $$ とします。与えられる数列 $A$ と正整数 $S$ について $$ \sum_{L = 1}^{N}\sum_{R = L}^{N}f(L, R) $$ を$998244353$で割ったあまりを求めてください。 制約： $1 \le N \le 3000$ $1 \le S \le 3000$ $1 \le A_i \le 3000$ for each $i=1,\dots,N$ 解説 まず $\Theta(N^2S)$ の愚直解法を説明し、後でそれを $\Theta(NS)$ に高速化する解法を示します（以下「998244353で割ったあまりを」の部分は無視して説明します）。'>
+<meta property='og:url' content='https://miiitomi.github.io/p/abc159f/'>
+<meta property='og:site_name' content='miiitomi'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='競プロ' /><meta property='article:published_time' content='2023-12-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-12-15T00:00:00&#43;00:00'/><meta property='og:image' content='https://miiitomi.github.io/images/avatar.png' />
+<meta name="twitter:site" content="@miiitomi">
+    <meta name="twitter:creator" content="@miiitomi"><meta name="twitter:title" content="ABC159 F - Knapsack for All Segments：別解">
+<meta name="twitter:description" content="ABC159のF問題について、解説にある公式解説・ユーザー解説のどれとも発想が異なりそうな解法を思い付いたので、解法解説らしきものを書いてみます。
+問題 問題リンクはこちら。 問題：$N$ 項の正整数からなる数列 $A = (A_1, A_2, \dots, A_N)$ と正整数 $S$ について、$f(L, R)$ を $L$ 項目から $R$ 項目までの（連続とは限らない）部分列のうち和が $S$ であるものの数、つまり $$ f(L, R) = \left|\left\lbrace (x_1, \dots, x_k) ~ \Big|~ L \le x_{1} &amp;lt; \dots &amp;lt; x_{k} \le R,~\mathrm{and}~ \sum_{j=1}^k A_{x_j} = S \right\rbrace\right| $$ とします。与えられる数列 $A$ と正整数 $S$ について $$ \sum_{L = 1}^{N}\sum_{R = L}^{N}f(L, R) $$ を$998244353$で割ったあまりを求めてください。 制約： $1 \le N \le 3000$ $1 \le S \le 3000$ $1 \le A_i \le 3000$ for each $i=1,\dots,N$ 解説 まず $\Theta(N^2S)$ の愚直解法を説明し、後でそれを $\Theta(NS)$ に高速化する解法を示します（以下「998244353で割ったあまりを」の部分は無視して説明します）。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://miiitomi.github.io/images/avatar.png' />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D93SYWPPB4"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-D93SYWPPB4', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="/images/avatar.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">miiitomi</a></h1>
+        <h2 class="site-description">みーとみブログ</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://github.com/miiitomi/'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a 
+                            href='https://twitter.com/miiitomi/'
+                            target="_blank"
+                            title="Twitter"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/app/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>App</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/matching/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>Matching</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%AB%B6%E3%83%97%E3%83%AD/" >
+                競プロ
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/abc159f/">ABC159 F - Knapsack for All Segments：別解</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 15, 2023</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><a class="link" href="https://atcoder.jp/contests/abc159"  target="_blank" rel="noopener"
+    >ABC159</a>の<a class="link" href="https://atcoder.jp/contests/abc159/tasks/abc159_f"  target="_blank" rel="noopener"
+    >F問題</a>について、<a class="link" href="https://atcoder.jp/contests/abc159/tasks/abc159_f/editorial"  target="_blank" rel="noopener"
+    >解説</a>にある公式解説・ユーザー解説のどれとも発想が異なりそうな解法を思い付いたので、解法解説らしきものを書いてみます。</p>
+<h1 id="問題">問題</h1>
+<ul>
+<li>問題リンクは<a class="link" href="https://atcoder.jp/contests/abc159/tasks/abc159_f"  target="_blank" rel="noopener"
+    >こちら</a>。</li>
+<li>問題：$N$ 項の正整数からなる数列 $A = (A_1, A_2, \dots, A_N)$ と正整数 $S$ について、$f(L, R)$ を $L$ 項目から $R$ 項目までの（連続とは限らない）部分列のうち和が $S$ であるものの数、つまり
+$$
+f(L, R) =  \left|\left\lbrace (x_1, \dots, x_k) ~ \Big|~ L \le x_{1} &lt; \dots &lt; x_{k} \le R,~\mathrm{and}~ \sum_{j=1}^k A_{x_j} = S \right\rbrace\right|
+$$
+とします。与えられる数列 $A$ と正整数 $S$ について
+$$
+\sum_{L = 1}^{N}\sum_{R = L}^{N}f(L, R)
+$$
+を$998244353$で割ったあまりを求めてください。</li>
+<li>制約：
+<ul>
+<li>$1 \le N \le 3000$</li>
+<li>$1 \le S \le 3000$</li>
+<li>$1 \le A_i \le 3000$  for each $i=1,\dots,N$</li>
+</ul>
+</li>
+</ul>
+<h1 id="解説">解説</h1>
+<p>まず $\Theta(N^2S)$ の愚直解法を説明し、後でそれを $\Theta(NS)$ に高速化する解法を示します（以下「998244353で割ったあまりを」の部分は無視して説明します）。</p>
+<h2 id="1-愚直解法thetan2s">1. 愚直解法：$\Theta(N^2S)$</h2>
+<p>この解法は以下の2ステップからなります。</p>
+<h3 id="ステップ1まず-l--1-で固定してナップサックdpテーブルを求める">ステップ1：まず $L = 1$ で固定してナップサックDPテーブルを求める。</h3>
+<p>通常のナップサックDPのように、$dp[i][w] =$ 「数列の $i$ 番目まで（$A_1,\dots,A_i$）のうち、いくつかを使って和を $w$ にする方法の数」（ただし $0 \le i\le N,~0 \le w \le S$）とします。
+これは、
+$$
+\begin{align*}
+dp[1][w] &amp;= \begin{cases} 1 &amp; \mathrm{if} ~ w = 0 \\ 0 &amp; \mathrm{otherwise}\end{cases}, \\
+dp[i][w] &amp;= \begin{cases} dp[i-1][w] + dp[i-1][w-A[i]]&amp; \mathrm{if}~w-A[i]\ge 0 \\ dp[i-1][w] &amp; \mathrm{otherwise} \end{cases},
+\end{align*}
+$$
+とすることで、$\Theta(NS)$ で列挙できます。このとき、
+$$
+f(1, R) = dp[R][S]
+$$
+のため、$L = 1$ のときの和はこのテーブルの $S$ 列目の和を取ることで求められます。</p>
+<h3 id="ステップ2-a_1-a_2-dots-を抜いたケースを数えていくことで-fl-rl-ge-2を求めていく">ステップ2： $A_1, A_2, \dots,$ を抜いたケースを数えていくことで $f(L, R)$（$L \ge 2$）を求めていく.</h3>
+<p>上記で求めたdpテーブルについて、左（$w$ の小さい方）から
+$$ dp[i][w] = dp[i][w] - dp[i][w - A[1]]　\tag{1} $$
+としていくことで、$A_2,\dots, A_i$ 番目のうちいくつかを用いて和を $S$ にする方法の数を求めていくことができます。
+したがって、$A_1$ についてこの操作をすべて行なった後のdpテーブルにおいて、
+$$
+\sum_{R=2}^{N} f(2, R) = \sum_{R = 2}^{N} dp[R][S]
+$$
+が成り立ちます。</p>
+<p>以下、この操作を $A_2, A_3, \dots$ と続けていくことで、 $L = 3, 4, \dots$ について $\sum_{R=L}^{N} f(L, R)$ を求めていくことができます。</p>
+<p>$A_1, A_2, \dots$ のそれぞれについて、dpテーブルの各セルについて $(1)$ の操作を行うため、全体で $\Theta(N^2S)$ となります。</p>
+<h2 id="2-高速化解法thetans">2. 高速化解法：$\Theta(NS)$</h2>
+<p>1.の愚直解法では間に合いませんが、この解法の中でネックとなっているのは $N\times S$ のサイズのdpテーブルを状態として保持してステップ2でこの各セルを更新する箇所であり、これを少しのステップで高速化することができます。</p>
+<p>上記の解法の中で、$L$ を固定した時の $f(L, R)$ の和は、その時点でのdpテーブルの$S$列目に関して行方向に足し合わせたものです。
+また、操作 (1) において、列 $w$ から列 $w - A_i$ の値を引くという形で、各行について同じような操作を行なっています。</p>
+<p>したがって、このdpテーブルを行方向に足し合わせた$1$行$S$列のテーブル $sum$ を保持していれば、各状態における$S$列目の和を求めることと、更新を行うことができます。</p>
+<p>アルゴリズムの全体像を擬似コードとして書くと、以下の通りになります：</p>
+<pre tabindex="0"><code>Input: N, S, A = (A_1, ... , A_N)
+---
+Initialize ans=0, dp[0][0]=0, dp[0][w]=0 for w=1..S, sum[w]=0 for w=0..S
+// Step 1.
+For i = 1 to N
+    For w = 0 to S
+        dp[i][w] = dp[i-1][w]
+        if w - A_i &gt;= 0
+            dp[i][w] += dp[i-1][w - A_i]
+        sum[w] += dp[i][w]
+// Step 2.
+For i = 1 to N
+    ans += sum[S]    // A_i を除く前の S 列の和
+    For w = A_i to S
+        sum[w] -= sum[w - A_i]
+    sum[0] -= 1    // dp[i][0] の 1 を除くため.
+return ans
+</code></pre><p>提出コードは<a class="link" href="https://atcoder.jp/contests/abc159/submissions/48493563"  target="_blank" rel="noopener"
+    >こちら</a>。</p>
+<h1 id="終わりに">終わりに</h1>
+<p>早く黄色コーダーになってこの記事を解説に載せたい。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%AB%B6%E3%83%97%E3%83%AD/">競プロ</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/zerokan/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/images/zerokan/grey.png" loading="lazy" data-key="zerokan" data-hash="/images/zerokan/grey.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">青コーダーがARC169で0完灰パフォ出して入水した話</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2021 - 
+        
+        2023 miiitomi
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.7.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
