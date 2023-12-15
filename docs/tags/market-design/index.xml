@@ -6,28 +6,32 @@
     <description>Recent content in Market Design on miiitomi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 11 Feb 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://miiitomi.github.io/tags/market-design/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/tags/market-design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>App</title>
       <link>https://miiitomi.github.io/app/</link>
       <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+      
       <guid>https://miiitomi.github.io/app/</guid>
       <description> Matching 男性と女性のマッチングを行うDAアルゴリズムの実行ができます。 DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説はこちら。 </description>
     </item>
+    
     <item>
       <title>Matching</title>
       <link>https://miiitomi.github.io/matching/</link>
       <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+      
       <guid>https://miiitomi.github.io/matching/</guid>
       <description>このページでは、男性と女性のマッチングを行うDAアルゴリズムの実行ができます。
 合コンにおける席決め・ゲームなどにお使いください。
 DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説はこちら。</description>
     </item>
+    
     <item>
       <title>マッチングアルゴリズムの解説</title>
       <link>https://miiitomi.github.io/p/matching/</link>
       <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+      
       <guid>https://miiitomi.github.io/p/matching/</guid>
       <description>こちらに男性と女性をマッチさせるDAアルゴリズムの実行ができるウェブアプリを公開しました。 このページでは、実装したDAアルゴリズム（Gale-Shapleyアルゴリズム）の解説を行います。
 安定結婚問題 DAアルゴリズムは「安定結婚問題」という問題を解くアルゴリズムとして知られています。 安定結婚問題とは、
@@ -38,15 +42,18 @@ A B C X Y Z 第1希望 X X Y C A B 第2希望 Z Y Z A B A 第3希望 Y Z X B C �
 上記の例において、次のようなマッチを考えてみます。
 A さん &amp;ndash; X さん B さん &amp;ndash; Y さん C さん &amp;ndash; Z さん この例において、Z さんは自身が希望表に書いていない C さんとマッチしています。 この場合、Z さんは希望しない相手と無理矢理マッチさせられているという点で不満を持つでしょう。 したがって、安定結婚問題におけるマッチはまず次の条件を満たすことが望まれます。</description>
     </item>
+    
     <item>
       <title>Scarf&#39;s lemmaとその実装</title>
       <link>https://miiitomi.github.io/p/scarf/</link>
       <pubDate>Sat, 25 Dec 2021 10:53:40 +0900</pubDate>
+      
       <guid>https://miiitomi.github.io/p/scarf/</guid>
       <description>はじめに 誰しも普通に生きていると一度くらいScarf&amp;rsquo;s lemmaを実装する場面に遭遇すると思いますが、意外と日本語の情報が出てこなくて困ったことのある人もいるかもしれません。 Scarf’s lemma完全理解して実装完了したらqiitaかzennかにでも誰得記事書いてやろうかな
 &amp;mdash; みーとみ (@miiitomi) November 19, 2021 というツイートを前にしましたが、せっかくブログ作ったのでここに勉強記録としてまとめてみようと思います。 お気持ち整理みたいな感じなので証明はちゃんとしないし、数学的・ゲーム理論的に厳密でない書き方してるとこも多々あるかも。
 Scarf&amp;rsquo;s lemma とは Scarf&amp;rsquo;s lemmaとは Scarf (1967) で示されたコアを求めるための補題です。 応用としては、例えばマッチング理論の文脈で Nguyen and Vohra (2018) で安定マッチングを求めるために使用されています。
 命題 $A, C$ は $n\times m$ $(n &amp;lt; m)$ の行列で $$ \begin{align*} A &amp;amp;= \begin{bmatrix} 1 &amp;amp; \dots &amp;amp; 0 &amp;amp; a_{1,n+1} &amp;amp; \dots &amp;amp; a_{1,m} \cr \vdots &amp;amp;\ddots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; &amp;amp; \vdots \cr 0 &amp;amp; \dots &amp;amp; 1 &amp;amp; a_{n,n+1} &amp;amp; \dots &amp;amp; a_{n,m} \end{bmatrix},\cr C &amp;amp;= \begin{bmatrix} c_{1,1} &amp;amp; \dots &amp;amp; c_{n,1} &amp;amp; c_{1,n+1} &amp;amp; \dots &amp;amp; c_{1,m} \cr \vdots &amp;amp;\ddots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; &amp;amp; \vdots \cr c_{n,1} &amp;amp; \dots &amp;amp; c_{n,n} &amp;amp; c_{n,n+1} &amp;amp; \dots &amp;amp; c_{n,m} \end{bmatrix} \end{align*} $$ の形のもので、$C$ は以下を満たすとします（これを標準形（standard form）と呼ぶことにします）：</description>
     </item>
+    
   </channel>
 </rss>
