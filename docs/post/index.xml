@@ -6,8 +6,15 @@
     <description>Recent content in Posts on miiitomi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 11 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Dec 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://miiitomi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ABC159 F - Knapsack for All Segments：別解</title>
+      <link>https://miiitomi.github.io/p/abc159f/</link>
+      <pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://miiitomi.github.io/p/abc159f/</guid>
+      <description>ABC159のF問題について、解説にある公式解説・ユーザー解説のどれとも発想が異なりそうな解法を思い付いたので、解法解説らしきものを書いてみます。&#xA;問題 問題リンクはこちら。 問題：$N$ 項の正整数からなる数列 $A = (A_1, A_2, \dots, A_N)$ と正整数 $S$ について、$f(L, R)$ を $L$ 項目から $R$ 項目までの（連続とは限らない）部分列のうち和が $S$ であるものの数、つまり $$ f(L, R) = \left|\left\lbrace (x_1, \dots, x_k) ~ \Big|~ L \le x_{1} &amp;lt; \dots &amp;lt; x_{k} \le R,~\mathrm{and}~ \sum_{j=1}^k A_{x_j} = S \right\rbrace\right| $$ とします。与えられる数列 $A$ と正整数 $S$ について $$ \sum_{L = 1}^{N}\sum_{R = L}^{N}f(L, R) $$ を$998244353$で割ったあまりを求めてください。 制約： $1 \le N \le 3000$ $1 \le S \le 3000$ $1 \le A_i \le 3000$ for each $i=1,\dots,N$ 解説 まず $\Theta(N^2S)$ の愚直解法を説明し、後でそれを $\Theta(NS)$ に高速化する解法を示します（以下「998244353で割ったあまりを」の部分は無視して説明します）。</description>
+    </item>
     <item>
       <title>青コーダーがARC169で0完灰パフォ出して入水した話</title>
       <link>https://miiitomi.github.io/p/zerokan/</link>
