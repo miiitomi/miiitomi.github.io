@@ -47,7 +47,7 @@ $$
 $$
 \begin{align*}
 dp[1][w] &amp;amp;= \begin{cases} 1 &amp;amp; \mathrm{if} ~ w = 0 \\ 0 &amp;amp; \mathrm{otherwise}\end{cases}, \\
-dp[i][w] &amp;amp;= \begin{cases} dp[i-1][w] + dp[i-1][w-A[i]]&amp;amp; \mathrm{if}~w-A[i]\ge 0 \\ dp[i-1][w] &amp;amp; \mathrm{otherwise} \end{cases},
+dp[i][w] &amp;amp;= \begin{cases} dp[i-1][w] + dp[i-1][w-A_i]&amp;amp; \mathrm{if}~w-A_i \ge 0 \\ dp[i-1][w] &amp;amp; \mathrm{otherwise} \end{cases},
 \end{align*}
 $$
 とすることで、$\Theta(NS)$ で列挙できます。このとき、
@@ -56,8 +56,8 @@ f(1, R) = dp[R][S]
 $$
 のため、$L = 1$ のときの和はこのテーブルの $S$ 列目の和を取ることで求められます。&lt;/p&gt;
 &lt;h3 id=&#34;ステップ2-a_1-a_2-dots-を抜いたケースを数えていくことで-fl-rl-ge-2を求めていく&#34;&gt;ステップ2： $A_1, A_2, \dots,$ を抜いたケースを数えていくことで $f(L, R)$（$L \ge 2$）を求めていく.&lt;/h3&gt;
-&lt;p&gt;上記で求めたdpテーブルについて、左（$w$ の小さい方）から
-$$ dp[i][w] = dp[i][w] - dp[i][w - A[1]]　\tag{1} $$
+&lt;p&gt;上記で求めたdpテーブルについて $A_1$ の影響を除いていくには、左（$w$ の小さい方）から
+$$ dp[i][w] = dp[i][w] - dp[i][w - A_1]　\tag{1} $$
 としていくことで、$A_2,\dots, A_i$ 番目のうちいくつかを用いて和を $S$ にする方法の数を求めていくことができます。
 したがって、$A_1$ についてこの操作をすべて行なった後のdpテーブルにおいて、
 $$
@@ -70,7 +70,7 @@ $$
 &lt;p&gt;1.の愚直解法では間に合いませんが、この解法の中でネックとなっているのは $N\times S$ のサイズのdpテーブルを状態として保持してステップ2でこの各セルを更新する箇所であり、これを少しのステップで高速化することができます。&lt;/p&gt;
 &lt;p&gt;上記の解法の中で、$L$ を固定した時の $f(L, R)$ の和は、その時点でのdpテーブルの$S$列目に関して行方向に足し合わせたものです。
 また、操作 (1) において、列 $w$ から列 $w - A_i$ の値を引くという形で、各行について同じような操作を行なっています。&lt;/p&gt;
-&lt;p&gt;したがって、このdpテーブルを行方向に足し合わせた$1$行$S$列のテーブル $sum$ を保持していれば、各状態における$S$列目の和を求めることと、更新を行うことができます。&lt;/p&gt;
+&lt;p&gt;したがって、このdpテーブルを行方向に足し合わせた$1$行$S$列のテーブル sum を保持していれば、各状態における$S$列目の和を求めることと、更新を行うことができます。&lt;/p&gt;
 &lt;p&gt;アルゴリズムの全体像を擬似コードとして書くと、以下の通りになります：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Input: N, S, A = (A_1, ... , A_N)
 ---
@@ -89,10 +89,18 @@ For i = 1 to N
         sum[w] -= sum[w - A_i]
     sum[0] -= 1    // dp[i][0] の 1 を除くため.
 return ans
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;提出コードは&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/abc159/submissions/48493563&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;こちら&lt;/a&gt;。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;C++での提出コードは&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/abc159/submissions/48510009&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;（実行時間 32 ms）。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h1 id=&#34;終わりに&#34;&gt;終わりに&lt;/h1&gt;
 &lt;p&gt;早く黄色コーダーになってこの記事を解説に載せたい。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;dpテーブルも1次元で保持することができるためコードではそのようにしています。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 </description>
         </item>
         <item>
