@@ -361,7 +361,7 @@ $$
 $$
 \begin{align*}
 dp[1][w] &amp;= \begin{cases} 1 &amp; \mathrm{if} ~ w = 0 \\ 0 &amp; \mathrm{otherwise}\end{cases}, \\
-dp[i][w] &amp;= \begin{cases} dp[i-1][w] + dp[i-1][w-A[i]]&amp; \mathrm{if}~w-A[i]\ge 0 \\ dp[i-1][w] &amp; \mathrm{otherwise} \end{cases},
+dp[i][w] &amp;= \begin{cases} dp[i-1][w] + dp[i-1][w-A_i]&amp; \mathrm{if}~w-A_i \ge 0 \\ dp[i-1][w] &amp; \mathrm{otherwise} \end{cases},
 \end{align*}
 $$
 とすることで、$\Theta(NS)$ で列挙できます。このとき、
@@ -370,8 +370,8 @@ f(1, R) = dp[R][S]
 $$
 のため、$L = 1$ のときの和はこのテーブルの $S$ 列目の和を取ることで求められます。</p>
 <h3 id="ステップ2-a_1-a_2-dots-を抜いたケースを数えていくことで-fl-rl-ge-2を求めていく">ステップ2： $A_1, A_2, \dots,$ を抜いたケースを数えていくことで $f(L, R)$（$L \ge 2$）を求めていく.</h3>
-<p>上記で求めたdpテーブルについて、左（$w$ の小さい方）から
-$$ dp[i][w] = dp[i][w] - dp[i][w - A[1]]　\tag{1} $$
+<p>上記で求めたdpテーブルについて $A_1$ の影響を除いていくには、左（$w$ の小さい方）から
+$$ dp[i][w] = dp[i][w] - dp[i][w - A_1]　\tag{1} $$
 としていくことで、$A_2,\dots, A_i$ 番目のうちいくつかを用いて和を $S$ にする方法の数を求めていくことができます。
 したがって、$A_1$ についてこの操作をすべて行なった後のdpテーブルにおいて、
 $$
@@ -384,7 +384,7 @@ $$
 <p>1.の愚直解法では間に合いませんが、この解法の中でネックとなっているのは $N\times S$ のサイズのdpテーブルを状態として保持してステップ2でこの各セルを更新する箇所であり、これを少しのステップで高速化することができます。</p>
 <p>上記の解法の中で、$L$ を固定した時の $f(L, R)$ の和は、その時点でのdpテーブルの$S$列目に関して行方向に足し合わせたものです。
 また、操作 (1) において、列 $w$ から列 $w - A_i$ の値を引くという形で、各行について同じような操作を行なっています。</p>
-<p>したがって、このdpテーブルを行方向に足し合わせた$1$行$S$列のテーブル $sum$ を保持していれば、各状態における$S$列目の和を求めることと、更新を行うことができます。</p>
+<p>したがって、このdpテーブルを行方向に足し合わせた$1$行$S$列のテーブル sum を保持していれば、各状態における$S$列目の和を求めることと、更新を行うことができます。</p>
 <p>アルゴリズムの全体像を擬似コードとして書くと、以下の通りになります：</p>
 <pre tabindex="0"><code>Input: N, S, A = (A_1, ... , A_N)
 ---
@@ -403,10 +403,18 @@ For i = 1 to N
         sum[w] -= sum[w - A_i]
     sum[0] -= 1    // dp[i][0] の 1 を除くため.
 return ans
-</code></pre><p>提出コードは<a class="link" href="https://atcoder.jp/contests/abc159/submissions/48493563"  target="_blank" rel="noopener"
-    >こちら</a>。</p>
+</code></pre><p>C++での提出コードは<a class="link" href="https://atcoder.jp/contests/abc159/submissions/48510009"  target="_blank" rel="noopener"
+    >こちら</a>（実行時間 32 ms）。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <h1 id="終わりに">終わりに</h1>
 <p>早く黄色コーダーになってこの記事を解説に載せたい。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>dpテーブルも1次元で保持することができるためコードではそのようにしています。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
 </section>
 
