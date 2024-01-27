@@ -6,21 +6,175 @@
         <description>Recent content on miiitomi</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Sat, 27 Jan 2024 13:49:27 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>VSCode&#43;Dockerで最小構成で始めるAtCoder用C&#43;&#43;/Python環境設定</title>
+        <lastBuildDate>Sat, 27 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>VSCode&#43;DockerによるAtCoder用C&#43;&#43;/Python環境設定</title>
         <link>https://miiitomi.github.io/p/kyopro-env/</link>
-        <pubDate>Sat, 27 Jan 2024 13:49:27 +0900</pubDate>
+        <pubDate>Sat, 27 Jan 2024 00:00:00 +0000</pubDate>
         
         <guid>https://miiitomi.github.io/p/kyopro-env/</guid>
-        <description>&lt;p&gt;競技プログラミングはプログラミング初心者がプログラミングを始めて学ぶのによいと言う人がいます．
+        <description>&lt;img src="https://miiitomi.github.io/images/kyopro-env/test.png" alt="Featured image of post VSCode&#43;DockerによるAtCoder用C&#43;&#43;/Python環境設定" /&gt;&lt;p&gt;競技プログラミングはプログラミング初心者がプログラミングを始めて学ぶのによいと言う人がいます．
 僕も同意するのですが，一方でコーディングの前に開発環境を整えるのがコンピュータに慣れていない人にはハードルが高いという面もあるように思います．
 AtCoder社がコンテストサイト上で提供する「コードテスト」や，PythonならGoogle Colabなどを使うのも一つの手ではありますが，VSCodeなどのIDEの機能を用いた方が快適にコーディングができるのは間違いないでしょう．&lt;/p&gt;
 &lt;p&gt;本記事は，VSCodeとDockerを用いることで初心者でもAtCoder用の環境を整えやすくすることを目的とします．また，後にそれぞれの好きなようにカスタマイズしやすいよう，構成は極力少なく単純に整えることを目指します．&lt;/p&gt;
-&lt;p&gt;本記事で紹介するディレクトリテンプレートは&lt;a class=&#34;link&#34; href=&#34;&#34; &gt;こちら&lt;/a&gt;で公開していますので，そちらも参照しながらご覧ください．&lt;/p&gt;
-&lt;h1 id=&#34;もくじ&#34;&gt;もくじ&lt;/h1&gt;
+&lt;p&gt;本記事で紹介するディレクトリテンプレートは&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/kyopro-env/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;で公開していますので，そちらも参照しながらご覧ください．&lt;/p&gt;
+&lt;h2 id=&#34;前提準備&#34;&gt;前提・準備&lt;/h2&gt;
+&lt;p&gt;以下のものは用意・インストールされているものとします．&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;PC/OS
+&lt;ul&gt;
+&lt;li&gt;私の手元ではMacbook Pro（M1・Intelチップ両方）・macOS Sonoma 14.0 で動作を確認しています．&lt;/li&gt;
+&lt;li&gt;WindowsやLinuxでもVSCode・Dockerが使えればほぼ同様に実行可能かと思います．&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;VSCode
+&lt;ul&gt;
+&lt;li&gt;お使いのPC/OSに合わせて&lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;からダウンロードしてください．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Docker
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.docker.com/ja-jp/products/docker-desktop/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Docker Desktop&lt;/a&gt;を利用するのが最も簡単かと思われます．通常範囲の個人利用では無料です．&lt;/li&gt;
+&lt;li&gt;（従業員数250人以上の企業でのビジネス利用は有料です．私は業務と私用とで極力合わせるため，docker desktopは用いずlimaからdockerを利用しています．）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;git/github（optional）
+&lt;ul&gt;
+&lt;li&gt;レポジトリをgit/githubで管理するなら．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ディレクトリ構成&#34;&gt;ディレクトリ構成&lt;/h2&gt;
+&lt;p&gt;ディレクトリ構成は以下の通りです．&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/kyopro-env/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;からすべてコピーしてきてください．&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── .devcontainer
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── devcontainer.json      &lt;span class=&#34;c1&#34;&gt;# Container設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── .vscode
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── c_cpp_properties.json  &lt;span class=&#34;c1&#34;&gt;# C/C++ extension設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── cpp.code-snippets      &lt;span class=&#34;c1&#34;&gt;# C++スニペット&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── launch.json            &lt;span class=&#34;c1&#34;&gt;# デバッグ設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── python.code-snippets   &lt;span class=&#34;c1&#34;&gt;# Pythonスニペット&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── settings.json          &lt;span class=&#34;c1&#34;&gt;# ワークスペース（特にcode-runner）設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── tasks.json             &lt;span class=&#34;c1&#34;&gt;# タスク設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── ABC
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── abc336                 &lt;span class=&#34;c1&#34;&gt;# 例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│       ├── a.cpp
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│       ├── a.py
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│       └── input.txt          &lt;span class=&#34;c1&#34;&gt;# 手動実行・デバッグ時用入力ファイル&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── Dockerfile                 &lt;span class=&#34;c1&#34;&gt;# Docker設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── ac-library                 &lt;span class=&#34;c1&#34;&gt;# Atcoder Library&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── ...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── requirements.txt           &lt;span class=&#34;c1&#34;&gt;# pip用requirements（特にonline-judge-tools）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── submit.sh                  &lt;span class=&#34;c1&#34;&gt;# 自動提出用スクリプト&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── test.sh                    &lt;span class=&#34;c1&#34;&gt;# 自動テスト用スクリプト&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ac-libraryについては，gitを用いている場合は&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git submodule add -b production git@github.com:atcoder/ac-library.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とサブモジュールとして追加するのが楽だと思います．&lt;/p&gt;
+&lt;h2 id=&#34;vscodeからdocker-containerで開くまで&#34;&gt;VSCodeからdocker containerで開くまで&lt;/h2&gt;
+&lt;p&gt;このディレクトリを，VSCodeで開いてください．&lt;/p&gt;
+&lt;p&gt;また，VSCodeで「Dev Containers」の拡張機能をインストールしていない場合は，左のツールバーから拡張機能を開き，検索してこちらをインストールしてください（これ↓）
+&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/devcontainers.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Dockerを起動していることを確認した上で，左したの「&amp;gt;&amp;lt;」みたいなボタンから「コンテナーで再度開く（Reopen in Container）」を選択して，コンテナーで開いてください（初めての場合はビルドに少し時間がかかります）．
+&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/open_container.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;最初のセットアップ&#34;&gt;最初のセットアップ&lt;/h2&gt;
+&lt;p&gt;開けたら，最初のセットアップを少しだけ行います．&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ターミナルを開き（上部のツールバーから，またはMacの場合は&lt;code&gt;ctl+Shift+^&lt;/code&gt;），以下のコマンドで online-judge-tools（oj）からatcoderにログインしてください（&lt;code&gt;{USERNAME}&lt;/code&gt;と&lt;code&gt;{PASSWORD}&lt;/code&gt;は自身のatcoderのユーザ名・パスワードで）．
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;oj login https://atcoder.jp -u &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;USERNAME&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt; -p &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;PASSWORD&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;code&gt;[SUCCESS] You have already signed in.&lt;/code&gt; のように出たら成功です．&lt;/li&gt;
+&lt;li&gt;(optional) git/githubを用いる場合はssh keyの作成と公開鍵の登録などしとくとcontainerからもgithubにアクセスできて便利です．&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
+&lt;h3 id=&#34;手動実行&#34;&gt;手動実行&lt;/h3&gt;
+&lt;p&gt;例にある通り，&lt;code&gt;./ABC/abc336/&lt;/code&gt; のようにコンテストごとにディレクトリを作り，問題Aに対しては &lt;code&gt;a.cpp&lt;/code&gt; や &lt;code&gt;a.py&lt;/code&gt; のようにファイルを作成してください．実行コードを書き，また &lt;code&gt;input.txt&lt;/code&gt; に与えたい入力を書き込みます．&lt;/p&gt;
+&lt;p&gt;実行コードファイルを開いた状態で右上から「Run Code」を押す（またはMacの場合「option+ctl+N」）と，ターミナルが開き実行されます．&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/runcode.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;自動テスト&#34;&gt;自動テスト&lt;/h3&gt;
+&lt;p&gt;同様に実行コードを書き，上のツールバーのターミナルから「タスクを実行」を選択（または&lt;code&gt;cmd+shift+P&lt;/code&gt;から&lt;code&gt;タスクを実行&lt;/code&gt;）し，「test」を押すと，以下のようにojを用いて自動でサンプルケースをダウンロードして実行してくれます（以下はサンプルについてACだったときの例）．&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/test.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;もしかしたら実行時に &lt;code&gt;Permission denied&lt;/code&gt; のようにエラーを吐くかもしれませんが，その場合はターミナルを開いて &lt;code&gt;chhmod +x test.sh&lt;/code&gt; のようにして実行権限を付与してください．&lt;/p&gt;
+&lt;h3 id=&#34;自動提出&#34;&gt;自動提出&lt;/h3&gt;
+&lt;p&gt;テストと同様に「タスクを実行」から「submit」を実行すると，ojを用いてatcoderにsubmitされ，ブラウザが開いてsubmission pageが開かれます．
+C++なら「C++ 23 (gcc 12.2)」，Pythonなら「Python (PyPy 3.10-v7.3.12)」で提出されると思います．&lt;/p&gt;
+&lt;h3 id=&#34;デバッグ&#34;&gt;デバッグ&lt;/h3&gt;
+&lt;p&gt;実行ファイルと入力ファイルの&lt;code&gt;input.txt&lt;/code&gt;を手動実行と同様に同階層に置きます．
+実行ファイルの行番号の横の空白の上にカーソルを合わせると薄く赤丸が現れるので，デバッグ時に止めたい箇所で押してブレークポイントを置きます．
+左のツールバーから虫付きの▷のようなマークを押し，上部からPythonなら「Python Debug」を，C++なら「(lldb) C++ Debug」を選択して「▷」を押すとデバッグ実行がされます．
+&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/debug.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+上部の「▷」を押してブレークポイントを一つずつ進めながら，左のバーやデバッグコンソールから変数を確認することができます．&lt;/p&gt;
+&lt;h2 id=&#34;カスタマイズ&#34;&gt;カスタマイズ&lt;/h2&gt;
+&lt;p&gt;上記の範囲でもある程度便利に使えると思いますが，自分好みに変更することによってより使いやすくなるかもしれません．
+以下では考えられうるカスタマイズ箇所を少しだけ紹介します．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;拡張機能
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.devcontainer/devcontainer.json&lt;/code&gt; の設定によって，Python（Pythonの補完等），C/C++（C++の補完等），Code-runner（手動実行），LLDB（C++のデバッグ）の拡張機能はすでに入るようになっていると思います．他の使いたい拡張機能も入れてみると良いかもしれません．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ライブラリ
+&lt;ul&gt;
+&lt;li&gt;C++では，Dockerfile内の記述により &lt;code&gt;boost&lt;/code&gt; は使えるようになっていますが，atcoderで使える &lt;code&gt;eigen&lt;/code&gt; などは入れていません．必要あればDockerfile内に記述を加えてインストールしてください．&lt;/li&gt;
+&lt;li&gt;Pythonについては，&lt;code&gt;requirements.txt&lt;/code&gt; に &lt;code&gt;online-judge-tools&lt;/code&gt; しか書いてないので，必要な外部ライブラリはご自身で追記してください（競プロでよく使われるのはNumpy，Scipy，NetworkXあたりでしょうか）．また，ubuntuイメージに元から入っているCPython3.10しか使えないので，pypyが必要であればDockerfileを編集して追加してください．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;テスト・提出
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;test.sh&lt;/code&gt;・&lt;code&gt;submit.sh&lt;/code&gt;がそれぞれ自動テスト・提出のためのスクリプトです．必要があれば少し変更してもよいかもしれません．
+&lt;ul&gt;
+&lt;li&gt;自分はatcoder problemsのバーチャルコンテストにも参加するので，その場合はコードの一行目にコメントとして書かれたurlからテストケースのダウンロードや提出がされるよう変更しています（&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/atcoder/tree/main&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;）．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;C++ intelliSenseMode
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;./vscode/c_cpp_properties.json&lt;/code&gt; 内で私の環境ではintelliSenseModeを &lt;code&gt;intelliSenseMode&amp;quot;: &amp;quot;linux-gcc-arm64&amp;quot;&lt;/code&gt; としてありますが，他の環境では&lt;code&gt;&amp;quot;linux-gcc-x64&amp;quot;&lt;/code&gt; などが適切かもしれません．間違っていても自動で認識すると思うので特に問題はないと思いますが，必要があれば辺越してください．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;おわりに&#34;&gt;おわりに&lt;/h2&gt;
+&lt;p&gt;詰まった箇所やローカル環境等によって少し異なる点があるでしょうし，また変な記述があれば修正・追記したいので，何かありましたら&lt;a class=&#34;link&#34; href=&#34;https://twitter.com/miiitomi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;みーとみ&lt;/a&gt;まで教えていただけると嬉しいです．
+開発環境を良い感じに整えて良い競プロライフを！！&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -1066,6 +1220,135 @@ $$ g(s) = g_1(s_1) \oplus g_2(s_2) \oplus \dots \oplus g_n(s_n) $$
 </description>
         </item>
         <item>
+        <title>About</title>
+        <link>https://miiitomi.github.io/about/</link>
+        <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/about/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;氏名&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;冨田 燿志（とみた ようじ）／ みーとみ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;所属&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;サイバーエージェント AI Lab 経済学社会実装チーム リサーチサイエンティスト&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;専門&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;マッチング理論・マーケットデザインのWEBサービスへの応用と社会実装&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;経歴&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2018年3月 東京大学経済学部経済学科卒業
+&lt;ul&gt;
+&lt;li&gt;2013年4月-2014年3月 特別休学（初年次長期自主活動/FLYプログラム1期生）&lt;/li&gt;
+&lt;li&gt;経済学部卒業生総代&lt;/li&gt;
+&lt;li&gt;経済学部特選論文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2019年3月 東京大学大学院経済学研究科経済理論コース修士課程修了
+&lt;ul&gt;
+&lt;li&gt;卓越プログラム（早期修了プログラム）により1年で短縮修了&lt;/li&gt;
+&lt;li&gt;経済学研究科修了生総代&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2019年4月 東京大学経済学研究科博士課程進学
+&lt;ul&gt;
+&lt;li&gt;2020年4月-2023年3月 休学, 2023年3月退学&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2020年4月- サイバーエージェント新卒入社、AI Lab配属&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;研究&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Publications
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, Yuriko Hashizume, and Naoto Ohsaka. 2023. &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2306.09060&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fast and Examination-agnostic Reciprocal Recommendation in Matching Markets.&lt;/a&gt; RecSys&#39;23 (Full Research Paper).&lt;/li&gt;
+&lt;li&gt;Zhaohong Sun, Daisuke Moriwaki, Yoshihiro Takenami, &lt;strong&gt;Yoji Tomita&lt;/strong&gt;, and Makoto Yokoo. 2023. &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2212.02751&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Daycare Matching in Japan: Transfers and Siblings.&lt;/a&gt; AAAI-23.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, and Daisuke Moriwaki. 2022. &lt;a class=&#34;link&#34; href=&#34;https://dl.acm.org/doi/fullHtml/10.1145/3523227.3547406&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Matching Theory-based Recommender Systems in Online Dating.&lt;/a&gt; RecSys&#39;22 (Industrial Paper).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Working Paper
+&lt;ul&gt;
+&lt;li&gt;Akira Matsushita, Kei Ikegami, Kyohei Okumura, &lt;strong&gt;Yoji Tomita&lt;/strong&gt;, and Atsushi Iwasaki. 2022. &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2205.14387&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Regulating Matching Markets with Constraints: Data-driven Taxation.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;登壇&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2021年3月5日 &lt;a class=&#34;link&#34; href=&#34;https://www.slideshare.net/YojiTomita/ss-244201005&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;身近なところからはじめるマーケットデザイン&lt;/a&gt; at &lt;a class=&#34;link&#34; href=&#34;https://sansan.connpass.com/event/203771/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Econ Fiesta 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2021年10月9日 「経済学のビジネス活用をめぐって ①民間企業の立場から」with 森脇大輔さん at 日本経済学会秋季大会企画セッション&lt;/li&gt;
+&lt;li&gt;2021年11月24日 「マーケットデザインで一歩先の自治体DXを」 at &lt;a class=&#34;link&#34; href=&#34;https://techplay.jp/event/835479&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;エンジニアリング・研究両面から考えるDXを推進するためのデータサイエンス&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2021年12月17日 「保育所利用調整におけるマーケットデザインの社会実装」at &lt;a class=&#34;link&#34; href=&#34;https://ccse.jp/2021/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CCSE2021&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2022年7月28日 &lt;a class=&#34;link&#34; href=&#34;https://ca-base-next.cyberagent.co.jp/2022/sessions/market-design/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;なぜテック企業で「マーケットデザイン」が必要なのか&lt;/a&gt; at &lt;a class=&#34;link&#34; href=&#34;https://ca-base-next.cyberagent.co.jp/2022/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CA BASE NEXT 2022&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2022年8月30日 &lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/37354/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;マッチング理論に基づく推薦とそれを支えるMLOps開発&lt;/a&gt; with 松月大輔さん at &lt;a class=&#34;link&#34; href=&#34;https://cyberagent.connpass.com/event/255813/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;メディアサービスにおけるデータ・AIの活用事例&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2023年6月28日 &lt;a class=&#34;link&#34; href=&#34;https://cadc.cyberagent.co.jp/2023/sessions/market-design/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;マーケットデザインと保育所利用調整—実務のニーズを満たすアルゴリズムとシステム開発—&lt;/a&gt; with 竹浪良寛さん at &lt;a class=&#34;link&#34; href=&#34;https://cadc.cyberagent.co.jp/2023/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CADC NEXT2023&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;対談&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2021年9月22日公開 &lt;a class=&#34;link&#34; href=&#34;https://www.cyberagent.co.jp/way/list/detail/id=26671&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【最先端の経済学】マーケットデザインの社会実装で変える、日本の未来&lt;/a&gt; with 鎌田雄一郎先生&lt;/li&gt;
+&lt;li&gt;2022年3月24日公開 &lt;a class=&#34;link&#34; href=&#34;https://cadc.cyberagent.co.jp/2022/program/economics-govtech/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;行政DXにおける経済学の活用-待機児童問題におけるマーケットデザインの導入-&lt;/a&gt;（森脇大輔さん、小田原悠朗さん）のインタビュアー at &lt;a class=&#34;link&#34; href=&#34;https://cadc.cyberagent.co.jp/2022/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CA Developer Conference 2022&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;CAブログ&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2021年12月9日公開 「&lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/32763/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;待機児童問題にマーケットデザインで挑む&lt;/a&gt;」 （&lt;a class=&#34;link&#34; href=&#34;https://adventar.org/calendars/6839&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CA Advent Calendar 2021&lt;/a&gt; 9日目）&lt;/li&gt;
+&lt;li&gt;2022年9月30日公開 「&lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/37708/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;なぜテック企業で「マーケットデザイン」が必要なのか&lt;/a&gt;」&lt;/li&gt;
+&lt;li&gt;2022年10月21日公開 「&lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/38014/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RecSys 2022 参加報告&lt;/a&gt;」 with ゆっこさん&lt;/li&gt;
+&lt;li&gt;2022年12月14日公開 「&lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/39706/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;皆が幸せになるマッチングプラットフォームを目指して。「マッチング理論に基づく相互推薦システム」&lt;/a&gt;」 （&lt;a class=&#34;link&#34; href=&#34;https://adventar.org/calendars/7806&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CA Advent Calendar 2022&lt;/a&gt; 14日目）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;技術スキル&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python、C++、Javascript（React）、SQL、LaTeX&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;趣味&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;サッカー観戦（特にJリーグ、横浜F・マリノス）&lt;/li&gt;
+&lt;li&gt;小説・漫画&lt;/li&gt;
+&lt;li&gt;スキューバダイビング&lt;/li&gt;
+&lt;li&gt;ネイル&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;連絡先・SNS&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Email: &lt;a class=&#34;link&#34; href=&#34;mailto:tomita_yoji@cyberagent.co.jp&#34; &gt;tomita_yoji@cyberagent.co.jp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a class=&#34;link&#34; href=&#34;https://twitter.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub: &lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;LinkedIn: &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/yoji-tomita/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@Yoji Tomita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Facebook: &lt;a class=&#34;link&#34; href=&#34;https://www.facebook.com/yoji.tomita.9/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@yoji.tomita.9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Instagram: &lt;a class=&#34;link&#34; href=&#34;https://www.instagram.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Threads: &lt;a class=&#34;link&#34; href=&#34;https://www.threads.net/@miiitomi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>『怪物』</title>
         <link>https://miiitomi.github.io/p/kaibutsu/</link>
         <pubDate>Tue, 20 Jun 2023 23:18:23 +0900</pubDate>
@@ -1978,6 +2261,35 @@ $$ g(s) = g_1(s_1) \oplus g_2(s_2) \oplus \dots \oplus g_n(s_n) $$
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
+</description>
+        </item>
+        <item>
+        <title>App</title>
+        <link>https://miiitomi.github.io/app/</link>
+        <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/app/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/matching&#34; &gt;Matching&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;男性と女性のマッチングを行うDAアルゴリズムの実行ができます。&lt;/li&gt;
+&lt;li&gt;DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説は&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/p/matching&#34; &gt;こちら&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Matching</title>
+        <link>https://miiitomi.github.io/matching/</link>
+        <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/matching/</guid>
+        <description>&lt;p&gt;このページでは、男性と女性のマッチングを行うDAアルゴリズムの実行ができます。&lt;br&gt;
+合コンにおける席決め・ゲームなどにお使いください。&lt;br&gt;
+DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説は&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/p/matching&#34; &gt;こちら&lt;/a&gt;。&lt;/p&gt;
+&lt;div id=&#34;app&#34;&gt;&lt;/div&gt;
+&lt;script src=&#34;https://miiitomi.github.io/js/matching.js&#34;&gt;&lt;/script&gt;
 </description>
         </item>
         <item>
@@ -3026,18 +3338,14 @@ Running in Fast Render Mode. For full rebuilds on change: hugo server --disableF
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;と出てくるので、&lt;code&gt;localhost:1313&lt;/code&gt;をブラウザで開いてみると、&lt;/p&gt;
-&lt;p&gt;&lt;figure 
-	&gt;
-	&lt;a href=&#34;https://miiitomi.github.io/images/img20211209222536.png&#34; &gt;
-		&lt;img src=&#34;https://miiitomi.github.io/images/img20211209222536.png&#34;
-			
-			
-			
-			loading=&#34;lazy&#34;
-			&gt;
-	&lt;/a&gt;
+&lt;p&gt;&lt;img src=&#34;https://miiitomi.github.io/images/img20211209222536.png&#34;
 	
-&lt;/figure&gt;&lt;/p&gt;
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;できた！！！（できてない）&lt;/p&gt;
 &lt;h1 id=&#34;config&#34;&gt;config&lt;/h1&gt;
 &lt;p&gt;あとは &lt;code&gt;config.yaml&lt;/code&gt; を少し変えていきます。
@@ -3145,18 +3453,14 @@ tags: []
 &lt;h1 id=&#34;プッシュgithub-pagesでホスト&#34;&gt;プッシュ・Github Pagesでホスト。&lt;/h1&gt;
 &lt;p&gt;GitHubで自分のレポジトリとして &lt;code&gt;&amp;lt;GitHubAccount&amp;gt;.github.io&lt;/code&gt; を作り、これまで作ってきたものをプッシュ。&lt;/p&gt;
 &lt;p&gt;Settings/Pagesから, Sourceをmainブランチの&lt;code&gt;docs/&lt;/code&gt;とする。ホストされるまでちょっと待つと、
-&lt;figure 
-	&gt;
-	&lt;a href=&#34;https://miiitomi.github.io/images/20211209231722.png&#34; &gt;
-		&lt;img src=&#34;https://miiitomi.github.io/images/20211209231722.png&#34;
-			
-			
-			
-			loading=&#34;lazy&#34;
-			&gt;
-	&lt;/a&gt;
+&lt;img src=&#34;https://miiitomi.github.io/images/20211209231722.png&#34;
 	
-&lt;/figure&gt;
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
 今度こそできた！&lt;/p&gt;
 &lt;h1 id=&#34;記事の書き方&#34;&gt;記事の書き方&lt;/h1&gt;
 &lt;p&gt;新規のブログ記事を書くときはとりあえず &lt;code&gt;hugo new post/XXX.md&lt;/code&gt; したあと、&lt;code&gt;hugo server -D&lt;/code&gt;で確認しながら執筆し、書けたら &lt;code&gt;hugo&lt;/code&gt; でビルド、GithubにプッシュすればOKという感じ。自動デプロイとかもやればできるんだろうけど大したことないしとりあえずいいや。そのうち気が向いたらやろう。&lt;/p&gt;
@@ -3164,6 +3468,22 @@ tags: []
 &lt;p&gt;今日やったことじゃないので忘れてるとことかあるかもだけど、大体こんな感じ。&lt;/p&gt;
 &lt;p&gt;これからどんどん記事書いてこう！！&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>https://miiitomi.github.io/archives/</link>
+        <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>https://miiitomi.github.io/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/search/</guid>
+        <description></description>
         </item>
         
     </channel>

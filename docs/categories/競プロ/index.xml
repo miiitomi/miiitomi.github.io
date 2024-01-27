@@ -1,33 +1,392 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>競プロ on miiitomi</title>
-    <link>https://miiitomi.github.io/categories/%E7%AB%B6%E3%83%97%E3%83%AD/</link>
-    <description>Recent content in 競プロ on miiitomi</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <lastBuildDate>Sat, 27 Jan 2024 13:49:27 +0900</lastBuildDate>
-    <atom:link href="https://miiitomi.github.io/categories/%E7%AB%B6%E3%83%97%E3%83%AD/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>VSCode&#43;Dockerで最小構成で始めるAtCoder用C&#43;&#43;/Python環境設定</title>
-      <link>https://miiitomi.github.io/p/kyopro-env/</link>
-      <pubDate>Sat, 27 Jan 2024 13:49:27 +0900</pubDate>
-      <guid>https://miiitomi.github.io/p/kyopro-env/</guid>
-      <description>競技プログラミングはプログラミング初心者がプログラミングを始めて学ぶのによいと言う人がいます． 僕も同意するのですが，一方でコーディングの前に開発環境を整えるのがコンピュータに慣れていない人にはハードルが高いという面もあるように思います． AtCoder社がコンテストサイト上で提供する「コードテスト」や，PythonならGoogle Colabなどを使うのも一つの手ではありますが，VSCodeなどのIDEの機能を用いた方が快適にコーディングができるのは間違いないでしょう．&#xA;本記事は，VSCodeとDockerを用いることで初心者でもAtCoder用の環境を整えやすくすることを目的とします．また，後にそれぞれの好きなようにカスタマイズしやすいよう，構成は極力少なく単純に整えることを目指します．&#xA;本記事で紹介するディレクトリテンプレートはこちらで公開していますので，そちらも参照しながらご覧ください．&#xA;もくじ </description>
-    </item>
-    <item>
-      <title>ABC159 F - Knapsack for All Segments：別解</title>
-      <link>https://miiitomi.github.io/p/abc159f/</link>
-      <pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://miiitomi.github.io/p/abc159f/</guid>
-      <description>ABC159のF問題について、解説にある公式解説・ユーザー解説のどれとも発想が異なりそうな解法を思い付いたので、解法解説らしきものを書いてみます。&#xA;問題 問題リンクはこちら。 問題：$N$ 項の正整数からなる数列 $A = (A_1, A_2, \dots, A_N)$ と正整数 $S$ について、$f(L, R)$ を $L$ 項目から $R$ 項目までの（連続とは限らない）部分列のうち和が $S$ であるものの数、つまり $$ f(L, R) = \left|\left\lbrace (x_1, \dots, x_k) ~ \Big|~ L \le x_{1} &amp;lt; \dots &amp;lt; x_{k} \le R,~\mathrm{and}~ \sum_{j=1}^k A_{x_j} = S \right\rbrace\right| $$ とします。与えられる数列 $A$ と正整数 $S$ について $$ \sum_{L = 1}^{N}\sum_{R = L}^{N}f(L, R) $$ を$998244353$で割ったあまりを求めてください。 制約： $1 \le N \le 3000$ $1 \le S \le 3000$ $1 \le A_i \le 3000$ for each $i=1,\dots,N$ 解説 まず $\Theta(N^2S)$ の愚直解法を説明し、後でそれを $\Theta(NS)$ に高速化する解法を示します（以下「998244353で割ったあまりを」の部分は無視して説明します）。</description>
-    </item>
-    <item>
-      <title>青コーダーがARC169で0完灰パフォ出して入水した話</title>
-      <link>https://miiitomi.github.io/p/zerokan/</link>
-      <pubDate>Mon, 11 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://miiitomi.github.io/p/zerokan/</guid>
-      <description>こちらの記事は、競プロ Advent Calendar 2023の11日目の記事になります。1&#xA;登録時は「 HACK TO THE FUTURE 2024（AHC027）で上位入賞しました！記事を書きます」と書いていてこんなツイートもしていましたが、AHC027は最終360位という見るも無惨な結果となって恥ずかしいので内容を変更してお送りいたします。ご了承くださいませ。2&#xA;内容はタイトルの通りで、今後同じ惨劇を生み出さないために記録に残していこうと思います。&#xA;ARC169に参加するまで 2023年12月9日(土)、「estie プログラミングコンテスト2023 （AtCoder Regular Contest 169）」（以下ARC169）が開催されました。 このコンテスト前の時点で私のレートは1656で青。 11月に青コーダーになったばかりですが、ABCでは11連続で青パフォを取るなどしており、青の実力は普通にあるかなと慢心していたところでした。 ARCについてはABCより苦手意識はあるものの、前回のARCでは青パフォを取っており、多少ミスしても水色か最悪緑パフォくらいでは耐えるだろうし、1回で水色に落ちたりはしないだろうと考えていました。&#xA;ちなみに、この日の昼間にAtCoderInfoというAtCoderの情報をまとめた公式サイトが公開されており、その中の「Algorithm部門のレーティングと業務における期待できる活躍」のページの青色の箇所で書かれていた表現を使って、コンテスト前にはこんな調子に乗ったツイートをしていたりもしました。&#xA;見せてやる僕の†常軌を逸したコーディング速度†を…… pic.twitter.com/8jgrIUIShe&#xA;&amp;mdash; みーとみ (@miiitomi) December 9, 2023 （この後にあんな惨劇に見舞われるとは……）&#xA;ちなみに、このARC169では1問目の配点が400点となっており、普段のARCの1問目が300点程度であることを考えるとやや高めであるため、ツイッター上では少し0完を心配している参加者の方も見受けられましたが、僕自身は「いやいくらなんでも0完ってことはないでしょう、1完は早めに確保して、ノルマは2完、可能なら3問目もトライしたい」くらいに考えていました。&#xA;ARC169コンテスト中 21時、2時間のコンテストが始まりました。コンテストの時間中の自分の思考過程を思い出しながら時系列に沿って書いていこうと思います。&#xA;A問題（21:00~21:20程度） まずA問題を開きます。むむむ、なるほどわからん。&#xA;最初開いて問題を読んでから、20分近くそのままA問題を色々ごちゃごちゃ考え続けていました。 今思い出すと、公式解説解法の「深さの深い方ほど寄与が大きくなるはずなのでそちらから考える」という考えに近いところには至っていたように思います。&#xA;しかし、これはコンテストの終了後に気付いて愕然とするのですが、この時の自分はA問題の設定をやや誤解していました。 各繰り返しステップ内において、本当なら頂点Aから頂点Bに値が加えられた後で頂点Bから別の頂点Cに値が加えられるということはこの問題設定ではありえないのですが、この時自分はそれが起こりうるものとずっと信じ込んでいました。3 そのため、同じ深さ内での値の総和が0であっても、足される順番の前後によって寄与が違うことがありうるのではないかと考えてしまい、そのあたりの解消をすることができそうでできないな……と考え続けてしまっていました。&#xA;しばらく考えてから、一旦A問題は置いておいて、先にB問題へ移ることにします。&#xA;B問題：開いてから嘘解法を実装するまで（21:20~21:40程度） B問題を開きます。&#xA;$l = 1$ で固定すると $r = 1, \dots, N$ に関しては $f(A_\ell, \dots, A_r)$ は貪欲法で計算でき、それらの列挙は $O(N)$ でできます。が、それらを $l = 2, 3, \dots, $ とやっていくわけにはいかないので工夫が必要です。 公式解説ではDPでやっているわけですが、残念なことにここで自分は $l = 1$ での結果からそれを他の $l$ についても構成するような嘘解法を閃いてしまいます。4 5</description>
-    </item>
-  </channel>
+    <channel>
+        <title>競プロ on miiitomi</title>
+        <link>https://miiitomi.github.io/categories/%E7%AB%B6%E3%83%97%E3%83%AD/</link>
+        <description>Recent content in 競プロ on miiitomi</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>ja</language>
+        <lastBuildDate>Sat, 27 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/categories/%E7%AB%B6%E3%83%97%E3%83%AD/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>VSCode&#43;DockerによるAtCoder用C&#43;&#43;/Python環境設定</title>
+        <link>https://miiitomi.github.io/p/kyopro-env/</link>
+        <pubDate>Sat, 27 Jan 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/kyopro-env/</guid>
+        <description>&lt;img src="https://miiitomi.github.io/images/kyopro-env/test.png" alt="Featured image of post VSCode&#43;DockerによるAtCoder用C&#43;&#43;/Python環境設定" /&gt;&lt;p&gt;競技プログラミングはプログラミング初心者がプログラミングを始めて学ぶのによいと言う人がいます．
+僕も同意するのですが，一方でコーディングの前に開発環境を整えるのがコンピュータに慣れていない人にはハードルが高いという面もあるように思います．
+AtCoder社がコンテストサイト上で提供する「コードテスト」や，PythonならGoogle Colabなどを使うのも一つの手ではありますが，VSCodeなどのIDEの機能を用いた方が快適にコーディングができるのは間違いないでしょう．&lt;/p&gt;
+&lt;p&gt;本記事は，VSCodeとDockerを用いることで初心者でもAtCoder用の環境を整えやすくすることを目的とします．また，後にそれぞれの好きなようにカスタマイズしやすいよう，構成は極力少なく単純に整えることを目指します．&lt;/p&gt;
+&lt;p&gt;本記事で紹介するディレクトリテンプレートは&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/kyopro-env/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;で公開していますので，そちらも参照しながらご覧ください．&lt;/p&gt;
+&lt;h2 id=&#34;前提準備&#34;&gt;前提・準備&lt;/h2&gt;
+&lt;p&gt;以下のものは用意・インストールされているものとします．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PC/OS
+&lt;ul&gt;
+&lt;li&gt;私の手元ではMacbook Pro（M1・Intelチップ両方）・macOS Sonoma 14.0 で動作を確認しています．&lt;/li&gt;
+&lt;li&gt;WindowsやLinuxでもVSCode・Dockerが使えればほぼ同様に実行可能かと思います．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;VSCode
+&lt;ul&gt;
+&lt;li&gt;お使いのPC/OSに合わせて&lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;からダウンロードしてください．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Docker
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.docker.com/ja-jp/products/docker-desktop/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Docker Desktop&lt;/a&gt;を利用するのが最も簡単かと思われます．通常範囲の個人利用では無料です．&lt;/li&gt;
+&lt;li&gt;（従業員数250人以上の企業でのビジネス利用は有料です．私は業務と私用とで極力合わせるため，docker desktopは用いずlimaからdockerを利用しています．）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;git/github（optional）
+&lt;ul&gt;
+&lt;li&gt;レポジトリをgit/githubで管理するなら．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ディレクトリ構成&#34;&gt;ディレクトリ構成&lt;/h2&gt;
+&lt;p&gt;ディレクトリ構成は以下の通りです．&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/kyopro-env/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;からすべてコピーしてきてください．&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── .devcontainer
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── devcontainer.json      &lt;span class=&#34;c1&#34;&gt;# Container設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── .vscode
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── c_cpp_properties.json  &lt;span class=&#34;c1&#34;&gt;# C/C++ extension設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── cpp.code-snippets      &lt;span class=&#34;c1&#34;&gt;# C++スニペット&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── launch.json            &lt;span class=&#34;c1&#34;&gt;# デバッグ設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── python.code-snippets   &lt;span class=&#34;c1&#34;&gt;# Pythonスニペット&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── settings.json          &lt;span class=&#34;c1&#34;&gt;# ワークスペース（特にcode-runner）設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── tasks.json             &lt;span class=&#34;c1&#34;&gt;# タスク設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── ABC
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── abc336                 &lt;span class=&#34;c1&#34;&gt;# 例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│       ├── a.cpp
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│       ├── a.py
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│       └── input.txt          &lt;span class=&#34;c1&#34;&gt;# 手動実行・デバッグ時用入力ファイル&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── Dockerfile                 &lt;span class=&#34;c1&#34;&gt;# Docker設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── ac-library                 &lt;span class=&#34;c1&#34;&gt;# Atcoder Library&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── ...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── requirements.txt           &lt;span class=&#34;c1&#34;&gt;# pip用requirements（特にonline-judge-tools）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── submit.sh                  &lt;span class=&#34;c1&#34;&gt;# 自動提出用スクリプト&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── test.sh                    &lt;span class=&#34;c1&#34;&gt;# 自動テスト用スクリプト&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ac-libraryについては，gitを用いている場合は&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git submodule add -b production git@github.com:atcoder/ac-library.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とサブモジュールとして追加するのが楽だと思います．&lt;/p&gt;
+&lt;h2 id=&#34;vscodeからdocker-containerで開くまで&#34;&gt;VSCodeからdocker containerで開くまで&lt;/h2&gt;
+&lt;p&gt;このディレクトリを，VSCodeで開いてください．&lt;/p&gt;
+&lt;p&gt;また，VSCodeで「Dev Containers」の拡張機能をインストールしていない場合は，左のツールバーから拡張機能を開き，検索してこちらをインストールしてください（これ↓）
+&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/devcontainers.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Dockerを起動していることを確認した上で，左したの「&amp;gt;&amp;lt;」みたいなボタンから「コンテナーで再度開く（Reopen in Container）」を選択して，コンテナーで開いてください（初めての場合はビルドに少し時間がかかります）．
+&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/open_container.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;最初のセットアップ&#34;&gt;最初のセットアップ&lt;/h2&gt;
+&lt;p&gt;開けたら，最初のセットアップを少しだけ行います．&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ターミナルを開き（上部のツールバーから，またはMacの場合は&lt;code&gt;ctl+Shift+^&lt;/code&gt;），以下のコマンドで online-judge-tools（oj）からatcoderにログインしてください（&lt;code&gt;{USERNAME}&lt;/code&gt;と&lt;code&gt;{PASSWORD}&lt;/code&gt;は自身のatcoderのユーザ名・パスワードで）．
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;oj login https://atcoder.jp -u &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;USERNAME&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt; -p &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;PASSWORD&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;code&gt;[SUCCESS] You have already signed in.&lt;/code&gt; のように出たら成功です．&lt;/li&gt;
+&lt;li&gt;(optional) git/githubを用いる場合はssh keyの作成と公開鍵の登録などしとくとcontainerからもgithubにアクセスできて便利です．&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
+&lt;h3 id=&#34;手動実行&#34;&gt;手動実行&lt;/h3&gt;
+&lt;p&gt;例にある通り，&lt;code&gt;./ABC/abc336/&lt;/code&gt; のようにコンテストごとにディレクトリを作り，問題Aに対しては &lt;code&gt;a.cpp&lt;/code&gt; や &lt;code&gt;a.py&lt;/code&gt; のようにファイルを作成してください．実行コードを書き，また &lt;code&gt;input.txt&lt;/code&gt; に与えたい入力を書き込みます．&lt;/p&gt;
+&lt;p&gt;実行コードファイルを開いた状態で右上から「Run Code」を押す（またはMacの場合「option+ctl+N」）と，ターミナルが開き実行されます．&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/runcode.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;自動テスト&#34;&gt;自動テスト&lt;/h3&gt;
+&lt;p&gt;同様に実行コードを書き，上のツールバーのターミナルから「タスクを実行」を選択（または&lt;code&gt;cmd+shift+P&lt;/code&gt;から&lt;code&gt;タスクを実行&lt;/code&gt;）し，「test」を押すと，以下のようにojを用いて自動でサンプルケースをダウンロードして実行してくれます（以下はサンプルについてACだったときの例）．&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/test.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;もしかしたら実行時に &lt;code&gt;Permission denied&lt;/code&gt; のようにエラーを吐くかもしれませんが，その場合はターミナルを開いて &lt;code&gt;chhmod +x test.sh&lt;/code&gt; のようにして実行権限を付与してください．&lt;/p&gt;
+&lt;h3 id=&#34;自動提出&#34;&gt;自動提出&lt;/h3&gt;
+&lt;p&gt;テストと同様に「タスクを実行」から「submit」を実行すると，ojを用いてatcoderにsubmitされ，ブラウザが開いてsubmission pageが開かれます．
+C++なら「C++ 23 (gcc 12.2)」，Pythonなら「Python (PyPy 3.10-v7.3.12)」で提出されると思います．&lt;/p&gt;
+&lt;h3 id=&#34;デバッグ&#34;&gt;デバッグ&lt;/h3&gt;
+&lt;p&gt;実行ファイルと入力ファイルの&lt;code&gt;input.txt&lt;/code&gt;を手動実行と同様に同階層に置きます．
+実行ファイルの行番号の横の空白の上にカーソルを合わせると薄く赤丸が現れるので，デバッグ時に止めたい箇所で押してブレークポイントを置きます．
+左のツールバーから虫付きの▷のようなマークを押し，上部からPythonなら「Python Debug」を，C++なら「(lldb) C++ Debug」を選択して「▷」を押すとデバッグ実行がされます．
+&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/debug.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+上部の「▷」を押してブレークポイントを一つずつ進めながら，左のバーやデバッグコンソールから変数を確認することができます．&lt;/p&gt;
+&lt;h2 id=&#34;カスタマイズ&#34;&gt;カスタマイズ&lt;/h2&gt;
+&lt;p&gt;上記の範囲でもある程度便利に使えると思いますが，自分好みに変更することによってより使いやすくなるかもしれません．
+以下では考えられうるカスタマイズ箇所を少しだけ紹介します．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;拡張機能
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.devcontainer/devcontainer.json&lt;/code&gt; の設定によって，Python（Pythonの補完等），C/C++（C++の補完等），Code-runner（手動実行），LLDB（C++のデバッグ）の拡張機能はすでに入るようになっていると思います．他の使いたい拡張機能も入れてみると良いかもしれません．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ライブラリ
+&lt;ul&gt;
+&lt;li&gt;C++では，Dockerfile内の記述により &lt;code&gt;boost&lt;/code&gt; は使えるようになっていますが，atcoderで使える &lt;code&gt;eigen&lt;/code&gt; などは入れていません．必要あればDockerfile内に記述を加えてインストールしてください．&lt;/li&gt;
+&lt;li&gt;Pythonについては，&lt;code&gt;requirements.txt&lt;/code&gt; に &lt;code&gt;online-judge-tools&lt;/code&gt; しか書いてないので，必要な外部ライブラリはご自身で追記してください（競プロでよく使われるのはNumpy，Scipy，NetworkXあたりでしょうか）．また，ubuntuイメージに元から入っているCPython3.10しか使えないので，pypyが必要であればDockerfileを編集して追加してください．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;テスト・提出
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;test.sh&lt;/code&gt;・&lt;code&gt;submit.sh&lt;/code&gt;がそれぞれ自動テスト・提出のためのスクリプトです．必要があれば少し変更してもよいかもしれません．
+&lt;ul&gt;
+&lt;li&gt;自分はatcoder problemsのバーチャルコンテストにも参加するので，その場合はコードの一行目にコメントとして書かれたurlからテストケースのダウンロードや提出がされるよう変更しています（&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/atcoder/tree/main&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;）．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;C++ intelliSenseMode
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;./vscode/c_cpp_properties.json&lt;/code&gt; 内で私の環境ではintelliSenseModeを &lt;code&gt;intelliSenseMode&amp;quot;: &amp;quot;linux-gcc-arm64&amp;quot;&lt;/code&gt; としてありますが，他の環境では&lt;code&gt;&amp;quot;linux-gcc-x64&amp;quot;&lt;/code&gt; などが適切かもしれません．間違っていても自動で認識すると思うので特に問題はないと思いますが，必要があれば辺越してください．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;おわりに&#34;&gt;おわりに&lt;/h2&gt;
+&lt;p&gt;詰まった箇所やローカル環境等によって少し異なる点があるでしょうし，また変な記述があれば修正・追記したいので，何かありましたら&lt;a class=&#34;link&#34; href=&#34;https://twitter.com/miiitomi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;みーとみ&lt;/a&gt;まで教えていただけると嬉しいです．
+開発環境を良い感じに整えて良い競プロライフを！！&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>ABC159 F - Knapsack for All Segments：別解</title>
+        <link>https://miiitomi.github.io/p/abc159f/</link>
+        <pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/abc159f/</guid>
+        <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/abc159&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ABC159&lt;/a&gt;の&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/abc159/tasks/abc159_f&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;F問題&lt;/a&gt;について、&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/abc159/tasks/abc159_f/editorial&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;解説&lt;/a&gt;にある公式解説・ユーザー解説のどれとも発想が異なりそうな解法を思い付いたので、解法解説らしきものを書いてみます。&lt;/p&gt;
+&lt;h1 id=&#34;問題&#34;&gt;問題&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;問題リンクは&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/abc159/tasks/abc159_f&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;問題：$N$ 項の正整数からなる数列 $A = (A_1, A_2, \dots, A_N)$ と正整数 $S$ について、$f(L, R)$ を $L$ 項目から $R$ 項目までの（連続とは限らない）部分列のうち和が $S$ であるものの数、つまり
+$$
+f(L, R) =  \left|\left\lbrace (x_1, \dots, x_k) ~ \Big|~ L \le x_{1} &amp;lt; \dots &amp;lt; x_{k} \le R,~\mathrm{and}~ \sum_{j=1}^k A_{x_j} = S \right\rbrace\right|
+$$
+とします。与えられる数列 $A$ と正整数 $S$ について
+$$
+\sum_{L = 1}^{N}\sum_{R = L}^{N}f(L, R)
+$$
+を$998244353$で割ったあまりを求めてください。&lt;/li&gt;
+&lt;li&gt;制約：
+&lt;ul&gt;
+&lt;li&gt;$1 \le N \le 3000$&lt;/li&gt;
+&lt;li&gt;$1 \le S \le 3000$&lt;/li&gt;
+&lt;li&gt;$1 \le A_i \le 3000$  for each $i=1,\dots,N$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;解説&#34;&gt;解説&lt;/h1&gt;
+&lt;p&gt;まず $\Theta(N^2S)$ の愚直解法を説明し、後でそれを $\Theta(NS)$ に高速化する解法を示します（以下「998244353で割ったあまりを」の部分は無視して説明します）。&lt;/p&gt;
+&lt;h2 id=&#34;1-愚直解法thetan2s&#34;&gt;1. 愚直解法：$\Theta(N^2S)$&lt;/h2&gt;
+&lt;p&gt;この解法は以下の2ステップからなります。&lt;/p&gt;
+&lt;h3 id=&#34;ステップ1まず-l--1-で固定してナップサックdpテーブルを求める&#34;&gt;ステップ1：まず $L = 1$ で固定してナップサックDPテーブルを求める。&lt;/h3&gt;
+&lt;p&gt;通常のナップサックDPのように、$dp[i][w] =$ 「数列の $i$ 番目まで（$A_1,\dots,A_i$）のうち、いくつかを使って和を $w$ にする方法の数」（ただし $0 \le i\le N,~0 \le w \le S$）とします。
+これは、
+$$
+\begin{align*}
+dp[1][w] &amp;amp;= \begin{cases} 1 &amp;amp; \mathrm{if} ~ w = 0 \\ 0 &amp;amp; \mathrm{otherwise}\end{cases}, \\
+dp[i][w] &amp;amp;= \begin{cases} dp[i-1][w] + dp[i-1][w-A_i]&amp;amp; \mathrm{if}~w-A_i \ge 0 \\ dp[i-1][w] &amp;amp; \mathrm{otherwise} \end{cases},
+\end{align*}
+$$
+とすることで、$\Theta(NS)$ で列挙できます。このとき、
+$$
+f(1, R) = dp[R][S]
+$$
+のため、$L = 1$ のときの和はこのテーブルの $S$ 列目の和を取ることで求められます。&lt;/p&gt;
+&lt;h3 id=&#34;ステップ2-a_1-a_2-dots-を抜いたケースを数えていくことで-fl-rl-ge-2を求めていく&#34;&gt;ステップ2： $A_1, A_2, \dots,$ を抜いたケースを数えていくことで $f(L, R)$（$L \ge 2$）を求めていく.&lt;/h3&gt;
+&lt;p&gt;上記で求めたdpテーブルについて $A_1$ の影響を除いていくには、左（$w$ の小さい方）から
+$$ dp[i][w] = dp[i][w] - dp[i][w - A_1]　\tag{1} $$
+としていくことで、$A_2,\dots, A_i$ 番目のうちいくつかを用いて和を $S$ にする方法の数を求めていくことができます。
+したがって、$A_1$ についてこの操作をすべて行なった後のdpテーブルにおいて、
+$$
+\sum_{R=2}^{N} f(2, R) = \sum_{R = 2}^{N} dp[R][S]
+$$
+が成り立ちます。&lt;/p&gt;
+&lt;p&gt;以下、この操作を $A_2, A_3, \dots$ と続けていくことで、 $L = 3, 4, \dots$ について $\sum_{R=L}^{N} f(L, R)$ を求めていくことができます。&lt;/p&gt;
+&lt;p&gt;$A_1, A_2, \dots$ のそれぞれについて、dpテーブルの各セルについて $(1)$ の操作を行うため、全体で $\Theta(N^2S)$ となります。&lt;/p&gt;
+&lt;h2 id=&#34;2-高速化解法thetans&#34;&gt;2. 高速化解法：$\Theta(NS)$&lt;/h2&gt;
+&lt;p&gt;1.の愚直解法では間に合いませんが、この解法の中でネックとなっているのは $N\times S$ のサイズのdpテーブルを状態として保持してステップ2でこの各セルを更新する箇所であり、これを少しのステップで高速化することができます。&lt;/p&gt;
+&lt;p&gt;上記の解法の中で、$L$ を固定した時の $f(L, R)$ の和は、その時点でのdpテーブルの$S$列目に関して行方向に足し合わせたものです。
+また、操作 (1) において、列 $w$ から列 $w - A_i$ の値を引くという形で、各行について同じような操作を行なっています。&lt;/p&gt;
+&lt;p&gt;したがって、このdpテーブルを行方向に足し合わせた$1$行$S$列のテーブル sum を保持していれば、各状態における$S$列目の和を求めることと、更新を行うことができます。&lt;/p&gt;
+&lt;p&gt;アルゴリズムの全体像を擬似コードとして書くと、以下の通りになります：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Input: N, S, A = (A_1, ... , A_N)
+---
+Initialize ans=0, dp[0][0]=0, dp[0][w]=0 for w=1..S, sum[w]=0 for w=0..S
+// Step 1.
+For i = 1 to N
+    For w = 0 to S
+        dp[i][w] = dp[i-1][w]
+        if w - A_i &amp;gt;= 0
+            dp[i][w] += dp[i-1][w - A_i]
+        sum[w] += dp[i][w]
+// Step 2.
+For i = 1 to N
+    ans += sum[S]    // A_i を除く前の S 列の和
+    For w = A_i to S
+        sum[w] -= sum[w - A_i]
+    sum[0] -= 1    // dp[i][0] の 1 を除くため.
+return ans
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;C++での提出コードは&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/abc159/submissions/48510009&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;（実行時間 32 ms）。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h1 id=&#34;終わりに&#34;&gt;終わりに&lt;/h1&gt;
+&lt;p&gt;早く黄色コーダーになってこの記事を解説に載せたい。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;dpテーブルも1次元で保持することができるためコードではそのようにしています。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        <item>
+        <title>青コーダーがARC169で0完灰パフォ出して入水した話</title>
+        <link>https://miiitomi.github.io/p/zerokan/</link>
+        <pubDate>Mon, 11 Dec 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/zerokan/</guid>
+        <description>&lt;img src="https://miiitomi.github.io/images/zerokan/grey.png" alt="Featured image of post 青コーダーがARC169で0完灰パフォ出して入水した話" /&gt;&lt;p&gt;こちらの記事は、&lt;a class=&#34;link&#34; href=&#34;https://adventar.org/calendars/8745&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;競プロ Advent Calendar 2023&lt;/a&gt;の11日目の記事になります。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;登録時は「 HACK TO THE FUTURE 2024（AHC027）で上位入賞しました！記事を書きます」と書いていて&lt;a class=&#34;link&#34; href=&#34;https://x.com/miiitomi/status/1724020208300626093?s=20&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こんなツイート&lt;/a&gt;もしていましたが、AHC027は最終360位という見るも無惨な結果となって恥ずかしいので内容を変更してお送りいたします。ご了承くださいませ。&lt;/del&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;内容はタイトルの通りで、今後同じ惨劇を生み出さないために記録に残していこうと思います。&lt;/p&gt;
+&lt;h1 id=&#34;arc169に参加するまで&#34;&gt;ARC169に参加するまで&lt;/h1&gt;
+&lt;p&gt;2023年12月9日(土)、「&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/arc169&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;estie プログラミングコンテスト2023 （AtCoder Regular Contest 169）&lt;/a&gt;」（以下ARC169）が開催されました。
+このコンテスト前の時点で私のレートは1656で青。
+11月に青コーダーになったばかりですが、ABCでは11連続で青パフォを取るなどしており、青の実力は普通にあるかなと慢心していたところでした。
+ARCについてはABCより苦手意識はあるものの、前回のARCでは青パフォを取っており、多少ミスしても水色か最悪緑パフォくらいでは耐えるだろうし、1回で水色に落ちたりはしないだろうと考えていました。&lt;/p&gt;
+&lt;p&gt;ちなみに、この日の昼間に&lt;a class=&#34;link&#34; href=&#34;https://info.atcoder.jp/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AtCoderInfo&lt;/a&gt;というAtCoderの情報をまとめた公式サイトが公開されており、その中の「&lt;a class=&#34;link&#34; href=&#34;https://info.atcoder.jp/utilize/jobs/rating-business-impact#:~:text=%E6%99%AE%E9%80%9A%E3%81%AEIT%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%A6%E3%80%81%E5%B8%B8%E8%BB%8C%E3%82%92%E9%80%B8%E3%81%97%E3%81%9F%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E9%80%9F%E5%BA%A6%E3%82%92%E6%8C%81%E3%81%A1%E3%80%81%E8%A4%87%E9%9B%91%E3%81%AA%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF%E3%81%AB%E3%81%8A%E3%81%84%E3%81%A6%E3%82%82%E3%83%90%E3%82%B0%E3%81%AE%E5%B0%91%E3%81%AA%E3%81%84%E5%AE%89%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF%E6%A7%8B%E7%AF%89%E3%81%8C%E5%8F%AF%E8%83%BD%E3%81%A8%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Algorithm部門のレーティングと業務における期待できる活躍&lt;/a&gt;」のページの青色の箇所で書かれていた表現を使って、コンテスト前にはこんな調子に乗ったツイートをしていたりもしました。&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;見せてやる僕の†常軌を逸したコーディング速度†を…… &lt;a href=&#34;https://t.co/8jgrIUIShe&#34;&gt;pic.twitter.com/8jgrIUIShe&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1733455252400300469?ref_src=twsrc%5Etfw&#34;&gt;December 9, 2023&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+（この後にあんな惨劇に見舞われるとは……）&lt;/p&gt;
+&lt;p&gt;ちなみに、このARC169では1問目の配点が400点となっており、普段のARCの1問目が300点程度であることを考えるとやや高めであるため、ツイッター上では少し0完を心配している参加者の方も見受けられましたが、僕自身は「いやいくらなんでも0完ってことはないでしょう、1完は早めに確保して、ノルマは2完、可能なら3問目もトライしたい」くらいに考えていました。&lt;/p&gt;
+&lt;h1 id=&#34;arc169コンテスト中&#34;&gt;ARC169コンテスト中&lt;/h1&gt;
+&lt;p&gt;21時、2時間のコンテストが始まりました。コンテストの時間中の自分の思考過程を思い出しながら時系列に沿って書いていこうと思います。&lt;/p&gt;
+&lt;h2 id=&#34;a問題21002120程度&#34;&gt;A問題（21:00~21:20程度）&lt;/h2&gt;
+&lt;p&gt;まず&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/arc169/tasks/arc169_a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;A問題&lt;/a&gt;を開きます。むむむ、なるほどわからん。&lt;/p&gt;
+&lt;p&gt;最初開いて問題を読んでから、20分近くそのままA問題を色々ごちゃごちゃ考え続けていました。
+今思い出すと、公式解説解法の「深さの深い方ほど寄与が大きくなるはずなのでそちらから考える」という考えに近いところには至っていたように思います。&lt;/p&gt;
+&lt;p&gt;しかし、これはコンテストの終了後に気付いて愕然とするのですが、この時の自分はA問題の設定をやや誤解していました。
+各繰り返しステップ内において、本当なら頂点Aから頂点Bに値が加えられた後で頂点Bから別の頂点Cに値が加えられるということはこの問題設定ではありえないのですが、この時自分はそれが起こりうるものとずっと信じ込んでいました。&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;
+そのため、同じ深さ内での値の総和が0であっても、足される順番の前後によって寄与が違うことがありうるのではないかと考えてしまい、そのあたりの解消をすることができそうでできないな……と考え続けてしまっていました。&lt;/p&gt;
+&lt;p&gt;しばらく考えてから、一旦A問題は置いておいて、先にB問題へ移ることにします。&lt;/p&gt;
+&lt;h2 id=&#34;b問題開いてから嘘解法を実装するまで21202140程度&#34;&gt;B問題：開いてから嘘解法を実装するまで（21:20~21:40程度）&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/arc169/tasks/arc169_b&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;B問題&lt;/a&gt;を開きます。&lt;/p&gt;
+&lt;p&gt;$l = 1$ で固定すると $r = 1, \dots, N$ に関しては $f(A_\ell, \dots, A_r)$ は貪欲法で計算でき、それらの列挙は $O(N)$ でできます。が、それらを $l = 2, 3, \dots, $ とやっていくわけにはいかないので工夫が必要です。
+公式解説ではDPでやっているわけですが、残念なことにここで自分は $l = 1$ での結果からそれを他の $l$ についても構成するような嘘解法を閃いてしまいます。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;この嘘解法でいけると確信してしまった私は、A問題のことは忘れてB問題のその実装に突っ走ることになります。多分最初の実装が22時よりだいぶ前にはできていたと思います。&lt;/p&gt;
+&lt;h2 id=&#34;b問題デバッグ21402230程度&#34;&gt;B問題：デバッグ（21:40~22:30程度）&lt;/h2&gt;
+&lt;p&gt;一旦その解法を実装してサンプルを試してみますが、出力が合いません。
+まあまだ時間は全然ある、落ち着いてデバッグしよう、と考えます。&lt;/p&gt;
+&lt;p&gt;ここでの悲劇の一つは、この嘘解法、実装が極めて複雑で難しかったことです。
+致命的な実装ミスがこのデバッグしてた中で3-4回は見つかったと思います。
+そのデバッグを続けていても全然サンプルが合わないのですが、実装の複雑さからまだバグがあるだけだと思い、解法を考え直すということに至りませんでした……。&lt;/p&gt;
+&lt;p&gt;22時を回って時間が短くなってくると、焦りがつのり始めます。するとどんどん頭は働かなくなり、デバッグしててもサンプルに対してどう動いていたら正しいのかもよくわからなくなってきて、それを自覚してさらに焦りが大きくなり、という悪循環に入ってしまいました。&lt;/p&gt;
+&lt;p&gt;ここまでのどこかで、一旦B問題の別解法をゆっくり考え直そう、あるいはA問題に戻ってゆっくり問題設定を考え直そうということができればもしかしたらよかったのかもしれませんが、この嘘解法にあまりに時間を使いすぎてしまっていたせいでそのスイッチもすることができませんでした。&lt;/p&gt;
+&lt;h2 id=&#34;諦め2230終了程度&#34;&gt;諦め（22:30~終了程度）&lt;/h2&gt;
+&lt;p&gt;22:30を回ってくると「あ、もうこれ無理そう」って気持ちになってきます。一応手ではデバッグを続けてはいるのですが、もう自分のコードが何を意図して書いていたものなのかもよくわからなくなってきているし、そこから今更A問題とか考えても時間無いだろうと考えてしまいそうすることもできません。
+だんだん諦めモードが大きくなってくるともうデバッグもやめ、ツイッターを開いて眺めたりもして、0完したことをどんなふうにツイートしたらウケるかな、とか考えてました。&lt;/p&gt;
+&lt;h2 id=&#34;終了後&#34;&gt;終了後&lt;/h2&gt;
+&lt;p&gt;23時、コンテストが終わります。なんかこの時は0完でコンテストが終わってしまったみたいな絶望感より、やっと苦しみから逃れられるみたいな解放感の方が大きかった気がします。
+ツイッターのタイムラインを見たり公式解説を読んでA問題の勘違いに気づいて愕然としたり、B問題の解説を見て「やっぱりあれは想定解法ではなかったんだ、まあそりゃそうだよな」と思ったりしてました。&lt;/p&gt;
+&lt;p&gt;結果としては1問以上解いた人が1710人いたため自分は1711位タイ、パフォーマンスは393の灰色パフォで、レートは79下がり青色から水色に陥落となりました。&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;Rated参加93回目にして初の灰パフォで爆笑してる&lt;br&gt;&lt;br&gt;miiitomiさんのestie プログラミングコンテスト2023 （AtCoder Regular Contest 169）での成績：1711位&lt;br&gt;パフォーマンス：393相当&lt;br&gt;レーティング：1656→1577 (-79) :(&lt;a href=&#34;https://twitter.com/hashtag/AtCoder?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#AtCoder&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/estie%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%882023?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#estieプログラミングコンテスト2023&lt;/a&gt;（ARC169） &lt;a href=&#34;https://t.co/cnDqNgDJ66&#34;&gt;https://t.co/cnDqNgDJ66&lt;/a&gt; &lt;a href=&#34;https://t.co/CeKVNTX7lt&#34;&gt;pic.twitter.com/CeKVNTX7lt&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1733494793391726812?ref_src=twsrc%5Etfw&#34;&gt;December 9, 2023&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;h1 id=&#34;0完灰パフォを出さないために&#34;&gt;0完灰パフォを出さないために&lt;/h1&gt;
+&lt;p&gt;ここからは同じ悲劇を繰り返さないために、できる対策を考えていこうと思います、といっても当たり前のことしか書いてないですが。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. ARCに出ない。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;完璧な対策ですね。ARCに出なければARCで0完灰パフォを出すことはありません。レートは落としたくないけど問題は解きたいという人はUnrated参加にしても良いでしょう。なお、ARCだけでなくAGCも0完リスクがある（というかそちらの方が当然リスクは高い）ため、AGCも出ない方がいいかもしれません。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. ARCの問題を解いて慣れる。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;普段の練習で僕はほぼABCの問題しか解いていません（それも全然そんなにまだ埋められていません）。
+青下位くらいならまだABCを解いて典型を学び身につけることがレートを上げるために最重要だと思っているからなのですが、ARCに挑戦してARCでまともな成績を出したいなら、ARCの問題をもっと解いて、ARC的な問題に慣れ、考察するときの考え方を身につけるべきでしょう。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 問題文は落ち着いてゆっくり読み、詰まったら問題設定の勘違いがないか何度も見直す。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;今回のA問題から得られた教訓です。解説を読んでから問題文を読み直したらすぐに勘違いに気付いたため、どこかでA問題に立ち戻ったら問題設定の勘違いに気付いてそこから解けていたかもしれません。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. それっぽそうな解法を思いついても、突っ走る前にちゃんと確かめる。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;B問題で嘘解法を見つけてそれに突っ走ってしまったことへの反省です。特に今回は極めて実装の重すぎる方針を引いてしまったことものちに後を引いたので、解法としての正当性だけでなく、もっと実装しやすくバグらせにくい簡潔な解法・実装方針がないかも一旦立ち止まって考えるとよいかもしれません。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5. どんなに時間をかけてしまっても、ハズレ方針だったっぽいと思ったら勇気をもってきっぱりそれを捨てよう。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;上記とも関連しますが、あまりにB問題の嘘解法をひっぱり続けてしまい、それを捨てて別解法を考えることも、A問題に立ち戻ることもできなかったことへの反省です。
+どうしても時間をかけてしまった方針があったらそれを捨てることにコストを感じてしまいがちですが、それまでにサンクコストをかけてしまったからといってそれを気にしてしまうのは非合理です。&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;
+捨てるべき時はきっぱり捨てましょう。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6. 最後まで諦めない。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;最後まで諦めてはいけない、言うは易し行うは難しの最たるものとも思いますが、今回の自分はあまりにも諦めモードに入るのが早かったように思います。残り30分で、Bの嘘解法を見切ってA問題に立ち戻っていたら1完はできていたかもしれません。
+小さい頃から教師ややっていたスポーツのコーチに「お前は諦めが早すぎる」と怒られ続けて生きてきた私ですが、それがこの年になってもこんな形で影響を与えてくるとは……。&lt;/p&gt;
+&lt;h1 id=&#34;さいごに&#34;&gt;さいごに&lt;/h1&gt;
+&lt;p&gt;上の反省を踏まえて自分はこれからARCにどう取り組もうかと考えると、正直&lt;strong&gt;しばらくARC/AGCのrated参加はしなくていいかな&lt;/strong&gt;、という気持ちなんですが（現状ABC対策の方が重要度は何倍も高いと思いますし）、もし心変わりしてまたARCにチャレンジしようって気持ちになったら上の1以外の対策を心に刻んで取り組んでいこうと思います。&lt;/p&gt;
+&lt;p&gt;とりあえずは早く青復帰したいので、そのためにまずは引き続きABCの練習に勤しんでいこうと思います。&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;ここまで読んでいただいた方、ありがとうございました。
+ARC対策をちゃんとしないと、次に0完灰パフォを取って色落ちするのはあなたかもしれませんよ……。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;企画くださったryusukeさんありがとうございます！&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;0完灰パフォの方が恥ずかしいだろという説もあります。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;誤解というか、それを問題文からちゃんと読み取れるのも実力だろ、と言われると全くその通りであって反論の余地もないのですが……。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;この嘘解法についてはあまり覚えてないのと恥ずかしいので、それについては詳しく書きませんが……。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;嘘解法とは言ってますが、いまだに自分はあれが本当に嘘だったのかどうか確証がないし、本当はちゃんと上手くやればその方針でいけたんじゃないかとほんの少しだけ思ってます。もう詳細は覚えてないし、終わった後のショックで書いてたコードも消しちゃったし、何よりそれを思い出すのは強いストレスなので今更それを検証しようとは思わないですけど。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;経済学やってるんだからサンクコストは気にしてはいけないってよく分かっているはずなのに……。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;ちなみにこの翌日のABCは普通に水色パフォとってしまいレートは上がりませんでした。こちらはただの実力不足。悔しい……。&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>
