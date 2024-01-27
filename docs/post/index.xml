@@ -123,7 +123,7 @@ AtCoder社がコンテストサイト上で提供する「コードテスト」�
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;もしかしたら実行時に &lt;code&gt;Permission denied&lt;/code&gt; のようにエラーを吐くかもしれませんが，その場合はターミナルを開いて &lt;code&gt;chhmod +x test.sh&lt;/code&gt; のようにして実行権限を付与してください．&lt;/p&gt;
+&lt;p&gt;もしかしたら実行時に &lt;code&gt;Permission denied&lt;/code&gt; のようなエラーを吐くかもしれません．その場合はターミナルを開いて &lt;code&gt;chmod +x test.sh&lt;/code&gt; のようにして実行権限を付与してください．&lt;/p&gt;
 &lt;h3 id=&#34;自動提出&#34;&gt;自動提出&lt;/h3&gt;
 &lt;p&gt;テストと同様に「タスクを実行」から「submit」を実行すると，ojを用いてatcoderにsubmitされ，ブラウザが開いてsubmission pageが開かれます．
 C++なら「C++ 23 (gcc 12.2)」，Pythonなら「Python (PyPy 3.10-v7.3.12)」で提出されると思います．&lt;/p&gt;
@@ -144,6 +144,12 @@ C++なら「C++ 23 (gcc 12.2)」，Pythonなら「Python (PyPy 3.10-v7.3.12)」�
 &lt;p&gt;上記の範囲でもある程度便利に使えると思いますが，自分好みに変更することによってより使いやすくなるかもしれません．
 以下では考えられうるカスタマイズ箇所を少しだけ紹介します．&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;スニペット
+&lt;ul&gt;
+&lt;li&gt;上記では説明しませんでしたが，&lt;code&gt;.vscode/&lt;/code&gt;内にC++とPythonのスニペット設定用ファイルを作っており，VSCode上でファイルを開いて &lt;code&gt;a&lt;/code&gt; と打つとベーステンプレートを開くようにしています．よく使うデータ構造などをスニペットにして入れておくとコマンド一発で貼れて便利です（例えば私のスニペットは&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/atcoder/blob/main/.vscode/cpp.code-snippets&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;）．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;拡張機能
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;.devcontainer/devcontainer.json&lt;/code&gt; の設定によって，Python（Pythonの補完等），C/C++（C++の補完等），Code-runner（手動実行），LLDB（C++のデバッグ）の拡張機能はすでに入るようになっていると思います．他の使いたい拡張機能も入れてみると良いかもしれません．&lt;/li&gt;
@@ -151,8 +157,8 @@ C++なら「C++ 23 (gcc 12.2)」，Pythonなら「Python (PyPy 3.10-v7.3.12)」�
 &lt;/li&gt;
 &lt;li&gt;ライブラリ
 &lt;ul&gt;
-&lt;li&gt;C++では，Dockerfile内の記述により &lt;code&gt;boost&lt;/code&gt; は使えるようになっていますが，atcoderで使える &lt;code&gt;eigen&lt;/code&gt; などは入れていません．必要あればDockerfile内に記述を加えてインストールしてください．&lt;/li&gt;
-&lt;li&gt;Pythonについては，&lt;code&gt;requirements.txt&lt;/code&gt; に &lt;code&gt;online-judge-tools&lt;/code&gt; しか書いてないので，必要な外部ライブラリはご自身で追記してください（競プロでよく使われるのはNumpy，Scipy，NetworkXあたりでしょうか）．また，ubuntuイメージに元から入っているCPython3.10しか使えないので，pypyが必要であればDockerfileを編集して追加してください．&lt;/li&gt;
+&lt;li&gt;C++では，Dockerfile内でインストールして &lt;code&gt;boost&lt;/code&gt; は使えるようになっていますが，他にatcoderで使える &lt;code&gt;Eigen&lt;/code&gt; などは入れていません．必要あればDockerfile内に記述を加えてインストールしてください．&lt;/li&gt;
+&lt;li&gt;Pythonについては &lt;code&gt;requirements.txt&lt;/code&gt; に書かれたものが pip によってインストールされるようになっていますが，ここでは &lt;code&gt;online-judge-tools&lt;/code&gt; しか書いていません．必要な外部ライブラリはご自身で追記してください（競プロでよく使われるのはnumpyやnetworkxあたりでしょうか）．また，ubuntuイメージに元から入っているCPython3.10しか使えないので，pypyが必要であればDockerfileを編集して追加してください．&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;テスト・提出
@@ -167,7 +173,7 @@ C++なら「C++ 23 (gcc 12.2)」，Pythonなら「Python (PyPy 3.10-v7.3.12)」�
 &lt;/li&gt;
 &lt;li&gt;C++ intelliSenseMode
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;./vscode/c_cpp_properties.json&lt;/code&gt; 内で私の環境ではintelliSenseModeを &lt;code&gt;intelliSenseMode&amp;quot;: &amp;quot;linux-gcc-arm64&amp;quot;&lt;/code&gt; としてありますが，他の環境では&lt;code&gt;&amp;quot;linux-gcc-x64&amp;quot;&lt;/code&gt; などが適切かもしれません．間違っていても自動で認識すると思うので特に問題はないと思いますが，必要があれば辺越してください．&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./vscode/c_cpp_properties.json&lt;/code&gt; 内で私の環境ではintelliSenseModeを &lt;code&gt;intelliSenseMode&amp;quot;: &amp;quot;linux-gcc-arm64&amp;quot;&lt;/code&gt; としてありますが，他の環境では&lt;code&gt;&amp;quot;linux-gcc-x64&amp;quot;&lt;/code&gt; などが適切かもしれません．間違っていても自動で認識すると思うので特に問題はないと思いますが，必要があれば修正してください．&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
