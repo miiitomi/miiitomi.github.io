@@ -6,7 +6,24 @@
         <description>Recent content on miiitomi</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Sun, 31 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 27 Jan 2024 13:49:27 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>VSCode&#43;Dockerで最小構成で始めるAtCoder用C&#43;&#43;/Python環境設定</title>
+        <link>https://miiitomi.github.io/p/kyopro-env/</link>
+        <pubDate>Sat, 27 Jan 2024 13:49:27 +0900</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/kyopro-env/</guid>
+        <description>&lt;p&gt;競技プログラミングはプログラミング初心者がプログラミングを始めて学ぶのによいと言う人がいます．
+僕も同意するのですが，一方でコーディングの前に開発環境を整えるのがコンピュータに慣れていない人にはハードルが高いという面もあるように思います．
+AtCoder社がコンテストサイト上で提供する「コードテスト」や，PythonならGoogle Colabなどを使うのも一つの手ではありますが，VSCodeなどのIDEの機能を用いた方が快適にコーディングができるのは間違いないでしょう．&lt;/p&gt;
+&lt;p&gt;本記事は，VSCodeとDockerを用いることで初心者でもAtCoder用の環境を整えやすくすることを目的とします．また，後にそれぞれの好きなようにカスタマイズしやすいよう，構成は極力少なく単純に整えることを目指します．&lt;/p&gt;
+&lt;p&gt;本記事で紹介するディレクトリテンプレートは&lt;a class=&#34;link&#34; href=&#34;&#34; &gt;こちら&lt;/a&gt;で公開していますので，そちらも参照しながらご覧ください．&lt;/p&gt;
+&lt;h1 id=&#34;もくじ&#34;&gt;もくじ&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>2023みーとみネイルまとめ</title>
         <link>https://miiitomi.github.io/p/nail2023/</link>
         <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>

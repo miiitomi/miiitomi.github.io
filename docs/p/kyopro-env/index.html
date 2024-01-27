@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='最近あまり映画館に足を運んでいなかったけど、ふと時間が空いたので少し評判がいいらしいと小耳に挟んだこの作品を見てきた。 小説もそうだけど（最近書けてないけど）、感想の言語化は感想の言語化をしていかないと上手くならないと思うので、映画についてもブログに感想を書いていこうと思う。 すごい是枝作品感はあったし、合う人合わない人がいるのかもしれないが、僕としてはかなりよかった。
-母と小学校高学年の息子・湊のシングルマザー家庭で、母は突然スニーカーを片方無くしてくるなどの湊の不自然な様子を心配していた。 ある日、帰りの遅い湊を探しに行くと、湊は人気のない場所で意味不明な言葉を発しており、さらに耳を負傷していた。 その耳の負傷は担任の堀先生にやられたと言い、さらに先生に「お前の脳は豚の脳だ」とまで言われたという。 母は学校に説明を求めに行くと、校長や堀先生に不誠実極まりない態度を取られ憤る。 しかし、一連の話を先生目線で見ると、また違った側面があり……。
-一つの話を母の視点と先生の視点でみると違った側面があって、という感じの話ならありきたりの話でしかないのだが（その表面的な側面だけ取ってもこの話はそれだけではないのだけれども）、この作品はその中の登場人物、特に堀先生や湊の内面表現が素晴らしかった。 母親視点では不誠実で最低な教師にしか映らなかった堀先生だが、堀先生視点では不器用な面はあるものの、誠実で良い教師であろうとし、学校の対応に疑問を持つも真っ向から対抗することもできず、私生活でも上手く行かない面もあって、繊細な様子がよくみれる。 そしてその態度が、母親視点では不誠実に見える先生の態度と、ほとんど矛盾がないというのは表現として秀逸なところだなと思った。
-さらには湊の、教室内での生徒間での立場の取り方に苦悩し、また大きな秘密を抱えながら、自身と母のためにそれを誰かに言うこともできず、それで堀先生を傷付けてしまっていることにもまた傷付き、とある意味小学生らしいがある意味では大人な内面がよく描写されていた。 この湊を演じた子役の黒川想矢の演技だけでも見に行く価値があると思う。
-ただ、タイトルの『怪物』やトレーラー映像とかはミスリーディングなように個人的には感じた。 商業的に成功してるようなのでこれでいいのかもしれないのだが、僕個人としてはこの作品をこうまとめるセンスはちょっと違うかなあと。 これから見る人にはそういった先入観は持たず、どういう作品かの事前情報は極力廃した上で見に行ってほしい（と言ったところでこのブログをここまで読んでしまってる人にはもう手遅れだが）。'><title>『怪物』</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='競技プログラミングはプログラミング初心者がプログラミングを始めて学ぶのによいと言う人がいます． 僕も同意するのですが，一方でコーディングの前に開発環境を整えるのがコンピュータに慣れていない人にはハードルが高いという面もあるように思います． AtCoder社がコンテストサイト上で提供する「コードテスト」や，PythonならGoogle Colabなどを使うのも一つの手ではありますが，VSCodeなどのIDEの機能を用いた方が快適にコーディングができるのは間違いないでしょう．
+本記事は，VSCodeとDockerを用いることで初心者でもAtCoder用の環境を整えやすくすることを目的とします．また，後にそれぞれの好きなようにカスタマイズしやすいよう，構成は極力少なく単純に整えることを目指します．
+本記事で紹介するディレクトリテンプレートはこちらで公開していますので，そちらも参照しながらご覧ください．
+もくじ '><title>VSCode&#43;Dockerで最小構成で始めるAtCoder用C&#43;&#43;/Python環境設定</title>
 
-<link rel='canonical' href='https://miiitomi.github.io/p/kaibutsu/'>
+<link rel='canonical' href='https://miiitomi.github.io/p/kyopro-env/'>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-<link rel="stylesheet" href="/scss/style.min.d43579348960a57d5117b521bb1d6e306d4bdff5d9249f3968385a5cefe7b925.css"><meta property='og:title' content='『怪物』'>
-<meta property='og:description' content='最近あまり映画館に足を運んでいなかったけど、ふと時間が空いたので少し評判がいいらしいと小耳に挟んだこの作品を見てきた。 小説もそうだけど（最近書けてないけど）、感想の言語化は感想の言語化をしていかないと上手くならないと思うので、映画についてもブログに感想を書いていこうと思う。 すごい是枝作品感はあったし、合う人合わない人がいるのかもしれないが、僕としてはかなりよかった。
-母と小学校高学年の息子・湊のシングルマザー家庭で、母は突然スニーカーを片方無くしてくるなどの湊の不自然な様子を心配していた。 ある日、帰りの遅い湊を探しに行くと、湊は人気のない場所で意味不明な言葉を発しており、さらに耳を負傷していた。 その耳の負傷は担任の堀先生にやられたと言い、さらに先生に「お前の脳は豚の脳だ」とまで言われたという。 母は学校に説明を求めに行くと、校長や堀先生に不誠実極まりない態度を取られ憤る。 しかし、一連の話を先生目線で見ると、また違った側面があり……。
-一つの話を母の視点と先生の視点でみると違った側面があって、という感じの話ならありきたりの話でしかないのだが（その表面的な側面だけ取ってもこの話はそれだけではないのだけれども）、この作品はその中の登場人物、特に堀先生や湊の内面表現が素晴らしかった。 母親視点では不誠実で最低な教師にしか映らなかった堀先生だが、堀先生視点では不器用な面はあるものの、誠実で良い教師であろうとし、学校の対応に疑問を持つも真っ向から対抗することもできず、私生活でも上手く行かない面もあって、繊細な様子がよくみれる。 そしてその態度が、母親視点では不誠実に見える先生の態度と、ほとんど矛盾がないというのは表現として秀逸なところだなと思った。
-さらには湊の、教室内での生徒間での立場の取り方に苦悩し、また大きな秘密を抱えながら、自身と母のためにそれを誰かに言うこともできず、それで堀先生を傷付けてしまっていることにもまた傷付き、とある意味小学生らしいがある意味では大人な内面がよく描写されていた。 この湊を演じた子役の黒川想矢の演技だけでも見に行く価値があると思う。
-ただ、タイトルの『怪物』やトレーラー映像とかはミスリーディングなように個人的には感じた。 商業的に成功してるようなのでこれでいいのかもしれないのだが、僕個人としてはこの作品をこうまとめるセンスはちょっと違うかなあと。 これから見る人にはそういった先入観は持たず、どういう作品かの事前情報は極力廃した上で見に行ってほしい（と言ったところでこのブログをここまで読んでしまってる人にはもう手遅れだが）。'>
-<meta property='og:url' content='https://miiitomi.github.io/p/kaibutsu/'>
+<link rel="stylesheet" href="/scss/style.min.d43579348960a57d5117b521bb1d6e306d4bdff5d9249f3968385a5cefe7b925.css"><meta property='og:title' content='VSCode&#43;Dockerで最小構成で始めるAtCoder用C&#43;&#43;/Python環境設定'>
+<meta property='og:description' content='競技プログラミングはプログラミング初心者がプログラミングを始めて学ぶのによいと言う人がいます． 僕も同意するのですが，一方でコーディングの前に開発環境を整えるのがコンピュータに慣れていない人にはハードルが高いという面もあるように思います． AtCoder社がコンテストサイト上で提供する「コードテスト」や，PythonならGoogle Colabなどを使うのも一つの手ではありますが，VSCodeなどのIDEの機能を用いた方が快適にコーディングができるのは間違いないでしょう．
+本記事は，VSCodeとDockerを用いることで初心者でもAtCoder用の環境を整えやすくすることを目的とします．また，後にそれぞれの好きなようにカスタマイズしやすいよう，構成は極力少なく単純に整えることを目指します．
+本記事で紹介するディレクトリテンプレートはこちらで公開していますので，そちらも参照しながらご覧ください．
+もくじ '>
+<meta property='og:url' content='https://miiitomi.github.io/p/kyopro-env/'>
 <meta property='og:site_name' content='miiitomi'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='映画' /><meta property='article:published_time' content='2023-06-20T23:18:23&#43;09:00'/><meta property='article:modified_time' content='2023-06-20T23:18:23&#43;09:00'/><meta property='og:image' content='https://miiitomi.github.io/images/movie/kaibutsu.jpeg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='競プロ' /><meta property='article:published_time' content='2024-01-27T13:49:27&#43;09:00'/><meta property='article:modified_time' content='2024-01-27T13:49:27&#43;09:00'/><meta property='og:image' content='https://miiitomi.github.io/images/avatar.png' />
 <meta name="twitter:site" content="@miiitomi">
-    <meta name="twitter:creator" content="@miiitomi"><meta name="twitter:title" content="『怪物』">
-<meta name="twitter:description" content="最近あまり映画館に足を運んでいなかったけど、ふと時間が空いたので少し評判がいいらしいと小耳に挟んだこの作品を見てきた。 小説もそうだけど（最近書けてないけど）、感想の言語化は感想の言語化をしていかないと上手くならないと思うので、映画についてもブログに感想を書いていこうと思う。 すごい是枝作品感はあったし、合う人合わない人がいるのかもしれないが、僕としてはかなりよかった。
-母と小学校高学年の息子・湊のシングルマザー家庭で、母は突然スニーカーを片方無くしてくるなどの湊の不自然な様子を心配していた。 ある日、帰りの遅い湊を探しに行くと、湊は人気のない場所で意味不明な言葉を発しており、さらに耳を負傷していた。 その耳の負傷は担任の堀先生にやられたと言い、さらに先生に「お前の脳は豚の脳だ」とまで言われたという。 母は学校に説明を求めに行くと、校長や堀先生に不誠実極まりない態度を取られ憤る。 しかし、一連の話を先生目線で見ると、また違った側面があり……。
-一つの話を母の視点と先生の視点でみると違った側面があって、という感じの話ならありきたりの話でしかないのだが（その表面的な側面だけ取ってもこの話はそれだけではないのだけれども）、この作品はその中の登場人物、特に堀先生や湊の内面表現が素晴らしかった。 母親視点では不誠実で最低な教師にしか映らなかった堀先生だが、堀先生視点では不器用な面はあるものの、誠実で良い教師であろうとし、学校の対応に疑問を持つも真っ向から対抗することもできず、私生活でも上手く行かない面もあって、繊細な様子がよくみれる。 そしてその態度が、母親視点では不誠実に見える先生の態度と、ほとんど矛盾がないというのは表現として秀逸なところだなと思った。
-さらには湊の、教室内での生徒間での立場の取り方に苦悩し、また大きな秘密を抱えながら、自身と母のためにそれを誰かに言うこともできず、それで堀先生を傷付けてしまっていることにもまた傷付き、とある意味小学生らしいがある意味では大人な内面がよく描写されていた。 この湊を演じた子役の黒川想矢の演技だけでも見に行く価値があると思う。
-ただ、タイトルの『怪物』やトレーラー映像とかはミスリーディングなように個人的には感じた。 商業的に成功してるようなのでこれでいいのかもしれないのだが、僕個人としてはこの作品をこうまとめるセンスはちょっと違うかなあと。 これから見る人にはそういった先入観は持たず、どういう作品かの事前情報は極力廃した上で見に行ってほしい（と言ったところでこのブログをここまで読んでしまってる人にはもう手遅れだが）。"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://miiitomi.github.io/images/movie/kaibutsu.jpeg' />
+    <meta name="twitter:creator" content="@miiitomi"><meta name="twitter:title" content="VSCode&#43;Dockerで最小構成で始めるAtCoder用C&#43;&#43;/Python環境設定">
+<meta name="twitter:description" content="競技プログラミングはプログラミング初心者がプログラミングを始めて学ぶのによいと言う人がいます． 僕も同意するのですが，一方でコーディングの前に開発環境を整えるのがコンピュータに慣れていない人にはハードルが高いという面もあるように思います． AtCoder社がコンテストサイト上で提供する「コードテスト」や，PythonならGoogle Colabなどを使うのも一つの手ではありますが，VSCodeなどのIDEの機能を用いた方が快適にコーディングができるのは間違いないでしょう．
+本記事は，VSCodeとDockerを用いることで初心者でもAtCoder用の環境を整えやすくすることを目的とします．また，後にそれぞれの好きなようにカスタマイズしやすいよう，構成は極力少なく単純に整えることを目指します．
+本記事で紹介するディレクトリテンプレートはこちらで公開していますので，そちらも参照しながらご覧ください．
+もくじ "><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://miiitomi.github.io/images/avatar.png' />
     <link rel="shortcut icon" href="/images/favicon.ico" />
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D93SYWPPB4"></script>
@@ -289,30 +286,22 @@ if (!doNotTrack) {
 
     
 <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/kaibutsu/">
-                
-                    <img src="/images/movie/kaibutsu.jpeg" loading="lazy" alt="Featured image of post 『怪物』" />
-                
-            </a>
-        </div>
-    
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/%E6%98%A0%E7%94%BB/" >
-                映画
+            <a href="/categories/%E7%AB%B6%E3%83%97%E3%83%AD/" >
+                競プロ
             </a>
         
     </header>
     
 
     <h2 class="article-title">
-        <a href="/p/kaibutsu/">『怪物』</a>
+        <a href="/p/kyopro-env/">VSCode&#43;Dockerで最小構成で始めるAtCoder用C&#43;&#43;/Python環境設定</a>
     </h2>
 
     
@@ -330,7 +319,7 @@ if (!doNotTrack) {
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jun 20, 2023</time>
+                <time class="article-time--published">Jan 27, 2024</time>
             </div>
         
 
@@ -343,25 +332,15 @@ if (!doNotTrack) {
     <section class="article-content">
     
     
-    <p>最近あまり映画館に足を運んでいなかったけど、ふと時間が空いたので少し評判がいいらしいと小耳に挟んだこの作品を見てきた。
-小説もそうだけど（最近書けてないけど）、感想の言語化は感想の言語化をしていかないと上手くならないと思うので、映画についてもブログに感想を書いていこうと思う。
-すごい是枝作品感はあったし、合う人合わない人がいるのかもしれないが、僕としてはかなりよかった。</p>
-<p>母と小学校高学年の息子・湊のシングルマザー家庭で、母は突然スニーカーを片方無くしてくるなどの湊の不自然な様子を心配していた。
-ある日、帰りの遅い湊を探しに行くと、湊は人気のない場所で意味不明な言葉を発しており、さらに耳を負傷していた。
-その耳の負傷は担任の堀先生にやられたと言い、さらに先生に「お前の脳は豚の脳だ」とまで言われたという。
-母は学校に説明を求めに行くと、校長や堀先生に不誠実極まりない態度を取られ憤る。
-しかし、一連の話を先生目線で見ると、また違った側面があり……。</p>
-<p>一つの話を母の視点と先生の視点でみると違った側面があって、という感じの話ならありきたりの話でしかないのだが（その表面的な側面だけ取ってもこの話はそれだけではないのだけれども）、この作品はその中の登場人物、特に堀先生や湊の内面表現が素晴らしかった。
-母親視点では不誠実で最低な教師にしか映らなかった堀先生だが、堀先生視点では不器用な面はあるものの、誠実で良い教師であろうとし、学校の対応に疑問を持つも真っ向から対抗することもできず、私生活でも上手く行かない面もあって、繊細な様子がよくみれる。
-そしてその態度が、母親視点では不誠実に見える先生の態度と、ほとんど矛盾がないというのは表現として秀逸なところだなと思った。</p>
-<p>さらには湊の、教室内での生徒間での立場の取り方に苦悩し、また大きな秘密を抱えながら、自身と母のためにそれを誰かに言うこともできず、それで堀先生を傷付けてしまっていることにもまた傷付き、とある意味小学生らしいがある意味では大人な内面がよく描写されていた。
-この湊を演じた子役の黒川想矢の演技だけでも見に行く価値があると思う。</p>
-<p>ただ、タイトルの『怪物』やトレーラー映像とかはミスリーディングなように個人的には感じた。
-商業的に成功してるようなのでこれでいいのかもしれないのだが、僕個人としてはこの作品をこうまとめるセンスはちょっと違うかなあと。
-これから見る人にはそういった先入観は持たず、どういう作品かの事前情報は極力廃した上で見に行ってほしい（と言ったところでこのブログをここまで読んでしまってる人にはもう手遅れだが）。</p>
-<figure><a href="https://gaga.ne.jp/kaibutsu-movie/about/"><img src="/images/movie/kaibutsu.jpeg" width="400"/></a>
-</figure>
-
+    <p>競技プログラミングはプログラミング初心者がプログラミングを始めて学ぶのによいと言う人がいます．
+僕も同意するのですが，一方でコーディングの前に開発環境を整えるのがコンピュータに慣れていない人にはハードルが高いという面もあるように思います．
+AtCoder社がコンテストサイト上で提供する「コードテスト」や，PythonならGoogle Colabなどを使うのも一つの手ではありますが，VSCodeなどのIDEの機能を用いた方が快適にコーディングができるのは間違いないでしょう．</p>
+<p>本記事は，VSCodeとDockerを用いることで初心者でもAtCoder用の環境を整えやすくすることを目的とします．また，後にそれぞれの好きなようにカスタマイズしやすいよう，構成は極力少なく単純に整えることを目指します．</p>
+<p>本記事で紹介するディレクトリテンプレートは<a class="link" href="" >こちら</a>で公開していますので，そちらも参照しながらご覧ください．</p>
+<h1 id="もくじ">もくじ</h1>
+<ul>
+<li></li>
+</ul>
 
 </section>
 
@@ -370,7 +349,7 @@ if (!doNotTrack) {
     
     <section class="article-tags">
         
-            <a href="/tags/%E6%98%A0%E7%94%BB/">映画</a>
+            <a href="/tags/%E7%AB%B6%E3%83%97%E3%83%AD/">競プロ</a>
         
     </section>
 
@@ -408,6 +387,43 @@ if (!doNotTrack) {
 
     <aside class="related-contents--wrapper">
     
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/abc159f/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ABC159 F - Knapsack for All Segments：別解</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/zerokan/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/images/zerokan/grey.png" loading="lazy" data-key="zerokan" data-hash="/images/zerokan/grey.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">青コーダーがARC169で0完灰パフォ出して入水した話</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
     
 </aside>
 
