@@ -102,11 +102,13 @@ Dockerを起動していることを確認した上で，左したの「><」み
 
 ![](/images/kyopro-env/test.png)
 
-もしかしたら実行時に `Permission denied` のようにエラーを吐くかもしれませんが，その場合はターミナルを開いて `chhmod +x test.sh` のようにして実行権限を付与してください．
+もしかしたら実行時に `Permission denied` のようなエラーを吐くかもしれません．その場合はターミナルを開いて `chmod +x test.sh` のようにして実行権限を付与してください．
+
 
 ### 自動提出
 テストと同様に「タスクを実行」から「submit」を実行すると，ojを用いてatcoderにsubmitされ，ブラウザが開いてsubmission pageが開かれます．
 C++なら「C++ 23 (gcc 12.2)」，Pythonなら「Python (PyPy 3.10-v7.3.12)」で提出されると思います．
+
 
 ### デバッグ
 実行ファイルと入力ファイルの`input.txt`を手動実行と同様に同階層に置きます．
@@ -120,16 +122,19 @@ C++なら「C++ 23 (gcc 12.2)」，Pythonなら「Python (PyPy 3.10-v7.3.12)」�
 上記の範囲でもある程度便利に使えると思いますが，自分好みに変更することによってより使いやすくなるかもしれません．
 以下では考えられうるカスタマイズ箇所を少しだけ紹介します．
 
+- スニペット
+    - 上記では説明しませんでしたが，`.vscode/`内にC++とPythonのスニペット設定用ファイルを作っており，VSCode上でファイルを開いて `a` と打つとベーステンプレートを開くようにしています．よく使うデータ構造などをスニペットにして入れておくとコマンド一発で貼れて便利です（例えば私のスニペットは[こちら](https://github.com/miiitomi/atcoder/blob/main/.vscode/cpp.code-snippets)）．
 - 拡張機能
     - `.devcontainer/devcontainer.json` の設定によって，Python（Pythonの補完等），C/C++（C++の補完等），Code-runner（手動実行），LLDB（C++のデバッグ）の拡張機能はすでに入るようになっていると思います．他の使いたい拡張機能も入れてみると良いかもしれません．
 - ライブラリ
-    - C++では，Dockerfile内の記述により `boost` は使えるようになっていますが，atcoderで使える `eigen` などは入れていません．必要あればDockerfile内に記述を加えてインストールしてください．
-    - Pythonについては，`requirements.txt` に `online-judge-tools` しか書いてないので，必要な外部ライブラリはご自身で追記してください（競プロでよく使われるのはNumpy，Scipy，NetworkXあたりでしょうか）．また，ubuntuイメージに元から入っているCPython3.10しか使えないので，pypyが必要であればDockerfileを編集して追加してください．
+    - C++では，Dockerfile内でインストールして `boost` は使えるようになっていますが，他にatcoderで使える `Eigen` などは入れていません．必要あればDockerfile内に記述を加えてインストールしてください．
+    - Pythonについては `requirements.txt` に書かれたものが pip によってインストールされるようになっていますが，ここでは `online-judge-tools` しか書いていません．必要な外部ライブラリはご自身で追記してください（競プロでよく使われるのはnumpyやnetworkxあたりでしょうか）．また，ubuntuイメージに元から入っているCPython3.10しか使えないので，pypyが必要であればDockerfileを編集して追加してください．
 - テスト・提出
     - `test.sh`・`submit.sh`がそれぞれ自動テスト・提出のためのスクリプトです．必要があれば少し変更してもよいかもしれません．
         - 自分はatcoder problemsのバーチャルコンテストにも参加するので，その場合はコードの一行目にコメントとして書かれたurlからテストケースのダウンロードや提出がされるよう変更しています（[こちら](https://github.com/miiitomi/atcoder/tree/main)）．
 - C++ intelliSenseMode
-    - `./vscode/c_cpp_properties.json` 内で私の環境ではintelliSenseModeを `intelliSenseMode": "linux-gcc-arm64"` としてありますが，他の環境では`"linux-gcc-x64"` などが適切かもしれません．間違っていても自動で認識すると思うので特に問題はないと思いますが，必要があれば辺越してください．
+    - `./vscode/c_cpp_properties.json` 内で私の環境ではintelliSenseModeを `intelliSenseMode": "linux-gcc-arm64"` としてありますが，他の環境では`"linux-gcc-x64"` などが適切かもしれません．間違っていても自動で認識すると思うので特に問題はないと思いますが，必要があれば修正してください．
+
 
 ## おわりに
 詰まった箇所やローカル環境等によって少し異なる点があるでしょうし，また変な記述があれば修正・追記したいので，何かありましたら[みーとみ](https://twitter.com/miiitomi)まで教えていただけると嬉しいです．
