@@ -6,7 +6,178 @@
         <description>Recent content on miiitomi</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Sun, 31 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 27 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>VSCode&#43;DockerによるAtCoder用C&#43;&#43;/Python環境設定</title>
+        <link>https://miiitomi.github.io/p/kyopro-env/</link>
+        <pubDate>Sat, 27 Jan 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/kyopro-env/</guid>
+        <description>&lt;img src="https://miiitomi.github.io/images/kyopro-env/test.png" alt="Featured image of post VSCode&#43;DockerによるAtCoder用C&#43;&#43;/Python環境設定" /&gt;&lt;p&gt;競技プログラミングはプログラミング初心者がプログラミングを始めて学ぶのによいと言う人がいます．
+僕も同意するのですが，一方でコーディングの前に開発環境を整えるのがコンピュータに慣れていない人にはハードルが高いという面もあるように思います．
+AtCoder社がコンテストサイト上で提供する「コードテスト」や，PythonならGoogle Colabなどを使うのも一つの手ではありますが，VSCodeなどのIDEの機能を用いた方が快適にコーディングができるのは間違いないでしょう．&lt;/p&gt;
+&lt;p&gt;本記事は，VSCodeとDockerを用いることで初心者でもAtCoder用の環境を整えやすくすることを目的とします．また，後にそれぞれの好きなようにカスタマイズしやすいよう，構成は極力少なく単純に整えることを目指します．&lt;/p&gt;
+&lt;p&gt;本記事で紹介するディレクトリテンプレートは&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/kyopro-env/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;で公開していますので，そちらも参照しながらご覧ください．&lt;/p&gt;
+&lt;h2 id=&#34;前提準備&#34;&gt;前提・準備&lt;/h2&gt;
+&lt;p&gt;以下のものは用意・インストールされているものとします．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PC/OS
+&lt;ul&gt;
+&lt;li&gt;私の手元ではMacbook Pro（M1・Intelチップ両方）・macOS Sonoma 14.0 で動作を確認しています．&lt;/li&gt;
+&lt;li&gt;WindowsやLinuxでもVSCode・Dockerが使えればほぼ同様に実行可能かと思います．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;VSCode
+&lt;ul&gt;
+&lt;li&gt;お使いのPC/OSに合わせて&lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;からダウンロードしてください．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Docker
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.docker.com/ja-jp/products/docker-desktop/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Docker Desktop&lt;/a&gt;を利用するのが最も簡単かと思われます．通常範囲の個人利用では無料です．&lt;/li&gt;
+&lt;li&gt;（従業員数250人以上の企業でのビジネス利用は有料です．私は業務と私用とで極力合わせるため，docker desktopは用いずlimaからdockerを利用しています．）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;git/github（optional）
+&lt;ul&gt;
+&lt;li&gt;レポジトリをgit/githubで管理するなら．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ディレクトリ構成&#34;&gt;ディレクトリ構成&lt;/h2&gt;
+&lt;p&gt;ディレクトリ構成は以下の通りです．&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/kyopro-env/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;からすべてコピーしてきてください．&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── .devcontainer
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── devcontainer.json      &lt;span class=&#34;c1&#34;&gt;# Container設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── .vscode
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── c_cpp_properties.json  &lt;span class=&#34;c1&#34;&gt;# C/C++ extension設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── cpp.code-snippets      &lt;span class=&#34;c1&#34;&gt;# C++スニペット&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── launch.json            &lt;span class=&#34;c1&#34;&gt;# デバッグ設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── python.code-snippets   &lt;span class=&#34;c1&#34;&gt;# Pythonスニペット&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── settings.json          &lt;span class=&#34;c1&#34;&gt;# ワークスペース（特にcode-runner）設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── tasks.json             &lt;span class=&#34;c1&#34;&gt;# タスク設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── ABC
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── abc336                 &lt;span class=&#34;c1&#34;&gt;# 例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│       ├── a.cpp
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│       ├── a.py
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│       └── input.txt          &lt;span class=&#34;c1&#34;&gt;# 手動実行・デバッグ時用入力ファイル&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── Dockerfile                 &lt;span class=&#34;c1&#34;&gt;# Docker設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── ac-library                 &lt;span class=&#34;c1&#34;&gt;# Atcoder Library&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── ...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── requirements.txt           &lt;span class=&#34;c1&#34;&gt;# pip用requirements（特にonline-judge-tools）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── submit.sh                  &lt;span class=&#34;c1&#34;&gt;# 自動提出用スクリプト&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── test.sh                    &lt;span class=&#34;c1&#34;&gt;# 自動テスト用スクリプト&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ac-libraryについては，gitを用いている場合は&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git submodule add -b production git@github.com:atcoder/ac-library.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;とサブモジュールとして追加するのが楽だと思います．&lt;/p&gt;
+&lt;h2 id=&#34;vscodeからdocker-containerで開くまで&#34;&gt;VSCodeからdocker containerで開くまで&lt;/h2&gt;
+&lt;p&gt;このディレクトリを，VSCodeで開いてください．&lt;/p&gt;
+&lt;p&gt;また，VSCodeで「Dev Containers」の拡張機能をインストールしていない場合は，左のツールバーから拡張機能を開き，検索してこちらをインストールしてください（これ↓）
+&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/devcontainers.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Dockerを起動していることを確認した上で，左したの「&amp;gt;&amp;lt;」みたいなボタンから「コンテナーで再度開く（Reopen in Container）」を選択して，コンテナーで開いてください（初めての場合はビルドに少し時間がかかります）．
+&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/open_container.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;最初のセットアップ&#34;&gt;最初のセットアップ&lt;/h2&gt;
+&lt;p&gt;開けたら，最初のセットアップを少しだけ行います．&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ターミナルを開き（上部のツールバーから，またはMacの場合は&lt;code&gt;ctl+Shift+^&lt;/code&gt;），以下のコマンドで online-judge-tools（oj）からatcoderにログインしてください（&lt;code&gt;{USERNAME}&lt;/code&gt;と&lt;code&gt;{PASSWORD}&lt;/code&gt;は自身のatcoderのユーザ名・パスワードで）．
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;oj login https://atcoder.jp -u &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;USERNAME&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt; -p &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;PASSWORD&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;code&gt;[SUCCESS] You have already signed in.&lt;/code&gt; のように出たら成功です．&lt;/li&gt;
+&lt;li&gt;(optional) git/githubを用いる場合はssh keyの作成と公開鍵の登録などしとくとcontainerからもgithubにアクセスできて便利です．&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
+&lt;h3 id=&#34;手動実行&#34;&gt;手動実行&lt;/h3&gt;
+&lt;p&gt;例にある通り，&lt;code&gt;./ABC/abc336/&lt;/code&gt; のようにコンテストごとにディレクトリを作り，問題Aに対しては &lt;code&gt;a.cpp&lt;/code&gt; や &lt;code&gt;a.py&lt;/code&gt; のようにファイルを作成してください．実行コードを書き，また &lt;code&gt;input.txt&lt;/code&gt; に与えたい入力を書き込みます．&lt;/p&gt;
+&lt;p&gt;実行コードファイルを開いた状態で右上から「Run Code」を押す（またはMacの場合「option+ctl+N」）と，ターミナルが開き実行されます．&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/runcode.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;自動テスト&#34;&gt;自動テスト&lt;/h3&gt;
+&lt;p&gt;同様に実行コードを書き，上のツールバーのターミナルから「タスクを実行」を選択（または&lt;code&gt;cmd+shift+P&lt;/code&gt;から&lt;code&gt;タスクを実行&lt;/code&gt;）し，「test」を押すと，以下のようにojを用いて自動でサンプルケースをダウンロードして実行してくれます（以下はサンプルについてACだったときの例）．&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/test.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;もしかしたら実行時に &lt;code&gt;Permission denied&lt;/code&gt; のようにエラーを吐くかもしれませんが，その場合はターミナルを開いて &lt;code&gt;chhmod +x test.sh&lt;/code&gt; のようにして実行権限を付与してください．&lt;/p&gt;
+&lt;h3 id=&#34;自動提出&#34;&gt;自動提出&lt;/h3&gt;
+&lt;p&gt;テストと同様に「タスクを実行」から「submit」を実行すると，ojを用いてatcoderにsubmitされ，ブラウザが開いてsubmission pageが開かれます．
+C++なら「C++ 23 (gcc 12.2)」，Pythonなら「Python (PyPy 3.10-v7.3.12)」で提出されると思います．&lt;/p&gt;
+&lt;h3 id=&#34;デバッグ&#34;&gt;デバッグ&lt;/h3&gt;
+&lt;p&gt;実行ファイルと入力ファイルの&lt;code&gt;input.txt&lt;/code&gt;を手動実行と同様に同階層に置きます．
+実行ファイルの行番号の横の空白の上にカーソルを合わせると薄く赤丸が現れるので，デバッグ時に止めたい箇所で押してブレークポイントを置きます．
+左のツールバーから虫付きの▷のようなマークを押し，上部からPythonなら「Python Debug」を，C++なら「(lldb) C++ Debug」を選択して「▷」を押すとデバッグ実行がされます．
+&lt;img src=&#34;https://miiitomi.github.io/images/kyopro-env/debug.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+上部の「▷」を押してブレークポイントを一つずつ進めながら，左のバーやデバッグコンソールから変数を確認することができます．&lt;/p&gt;
+&lt;h2 id=&#34;カスタマイズ&#34;&gt;カスタマイズ&lt;/h2&gt;
+&lt;p&gt;上記の範囲でもある程度便利に使えると思いますが，自分好みに変更することによってより使いやすくなるかもしれません．
+以下では考えられうるカスタマイズ箇所を少しだけ紹介します．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;拡張機能
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.devcontainer/devcontainer.json&lt;/code&gt; の設定によって，Python（Pythonの補完等），C/C++（C++の補完等），Code-runner（手動実行），LLDB（C++のデバッグ）の拡張機能はすでに入るようになっていると思います．他の使いたい拡張機能も入れてみると良いかもしれません．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ライブラリ
+&lt;ul&gt;
+&lt;li&gt;C++では，Dockerfile内の記述により &lt;code&gt;boost&lt;/code&gt; は使えるようになっていますが，atcoderで使える &lt;code&gt;eigen&lt;/code&gt; などは入れていません．必要あればDockerfile内に記述を加えてインストールしてください．&lt;/li&gt;
+&lt;li&gt;Pythonについては，&lt;code&gt;requirements.txt&lt;/code&gt; に &lt;code&gt;online-judge-tools&lt;/code&gt; しか書いてないので，必要な外部ライブラリはご自身で追記してください（競プロでよく使われるのはNumpy，Scipy，NetworkXあたりでしょうか）．また，ubuntuイメージに元から入っているCPython3.10しか使えないので，pypyが必要であればDockerfileを編集して追加してください．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;テスト・提出
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;test.sh&lt;/code&gt;・&lt;code&gt;submit.sh&lt;/code&gt;がそれぞれ自動テスト・提出のためのスクリプトです．必要があれば少し変更してもよいかもしれません．
+&lt;ul&gt;
+&lt;li&gt;自分はatcoder problemsのバーチャルコンテストにも参加するので，その場合はコードの一行目にコメントとして書かれたurlからテストケースのダウンロードや提出がされるよう変更しています（&lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/atcoder/tree/main&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;こちら&lt;/a&gt;）．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;C++ intelliSenseMode
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;./vscode/c_cpp_properties.json&lt;/code&gt; 内で私の環境ではintelliSenseModeを &lt;code&gt;intelliSenseMode&amp;quot;: &amp;quot;linux-gcc-arm64&amp;quot;&lt;/code&gt; としてありますが，他の環境では&lt;code&gt;&amp;quot;linux-gcc-x64&amp;quot;&lt;/code&gt; などが適切かもしれません．間違っていても自動で認識すると思うので特に問題はないと思いますが，必要があれば辺越してください．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;おわりに&#34;&gt;おわりに&lt;/h2&gt;
+&lt;p&gt;詰まった箇所やローカル環境等によって少し異なる点があるでしょうし，また変な記述があれば修正・追記したいので，何かありましたら&lt;a class=&#34;link&#34; href=&#34;https://twitter.com/miiitomi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;みーとみ&lt;/a&gt;まで教えていただけると嬉しいです．
+開発環境を良い感じに整えて良い競プロライフを！！&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>2023みーとみネイルまとめ</title>
         <link>https://miiitomi.github.io/p/nail2023/</link>
         <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
@@ -504,7 +675,6 @@ $$ g(s) = g_1(s_1) \oplus g_2(s_2) \oplus \dots \oplus g_n(s_n) $$
 特に私が興味を持った発表は&lt;strong&gt;太字&lt;/strong&gt;で、それらはほぼtwitterに書いたものと同じになります。
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;ロンドンで今日から開かれているEconCS分野の国際カンファレンスEC’23に参加してます！あまり日本からの投稿・参加の多くないカンファレンスですが、せっかくなので興味持った発表についてのメモをこちらにあげていこうと思います！ &lt;a href=&#34;https://twitter.com/hashtag/EC2023?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#EC2023&lt;/a&gt; &lt;a href=&#34;https://t.co/snroQwFWAR&#34;&gt;pic.twitter.com/snroQwFWAR&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1677962499566493698?ref_src=twsrc%5Etfw&#34;&gt;July 9, 2023&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
 &lt;/p&gt;
 &lt;p&gt;聞いたけどよくわからなかったとか、集中して聞いてなかったものなどは空白にしてあります。&lt;/p&gt;
 &lt;figure&gt;&lt;img src=&#34;https://miiitomi.github.io/images/conferences/ec23/bigben.jpg&#34; width=&#34;600&#34;/&gt;
@@ -1047,6 +1217,135 @@ $$ g(s) = g_1(s_1) \oplus g_2(s_2) \oplus \dots \oplus g_n(s_n) $$
 &lt;figure&gt;&lt;a href=&#34;https://www.amazon.co.jp/%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%EF%BC%81-%E6%96%B0%E6%BD%AE%E6%96%87%E5%BA%AB-%E3%81%8B-95-1-%E5%8A%A0%E8%97%A4-%E5%8D%83%E6%81%B5/dp/4101802637/&#34;&gt;&lt;img src=&#34;https://miiitomi.github.io/images/novels/mattingu.jpg&#34; width=&#34;400&#34;/&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
+</description>
+        </item>
+        <item>
+        <title>About</title>
+        <link>https://miiitomi.github.io/about/</link>
+        <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/about/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;氏名&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;冨田 燿志（とみた ようじ）／ みーとみ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;所属&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;サイバーエージェント AI Lab 経済学社会実装チーム リサーチサイエンティスト&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;専門&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;マッチング理論・マーケットデザインのWEBサービスへの応用と社会実装&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;経歴&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2018年3月 東京大学経済学部経済学科卒業
+&lt;ul&gt;
+&lt;li&gt;2013年4月-2014年3月 特別休学（初年次長期自主活動/FLYプログラム1期生）&lt;/li&gt;
+&lt;li&gt;経済学部卒業生総代&lt;/li&gt;
+&lt;li&gt;経済学部特選論文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2019年3月 東京大学大学院経済学研究科経済理論コース修士課程修了
+&lt;ul&gt;
+&lt;li&gt;卓越プログラム（早期修了プログラム）により1年で短縮修了&lt;/li&gt;
+&lt;li&gt;経済学研究科修了生総代&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2019年4月 東京大学経済学研究科博士課程進学
+&lt;ul&gt;
+&lt;li&gt;2020年4月-2023年3月 休学, 2023年3月退学&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2020年4月- サイバーエージェント新卒入社、AI Lab配属&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;研究&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Publications
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, Yuriko Hashizume, and Naoto Ohsaka. 2023. &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2306.09060&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fast and Examination-agnostic Reciprocal Recommendation in Matching Markets.&lt;/a&gt; RecSys&#39;23 (Full Research Paper).&lt;/li&gt;
+&lt;li&gt;Zhaohong Sun, Daisuke Moriwaki, Yoshihiro Takenami, &lt;strong&gt;Yoji Tomita&lt;/strong&gt;, and Makoto Yokoo. 2023. &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2212.02751&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Daycare Matching in Japan: Transfers and Siblings.&lt;/a&gt; AAAI-23.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, and Daisuke Moriwaki. 2022. &lt;a class=&#34;link&#34; href=&#34;https://dl.acm.org/doi/fullHtml/10.1145/3523227.3547406&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Matching Theory-based Recommender Systems in Online Dating.&lt;/a&gt; RecSys&#39;22 (Industrial Paper).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Working Paper
+&lt;ul&gt;
+&lt;li&gt;Akira Matsushita, Kei Ikegami, Kyohei Okumura, &lt;strong&gt;Yoji Tomita&lt;/strong&gt;, and Atsushi Iwasaki. 2022. &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2205.14387&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Regulating Matching Markets with Constraints: Data-driven Taxation.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;登壇&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2021年3月5日 &lt;a class=&#34;link&#34; href=&#34;https://www.slideshare.net/YojiTomita/ss-244201005&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;身近なところからはじめるマーケットデザイン&lt;/a&gt; at &lt;a class=&#34;link&#34; href=&#34;https://sansan.connpass.com/event/203771/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Econ Fiesta 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2021年10月9日 「経済学のビジネス活用をめぐって ①民間企業の立場から」with 森脇大輔さん at 日本経済学会秋季大会企画セッション&lt;/li&gt;
+&lt;li&gt;2021年11月24日 「マーケットデザインで一歩先の自治体DXを」 at &lt;a class=&#34;link&#34; href=&#34;https://techplay.jp/event/835479&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;エンジニアリング・研究両面から考えるDXを推進するためのデータサイエンス&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2021年12月17日 「保育所利用調整におけるマーケットデザインの社会実装」at &lt;a class=&#34;link&#34; href=&#34;https://ccse.jp/2021/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CCSE2021&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2022年7月28日 &lt;a class=&#34;link&#34; href=&#34;https://ca-base-next.cyberagent.co.jp/2022/sessions/market-design/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;なぜテック企業で「マーケットデザイン」が必要なのか&lt;/a&gt; at &lt;a class=&#34;link&#34; href=&#34;https://ca-base-next.cyberagent.co.jp/2022/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CA BASE NEXT 2022&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2022年8月30日 &lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/37354/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;マッチング理論に基づく推薦とそれを支えるMLOps開発&lt;/a&gt; with 松月大輔さん at &lt;a class=&#34;link&#34; href=&#34;https://cyberagent.connpass.com/event/255813/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;メディアサービスにおけるデータ・AIの活用事例&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2023年6月28日 &lt;a class=&#34;link&#34; href=&#34;https://cadc.cyberagent.co.jp/2023/sessions/market-design/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;マーケットデザインと保育所利用調整—実務のニーズを満たすアルゴリズムとシステム開発—&lt;/a&gt; with 竹浪良寛さん at &lt;a class=&#34;link&#34; href=&#34;https://cadc.cyberagent.co.jp/2023/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CADC NEXT2023&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;対談&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2021年9月22日公開 &lt;a class=&#34;link&#34; href=&#34;https://www.cyberagent.co.jp/way/list/detail/id=26671&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【最先端の経済学】マーケットデザインの社会実装で変える、日本の未来&lt;/a&gt; with 鎌田雄一郎先生&lt;/li&gt;
+&lt;li&gt;2022年3月24日公開 &lt;a class=&#34;link&#34; href=&#34;https://cadc.cyberagent.co.jp/2022/program/economics-govtech/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;行政DXにおける経済学の活用-待機児童問題におけるマーケットデザインの導入-&lt;/a&gt;（森脇大輔さん、小田原悠朗さん）のインタビュアー at &lt;a class=&#34;link&#34; href=&#34;https://cadc.cyberagent.co.jp/2022/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CA Developer Conference 2022&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;CAブログ&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2021年12月9日公開 「&lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/32763/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;待機児童問題にマーケットデザインで挑む&lt;/a&gt;」 （&lt;a class=&#34;link&#34; href=&#34;https://adventar.org/calendars/6839&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CA Advent Calendar 2021&lt;/a&gt; 9日目）&lt;/li&gt;
+&lt;li&gt;2022年9月30日公開 「&lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/37708/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;なぜテック企業で「マーケットデザイン」が必要なのか&lt;/a&gt;」&lt;/li&gt;
+&lt;li&gt;2022年10月21日公開 「&lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/38014/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RecSys 2022 参加報告&lt;/a&gt;」 with ゆっこさん&lt;/li&gt;
+&lt;li&gt;2022年12月14日公開 「&lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/39706/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;皆が幸せになるマッチングプラットフォームを目指して。「マッチング理論に基づく相互推薦システム」&lt;/a&gt;」 （&lt;a class=&#34;link&#34; href=&#34;https://adventar.org/calendars/7806&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CA Advent Calendar 2022&lt;/a&gt; 14日目）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;技術スキル&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python、C++、Javascript（React）、SQL、LaTeX&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;趣味&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;サッカー観戦（特にJリーグ、横浜F・マリノス）&lt;/li&gt;
+&lt;li&gt;小説・漫画&lt;/li&gt;
+&lt;li&gt;スキューバダイビング&lt;/li&gt;
+&lt;li&gt;ネイル&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;連絡先・SNS&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Email: &lt;a class=&#34;link&#34; href=&#34;mailto:tomita_yoji@cyberagent.co.jp&#34; &gt;tomita_yoji@cyberagent.co.jp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a class=&#34;link&#34; href=&#34;https://twitter.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub: &lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;LinkedIn: &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/yoji-tomita/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@Yoji Tomita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Facebook: &lt;a class=&#34;link&#34; href=&#34;https://www.facebook.com/yoji.tomita.9/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@yoji.tomita.9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Instagram: &lt;a class=&#34;link&#34; href=&#34;https://www.instagram.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Threads: &lt;a class=&#34;link&#34; href=&#34;https://www.threads.net/@miiitomi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
@@ -1691,7 +1990,6 @@ $$ g(s) = g_1(s_1) \oplus g_2(s_2) \oplus \dots \oplus g_n(s_n) $$
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;男性と女性のマッチングを行うDAアルゴリズムの実行ができるウェブアプリを作ってみました。良かったら合コンにおける席決め・ゲームなどに使ってみてください。&lt;a href=&#34;https://t.co/YuC4LSVQQ2&#34;&gt;https://t.co/YuC4LSVQQ2&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1492417575078481928?ref_src=twsrc%5Etfw&#34;&gt;February 12, 2022&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
 
-
 類似のアプリって他にもあるんじゃないかとは思うんですが、ツイッターで流してみたら意外と反応があって、特にマッチング理論の研究者の方からもいいねって言ってもらえてビックリした。
 趣味でやっただけのもののつもりだったけど、こう実際に動かせるものがその気になれば自分でも作れるってことは大事かもしれない。&lt;/p&gt;
 &lt;h2 id=&#34;引っ越した&#34;&gt;引っ越した&lt;/h2&gt;
@@ -1748,7 +2046,6 @@ $$ g(s) = g_1(s_1) \oplus g_2(s_2) \oplus \dots \oplus g_n(s_n) $$
 &lt;p&gt;マリノスは今年非常に好調で、5月頃に首位に立ってから、少し2位に勝ち点差を詰められることもあったものの、そのまま首位を譲ることはなく最終節のアウェイでのヴィッセル神戸戦で優勝を決めました。いいシーズンでした。
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;優勝！！☆☆☆☆☆ &lt;a href=&#34;https://twitter.com/hashtag/fmarinos?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#fmarinos&lt;/a&gt; &lt;a href=&#34;https://t.co/lEuCOAl3eb&#34;&gt;pic.twitter.com/lEuCOAl3eb&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1588797318786355201?ref_src=twsrc%5Etfw&#34;&gt;November 5, 2022&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
 
 2021年よりだいぶ行ったと思うけど、それでも行けたのはマリノスの試合の半分くらいでした。
 来年は20試合以上行きたい。W杯見てサッカー興味持った方とかいらっしゃると思うので、そういう方はお声がけください！ぜひ新横浜の日産スタジアムへ！！&lt;/p&gt;
@@ -1964,6 +2261,35 @@ $$ g(s) = g_1(s_1) \oplus g_2(s_2) \oplus \dots \oplus g_n(s_n) $$
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
+</description>
+        </item>
+        <item>
+        <title>App</title>
+        <link>https://miiitomi.github.io/app/</link>
+        <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/app/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/matching&#34; &gt;Matching&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;男性と女性のマッチングを行うDAアルゴリズムの実行ができます。&lt;/li&gt;
+&lt;li&gt;DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説は&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/p/matching&#34; &gt;こちら&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Matching</title>
+        <link>https://miiitomi.github.io/matching/</link>
+        <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/matching/</guid>
+        <description>&lt;p&gt;このページでは、男性と女性のマッチングを行うDAアルゴリズムの実行ができます。&lt;br&gt;
+合コンにおける席決め・ゲームなどにお使いください。&lt;br&gt;
+DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説は&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/p/matching&#34; &gt;こちら&lt;/a&gt;。&lt;/p&gt;
+&lt;div id=&#34;app&#34;&gt;&lt;/div&gt;
+&lt;script src=&#34;https://miiitomi.github.io/js/matching.js&#34;&gt;&lt;/script&gt;
 </description>
         </item>
         <item>
@@ -2478,14 +2804,12 @@ $w$ は $m$ を希望表に書いているので、断った時点で $m$ より
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;＼プレスリリース／&lt;br&gt;AI Lab、GovTech開発センター、東京大学マーケットデザインセンター (&lt;a href=&#34;https://twitter.com/UTokyoMD?ref_src=twsrc%5Etfw&#34;&gt;@UTokyoMD&lt;/a&gt;) にて、共同研究を開始いたします。&lt;br&gt;&lt;br&gt;官公庁・自治体のDXを &lt;a href=&#34;https://twitter.com/hashtag/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#マーケットデザイン&lt;/a&gt; で推進。 &lt;br&gt;経済学者の小島武仁氏、鎌田雄一郎氏と共に、社会課題の解決を目指します。&lt;a href=&#34;https://twitter.com/hashtag/UTMD?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#UTMD&lt;/a&gt;&lt;a href=&#34;https://t.co/I8aFFVcfeu&#34;&gt;https://t.co/I8aFFVcfeu&lt;/a&gt;&lt;/p&gt;&amp;mdash; サイバーエージェント　広報＆IR (@CyberAgent_PR) &lt;a href=&#34;https://twitter.com/CyberAgent_PR/status/1371705325443641345?ref_src=twsrc%5Etfw&#34;&gt;March 16, 2021&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
 
-
 &lt;/blockquote&gt;
 &lt;p&gt;具体的には、&lt;a class=&#34;link&#34; href=&#34;https://adventar.org/calendars/6839&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Advent Calendar&lt;/a&gt; で自分が書かせていただいた「保育所利用調整マッチングの実証実験」に取り組んでいます。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;🎄&lt;a href=&#34;https://twitter.com/hashtag/CyberAgentAdventCalendar2021?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#CyberAgentAdventCalendar2021&lt;/a&gt;🎄&lt;br&gt;9日目は &lt;a href=&#34;https://twitter.com/hashtag/AILab?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#AILab&lt;/a&gt; が東京大学マーケットデザインセンター（UTMD）との共同研究の1つとして取り組んでいる「保育所マッチングプロジェクト」についてご紹介しています。ぜひご覧ください。&lt;a href=&#34;https://t.co/EhfDpZ7rO6&#34;&gt;https://t.co/EhfDpZ7rO6&lt;/a&gt;&lt;/p&gt;&amp;mdash; CyberAgentDevelopers (@ca_developers) &lt;a href=&#34;https://twitter.com/ca_developers/status/1468732125511880707?ref_src=twsrc%5Etfw&#34;&gt;December 9, 2021&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
 
 &lt;/blockquote&gt;
 &lt;p&gt;自分はこのプロジェクトで、経済学・CS分野で研究されているマッチングアルゴリズムを現実の問題に即した形で実装し、どういったアルゴリズムを使うべきかと言う議論と新アルゴリズムの開発を行なっています。&lt;/p&gt;
@@ -2500,7 +2824,6 @@ $w$ は $m$ を希望表に書いているので、断った時点で $m$ より
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;―マーケットデザインと、その有用性を知ってもらいたい&lt;br&gt;&lt;br&gt;近年注目が高まる、新しい研究領域「マーケットデザイン」&lt;br&gt;より良い社会の設計、共同研究での利点、両者の見据える未来についてなど、世界で活躍する経済学者 鎌田准教授と、AI Lab研究員冨田が対談を実施しました。&lt;a href=&#34;https://t.co/c1JCH1Wjkt&#34;&gt;https://t.co/c1JCH1Wjkt&lt;/a&gt;&lt;/p&gt;&amp;mdash; サイバーエージェント　広報＆IR (@CyberAgent_PR) &lt;a href=&#34;https://twitter.com/CyberAgent_PR/status/1440162624084201474?ref_src=twsrc%5Etfw&#34;&gt;September 21, 2021&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
 
-
 &lt;/blockquote&gt;
 &lt;p&gt;また、&lt;a class=&#34;link&#34; href=&#34;https://sansan.connpass.com/event/203771/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;EconFiesta2&lt;/a&gt;や日経学会秋季大会の&lt;a class=&#34;link&#34; href=&#34;https://confit.atlas.jp/guide/event/jeaf2021/session/1G01-01/category&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -2509,7 +2832,6 @@ $w$ は $m$ を希望表に書いているので、断った時点で $m$ より
 &lt;blockquote&gt;
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;A会場では12:00から、&lt;a href=&#34;https://twitter.com/hashtag/%E7%B5%8C%E6%B8%88%E5%AD%A6?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#経済学&lt;/a&gt; に関する個人セッションがスタートします！&lt;br&gt;メルカリから柳沼慎哉氏、サイバーエージェントから冨田 燿志氏が登壇します😀&lt;br&gt;&lt;br&gt;▼タイムテーブル&lt;a href=&#34;https://t.co/g30pR8GSef&#34;&gt;https://t.co/g30pR8GSef&lt;/a&gt;&lt;br&gt; &lt;a href=&#34;https://twitter.com/hashtag/CCSE2021?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#CCSE2021&lt;/a&gt; &lt;a href=&#34;https://t.co/TAzgnVcFvw&#34;&gt;pic.twitter.com/TAzgnVcFvw&lt;/a&gt;&lt;/p&gt;&amp;mdash; CCSE2023_企業による合同研究カンファレンス (@ccse_comitee) &lt;a href=&#34;https://twitter.com/ccse_comitee/status/1471676259017293824?ref_src=twsrc%5Etfw&#34;&gt;December 17, 2021&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
 
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;ca-awards&#34;&gt;CA AWARDS&lt;/h1&gt;
@@ -2523,13 +2845,11 @@ $w$ は $m$ を希望表に書いているので、断った時点で $m$ より
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;じゃーん✌️ &lt;a href=&#34;https://t.co/b8zhxbB23W&#34;&gt;pic.twitter.com/b8zhxbB23W&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1473490171643703305?ref_src=twsrc%5Etfw&#34;&gt;December 22, 2021&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
 
-
 &lt;/blockquote&gt;
 &lt;p&gt;まさか自分が表彰していただけるなんて全く思ってもいなかったので驚いたのですが、気持ちとしてはこのツイートに書いた通りで、&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;自分が新人賞ノミネートしていただいたこと自体も嬉しいんだけど、経済学・マーケットデザインの取り組みで全社表彰にノミネートしてもらえるくらい自分たちのプロジェクトが評価されてるんだってことが正直ちょっと驚いたし嬉しい&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1445755691130445827?ref_src=twsrc%5Etfw&#34;&gt;October 6, 2021&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
 
 &lt;/blockquote&gt;
 &lt;p&gt;経済学・マーケットデザインの研究・実装に取り組ませてもらえ、しかもその取り組みで評価してもらえるなんて、本当に恵まれた環境にいさせてもらっているなと思います。&lt;/p&gt;
@@ -2542,11 +2862,9 @@ $w$ は $m$ を希望表に書いているので、断った時点で $m$ より
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;逆転勝ち！ &lt;a href=&#34;https://t.co/Mq4p4Kayik&#34;&gt;pic.twitter.com/Mq4p4Kayik&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1449344498778066948?ref_src=twsrc%5Etfw&#34;&gt;October 16, 2021&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
 
-
 &lt;p&gt;狩りをしたり、&lt;/p&gt;
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;これからしばらくの間の自由時間が生け贄に捧げられた &lt;a href=&#34;https://t.co/Wn1ZXesSKj&#34;&gt;pic.twitter.com/Wn1ZXesSKj&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1375698606640955393?ref_src=twsrc%5Etfw&#34;&gt;March 27, 2021&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
 
 &lt;p&gt;してました。&lt;/p&gt;
 &lt;p&gt;あと学生の頃からの友人とほぼ週1でやってる&lt;a class=&#34;link&#34; href=&#34;https://github.com/CSReading&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -2565,7 +2883,6 @@ $w$ は $m$ を希望表に書いているので、断った時点で $m$ より
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;今年は小説・漫画・映画問わず昨年より多くの物語を摂取して日々現実逃避を楽しんでいきたい&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1344667204067815427?ref_src=twsrc%5Etfw&#34;&gt;December 31, 2020&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
 
-
 &lt;p&gt;漫画は（&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/p/oregawatashininarumade/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;シリアスTSF&lt;/a&gt;とか）多少読んだけど、小説・映画はあまり沢山読んだり見たりできなかった気がする。
 そのあたりは2022年の課題としたい(？)&lt;/p&gt;
@@ -2577,7 +2894,6 @@ $w$ は $m$ を希望表に書いているので、断った時点で $m$ より
 &lt;ul&gt;
 &lt;li&gt;2020年にやってたこれができるくらい。&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;こんなのでどうだ(ネタ切れしたらごめんなさい) &lt;a href=&#34;https://twitter.com/hashtag/%E3%81%84%E3%81%84%E3%81%AD%E3%81%95%E3%82%8C%E3%81%9F%E6%95%B0%E3%81%A0%E3%81%91%E4%BB%8A%E5%B9%B4%E8%AA%AD%E3%82%93%E3%81%A7%E8%89%AF%E3%81%8B%E3%81%A3%E3%81%9F%E5%B0%8F%E8%AA%AC%E3%82%92%E7%B4%B9%E4%BB%8B%E3%81%99%E3%82%8B?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#いいねされた数だけ今年読んで良かった小説を紹介する&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1342441247080759296?ref_src=twsrc%5Etfw&#34;&gt;December 25, 2020&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -2591,7 +2907,6 @@ $w$ は $m$ を希望表に書いているので、断った時点で $m$ より
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mezamee.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Mezamee&lt;/a&gt;を使ってまともな時間に就寝・起床する生活を一年間維持する。&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;メザミーで目覚め率100%のまま20回目覚めた(1回解除しそびれたと思ったらそもそも設定してなかったことあったけど) &lt;a href=&#34;https://t.co/6gmlOvLwkM&#34;&gt;pic.twitter.com/6gmlOvLwkM&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1471638850158346241?ref_src=twsrc%5Etfw&#34;&gt;December 17, 2021&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
 &lt;/li&gt;
 &lt;li&gt;コーヒーを自分で淹れる習慣を作る。&lt;/li&gt;
 &lt;li&gt;香水にチャレンジする。&lt;/li&gt;
@@ -2623,7 +2938,6 @@ $w$ は $m$ を希望表に書いているので、断った時点で $m$ より
 &lt;p&gt;僕なりに定義してみると、シリアスTSFとは「ギャグ要素やエロ要素ではなく、TSに伴う登場人物の内面の葛藤や周りの人間関係の変化といったシリアス要素に物語の重きを置いた、ヒューマンドラマとしてのTSF（Trans-Sexual Fiction/性転換もの）」である。&lt;/p&gt;
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;ギャグでもエロでもないシリアスめなTSFが好きって話したことありましたっけ？&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1452270640241672198?ref_src=twsrc%5Etfw&#34;&gt;October 24, 2021&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
 
 &lt;p&gt;現実にはあり得ない状況における少年・少女たちの戸惑い、葛藤が魅力のこのジャンルの作品を、
 これから1つずつ&lt;del&gt;僕が飽きるまで&lt;/del&gt;紹介していきたいと思う。&lt;/p&gt;
@@ -2707,7 +3021,6 @@ TSFと言われるとちょっとマニアックなジャンルに思われて�
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;12月22日発売の「オレが私になるまで」4巻の書店特典一覧です。&lt;br&gt;12月22日！！12月22日！！！12月22日です！！！！&lt;br&gt;よろしくお願いします！！！！&lt;a href=&#34;https://twitter.com/hashtag/%E3%82%AA%E3%83%AC%E3%81%8C%E7%A7%81%E3%81%AB%E3%81%AA%E3%82%8B%E3%81%BE%E3%81%A7?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#オレが私になるまで&lt;/a&gt; &lt;a href=&#34;https://t.co/Kl01mWH7Yh&#34;&gt;pic.twitter.com/Kl01mWH7Yh&lt;/a&gt;&lt;/p&gt;&amp;mdash; 佐藤はつき@4巻12月22日発売 (@hatukisu) &lt;a href=&#34;https://twitter.com/hatukisu/status/1472860090965577728?ref_src=twsrc%5Etfw&#34;&gt;December 20, 2021&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
 
-
 &lt;/blockquote&gt;
 </description>
         </item>
@@ -2721,7 +3034,6 @@ TSFと言われるとちょっとマニアックなジャンルに思われて�
 &lt;p&gt;誰しも普通に生きていると一度くらいScarf&amp;rsquo;s lemmaを実装する場面に遭遇すると思いますが、意外と日本語の情報が出てこなくて困ったことのある人もいるかもしれません。
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;Scarf’s lemma完全理解して実装完了したらqiitaかzennかにでも誰得記事書いてやろうかな&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1461662490350145539?ref_src=twsrc%5Etfw&#34;&gt;November 19, 2021&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
 
 というツイートを前にしましたが、せっかくブログ作ったのでここに勉強記録としてまとめてみようと思います。
 お気持ち整理みたいな感じなので証明はちゃんとしないし、数学的・ゲーム理論的に厳密でない書き方してるとこも多々あるかも。&lt;/p&gt;
@@ -3026,18 +3338,14 @@ Running in Fast Render Mode. For full rebuilds on change: hugo server --disableF
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;と出てくるので、&lt;code&gt;localhost:1313&lt;/code&gt;をブラウザで開いてみると、&lt;/p&gt;
-&lt;p&gt;&lt;figure 
-	&gt;
-	&lt;a href=&#34;https://miiitomi.github.io/images/img20211209222536.png&#34; &gt;
-		&lt;img src=&#34;https://miiitomi.github.io/images/img20211209222536.png&#34;
-			
-			
-			
-			loading=&#34;lazy&#34;
-			&gt;
-	&lt;/a&gt;
+&lt;p&gt;&lt;img src=&#34;https://miiitomi.github.io/images/img20211209222536.png&#34;
 	
-&lt;/figure&gt;&lt;/p&gt;
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;できた！！！（できてない）&lt;/p&gt;
 &lt;h1 id=&#34;config&#34;&gt;config&lt;/h1&gt;
 &lt;p&gt;あとは &lt;code&gt;config.yaml&lt;/code&gt; を少し変えていきます。
@@ -3145,18 +3453,14 @@ tags: []
 &lt;h1 id=&#34;プッシュgithub-pagesでホスト&#34;&gt;プッシュ・Github Pagesでホスト。&lt;/h1&gt;
 &lt;p&gt;GitHubで自分のレポジトリとして &lt;code&gt;&amp;lt;GitHubAccount&amp;gt;.github.io&lt;/code&gt; を作り、これまで作ってきたものをプッシュ。&lt;/p&gt;
 &lt;p&gt;Settings/Pagesから, Sourceをmainブランチの&lt;code&gt;docs/&lt;/code&gt;とする。ホストされるまでちょっと待つと、
-&lt;figure 
-	&gt;
-	&lt;a href=&#34;https://miiitomi.github.io/images/20211209231722.png&#34; &gt;
-		&lt;img src=&#34;https://miiitomi.github.io/images/20211209231722.png&#34;
-			
-			
-			
-			loading=&#34;lazy&#34;
-			&gt;
-	&lt;/a&gt;
+&lt;img src=&#34;https://miiitomi.github.io/images/20211209231722.png&#34;
 	
-&lt;/figure&gt;
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
 今度こそできた！&lt;/p&gt;
 &lt;h1 id=&#34;記事の書き方&#34;&gt;記事の書き方&lt;/h1&gt;
 &lt;p&gt;新規のブログ記事を書くときはとりあえず &lt;code&gt;hugo new post/XXX.md&lt;/code&gt; したあと、&lt;code&gt;hugo server -D&lt;/code&gt;で確認しながら執筆し、書けたら &lt;code&gt;hugo&lt;/code&gt; でビルド、GithubにプッシュすればOKという感じ。自動デプロイとかもやればできるんだろうけど大したことないしとりあえずいいや。そのうち気が向いたらやろう。&lt;/p&gt;
@@ -3164,6 +3468,22 @@ tags: []
 &lt;p&gt;今日やったことじゃないので忘れてるとことかあるかもだけど、大体こんな感じ。&lt;/p&gt;
 &lt;p&gt;これからどんどん記事書いてこう！！&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>https://miiitomi.github.io/archives/</link>
+        <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>https://miiitomi.github.io/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/search/</guid>
+        <description></description>
         </item>
         
     </channel>

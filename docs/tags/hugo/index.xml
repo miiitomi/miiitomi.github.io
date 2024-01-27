@@ -1,19 +1,223 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hugo on miiitomi</title>
-    <link>https://miiitomi.github.io/tags/hugo/</link>
-    <description>Recent content in Hugo on miiitomi</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <lastBuildDate>Thu, 09 Dec 2021 21:30:20 +0900</lastBuildDate>
-    <atom:link href="https://miiitomi.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>非エンジニアの初心者がHugo(テーマStack)&#43;GitHub Pagesでブログを開設するまで</title>
-      <link>https://miiitomi.github.io/p/hugo/</link>
-      <pubDate>Thu, 09 Dec 2021 21:30:20 +0900</pubDate>
-      <guid>https://miiitomi.github.io/p/hugo/</guid>
-      <description>はじめに タイトルの通りです。 このブログを開設するまでにやったことを備忘録としてまとめておきます。 わざわざ僕が新たに書き記すまでもなく似たような記事はたくさんあるのですが、1本目に書く内容としてちょうどいい感じのものな気がしたので。 分かってる人からしたらそりゃそうってことしか書いてないと思うけど、僕みたいな初心者が見たら1ミリくらい参考になるかもしれない（ならないかもしれない）。&#xA;ちなみにタイトルに「非エンジニアの初心者が」と書きましたが、すごく広い意味で捉えればエンジニアと言えなくもないかも。 でも自己認識としてはエンジニアを名乗れるほど技術力はない（し肩書きもリサーチャーな）ので嘘ではないでしょう。 Git/GitHubの使い方とかは一応わかってることを仮定します。&#xA;使ったもの・環境 macBook Pro/macOS Big Sur v11.1 Homebrew v3.3.7 Hugo v0.89.4 Hugo Theme Stack Git/GitHub Hugoのインストール・スタート とりあえずHomebrewを使って、ターミナルで brew install hugo でHugoをインストールします。 hubo version と打ってバージョン確認すると&#xA;$ hugo version hugo v0.89.4+extended darwin/amd64 BuildDate=unknown と出るので入ったっぽい。&#xA;ブログ用のディレクトリを作るところで hugo new site sitename (sitenameのところは適当に) とすると、&#xA;$ hugo new site sitename Congratulations! Your new Hugo site is created in ***/***/sitename. Just a few more steps and you&amp;#39;re ready to go: 1.</description>
-    </item>
-  </channel>
+    <channel>
+        <title>Hugo on miiitomi</title>
+        <link>https://miiitomi.github.io/tags/hugo/</link>
+        <description>Recent content in Hugo on miiitomi</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>ja</language>
+        <lastBuildDate>Thu, 09 Dec 2021 21:30:20 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>非エンジニアの初心者がHugo(テーマStack)&#43;GitHub Pagesでブログを開設するまで</title>
+        <link>https://miiitomi.github.io/p/hugo/</link>
+        <pubDate>Thu, 09 Dec 2021 21:30:20 +0900</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/hugo/</guid>
+        <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
+&lt;p&gt;タイトルの通りです。
+このブログを開設するまでにやったことを備忘録としてまとめておきます。
+わざわざ僕が新たに書き記すまでもなく似たような記事はたくさんあるのですが、1本目に書く内容としてちょうどいい感じのものな気がしたので。
+分かってる人からしたらそりゃそうってことしか書いてないと思うけど、僕みたいな初心者が見たら1ミリくらい参考になるかもしれない（ならないかもしれない）。&lt;/p&gt;
+&lt;p&gt;ちなみにタイトルに「非エンジニアの初心者が」と書きましたが、すごく広い意味で捉えればエンジニアと言えなくもないかも。
+でも自己認識としてはエンジニアを名乗れるほど技術力はない（し肩書きもリサーチャーな）ので嘘ではないでしょう。
+Git/GitHubの使い方とかは一応わかってることを仮定します。&lt;/p&gt;
+&lt;h1 id=&#34;使ったもの環境&#34;&gt;使ったもの・環境&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;macBook Pro/macOS Big Sur v11.1&lt;/li&gt;
+&lt;li&gt;Homebrew v3.3.7&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugo&lt;/a&gt; v0.89.4&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugo Theme Stack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Git/GitHub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;hugoのインストールスタート&#34;&gt;Hugoのインストール・スタート&lt;/h1&gt;
+&lt;p&gt;とりあえずHomebrewを使って、ターミナルで &lt;code&gt;brew install hugo&lt;/code&gt; でHugoをインストールします。
+&lt;code&gt;hubo version&lt;/code&gt; と打ってバージョン確認すると&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ hugo version
+hugo v0.89.4+extended darwin/amd64 BuildDate=unknown
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;と出るので入ったっぽい。&lt;/p&gt;
+&lt;p&gt;ブログ用のディレクトリを作るところで &lt;code&gt;hugo new site sitename&lt;/code&gt; (sitenameのところは適当に) とすると、&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ hugo new site sitename
+Congratulations! Your new Hugo site is created in ***/***/sitename.
+
+Just a few more steps and you&amp;#39;re ready to go:
+
+1. Download a theme into the same-named folder.
+   Choose a theme from https://themes.gohugo.io/ or
+   create your own with the &amp;#34;hugo new theme &amp;lt;THEMENAME&amp;gt;&amp;#34; command.
+2. Perhaps you want to add some content. You can add single files
+   with &amp;#34;hugo new &amp;lt;SECTIONNAME&amp;gt;/&amp;lt;FILENAME&amp;gt;.&amp;lt;FORMAT&amp;gt;&amp;#34;.
+3. Start the built-in live server via &amp;#34;hugo server&amp;#34;.
+
+Visit https://gohugo.io/ for quickstart guide and full documentation.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;と出てきて、&lt;code&gt;sitename&lt;/code&gt;ディレクトリができ、色々入ってます。&lt;/p&gt;
+&lt;h1 id=&#34;テーマ&#34;&gt;テーマ&lt;/h1&gt;
+&lt;p&gt;テーマを入れちゃいましょう。今回は&lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Stack&lt;/a&gt;にしました。
+HugoのdocumentationのQuick Startではgit submoduleに追加してたり、他の方はテーマをfolkしてから使ってたりしてますが、手っ取り早くクローンしちゃいました（ちゃんとfolkした方が本当は良いかも）。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd sitename
+cd themes
+git clone git@github.com:...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;...&lt;/code&gt;の部分は使うテーマに合わせて。&lt;/p&gt;
+&lt;p&gt;Stackは&lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack/tree/master/exampleSite&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;例&lt;/a&gt;を提供してくれてるので、それをベースに作っていきます。&lt;code&gt;sitename/themes/hugo-theme-stack/exampleSite&lt;/code&gt;内の&lt;code&gt;config.yaml&lt;/code&gt;と&lt;code&gt;content/&lt;/code&gt;を&lt;code&gt;sitename&lt;/code&gt;直下に移し(&lt;code&gt;content/&lt;/code&gt;は置き換え)、&lt;code&gt;config.toml&lt;/code&gt;を削除します。&lt;/p&gt;
+&lt;p&gt;そして &lt;code&gt;hugo server -D&lt;/code&gt; と打つと、&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ hugo server -D
+Start building sites … 
+hugo v0.89.4+extended darwin/amd64 BuildDate=unknown
+WARN 2021/12/09 22:20:52 The &amp;#34;twitter_simple&amp;#34; shortcode will soon require two named parameters: user and id. See &amp;#34;***/***/sitename/content/post/rich-content/index.md:26:1&amp;#34;
+
+                   | EN  
+-------------------+-----
+  Pages            | 49  
+  Paginator pages  |  3  
+  Non-page files   |  8  
+  Static files     |  0  
+  Processed images | 29  
+  Aliases          | 23  
+  Sitemaps         |  1  
+  Cleaned          |  0  
+
+Built in 241 ms
+Watching for changes in ***/***/sitename/{archetypes,content,data,layouts,static,themes}
+Watching for config changes in ***/***/sitename/config.yaml, ***/***/sitename/themes/hugo-theme-stack/config.yaml
+Environment: &amp;#34;development&amp;#34;
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;と出てくるので、&lt;code&gt;localhost:1313&lt;/code&gt;をブラウザで開いてみると、&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miiitomi.github.io/images/img20211209222536.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;できた！！！（できてない）&lt;/p&gt;
+&lt;h1 id=&#34;config&#34;&gt;config&lt;/h1&gt;
+&lt;p&gt;あとは &lt;code&gt;config.yaml&lt;/code&gt; を少し変えていきます。
+書き換えた箇所は大体こんな感じだっけ？(忘れてるとこもあるかも)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;baseurl: https://&amp;lt;GithubAccount&amp;gt;.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;languageCode: ja&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;title: &amp;lt;Sitename&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;publishDir: docs&lt;/code&gt; を追加.
+&lt;ul&gt;
+&lt;li&gt;Hugoでビルドするとデフォルトでは&lt;code&gt;public/&lt;/code&gt;にビルドされるのですが、Github Pagesでホストするためには&lt;code&gt;docs/&lt;/code&gt;にビルドしたいので。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;favicon: /images/favicon.ico&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;ファビコンに使いたいicoファイル(&lt;code&gt;favicon.ico&lt;/code&gt;)は&lt;code&gt;static/images/&lt;/code&gt;に入れておく.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sidebar&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;emoji: &lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;subtitle: ***&lt;/code&gt;：適当に.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;avatar:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;local: false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;src: /images/avatar.png&lt;/code&gt;：アバター用の画像は&lt;code&gt;static/images/&lt;/code&gt;内に。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;article:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;math: true&lt;/code&gt;：自分は今後数式を使った記事を書くことも多分あるので。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;toc: false&lt;/code&gt;：目次を表示させたくなければ。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;readingTime: false&lt;/code&gt;：各記事のreading timeを表示させたくなければ。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;comments:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;enabled: false&lt;/code&gt;：コメント設定面倒そうだったし、そもそもあまり必要ないと思ったので。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;opengraph:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;twitter:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;card: summary&lt;/code&gt; ツイッターカードのスタイル。お好みで。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;defaultImage:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;opengraph:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;enabled: true&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;local: false&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;src: images/avatar.png&lt;/code&gt;：OGP用のデフォルト画像、とりあえずアバターでいいか。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;menu:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;main:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;params:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;hewTab: false&lt;/code&gt;：homeボタン押したときに新規タブにしたくない。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;social:&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;github, twitterは設定.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;日本語フォント&#34;&gt;日本語フォント&lt;/h1&gt;
+&lt;p&gt;この辺りで漢字が中国語フォントになってることに気付く。これは&lt;code&gt;themes/hugo-theme-stack/assets/scss/variables.scss&lt;/code&gt; 内の、&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;--zh-font-family: ...`
+--base-font-family: &amp;#34;Lato&amp;#34;, var(--sys-font-family), var(--zh-font-family), sans-serif;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;を&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;--ja-font-family: &amp;#34;游ゴシック体&amp;#34;, &amp;#34;Yu Gothic&amp;#34;, YuGothic, &amp;#34;ヒラギノ角ゴ Pro&amp;#34;, &amp;#34;Hiragino Kaku Gothic Pro&amp;#34;, &amp;#34;メイリオ&amp;#34;, &amp;#34;Meiryo&amp;#34;;`
+--base-font-family: &amp;#34;Lato&amp;#34;, var(--sys-font-family), var(--ja-font-family), sans-serif;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;みたいな感じに変更したら日本語フォントになった、たしか（うろ覚え）。&lt;/p&gt;
+&lt;h1 id=&#34;コンテンツ&#34;&gt;コンテンツ&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;categories&lt;/code&gt;, &lt;code&gt;post&lt;/code&gt;内のテストカテゴリー・ポストは消して、必要あれば例参考に作る。また &lt;code&gt;page/about.md&lt;/code&gt; は最初から何らか必要だと思うので適当に書き換える。
+Hugoでは &lt;code&gt;hugo new post/XXX.md&lt;/code&gt; と打つと &lt;code&gt;content/post/&lt;/code&gt; に &lt;code&gt;XXX.md&lt;/code&gt; ができるのだがそのデフォルトは &lt;code&gt;archetypes/default.md&lt;/code&gt; になっている。これも必要に応じて書き換えとこう。自分の場合は&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;---
+title: {{ replace .Name &amp;#34;-&amp;#34; &amp;#34; &amp;#34; | title }}
+description: 
+slug: {{ .Name }}
+date: {{ .Date }}
+categories:
+    - 
+tags: []
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;とこんな感じにとりあえずしといた。&lt;/p&gt;
+&lt;h1 id=&#34;ビルド&#34;&gt;ビルド&lt;/h1&gt;
+&lt;p&gt;ビルドは&lt;code&gt;sitename&lt;/code&gt;直下で &lt;code&gt;hugo&lt;/code&gt; でOK。&lt;code&gt;docs/&lt;/code&gt;(&lt;code&gt;config.yaml&lt;/code&gt;内で&lt;code&gt;publishDir&lt;/code&gt;を設定してなければ&lt;code&gt;public/&lt;/code&gt;)内にビルドされるはず。&lt;/p&gt;
+&lt;h1 id=&#34;プッシュgithub-pagesでホスト&#34;&gt;プッシュ・Github Pagesでホスト。&lt;/h1&gt;
+&lt;p&gt;GitHubで自分のレポジトリとして &lt;code&gt;&amp;lt;GitHubAccount&amp;gt;.github.io&lt;/code&gt; を作り、これまで作ってきたものをプッシュ。&lt;/p&gt;
+&lt;p&gt;Settings/Pagesから, Sourceをmainブランチの&lt;code&gt;docs/&lt;/code&gt;とする。ホストされるまでちょっと待つと、
+&lt;img src=&#34;https://miiitomi.github.io/images/20211209231722.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+今度こそできた！&lt;/p&gt;
+&lt;h1 id=&#34;記事の書き方&#34;&gt;記事の書き方&lt;/h1&gt;
+&lt;p&gt;新規のブログ記事を書くときはとりあえず &lt;code&gt;hugo new post/XXX.md&lt;/code&gt; したあと、&lt;code&gt;hugo server -D&lt;/code&gt;で確認しながら執筆し、書けたら &lt;code&gt;hugo&lt;/code&gt; でビルド、GithubにプッシュすればOKという感じ。自動デプロイとかもやればできるんだろうけど大したことないしとりあえずいいや。そのうち気が向いたらやろう。&lt;/p&gt;
+&lt;h1 id=&#34;まとめ&#34;&gt;まとめ&lt;/h1&gt;
+&lt;p&gt;今日やったことじゃないので忘れてるとことかあるかもだけど、大体こんな感じ。&lt;/p&gt;
+&lt;p&gt;これからどんどん記事書いてこう！！&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

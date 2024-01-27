@@ -1,47 +1,185 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Pages on miiitomi</title>
-    <link>https://miiitomi.github.io/page/</link>
-    <description>Recent content in Pages on miiitomi</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <lastBuildDate>Sat, 08 Jul 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://miiitomi.github.io/page/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>About</title>
-      <link>https://miiitomi.github.io/about/</link>
-      <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://miiitomi.github.io/about/</guid>
-      <description>氏名&#xA;冨田 燿志（とみた ようじ）／ みーとみ 所属&#xA;サイバーエージェント AI Lab 経済学社会実装チーム リサーチサイエンティスト 専門&#xA;マッチング理論・マーケットデザインのWEBサービスへの応用と社会実装 経歴&#xA;2018年3月 東京大学経済学部経済学科卒業 2013年4月-2014年3月 特別休学（初年次長期自主活動/FLYプログラム1期生） 経済学部卒業生総代 経済学部特選論文 2019年3月 東京大学大学院経済学研究科経済理論コース修士課程修了 卓越プログラム（早期修了プログラム）により1年で短縮修了 経済学研究科修了生総代 2019年4月 東京大学経済学研究科博士課程進学 2020年4月-2023年3月 休学, 2023年3月退学 2020年4月- サイバーエージェント新卒入社、AI Lab配属 研究&#xA;Publications Yoji Tomita, Riku Togashi, Yuriko Hashizume, and Naoto Ohsaka. 2023. Fast and Examination-agnostic Reciprocal Recommendation in Matching Markets. RecSys&#39;23 (Full Research Paper). Zhaohong Sun, Daisuke Moriwaki, Yoshihiro Takenami, Yoji Tomita, and Makoto Yokoo. 2023. Daycare Matching in Japan: Transfers and Siblings.</description>
-    </item>
-    <item>
-      <title>App</title>
-      <link>https://miiitomi.github.io/app/</link>
-      <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://miiitomi.github.io/app/</guid>
-      <description> Matching 男性と女性のマッチングを行うDAアルゴリズムの実行ができます。 DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説はこちら。 </description>
-    </item>
-    <item>
-      <title>Matching</title>
-      <link>https://miiitomi.github.io/matching/</link>
-      <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://miiitomi.github.io/matching/</guid>
-      <description>このページでは、男性と女性のマッチングを行うDAアルゴリズムの実行ができます。&#xA;合コンにおける席決め・ゲームなどにお使いください。&#xA;DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説はこちら。</description>
-    </item>
-    <item>
-      <title>Archives</title>
-      <link>https://miiitomi.github.io/archives/</link>
-      <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://miiitomi.github.io/archives/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Search</title>
-      <link>https://miiitomi.github.io/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://miiitomi.github.io/search/</guid>
-      <description></description>
-    </item>
-  </channel>
+    <channel>
+        <title>Pages on miiitomi</title>
+        <link>https://miiitomi.github.io/page/</link>
+        <description>Recent content in Pages on miiitomi</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>ja</language>
+        <lastBuildDate>Sat, 08 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About</title>
+        <link>https://miiitomi.github.io/about/</link>
+        <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/about/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;氏名&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;冨田 燿志（とみた ようじ）／ みーとみ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;所属&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;サイバーエージェント AI Lab 経済学社会実装チーム リサーチサイエンティスト&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;専門&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;マッチング理論・マーケットデザインのWEBサービスへの応用と社会実装&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;経歴&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2018年3月 東京大学経済学部経済学科卒業
+&lt;ul&gt;
+&lt;li&gt;2013年4月-2014年3月 特別休学（初年次長期自主活動/FLYプログラム1期生）&lt;/li&gt;
+&lt;li&gt;経済学部卒業生総代&lt;/li&gt;
+&lt;li&gt;経済学部特選論文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2019年3月 東京大学大学院経済学研究科経済理論コース修士課程修了
+&lt;ul&gt;
+&lt;li&gt;卓越プログラム（早期修了プログラム）により1年で短縮修了&lt;/li&gt;
+&lt;li&gt;経済学研究科修了生総代&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2019年4月 東京大学経済学研究科博士課程進学
+&lt;ul&gt;
+&lt;li&gt;2020年4月-2023年3月 休学, 2023年3月退学&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2020年4月- サイバーエージェント新卒入社、AI Lab配属&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;研究&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Publications
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, Yuriko Hashizume, and Naoto Ohsaka. 2023. &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2306.09060&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fast and Examination-agnostic Reciprocal Recommendation in Matching Markets.&lt;/a&gt; RecSys&#39;23 (Full Research Paper).&lt;/li&gt;
+&lt;li&gt;Zhaohong Sun, Daisuke Moriwaki, Yoshihiro Takenami, &lt;strong&gt;Yoji Tomita&lt;/strong&gt;, and Makoto Yokoo. 2023. &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2212.02751&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Daycare Matching in Japan: Transfers and Siblings.&lt;/a&gt; AAAI-23.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, and Daisuke Moriwaki. 2022. &lt;a class=&#34;link&#34; href=&#34;https://dl.acm.org/doi/fullHtml/10.1145/3523227.3547406&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Matching Theory-based Recommender Systems in Online Dating.&lt;/a&gt; RecSys&#39;22 (Industrial Paper).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Working Paper
+&lt;ul&gt;
+&lt;li&gt;Akira Matsushita, Kei Ikegami, Kyohei Okumura, &lt;strong&gt;Yoji Tomita&lt;/strong&gt;, and Atsushi Iwasaki. 2022. &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2205.14387&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Regulating Matching Markets with Constraints: Data-driven Taxation.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;登壇&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2021年3月5日 &lt;a class=&#34;link&#34; href=&#34;https://www.slideshare.net/YojiTomita/ss-244201005&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;身近なところからはじめるマーケットデザイン&lt;/a&gt; at &lt;a class=&#34;link&#34; href=&#34;https://sansan.connpass.com/event/203771/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Econ Fiesta 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2021年10月9日 「経済学のビジネス活用をめぐって ①民間企業の立場から」with 森脇大輔さん at 日本経済学会秋季大会企画セッション&lt;/li&gt;
+&lt;li&gt;2021年11月24日 「マーケットデザインで一歩先の自治体DXを」 at &lt;a class=&#34;link&#34; href=&#34;https://techplay.jp/event/835479&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;エンジニアリング・研究両面から考えるDXを推進するためのデータサイエンス&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2021年12月17日 「保育所利用調整におけるマーケットデザインの社会実装」at &lt;a class=&#34;link&#34; href=&#34;https://ccse.jp/2021/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CCSE2021&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2022年7月28日 &lt;a class=&#34;link&#34; href=&#34;https://ca-base-next.cyberagent.co.jp/2022/sessions/market-design/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;なぜテック企業で「マーケットデザイン」が必要なのか&lt;/a&gt; at &lt;a class=&#34;link&#34; href=&#34;https://ca-base-next.cyberagent.co.jp/2022/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CA BASE NEXT 2022&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2022年8月30日 &lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/37354/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;マッチング理論に基づく推薦とそれを支えるMLOps開発&lt;/a&gt; with 松月大輔さん at &lt;a class=&#34;link&#34; href=&#34;https://cyberagent.connpass.com/event/255813/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;メディアサービスにおけるデータ・AIの活用事例&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2023年6月28日 &lt;a class=&#34;link&#34; href=&#34;https://cadc.cyberagent.co.jp/2023/sessions/market-design/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;マーケットデザインと保育所利用調整—実務のニーズを満たすアルゴリズムとシステム開発—&lt;/a&gt; with 竹浪良寛さん at &lt;a class=&#34;link&#34; href=&#34;https://cadc.cyberagent.co.jp/2023/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CADC NEXT2023&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;対談&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2021年9月22日公開 &lt;a class=&#34;link&#34; href=&#34;https://www.cyberagent.co.jp/way/list/detail/id=26671&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【最先端の経済学】マーケットデザインの社会実装で変える、日本の未来&lt;/a&gt; with 鎌田雄一郎先生&lt;/li&gt;
+&lt;li&gt;2022年3月24日公開 &lt;a class=&#34;link&#34; href=&#34;https://cadc.cyberagent.co.jp/2022/program/economics-govtech/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;行政DXにおける経済学の活用-待機児童問題におけるマーケットデザインの導入-&lt;/a&gt;（森脇大輔さん、小田原悠朗さん）のインタビュアー at &lt;a class=&#34;link&#34; href=&#34;https://cadc.cyberagent.co.jp/2022/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CA Developer Conference 2022&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;CAブログ&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2021年12月9日公開 「&lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/32763/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;待機児童問題にマーケットデザインで挑む&lt;/a&gt;」 （&lt;a class=&#34;link&#34; href=&#34;https://adventar.org/calendars/6839&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CA Advent Calendar 2021&lt;/a&gt; 9日目）&lt;/li&gt;
+&lt;li&gt;2022年9月30日公開 「&lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/37708/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;なぜテック企業で「マーケットデザイン」が必要なのか&lt;/a&gt;」&lt;/li&gt;
+&lt;li&gt;2022年10月21日公開 「&lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/38014/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RecSys 2022 参加報告&lt;/a&gt;」 with ゆっこさん&lt;/li&gt;
+&lt;li&gt;2022年12月14日公開 「&lt;a class=&#34;link&#34; href=&#34;https://developers.cyberagent.co.jp/blog/archives/39706/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;皆が幸せになるマッチングプラットフォームを目指して。「マッチング理論に基づく相互推薦システム」&lt;/a&gt;」 （&lt;a class=&#34;link&#34; href=&#34;https://adventar.org/calendars/7806&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CA Advent Calendar 2022&lt;/a&gt; 14日目）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;技術スキル&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python、C++、Javascript（React）、SQL、LaTeX&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;趣味&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;サッカー観戦（特にJリーグ、横浜F・マリノス）&lt;/li&gt;
+&lt;li&gt;小説・漫画&lt;/li&gt;
+&lt;li&gt;スキューバダイビング&lt;/li&gt;
+&lt;li&gt;ネイル&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;連絡先・SNS&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Email: &lt;a class=&#34;link&#34; href=&#34;mailto:tomita_yoji@cyberagent.co.jp&#34; &gt;tomita_yoji@cyberagent.co.jp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a class=&#34;link&#34; href=&#34;https://twitter.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub: &lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;LinkedIn: &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/yoji-tomita/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@Yoji Tomita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Facebook: &lt;a class=&#34;link&#34; href=&#34;https://www.facebook.com/yoji.tomita.9/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@yoji.tomita.9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Instagram: &lt;a class=&#34;link&#34; href=&#34;https://www.instagram.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Threads: &lt;a class=&#34;link&#34; href=&#34;https://www.threads.net/@miiitomi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>App</title>
+        <link>https://miiitomi.github.io/app/</link>
+        <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/app/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/matching&#34; &gt;Matching&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;男性と女性のマッチングを行うDAアルゴリズムの実行ができます。&lt;/li&gt;
+&lt;li&gt;DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説は&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/p/matching&#34; &gt;こちら&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Matching</title>
+        <link>https://miiitomi.github.io/matching/</link>
+        <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/matching/</guid>
+        <description>&lt;p&gt;このページでは、男性と女性のマッチングを行うDAアルゴリズムの実行ができます。&lt;br&gt;
+合コンにおける席決め・ゲームなどにお使いください。&lt;br&gt;
+DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説は&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/p/matching&#34; &gt;こちら&lt;/a&gt;。&lt;/p&gt;
+&lt;div id=&#34;app&#34;&gt;&lt;/div&gt;
+&lt;script src=&#34;https://miiitomi.github.io/js/matching.js&#34;&gt;&lt;/script&gt;
+</description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>https://miiitomi.github.io/archives/</link>
+        <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>https://miiitomi.github.io/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
 </rss>
