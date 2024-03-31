@@ -6,7 +6,38 @@
         <description>Recent content in 読書記録 on miiitomi</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Sat, 08 Jul 2023 19:20:43 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/categories/%E8%AA%AD%E6%9B%B8%E8%A8%98%E9%8C%B2/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 31 Mar 2024 22:51:33 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/categories/%E8%AA%AD%E6%9B%B8%E8%A8%98%E9%8C%B2/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>『人工知能の哲学入門』鈴木貴之</title>
+        <link>https://miiitomi.github.io/p/ai_philosophy/</link>
+        <pubDate>Sun, 31 Mar 2024 22:51:33 +0900</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/ai_philosophy/</guid>
+        <description>&lt;img src="https://miiitomi.github.io/images/ai_philosophy/ai_philosophy.jpg" alt="Featured image of post 『人工知能の哲学入門』鈴木貴之" /&gt;&lt;p&gt;タイトル通り人工知能技術に関連する哲学的議論についての入門書。私はAIについては関連分野の研究をしてるため若干の知識はあるものの&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;哲学・人文学については全くの素人だが、人工知能の歴史と近年の技術については正しく簡潔にまとめられており、また哲学的議論については素人の私にもわかりやすく紹介されていて、関連する話に興味のある人には誰にでも薦められるとても良い本だと感じた。&lt;/p&gt;
+&lt;p&gt;第１部では古典的な人工知能技術と、それらのアプローチでは極めて限定的な問題では一定の性能を出しうるものの問題を複雑化した途端技術的に解決困難な問題に当たること、および主に当時行われた古典的人工知能に関する哲学的議論を紹介している。そして第２部と第３部では人工知能研究に発展をもたらした機械学習・ニューラルネットワーク・深層学習についての紹介と、それらを応用する画像処理・自然言語処理・ゲームAI技術に解説する。最後に第４部でそれらの進展を踏まえ人工知能の発展と限界・汎用人工知能の実現可能性について、人工知能にまつわる倫理的問題、人工知能の進展に伴う認知科学・哲学への影響といった哲学的議論について紹介し論じている。&lt;/p&gt;
+&lt;p&gt;特に第４部については人工知能に関連する哲学的議論が非常にわかりやすく紹介されているため、人工知能についての論点を知りたい人は人工知能についての知識の少ない人・哲学の素人にもお勧めしたい。また第４部の議論は第１部での議論を踏まえての議論も多いため第１部も読んだ方がよいだろう。哲学的議論だけでなく、古典的人工知能の歴史についてはAI研究者でも詳しくない人も多いと思う&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;ので読んで損はないと思う。一方、私の同僚など第２部と第３部はAIに詳しい人はよく知っている話も多いのでそのような人は飛ばしても良さそうである。&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; AIに詳しくない人は第２-３部を丁寧に読めば本書の議論を追う上で必要なAIについての最低限の知識は得られると思うので非常に丁寧に書かれていると感じた。哲学的議論については入門書という性格上やや論証が少ない箇所もあるように感じたが（例えばフレーム問題が現状の深層学習ではデータ量・時間等の問題で困難であるという主張は、なんとなくそんな気はするけどやや説得的理由に乏しいように思った）、その場合は姉妹書の論文集を読むと良さそうである。自分はそちらを読むだけの時間・気力をとれるかな、、、という気持ちだが余裕ができたら読んでみたい。&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;figure&gt;&lt;a href=&#34;https://www.amazon.co.jp/%E4%BA%BA%E5%B7%A5%E7%9F%A5%E8%83%BD%E3%81%AE%E5%93%B2%E5%AD%A6%E5%85%A5%E9%96%80-%E9%88%B4%E6%9C%A8-%E8%B2%B4%E4%B9%8B/dp/4326103353&#34;&gt;&lt;img src=&#34;https://miiitomi.github.io/images/ai_philosophy/ai_philosophy.jpg&#34; width=&#34;400&#34;/&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;といってもかなり周縁部の研究ため特に本書で中心となる機械学習・深層学習については専門家とは言い難いが。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;少なくとも自分はそう。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;ただし自分は画像処理・自然言語処理については断片的知識しかないので復習として読んでおいてよかった。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;余裕ができたらとか言ってると余裕はいつまでもできないものだけど、余裕ができたら、、、。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        <item>
         <title>『マッチング！』加藤千恵</title>
         <link>https://miiitomi.github.io/p/mattingu/</link>
         <pubDate>Sat, 08 Jul 2023 19:20:43 +0900</pubDate>
