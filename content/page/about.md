@@ -1,7 +1,7 @@
 ---
 title: About
 description: 自己紹介
-lastmod: '2023-07-08'
+lastmod: '2024-10-24'
 menu:
     main: 
         weight: -90
@@ -34,7 +34,7 @@ My profile in English is **[here](/about_en/)**.
  - 2020年4月- サイバーエージェント AI Lab.
 
 **論文 (peer-reviewed)**
-- **Yoji Tomita**, Riku Togashi, and Daisuke Moriwaki. 2022. [Matching Theory-based Recommender Systems in Online Dating.](https://doi.org/10.1145/3523227.3547406) Proceedings of the 16th ACM Conference on Recommender Systems (RecSys '22). Industrial Track.
+- **Yoji Tomita**, Riku Togashi, and Daisuke Moriwaki. 2022. [Matching Theory-based Recommender Systems in Online Dating.](https://doi.org/10.1145/3523227.3547406) Proceedings of the 16th ACM Conference on Recommender Systems (RecSys'22). Industrial Track.
     - [プレスリリース](https://www.cyberagent.co.jp/news/detail/id=27897).
 - Zhaohong Sun, Yoshihiro Takenami, Daisuke Moriwaki, **Yoji Tomita**, and Makoto Yokoo. 2023. [Daycare Matching in Japan: Transfers and Siblings.](https://doi.org/10.1609/aaai.v37i12.26694) Proceedings of the 37th AAAI Conference on Artificial Intelligence (AAAI-23).
     - [プレスリリース](https://www.cyberagent.co.jp/news/detail/id=28487).
