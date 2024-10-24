@@ -7,75 +7,9 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
         <lastBuildDate>Thu, 24 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>About (English)</title>
-        <link>https://miiitomi.github.io/about_en/</link>
-        <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://miiitomi.github.io/about_en/</guid>
-        <description>&lt;p&gt;日本語ページは&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/about/&#34; &gt;&lt;strong&gt;こちら&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Yoji Tomita
-&lt;ul&gt;
-&lt;li&gt;冨田 燿志（とみた ようじ）in Japanese.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Employment&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Research Scientist, AI Lab, CyberAgent, Inc. 2020-present.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Research Interests&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Matching Theory, Market Design, (Algorithmic) Game Theory, Reciprocal Recommender Systems.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Education&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;B.A. in Economics, University of Tokyo. 2013-2018.
-&lt;ul&gt;
-&lt;li&gt;Advisor: Hitoshi Matsushima, Akihiko Matsui&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;M.A. in Economics, University of Tokyo. 2018-2019.
-&lt;ul&gt;
-&lt;li&gt;Advisor: Daisuke Oyama&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Ph.D. student in Economics, University of Tokyo. 2019-2020 (Incomplete).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Papers (peer-reviewed)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, and Daisuke Moriwaki. 2022. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3523227.3547406&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Matching Theory-based Recommender Systems in Online Dating.&lt;/a&gt; Proceedings of the 16th ACM Conference on Recommender Systems (RecSys &amp;lsquo;22). Industrial Track.&lt;/li&gt;
-&lt;li&gt;Zhaohong Sun, Yoshihiro Takenami, Daisuke Moriwaki, &lt;strong&gt;Yoji Tomita&lt;/strong&gt;, and Makoto Yokoo. 2023. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1609/aaai.v37i12.26694&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Daycare Matching in Japan: Transfers and Siblings.&lt;/a&gt; Proceedings of the 37th AAAI Conference on Artificial Intelligence (AAAI-23).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, Yuriko Hashizume, and Naoto Ohsaka. 2023. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3604915.3608774&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Fast and Examination-agnostic Reciprocal Recommendation in Matching Markets.&lt;/a&gt; Proceedings of the 17th ACM Conference on Recommender Systems (RecSys&#39;23).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt; and Tomohiko Yokoyama. 2024. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3640457.3688130&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Fair Reciprocal Recommendation in Matching Markets.&lt;/a&gt; Proceedings of the 18th ACM Conference on Recommender Systems (RecSys&#39;24).
-&lt;ul&gt;
-&lt;li&gt;shortlisted for 6 best full paper candidates in RecSys&#39;24&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Contacts&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Email tomita_yoji[at]cyberagent.co.jp&lt;/li&gt;
-&lt;li&gt;X &lt;a class=&#34;link&#34; href=&#34;https://twitter.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;miiitomi&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;GitHub &lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;miiitomi&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Linkedin &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/yoji-tomita/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Yoji Tomita&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;AtCoder &lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/user/miiitomi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;miiitomi&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
         <title>About</title>
         <link>https://miiitomi.github.io/about/</link>
-        <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://miiitomi.github.io/about/</guid>
         <description>&lt;p&gt;My profile in English is &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/about_en/&#34; &gt;here&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
@@ -116,7 +50,7 @@
 &lt;p&gt;&lt;strong&gt;論文 (peer-reviewed)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, and Daisuke Moriwaki. 2022. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3523227.3547406&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Matching Theory-based Recommender Systems in Online Dating.&lt;/a&gt; Proceedings of the 16th ACM Conference on Recommender Systems (RecSys &amp;lsquo;22). Industrial Track.
+    &gt;Matching Theory-based Recommender Systems in Online Dating.&lt;/a&gt; Proceedings of the 16th ACM Conference on Recommender Systems (RecSys&#39;22). Industrial Track.
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cyberagent.co.jp/news/detail/id=27897&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;プレスリリース&lt;/a&gt;.&lt;/li&gt;
@@ -213,6 +147,72 @@
 &lt;li&gt;競技プログラミング&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;連絡先&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Email tomita_yoji[at]cyberagent.co.jp&lt;/li&gt;
+&lt;li&gt;X &lt;a class=&#34;link&#34; href=&#34;https://twitter.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub &lt;a class=&#34;link&#34; href=&#34;https://github.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Linkedin &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/yoji-tomita/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Yoji Tomita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;AtCoder &lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/user/miiitomi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;miiitomi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>About (English)</title>
+        <link>https://miiitomi.github.io/about_en/</link>
+        <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/about_en/</guid>
+        <description>&lt;p&gt;日本語ページは&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/about/&#34; &gt;&lt;strong&gt;こちら&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yoji Tomita
+&lt;ul&gt;
+&lt;li&gt;冨田 燿志（とみた ようじ）in Japanese.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Employment&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Research Scientist, AI Lab, CyberAgent, Inc. 2020-present.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Research Interests&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Matching Theory, Market Design, (Algorithmic) Game Theory, Reciprocal Recommender Systems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Education&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;B.A. in Economics, University of Tokyo. 2013-2018.
+&lt;ul&gt;
+&lt;li&gt;Advisor: Hitoshi Matsushima, Akihiko Matsui&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;M.A. in Economics, University of Tokyo. 2018-2019.
+&lt;ul&gt;
+&lt;li&gt;Advisor: Daisuke Oyama&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Ph.D. student in Economics, University of Tokyo. 2019-2020 (Incomplete).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Papers (peer-reviewed)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, and Daisuke Moriwaki. 2022. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3523227.3547406&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Matching Theory-based Recommender Systems in Online Dating.&lt;/a&gt; Proceedings of the 16th ACM Conference on Recommender Systems (RecSys&#39;22). Industrial Track.&lt;/li&gt;
+&lt;li&gt;Zhaohong Sun, Yoshihiro Takenami, Daisuke Moriwaki, &lt;strong&gt;Yoji Tomita&lt;/strong&gt;, and Makoto Yokoo. 2023. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1609/aaai.v37i12.26694&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Daycare Matching in Japan: Transfers and Siblings.&lt;/a&gt; Proceedings of the 37th AAAI Conference on Artificial Intelligence (AAAI-23).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, Yuriko Hashizume, and Naoto Ohsaka. 2023. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3604915.3608774&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fast and Examination-agnostic Reciprocal Recommendation in Matching Markets.&lt;/a&gt; Proceedings of the 17th ACM Conference on Recommender Systems (RecSys&#39;23).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt; and Tomohiko Yokoyama. 2024. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3640457.3688130&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fair Reciprocal Recommendation in Matching Markets.&lt;/a&gt; Proceedings of the 18th ACM Conference on Recommender Systems (RecSys&#39;24).
+&lt;ul&gt;
+&lt;li&gt;shortlisted for 6 best full paper candidates in RecSys&#39;24&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Contacts&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Email tomita_yoji[at]cyberagent.co.jp&lt;/li&gt;
 &lt;li&gt;X &lt;a class=&#34;link&#34; href=&#34;https://twitter.com/miiitomi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
