@@ -58,8 +58,8 @@ My profile in English is **[here](/about_en/)**.
  - 2023年6月28日 [マーケットデザインと保育所利用調整—実務のニーズを満たすアルゴリズムとシステム開発—](https://cadc.cyberagent.co.jp/2023/sessions/market-design/) with 竹浪良寛さん at [CADC NEXT2023](https://cadc.cyberagent.co.jp/2023/)
  - 2023年10月21日 [RecSys2023論文読み会](https://connpass.com/event/298043/).
  - 2023年11月1日 [第26回情報論的学習理論ワークショップ(IBIS2023) 企画セッション4 メカニズムデザイン](https://ibisml.org/ibis2023/os/#os4).
- - （予定）2024年10月29日 [Workshop on Search and Platforms](https://sites.google.com/site/makotowtnb/workshop/workshop-on-search-and-platform).
- - （予定）2024年11月2日 [RecSys2024論文読み会](https://connpass.com/event/333388/).
+ - 2024年10月29日 [Workshop on Search and Platforms](https://sites.google.com/site/makotowtnb/workshop/workshop-on-search-and-platform).
+ - 2024年11月2日 [RecSys2024論文読み会](https://connpass.com/event/333388/).
 
 **対談**
  - 2021年9月22日公開 [【最先端の経済学】マーケットデザインの社会実装で変える、日本の未来](https://www.cyberagent.co.jp/way/list/detail/id=26671) with 鎌田雄一郎先生
