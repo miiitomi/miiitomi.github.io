@@ -1,8 +1,9 @@
 ---
-title: ABC159 F - Knapsack for All Segments：別解
+title: ABC159 F - Knapsack for All Segments：別解解説
 description: 
 slug: abc159f
-date: 2023-12-15
+date: '2023-12-15'
+lastmod: '2024-11-17'
 categories:
     - 競プロ
 tags: [競プロ]
@@ -12,20 +13,7 @@ tags: [競プロ]
 
 # 問題
 
- - 問題リンクは[こちら](https://atcoder.jp/contests/abc159/tasks/abc159_f)。
- - 問題：$N$ 項の正整数からなる数列 $A = (A_1, A_2, \dots, A_N)$ と正整数 $S$ について、$f(L, R)$ を $L$ 項目から $R$ 項目までの（連続とは限らない）部分列のうち和が $S$ であるものの数、つまり
-    $$
-        f(L, R) =  \left|\left\lbrace (x_1, \dots, x_k) ~ \Big|~ L \le x_{1} < \dots < x_{k} \le R,~\mathrm{and}~ \sum_{j=1}^k A_{x_j} = S \right\rbrace\right|
-    $$
-    とします。与えられる数列 $A$ と正整数 $S$ について
-    $$
-        \sum_{L = 1}^{N}\sum_{R = L}^{N}f(L, R)
-    $$
-    を$998244353$で割ったあまりを求めてください。
- - 制約：
-    - $1 \le N \le 3000$
-    - $1 \le S \le 3000$
-    - $1 \le A_i \le 3000$  for each $i=1,\dots,N$
+ - 問題は[こちら](https://atcoder.jp/contests/abc159/tasks/abc159_f)。
 
 # 解説
 まず $\Theta(N^2S)$ の愚直解法を説明し、後でそれを $\Theta(NS)$ に高速化する解法を示します（以下「998244353で割ったあまりを」の部分は無視して説明します）。
@@ -98,7 +86,8 @@ C++での提出コードは[こちら](https://atcoder.jp/contests/abc159/submis
 
 # 終わりに
 
-早く黄色コーダーになってこの記事を解説に載せたい。
+~~早く黄色コーダーになってこの記事を解説に載せたい。~~   
+（2024年11月17日 黄コーダーになったので載せてみた。）
 
 
-[^1]: dpテーブルも1次元で保持することができるためコードではそのようにしています。
+[^1]: dpテーブルも1次元で保持することができるため提出コードではそのようにしています。
