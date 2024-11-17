@@ -337,7 +337,7 @@ C++なら「C++ 23 (gcc 12.2)」，Pythonなら「Python (PyPy 3.10-v7.3.12)」�
 </description>
         </item>
         <item>
-        <title>ABC159 F - Knapsack for All Segments：別解</title>
+        <title>ABC159 F - Knapsack for All Segments：別解解説</title>
         <link>https://miiitomi.github.io/p/abc159f/</link>
         <pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate>
         
@@ -348,24 +348,8 @@ C++なら「C++ 23 (gcc 12.2)」，Pythonなら「Python (PyPy 3.10-v7.3.12)」�
     &gt;解説&lt;/a&gt;にある公式解説・ユーザー解説のどれとも発想が異なりそうな解法を思い付いたので、解法解説らしきものを書いてみます。&lt;/p&gt;
 &lt;h1 id=&#34;問題&#34;&gt;問題&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;問題リンクは&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/abc159/tasks/abc159_f&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;li&gt;問題は&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/abc159/tasks/abc159_f&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;こちら&lt;/a&gt;。&lt;/li&gt;
-&lt;li&gt;問題：$N$ 項の正整数からなる数列 $A = (A_1, A_2, \dots, A_N)$ と正整数 $S$ について、$f(L, R)$ を $L$ 項目から $R$ 項目までの（連続とは限らない）部分列のうち和が $S$ であるものの数、つまり
-$$
-f(L, R) =  \left|\left\lbrace (x_1, \dots, x_k) ~ \Big|~ L \le x_{1} &amp;lt; \dots &amp;lt; x_{k} \le R,~\mathrm{and}~ \sum_{j=1}^k A_{x_j} = S \right\rbrace\right|
-$$
-とします。与えられる数列 $A$ と正整数 $S$ について
-$$
-\sum_{L = 1}^{N}\sum_{R = L}^{N}f(L, R)
-$$
-を$998244353$で割ったあまりを求めてください。&lt;/li&gt;
-&lt;li&gt;制約：
-&lt;ul&gt;
-&lt;li&gt;$1 \le N \le 3000$&lt;/li&gt;
-&lt;li&gt;$1 \le S \le 3000$&lt;/li&gt;
-&lt;li&gt;$1 \le A_i \le 3000$  for each $i=1,\dots,N$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;解説&#34;&gt;解説&lt;/h1&gt;
 &lt;p&gt;まず $\Theta(N^2S)$ の愚直解法を説明し、後でそれを $\Theta(NS)$ に高速化する解法を示します（以下「998244353で割ったあまりを」の部分は無視して説明します）。&lt;/p&gt;
@@ -422,12 +406,13 @@ return ans
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;C++での提出コードは&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/abc159/submissions/48510009&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;こちら&lt;/a&gt;（実行時間 32 ms）。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h1 id=&#34;終わりに&#34;&gt;終わりに&lt;/h1&gt;
-&lt;p&gt;早く黄色コーダーになってこの記事を解説に載せたい。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;早く黄色コーダーになってこの記事を解説に載せたい。&lt;/del&gt;&lt;br&gt;
+（2024年11月17日 黄コーダーになったので載せてみた。）&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;dpテーブルも1次元で保持することができるためコードではそのようにしています。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;dpテーブルも1次元で保持することができるため提出コードではそのようにしています。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
