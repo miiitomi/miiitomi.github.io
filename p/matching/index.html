@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="安定結婚問題とDAアルゴリズムの解説をします。">
+<title>マッチングアルゴリズムの解説</title>
+
+<link rel='canonical' href='https://miiitomi.github.io/p/matching/'>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/scss/style.min.eddb5831811f423d0c42db61148da375ec1367cd9ea20f2c945ba0dc0fff144a.css"><meta property='og:title' content="マッチングアルゴリズムの解説">
+<meta property='og:description' content="安定結婚問題とDAアルゴリズムの解説をします。">
+<meta property='og:url' content='https://miiitomi.github.io/p/matching/'>
+<meta property='og:site_name' content='miiitomi'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Market Design' /><meta property='article:tag' content='Matching Theory' /><meta property='article:published_time' content='2022-02-11T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-02-11T00:00:00&#43;00:00'/><meta property='og:image' content='https://miiitomi.github.io/images/avatar.png' />
+<meta name="twitter:site" content="@miiitomi">
+    <meta name="twitter:creator" content="@miiitomi"><meta name="twitter:title" content="マッチングアルゴリズムの解説">
+<meta name="twitter:description" content="安定結婚問題とDAアルゴリズムの解説をします。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://miiitomi.github.io/images/avatar.png' />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-D93SYWPPB4"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-D93SYWPPB4');
+        }
+      </script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="/images/avatar.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">miiitomi</a></h1>
+            <h2 class="site-description">みーとみブログ</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/miiitomi/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/miiitomi/'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/app/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>App</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/matching/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>Matching</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#例">例</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#例-1">例</a></li>
+    <li><a href="#daアルゴリズムの安定性">DAアルゴリズムの安定性</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#例-2">例</a></li>
+    <li><a href="#男性側最適女性側最適安定マッチング">男性側最適/女性側最適安定マッチング</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#命題-1-の証明">命題 1. の証明</a></li>
+    <li><a href="#命題-2-の証明">命題 2. の証明</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/market-design/" >
+                Market Design
+            </a>
+        
+            <a href="/categories/matching-theory/" >
+                Matching Theory
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/matching/">マッチングアルゴリズムの解説</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            安定結婚問題とDAアルゴリズムの解説をします。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 11, 2022</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>　<a class="link" href="/matching" >こちら</a>に男性と女性をマッチさせるDAアルゴリズムの実行ができるウェブアプリを公開しました。
+このページでは、実装したDAアルゴリズム（Gale-Shapleyアルゴリズム）の解説を行います。</p>
+<h1 id="安定結婚問題">安定結婚問題
+</h1><p>　DAアルゴリズムは「安定結婚問題」という問題を解くアルゴリズムとして知られています。
+安定結婚問題とは、</p>
+<ul>
+<li>男性と女性がそれぞれ複数人おり、</li>
+<li>各男性はマッチしたい女性の希望順位表を、各女性はマッチしたい男性の希望順位表を提出し、</li>
+<li>提出された希望順位表に基づいて男性と女性をマッチさせる</li>
+</ul>
+<p>という状況において、参加者に不満の残らないようなマッチのさせ方はどのようなものかを考えるものです。</p>
+<h2 id="例">例
+</h2><p>　男性は A、B、C の3人、女性は X、Y、Z の3人とし、提出された希望表は以下の通りであったとします。</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">A</th>
+          <th style="text-align: center">B</th>
+          <th style="text-align: center">C</th>
+          <th style="text-align: center">X</th>
+          <th style="text-align: center">Y</th>
+          <th style="text-align: center">Z</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">第1希望</td>
+          <td style="text-align: center">X</td>
+          <td style="text-align: center">X</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">C</td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">B</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第2希望</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">B</td>
+          <td style="text-align: center">A</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第3希望</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center">X</td>
+          <td style="text-align: center">B</td>
+          <td style="text-align: center">C</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+<p>　ここで Z さんの第3希望が空白となっているのは、「第2希望までの相手とマッチできなかった場合、それ以外の相手とマッチするよりは誰ともマッチしない方が良い」という意味です。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+この状況において、不満の残らないマッチというのはどのようなものでしょうか。</p>
+<h1 id="安定マッチング">安定マッチング
+</h1><p>　安定結婚問題の目標は、参加者に不満の残らないマッチを見つけることです。では、まずどのようなマッチでは参加者に不満が残るか考えてみましょう。</p>
+<p>　上記の例において、次のようなマッチを考えてみます。</p>
+<ul>
+<li>A さん &ndash; X さん</li>
+<li>B さん &ndash; Y さん</li>
+<li>C さん &ndash; Z さん</li>
+</ul>
+<p>この例において、Z さんは自身が希望表に書いていない C さんとマッチしています。
+この場合、Z さんは希望しない相手と無理矢理マッチさせられているという点で不満を持つでしょう。
+したがって、安定結婚問題におけるマッチはまず次の条件を満たすことが望まれます。</p>
+<blockquote>
+<p><strong>条件 1.</strong>　誰も希望表に書いていない相手とはマッチしない。</p>
+</blockquote>
+<p>　では次に、以下のようなマッチではどうでしょうか。</p>
+<ul>
+<li>A さん &ndash; X さん</li>
+<li>B さん &ndash; Z さん</li>
+<li>C さん &ndash; Y さん</li>
+</ul>
+<p>B さんと Y さんに着目します。今 B さんは第3希望の Z さんとマッチしていますが、Y さんとのマッチをより希望しています。
+一方、Y さんも今マッチしている C さんより、B さんとのマッチをより希望しています。
+この場合、B さんと Y さんは抜け駆けして2人でマッチし直すと2人とも得できるため、このマッチ結果には納得しないでしょう。
+したがって、次の条件も望まれます。</p>
+<blockquote>
+<p><strong>条件 2.</strong>　抜け駆けして2人でマッチし直すことで2人とも得できてしまうようなペアがない。</p>
+</blockquote>
+<p>　上の条件 1. と 2. を満たすマッチならば、参加者は納得できるでしょう。
+なぜなら、条件1.から今マッチした人がいるならその人は自分が希望表に書いた人であり、また条件2.から自分が今の結果より望んでいる人は、自分を希望していないか、またはその人にとってより望ましい人とマッチしているからです。
+よって、安定結婚問題におけるマッチ結果は、次の安定マッチングであることが望ましいと考えられます。</p>
+<blockquote>
+<p><strong>定義 1.</strong>　<strong>安定マッチング</strong>とは、条件 1. と条件 2. を満たすようなマッチングである。</p>
+</blockquote>
+<h1 id="daアルゴリズム">DAアルゴリズム
+</h1><p>　では、その安定マッチングはどのようにして見つけたら良いのでしょうか。
+それはDavid Gale氏とLloyd Shapley氏によって提案されたDAアルゴリズムによって見つけることができると知られています。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<blockquote>
+<p><strong>（男性側提案）DAアルゴリズム</strong></p>
+<ol>
+<li>各男性は、最も希望順位の高い女性に申し込む。各女性は、申し込んできた男性の中に希望表に書いた人がいれば、そのうち最も希望順位の高い男性1人を保留し、それ以外の男性を断る。</li>
+<li>全ての男性が誰かに保留されるか、申し込める女性がいない状態になるまで、以下を繰り返す。
+<ul>
+<li>保留されされていない男性は、希望表に書いていてまだ申し込んでいない女性のうち、最も希望順位の高い女性に申し込む。</li>
+<li>各女性は、前ステップで保留した男性と新たに申し込んできた男性のうち、希望表に書いた人がいればその中で最も希望順位の高い男性1人を保留し、それ以外の男性を断る。</li>
+</ul>
+</li>
+<li>繰り返し終了時点において、誰かに保留されている男性は、その男性を保留している女性とマッチさせる。誰にも保留されていない男性と、誰も保留していない女性は、誰ともマッチしなかったという結果とする。</li>
+</ol>
+</blockquote>
+<h2 id="例-1">例
+</h2><p>　冒頭の例にこの（男性側提案）DAアルゴリズムを適用すると、以下のようになります。</p>
+<ol>
+<li>男性 A、B、C はそれぞれ第1希望の女性 X、X、Y に申し込みます。
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">A</th>
+          <th style="text-align: center">B</th>
+          <th style="text-align: center">C</th>
+          <th style="text-align: center">X</th>
+          <th style="text-align: center">Y</th>
+          <th style="text-align: center">Z</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">第1希望</td>
+          <td style="text-align: center"><strong>X</strong></td>
+          <td style="text-align: center"><strong>X</strong></td>
+          <td style="text-align: center"><strong>Y</strong></td>
+          <td style="text-align: center">C</td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">B</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第2希望</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center"><strong>A</strong></td>
+          <td style="text-align: center">B</td>
+          <td style="text-align: center">A</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第3希望</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center">X</td>
+          <td style="text-align: center"><strong>B</strong></td>
+          <td style="text-align: center"><strong>C</strong></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+</ol>
+<p>　女性 X は申し込んできた A と B を比較して、A を保留し B を断ります。女性 Y は申し込んできた C を保留します。</p>
+<ol start="2">
+<li>前ステップで断られた男性 B は、女性 Y に申し込みます。
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">A</th>
+          <th style="text-align: center">B</th>
+          <th style="text-align: center">C</th>
+          <th style="text-align: center">X</th>
+          <th style="text-align: center">Y</th>
+          <th style="text-align: center">Z</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">第1希望</td>
+          <td style="text-align: center"><strong>X</strong></td>
+          <td style="text-align: center"><del>X</del></td>
+          <td style="text-align: center"><strong>Y</strong></td>
+          <td style="text-align: center">C</td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">B</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第2希望</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center"><strong>Y</strong></td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center"><strong>A</strong></td>
+          <td style="text-align: center"><strong>B</strong></td>
+          <td style="text-align: center">A</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第3希望</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center">X</td>
+          <td style="text-align: center"><del>B</del></td>
+          <td style="text-align: center"><strong>C</strong></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+</ol>
+<p>　女性 Y は、保留している C と新たに申し込んできた B を比較して、B を新たに保留し C を断ります。</p>
+<ol start="3">
+<li>前ステップで断られた男性 C は、女性 Z に申し込みます。
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">A</th>
+          <th style="text-align: center">B</th>
+          <th style="text-align: center">C</th>
+          <th style="text-align: center">X</th>
+          <th style="text-align: center">Y</th>
+          <th style="text-align: center">Z</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">第1希望</td>
+          <td style="text-align: center"><strong>X</strong></td>
+          <td style="text-align: center"><del>X</del></td>
+          <td style="text-align: center"><del>Y</del></td>
+          <td style="text-align: center">C</td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">B</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第2希望</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center"><strong>Y</strong></td>
+          <td style="text-align: center"><strong>Z</strong></td>
+          <td style="text-align: center"><strong>A</strong></td>
+          <td style="text-align: center"><strong>B</strong></td>
+          <td style="text-align: center">A</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第3希望</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center">X</td>
+          <td style="text-align: center"><del>B</del></td>
+          <td style="text-align: center"><del>C</del></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+</ol>
+<p>　女性 Z は、申し込んできた男性 C とのマッチは希望していないので、C を断ります。</p>
+<ol start="4">
+<li>前ステップで断られた男性 C は、女性 X に申し込みます。
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">A</th>
+          <th style="text-align: center">B</th>
+          <th style="text-align: center">C</th>
+          <th style="text-align: center">X</th>
+          <th style="text-align: center">Y</th>
+          <th style="text-align: center">Z</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">第1希望</td>
+          <td style="text-align: center"><strong>X</strong></td>
+          <td style="text-align: center"><del>X</del></td>
+          <td style="text-align: center"><del>Y</del></td>
+          <td style="text-align: center"><strong>C</strong></td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">B</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第2希望</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center"><strong>Y</strong></td>
+          <td style="text-align: center"><del>Z</del></td>
+          <td style="text-align: center"><strong>A</strong></td>
+          <td style="text-align: center"><strong>B</strong></td>
+          <td style="text-align: center">A</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第3希望</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center"><strong>X</strong></td>
+          <td style="text-align: center"><del>B</del></td>
+          <td style="text-align: center"><del>C</del></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+</ol>
+<p>　女性 X は、保留している男性 A と新たに申し込んできた C を比較して、C を新たに保留し A を断ります。</p>
+<ol start="5">
+<li>前ステップで断られた男性 A は、女性 Z に申し込みます。
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">A</th>
+          <th style="text-align: center">B</th>
+          <th style="text-align: center">C</th>
+          <th style="text-align: center">X</th>
+          <th style="text-align: center">Y</th>
+          <th style="text-align: center">Z</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">第1希望</td>
+          <td style="text-align: center"><del>X</del></td>
+          <td style="text-align: center"><del>X</del></td>
+          <td style="text-align: center"><del>Y</del></td>
+          <td style="text-align: center"><strong>C</strong></td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">B</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第2希望</td>
+          <td style="text-align: center"><strong>Z</strong></td>
+          <td style="text-align: center"><strong>Y</strong></td>
+          <td style="text-align: center"><del>Z</del></td>
+          <td style="text-align: center"><del>A</del></td>
+          <td style="text-align: center"><strong>B</strong></td>
+          <td style="text-align: center"><strong>A</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第3希望</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center"><strong>X</strong></td>
+          <td style="text-align: center"><del>B</del></td>
+          <td style="text-align: center"><del>C</del></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+</ol>
+<p>　女性 Z は、新たに申し込んできた A を希望表に書いているので、A を保留します。</p>
+<ol start="6">
+<li>全ての男性が保留されたのでアルゴリズムが終了します。結果として得られるマッチングは以下の通りです。
+<ul>
+<li>A さん &ndash; Z さん</li>
+<li>B さん &ndash; Y さん</li>
+<li>C さん &ndash; X さん</li>
+</ul>
+</li>
+</ol>
+<p>　このマッチ結果では、全員が希望表に書いた相手とマッチしています（条件 1.）。
+また、A、B さんが今の結果より望む X さんは、X さんにとってより望ましい C さんとマッチしており、また C さんが今の結果より望む Y、Z さんは、C さんより望ましい相手とマッチしているか、C さんとのマッチを希望していないため、抜け駆けして2人とも得するペアもありません（条件 2.）。<br>
+　よってこの例で（男性側提案）DAアルゴリズムによって得られた上記のマッチングは、安定マッチングとなっています。</p>
+<h2 id="daアルゴリズムの安定性">DAアルゴリズムの安定性
+</h2><p>　上の例に限らず、DAアルゴリズムは常に安定マッチングを返します。</p>
+<blockquote>
+<p><strong>命題 1.</strong>　安定結婚問題において、DAアルゴリズムによって得られるマッチングは、常に安定マッチングである。</p>
+</blockquote>
+<p>（証明は末尾の補論参照）</p>
+<p>　よって安定結婚問題問題において安定マッチングを得るためには、DAアルゴリズムを用いれば良いことがわかりました。</p>
+<h1 id="男性側提案と女性側提案">男性側提案と女性側提案
+</h1><p>　これまでは男性側が申し込む形のDAアルゴリズムを説明してきました。
+もちろん女性側が申し込む形の女性側提案DAアルゴリズムを考えることもでき、女性側提案DAアルゴリズムによっても安定マッチングを得ることができます。
+男性側提案と女性側提案で、結果として得られるマッチングはどのように異なるのでしょうか。</p>
+<h2 id="例-2">例
+</h2><p>　もう一度冒頭の男性 A、B、C 3人、女性 X、Y、Z 3人の例を考えます。</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">A</th>
+          <th style="text-align: center">B</th>
+          <th style="text-align: center">C</th>
+          <th style="text-align: center">X</th>
+          <th style="text-align: center">Y</th>
+          <th style="text-align: center">Z</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">第1希望</td>
+          <td style="text-align: center">X</td>
+          <td style="text-align: center">X</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">C</td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">B</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第2希望</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">B</td>
+          <td style="text-align: center">A</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第3希望</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Z</td>
+          <td style="text-align: center">X</td>
+          <td style="text-align: center">B</td>
+          <td style="text-align: center">C</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+<p>この例において、男性側提案DAアルゴリズムによって得られるマッチングは以下の通りでした。</p>
+<ul>
+<li>A さん &ndash; Z さん</li>
+<li>B さん &ndash; Y さん</li>
+<li>C さん &ndash; X さん</li>
+</ul>
+<p>一方、女性側提案DAアルゴリズムを行うと、全ての女性が第1希望の男性に受け入れられ、結果は以下の通りとなります。</p>
+<ul>
+<li>A さん &ndash; Y さん</li>
+<li>B さん &ndash; Z さん</li>
+<li>C さん &ndash; X さん</li>
+</ul>
+<p>　この2つのマッチ結果を比較してみましょう。
+C さんと X さんの2人についてはどちらのアルゴリズムでも結果が変わりません。<br>
+　残りの4人のうち、男性の A さんと B さんについては、男性側提案DAアルゴリズムによって得られるマッチングではそれぞれ第2希望の相手と、女性側提案DAアルゴリズムによって得られるマッチングでは第3希望の相手とマッチしています。
+よって、男性2人は男性側提案DAアルゴリズムによって得られるマッチングの方が望ましい結果となっています。<br>
+　一方、女性の Y さんと Z さんについては、男性側提案DAアルゴリズムによって得られるマッチングではそれぞれ第2希望の相手と、女性側提案DAアルゴリズムによって得られるマッチングではそれぞれ第1希望の相手とマッチしています。
+したがって、女性2人は女性側提案DAアルゴリズムによって得られるマッチングの方が望ましい結果となっています。</p>
+<h2 id="男性側最適女性側最適安定マッチング">男性側最適/女性側最適安定マッチング
+</h2><p>　上記の例では、男性側提案DAアルゴリズムによって得られるマッチングは男性側にとって望ましく、女性側提案DAアルゴリズムによって得られるマッチングは女性側にとって望ましいものとなっていました。
+この結果は上記の例に限らず一般に成り立つことが知られています。</p>
+<blockquote>
+<p><strong>定義 2.</strong></p>
+<ul>
+<li>男性 $m$ にとって女性 $w$ が<strong>達成可能である</strong>とは、ある安定マッチングが存在して、その安定マッチングにおいて男性 $m$ は女性 $w$ とマッチしていることをいう。</li>
+<li><strong>男性側最適安定マッチング</strong>とは、全ての男性が達成可能な女性のうち最も望ましい女性とマッチするような安定マッチングのことをいう。</li>
+<li>女性側についても同様に定義する。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>命題 2.</strong></p>
+<ul>
+<li>男性側提案DAアルゴリズムによって得られるマッチングは、男性側最適安定マッチングである。</li>
+<li>女性側提案DAアルゴリズムによって得られるマッチングは、女性側最適安定マッチングである。</li>
+</ul>
+</blockquote>
+<p>（証明は末尾の補論参照）</p>
+<p>　したがって、男性側提案DAアルゴリズムでは男性側にとって最も望ましい安定マッチングとなり、女性側提案DAアルゴリズムでは女性側にとって最も望ましい安定マッチングとなります。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<h1 id="おわりに">おわりに
+</h1><p>　ここで紹介したDAアルゴリズムは、男性と女性のマッチングだけでなく、2つのグループをマッチさせる多くの状況で使うことができ、例えば公立学校と入学させる学生のマッチングや、研修医と病院とのマッチングなどで応用されています。
+また、安定結婚問題・DAアルゴリズム以外にも興味深いマッチング問題・マッチングアルゴリズムはたくさんあります。そうした問題の研究を行う「マッチング理論」や、その知見を用いて実際の市場・制度設計を行う「マーケットデザイン」と呼ばれる分野の研究がいま経済学やコンピュータサイエンスの世界で盛んに行われています。
+もし興味を持った方がいたらぜひ「マッチング理論」「マーケットデザイン」で調べてみてください。</p>
+<h1 id="補論-命題の証明">補論: 命題の証明
+</h1><h2 id="命題-1-の証明">命題 1. の証明
+</h2><p>（条件 1.）DAアルゴリズムにおいて、男性は希望表に書かれていない女性には申し込みません。
+また女性は、希望表に書かれていない男性に申し込まれても保留することはありません。
+したがって、男性も女性も希望表に書かれていない相手とマッチすることはないため、DAアルゴリズムによって得られるマッチングは条件 1.を満たします。<br>
+（条件 2.）背理法によって示します。ある男性 $m$ と女性 $w$ がいて、DAアルゴリズムによって得られたマッチングにおいて、$m$ と $w$ が抜け駆けして2人とも得できるようなペアになっているとします（仮定A）。
+$m$ は $w$ とマッチするよりも不本意な結果となっているので、DAアルゴリズムのどこかのステップで $w$ に申し込み、$w$ は $m$ を断っています。
+$w$ は $m$ を希望表に書いているので、断った時点で $m$ よりも望ましい相手（$m&rsquo;$ とする）を保留しているはずです。
+その次のステップで、$w$ は $m&rsquo;$ を保留しているので、$w$ はこのステップで $m&rsquo;$ かあるいは $m&rsquo;$ より望ましい人を保留します。
+さらにその後のどのステップでも、$w$ は $m&rsquo;$ かあるいは $m&rsquo;$ より望ましい人を保留するはずです。
+したがって、最終的に $w$ にとって $m$ とマッチするより不本意な結果となることはあり得ません。これは仮定Aに矛盾するため、DAアルゴリズムによって得られるマッチングは条件 2.を満たします。（証明終わり）</p>
+<h2 id="命題-2-の証明">命題 2. の証明
+</h2><p>　男性側についてのみ考えます。
+男性が達成可能な女性に断られることはない、ということを示せばいいため、これを背理法によって示します。<br>
+　男性側提案DAアルゴリズムにおいて、達成可能な女性に断られる男性がいると仮定し、そのうち最も早いステップで断られる男性を $m$ とし（複数いる場合はそのうちの1人）、その時に $m$ が断られる達成可能な女性を $w$ と呼ぶことにします（仮定B）。
+また $w$ は $m$ にとって達成可能なので、$m$ と $w$ がマッチする安定マッチングが存在するはずであり、そのうちの1つを $\mu$ とします。<br>
+　男性側提案DAにおいて $m$ が $w$ に断られる際、 $w$ が $m$ より望ましいとして保留した男性（$m&rsquo;$とする）がいます（$*$）。
+ここで、$\mu$ における $m&rsquo;$ のマッチ結果は、$m&rsquo;$ にとって $w$ とマッチするより望ましくない（$**$）はずです。
+なぜなら、まず $\mu$ おいて $w$ は $m$ とマッチするため、$m&rsquo;$ のマッチ相手は $w$ ではありえません。
+また $w$ より望ましい相手とマッチするのであれば、男性側提案DAのステップにおいて $m&rsquo;$ は $w$ に申し込む以前にその相手に断られているはずですが、その相手は $m&rsquo;$ にとって達成可能なので「男性 $m$ が最も早いステップで達成可能な女性に断られる男性である」という仮定Bに反するからです。<br>
+　したがって、（$*$）より $w$ にとって $\mu$ でマッチする $m$ より $m&rsquo;$ の方が望ましく、また、（$**$）より $m&rsquo;$ にとっても $\mu$ でのマッチ結果より $w$ の方が望ましいということになります。
+よって、マッチング $\mu$ において $m&rsquo;$ と $w$ は条件 2.における「抜け駆けして2人も得をするペア」になっており、これは $\mu$ が安定マッチングであることに矛盾します。（証明終わり）</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>このような希望が許容されるかどうかは状況によると思います。今回作成したアプリではそのような希望を許容するかどうかを主催者が選択できるようにしました。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Gale, David, and Lloyd S. Shapley. &ldquo;College admissions and the stability of marriage.&rdquo; The American Mathematical Monthly 69.1 (1962): 9-15.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Differed Acceptanceアルゴリズム（日本語では受入留保アルゴリズム）、提案者の名前からGale-Shapleyアルゴリズムとも呼ばれます。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>今回作成したアプリでは、実行前に男性側提案か女性側提案か選択できるようにしました。実際に使うときは、主催者が決めるか、くじ引きや男性・女性代表のじゃんけんで決めるなどして使ってください。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/market-design/">Market Design</a>
+        
+            <a href="/tags/matching-theory/">Matching Theory</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/matching/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Matching</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/app/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">App</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/scarf/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Scarf&#39;s lemmaとその実装</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2021 - 
+        
+        2024 miiitomi
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

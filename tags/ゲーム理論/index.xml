@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>ゲーム理論 on miiitomi</title>
+        <link>https://miiitomi.github.io/tags/%E3%82%B2%E3%83%BC%E3%83%A0%E7%90%86%E8%AB%96/</link>
+        <description>Recent content in ゲーム理論 on miiitomi</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>ja</language>
+        <lastBuildDate>Thu, 23 Nov 2023 11:35:53 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/tags/%E3%82%B2%E3%83%BC%E3%83%A0%E7%90%86%E8%AB%96/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Grundy数とSprague-Grundy定理と私</title>
+        <link>https://miiitomi.github.io/p/grundy/</link>
+        <pubDate>Thu, 23 Nov 2023 11:35:53 +0900</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/grundy/</guid>
+        <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに
+&lt;/h1&gt;&lt;p&gt;先日参加していた競技プログラミングコンテスト，ARC（AtCoder Regular Contest）でGrundy数に関する問題が出ました．
+この記事では私自身の勉強とまとめのため，Grundy数とSprague-Grundy定理について説明していきます．&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;最初は一般の不偏ゲームについて述べて，&lt;del&gt;後で上記の具体的な問題の設定を例にあげます．具体例を先に確認したい方は後半から読まれても良いかもしれません．&lt;/del&gt;(疲れたのでいったん一般の不偏ゲームについての議論のみで公開しちゃいます．その問題設定を用いた具体例の説明はやる気が出たら多分週末に書きます．)．&lt;/p&gt;
+&lt;h1 id=&#34;不偏ゲームimpartial-game&#34;&gt;不偏ゲーム（Impartial Game）
+&lt;/h1&gt;&lt;p&gt;ここでとりあげる &lt;strong&gt;不偏ゲーム（Impartial Game）&lt;/strong&gt;&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; とは，次のような特徴をもつゲームのことを呼びます：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2人のプレイヤーがおり，交互に手番プレイヤーとなって行動を行う．&lt;/li&gt;
+&lt;li&gt;生じうるゲーム状態，および可能な行動の数は有限．&lt;/li&gt;
+&lt;li&gt;ゲーム状態ごとに可能な行動が定められ，手番プレイヤーの操作によって別のゲーム状態に遷移し，相手の手番となる．&lt;/li&gt;
+&lt;li&gt;初期状態，および先手プレイヤー（最初に行動を選択する人）が定められている．&lt;/li&gt;
+&lt;li&gt;可能な行動のない状態（終了状態）がある．&lt;/li&gt;
+&lt;li&gt;終了状態に至ったときに手番プレイヤーであったプレイヤーの負け（自身のの行動によって終了状態に遷移したプレイヤーの勝ち），&lt;/li&gt;
+&lt;li&gt;ゲームの状態や行動は両者間ですべて確認され（完全情報），また状態遷移に不確実性を含まない．&lt;/li&gt;
+&lt;li&gt;どのような行動が取られても必ず有限回の行動で終了状態に至る．&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;モデル&#34;&gt;モデル
+&lt;/h2&gt;&lt;p&gt;この不偏ゲームは，以下のようにフォーマルな数理モデルで定式化できます．&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定義 1．&lt;/strong&gt; 不偏ゲーム：$I = (S,  s_0,  T)$ は&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$S$：とりうる全てのゲーム状態からなる有限集合．&lt;/li&gt;
+&lt;li&gt;$s_0 \in S$：初期状態．&lt;/li&gt;
+&lt;li&gt;$T:S \to 2^S$：状態 $s$ から手番プレイヤーの行動によって遷移できる状態の集合 $T(s) \subseteq S$ をあらわす写像．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;で表される．&lt;/p&gt;
+&lt;h2 id=&#34;戦略&#34;&gt;戦略
+&lt;/h2&gt;&lt;p&gt;ここでプレイヤーにとっての戦略（Strategy）を定義します．&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定義 2．&lt;/strong&gt; 不偏ゲーム$I = (S,  s_0,  T)$におけるプレイヤー$i$の戦略とは，与えられた状態から遷移先状態をしめす写像 $ \beta_i:S \to S\cup \{ \emptyset \} $  で，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;もし $T(s) \ne \emptyset$ （終了状態でない）なら，$\beta_i(s) \in T(s)$．&lt;/li&gt;
+&lt;li&gt;もし $T(s) = \emptyset$（終了状態）なら，$\beta_i(s) = \emptyset$．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;を満たすもののことをいう．&lt;/p&gt;
+&lt;h2 id=&#34;必勝戦略&#34;&gt;必勝戦略
+&lt;/h2&gt;&lt;p&gt;必勝戦略とはなにかを定義しましょう．&lt;/p&gt;
+&lt;p&gt;先手プレイヤーを $A$，後手プレイヤーを $B$とし，それぞれについて戦略 $\beta_A, \beta_B$ が与えられたとします．この戦略のもとでゲームがが進められたとき，状態は&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$s_1 = \beta_A(s_0)$,&lt;/li&gt;
+&lt;li&gt;$s_2 = \beta_B(s_1)$,&lt;/li&gt;
+&lt;li&gt;$s_3 = \beta_A(s_2)$,&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;と遷移していきますが，有限回でゲームは終了するので，どこかである $k$ が存在して&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\beta_i(s_k) = \emptyset$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;となり，このときの手番プレイヤー $i$ が負け，もう一方のプレイヤーが勝利します．&lt;/p&gt;
+&lt;p&gt;したがって，戦略の組 $(\beta_A, \beta_B)$ が与えられると勝者が決まるため，これを勝者関数とすることにします．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$W(\beta_A, \beta_B) \in \{A, B\}$：戦略 $\beta_A, \beta_B$ が与えられたときの勝者．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;するとプレイヤー $i$ の必勝戦略とは，以下のように定義することができます．&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定義 3．&lt;/strong&gt;
+不偏ゲーム $I = (S, s_0, T)$ において，戦略 $\beta_i^*$ がプレイヤー $i$ の&lt;strong&gt;必勝戦略&lt;/strong&gt;であるとは，もう一方のプレイヤー $j$ の任意の戦略 $\beta_j$ に対してもプレイヤー $i$ が勝者となること，つまり&lt;/p&gt;
+&lt;p&gt;$$ W(\beta_i^*, \beta_j) = i, ~ \forall \beta_j $$&lt;/p&gt;
+&lt;p&gt;が成り立つことをいう．&lt;/p&gt;
+&lt;h2 id=&#34;必勝戦略の存在性&#34;&gt;必勝戦略の存在性
+&lt;/h2&gt;&lt;p&gt;では必勝戦略なんて存在するのか，という話なんですが，先手と後手の両方に必勝戦略が存在するということはもちろんありません（両者が必勝戦略を取った場合を考えると，どちらか一方は負けるので必勝戦略であることに矛盾します）．&lt;/p&gt;
+&lt;p&gt;ただし，どちらか一方には必ず必勝戦略がが存在します．&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理 1．&lt;/strong&gt; 不偏ゲームには，先手プレイヤーと後手プレイヤーのどちらか一方に必ず必勝戦略が存在する．&lt;/p&gt;
+&lt;p&gt;不偏ゲームを含むより一般的な二人逐次手番完全情報有限確定ゲームにおける&lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Zermelo%27s_theorem_%28game_theory%29&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Zermeloの定理&lt;/a&gt;からただちに成り立ちます．&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h1 id=&#34;grundy数&#34;&gt;Grundy数
+&lt;/h1&gt;&lt;p&gt;さて，やっとここから本題です．この不偏ゲームはGrundy数によって分析できます．&lt;/p&gt;
+&lt;p&gt;不偏ゲームの Grundy数 $g : S \to \mathbb{Z}_{\ge 0}$ （あるいはNim数，Nimber，Sprague-Grundy関数，など）は，各状態に対して以下のように帰納的に定められます．&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$S^{(0)} = \{s \in S \mid T(s) = \emptyset \}$ （終了状態の集合）．&lt;/li&gt;
+&lt;li&gt;各 $k = 0, 1, 2, \dots $ について, 以下を繰り返し行う．
+&lt;ul&gt;
+&lt;li&gt;各 $s \in S^{(k)}\setminus S^{(k-1)}$ について，以下のように定める．&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt;
+&lt;ul&gt;
+&lt;li&gt;$E = \{ g(s&amp;rsquo;) \mid s&amp;rsquo; \in T(s)\}$ （つまり，$s$ からの遷移先状態におけるgrundy数の集合）として，
+$$ g(s) := \mathrm{mex} ~ E $$
+とする（$ \mathrm{mex} $ は最小除外数（the minimum excluded value），つまり $\mathrm{mex} ~ E = \min \mathbb{Z}_{\ge 0}\setminus E$）．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;$S^{k} = S$ なら終了．そうでないなら $S^{(k+1)} = \{s \in S \mid T(s) \subseteq S^{(k)} \}$ として次の $k$ に進む．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不偏ゲームは有限回の行動で必ず終了するので，終了状態から遡ることで必ず全ての状態にGrundy数を定めることができます．&lt;/p&gt;
+&lt;p&gt;このGrundy数から，以下のことが示されます:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理 2.&lt;/strong&gt; 不偏ゲーム $I = (S, s_0, T)$ と状態 $s \in S$について，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$g(s) \ne 0$ なら，そこからの手番プレイヤーの必勝戦略がが存在する（つまり，$I&amp;rsquo; = (S, s, T)$ に先手必勝戦略がが存在する）．&lt;/li&gt;
+&lt;li&gt;$g(s) = 0$ なら，そこからの非手番プレイヤーの必勝戦略が存在する（つまり，$I&amp;rsquo;$に後手必勝戦略がが存在する）．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;証明．&lt;/em&gt;
+上記のgrundy数の定め方の中の $k$ についての帰納法によって示します．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$k = 0$ について：状態 $s \in S^{(0)}$ は，すべて終了状態です．したがって，$s$ においては手番プレイヤーの必敗なので，非手番プレイヤーの必勝戦略が存在します．また定義より，$E = \emptyset$ なので $g(s) = \mathrm{mex}~E = 0$ です．よって，$s \in S^{0}$ については主張が成り立ちます．&lt;/li&gt;
+&lt;li&gt;$k \ge 1$ について：すべての $s&amp;rsquo; \in S^{k-1}$ において主張が成り立っていると仮定します．各 $s \in S^{(k)}\setminus S^{(k-1)}$ について，$g(s) = 0$ の場合と $g(s)\ne 0$ の場合について考えます．
+&lt;ul&gt;
+&lt;li&gt;$g(s) = 0$ の場合：任意の $s&amp;rsquo; \in T(s)$ について，$g(s&amp;rsquo;) \ne 0$ であり，またその $s&amp;rsquo;$ らはすべて $s&amp;rsquo; \in S^{(k-1)}$ なので，$s&amp;rsquo;$ 以後は手番プレイヤーの必勝戦略が存在します．よって, $s$ からは非手番プレイヤーの必勝戦略が存在します．&lt;/li&gt;
+&lt;li&gt;$g(s) \ne 0$の場合：ある $s&amp;rsquo; \in T(s)$ が存在して，$g(s&amp;rsquo;) = 0$ です．したがって $s&amp;rsquo;$ からは非手番プレイヤーの必勝戦略がが存在するので，今の $s$ からは $s&amp;rsquo;$ に遷移させるような現手番プレイヤーの必勝戦略が存在します．$\Box$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;sprague-grundy-定理&#34;&gt;Sprague-Grundy 定理
+&lt;/h1&gt;&lt;p&gt;不偏ゲームが $2$ 個 $I_1 = (S_1, s_1, T_1), I_2 = (S_2, s_2, T_2)$ の二つ与えられ，以下のゲームを行うこととします．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;手番プレイヤーは, $I_1, I_2$ のうちいずれかを選び，行動を行います．
+&lt;ul&gt;
+&lt;li&gt;ここで選んだ方を $I_j = (S_j, s_j, T_j)$ とし，手番プレイヤーが選んだ遷移先を $\bar{s}_j \in T_j(s_j)$ とする．&lt;/li&gt;
+&lt;li&gt;$I_j$ の状態を $\bar{s}_j$ に更新し，$I_j = (S_j, \bar{s}_j, T_j)$ とする．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;更新されたら，相手の手番となる．&lt;/li&gt;
+&lt;li&gt;自身の手番となったときに，$I_1, I_2$ の両方で行動が不可能である場合，その手番プレイヤーの負けとする．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;このようにして2つの不偏ゲームから作られるゲームも不偏ゲームとなります．これを $I = I_1 + I_2$ と書くことにすると，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;状態集合： $S = S_1 \times S_2$&lt;/li&gt;
+&lt;li&gt;初期状態： $s = (s_1, s_2)$&lt;/li&gt;
+&lt;li&gt;遷移関数： $T(s) = \{ (\bar{s}_1, \bar{s}_2) \in S \mid \left(\bar{s}_1 = s_1 ~ \mathrm{and} ~ \bar{s}_2 \in T_2(s_2)\right) ~ \mathrm{or} ~ \left(\bar{s}_2 = s_2~ \mathrm{and}~ \bar{s}_1 \in T_1(s_1)\right) \},$   (for $s = (s_1, s_2)$)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;となります．&lt;/p&gt;
+&lt;p&gt;そのようにして作られた不偏ゲームについて，以下が成り立ちます：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理 3．（Sprague-Grundy）&lt;/strong&gt;
+二つの不偏ゲーム $I_1, I_2$ についてgrundy関数をそれぞれ $g_1,g_2$ とし，またそれらから作られる不偏ゲーム $I = I_1+I_2$ のgrundy関数を $g$ とする．このとき任意の状態 $s = (s_1, s_2)$ について
+$$ g(s) = g_{1}(s_1) \oplus g_2(s_2) $$
+が成り立つ（ここで $x\oplus y$ は$x,y$を二進数表現したときのビットごとの排他的論理和）．&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;証明.&lt;/em&gt;
+定理2と同様，Grundy数の定義で出てきたステップ数 $k$ についての帰納法で示します．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$k = 0$ の場合：$s = (s_1, s_2) \in S^{(0)}$ とします．このとき, $s$ は $I$ の終了状態なので，$s_1, s_2$ はそれぞれ $I_1, I_2$ の終了状態です．したがって，$g(s) = g_1(s_1) = g_2(s_2) = 0$ なので成り立ちます．&lt;/li&gt;
+&lt;li&gt;$k \ge 1$ の場合：任意の $s&amp;rsquo; \in S^{(k-1)}$ において主張が成り立っているものと仮定します．
+$s \in S^{(k)}$をとります．示すべきことは以下の二つです．
+&lt;ul&gt;
+&lt;li&gt;(1)「$s$ からの任意の遷移先 $\bar{s} \in T(s)$ において $g(\bar{s}) \ne g_1(s_1)\oplus g_2(s_2)$であること」を示します．
+&lt;ul&gt;
+&lt;li&gt;任意の遷移先 $\bar{s}$ をとります．$\bar{s}_1, \bar{s}_2$ のどちらか一方のみ $s_1,s_2$ と異なるので，仮に$\bar{s}_1 \ne s_1$かつ$\bar{s}_2 = s_2$としましょう．すると，$g_1(\bar{s}_1) \ne g_1(s_1)$ なので，$$g(\bar{s}) = g_1(\bar{s}_1)\oplus g_2(\bar{s}_2) = g_1(\bar{s}_1)\oplus g_2(s_2) \ne g_1(\bar{s}_1) \oplus g_2(\bar{s}_2) $$ となります．$\bar{s}_2$ のみ異なるケースも同様です．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;(2)「$0 \le z &amp;lt; g_1(s_1)\oplus g_2(s_2)$ なる任意の整数 $z$ に対して，ある状態 $\bar{s} \in T(s)$ が存在して，$g(\bar{s}) = z$ となること」
+&lt;ul&gt;
+&lt;li&gt;$g_1(s_1)\oplus g_2(s_2) = y$ とし，$0 \le z &amp;lt; y$ なる整数 $z$ を一つとります．また，$z$ と $y$ を二進数表示したときにビット値の異なるような最も大きい桁番号を $\ell$ とします．
+すると，$y_\ell = 1$ かつ $z_\ell = 0$ です（そうでなければ大小が逆転します），
+したがって，$g_1(s_1), g_2(s_2)$ のどちらか一方のみ，二進数表記時の $\ell$ 桁目が $1$ となります．
+それが仮に $g_1(s_1)$ で成り立つとしましょう ($g_2(s_2)$ なら以下 $I_2$ について読み替えれば同様に成り立ちます)．
+$x = g_1(s_1)$ とし，$y$ と $z$ の二進数表記時にビット値の異なる桁について $x$ のビット値を反転させたものを $\bar{x}$ とすると，必ず $\bar{x} &amp;lt; x$ となります（なぜなら，$\bar{x}$と$x$で異なる桁で最も大きいのは $\ell$ で，構成より $x_\ell = 1, \bar{x}_\ell = 0$ なので）．
+したがって，$\bar{x} = g_1(\bar{s}_1)$ となるような $I_1$ の状態 $\bar{s}_1 \in T_1(s_1)$ が存在するため，$\bar{s} = (\bar{s}_1, s_2)$ とすると，
+$$g(\bar{s}) = g_1(\bar{s}_1) \oplus g_2(s_2) = \bar{x} \oplus g_2(s_2) = z$$
+となります（最後の等号は $\bar{x}$ の構成より）．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;よって(1)-(2)より，$s \in S^{(k)}$ について $g(s) = g_1(s_1) \oplus g_2(s_2)$ となります．$\Box$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;もちろん，以上の議論を $n$ 個の不偏ゲーム $I_1, I_2, \dots, I_n$ の和にただちに拡張することができ，$I = I_1 + I_2 + \dots + I_n$ の不偏ゲームについて，そのgrundy数は
+$$ g(s) = g_1(s_1) \oplus g_2(s_2) \oplus \dots \oplus g_n(s_n) $$
+となります．&lt;/p&gt;
+&lt;h1 id=&#34;具体例arc168bhttpsatcoderjpcontestsarc168tasksarc168_b&#34;&gt;具体例：&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/arc168/tasks/arc168_b&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ARC168B&lt;/a&gt;
+&lt;/h1&gt;&lt;p&gt;To be written（多分）．&lt;/p&gt;
+&lt;h1 id=&#34;おわりに&#34;&gt;おわりに
+&lt;/h1&gt;&lt;p&gt;ここ間違ってる！・ここがわかんない！・こう書いた方がわかりやすくなりそう！などご質問・ご意見・ご罵倒ございましたらぜひ&lt;a class=&#34;link&#34; href=&#34;https://twitter.com/miiitomi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;みーとみ&lt;/a&gt;までご連絡ください！！&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;私は組み合わせゲーム理論については素人で，ここで解説している不偏ゲーム・Grundy数・Sprague-Grundy数についても最近学んだところですが，&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/about/&#34; &gt;About&lt;/a&gt;にもある通りもともと大学・大学院の経済学部でゲーム理論を専攻していて今もゲーム理論関連の研究を行っている人間であるため，そういう人特有の書き方が出ると思います．数多ある競プロerによるGrundy数解説記事の中でもそういった面がこの記事のオリジナリティになれば嬉しいです．&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;タイトルの「と私」の部分に意味は全くありません．「OOとXX」ときたらその後に「と私」と付けてしまう病気なだけです．&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;「偏りのないゲーム」あるいは「公平ゲーム」と訳してる文献もあります．&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;正確には「ゲーム状態を頂点，行動を状態から状態への有向辺として有向グラフを作ったときに有向非巡回グラフ（DAG）である」というと競プロerには伝わりやすいかもしれません．&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;Zermeloの定理が対象とするゲームは不偏ゲームと大体同じですが，終了状態において「行動ができなくなった人の負け」ではなく，状態ごとに「先手勝利」「後手勝利」「引き分け」のいずれかに決められる，という点が異なり，典型的にはオセロなどが当てはまります．そのようなゲームでは，「先手必勝戦略が存在する」「後手必勝戦略が存在する」「両者に少なくとも引き分けに持ち込む戦略が存在する」のいずれかが成り立ちます．不偏ゲームでは引き分けが存在しないので，定理 1．の主張となります．&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;先日オセロが解けたという&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2310.19387&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;論文&lt;/a&gt;が先日arXivに投稿されたそうですが，論文の主張が正しければオセロではこのうち「両者に少なくとも引き分けに持ち込む戦略が存在する」が成り立ち，その戦略が構成されたそうです．しゅごい．&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;ここで $\mathbb{Z}_{\ge 0} = \{0, 1, 2, \dots \}$ は$0$以上の整数の集合です．&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34;&gt;
+&lt;p&gt;$k = 0$ において $S^{-1}$ が生じますが，それは $S^{-1} = \emptyset$ とします．&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
