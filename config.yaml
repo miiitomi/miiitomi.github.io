@@ -149,7 +149,7 @@ params:
             site: miiitomi
 
             # Available values: summary, summary_large_image
-            card: summary_large_image
+            card: summary
 
     defaultImage:
         opengraph:

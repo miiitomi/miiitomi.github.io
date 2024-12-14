@@ -10,9 +10,10 @@ menu:
         params:
             icon: tag
 categories:
-    - Market Design
+    - マーケットデザイン
+    - マッチング理論
 tags:
-    - Market Design
+    [マーケットデザイン, マッチング理論]
 ---
 - [Matching](/matching)
     - 男性と女性のマッチングを行うDAアルゴリズムの実行ができます。

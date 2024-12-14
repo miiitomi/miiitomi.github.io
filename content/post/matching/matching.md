@@ -5,9 +5,10 @@ slug: "matching"
 date: '2022-02-11'
 draft: false
 categories:
-    - Market Design
-    - Matching Theory
-tags: [Market Design, Matching Theory]
+    - マーケットデザイン
+    - マッチング理論
+    - アルゴリズム
+tags: [マーケットデザイン, マッチング理論, アルゴリズム]
 ---
 
 　[こちら](/matching)に男性と女性をマッチさせるDAアルゴリズムの実行ができるウェブアプリを公開しました。
