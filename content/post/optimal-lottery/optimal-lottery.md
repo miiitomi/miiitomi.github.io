@@ -3,7 +3,7 @@ title: プレゼントを公平に配る最適なくじ引きを作ろう！🎁
 description: PSルールと最適くじ引きアプリのご紹介
 slug: optimal-lottery
 toc: true
-date: 2024-12-04
+date: '2024-12-16'
 categories:
     - マッチング理論
     - マーケットデザイン
