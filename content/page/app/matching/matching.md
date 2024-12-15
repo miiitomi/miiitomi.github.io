@@ -4,11 +4,11 @@ description: 男性と女性のマッチングを行うDAアルゴリズムの�
 slug: "matching"
 date: '2022-02-11'
 draft: false
-# menu:
-#     main: 
-#         weight: -90
-#         params:
-#             icon: tag
+menu:
+    main: 
+        weight: -90
+        params:
+            icon: tag
 categories:
     - マーケットデザイン
     - マッチング理論
