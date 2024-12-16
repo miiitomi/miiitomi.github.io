@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="PSルールと最適くじ引きアプリのご紹介">
+<title>プレゼントを公平に配る最適なくじ引きを作ろう！🎁</title>
+
+<link rel='canonical' href='https://miiitomi.github.io/p/optimal-lottery/'>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/scss/style.min.eddb5831811f423d0c42db61148da375ec1367cd9ea20f2c945ba0dc0fff144a.css"><meta property='og:title' content="プレゼントを公平に配る最適なくじ引きを作ろう！🎁">
+<meta property='og:description' content="PSルールと最適くじ引きアプリのご紹介">
+<meta property='og:url' content='https://miiitomi.github.io/p/optimal-lottery/'>
+<meta property='og:site_name' content='miiitomi'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='マッチング理論' /><meta property='article:tag' content='マーケットデザイン' /><meta property='article:tag' content='アルゴリズム' /><meta property='article:published_time' content='2024-12-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-16T00:00:00&#43;00:00'/><meta property='og:image' content='https://miiitomi.github.io/images/optimal-lottery/optimal-lottery.png' />
+<meta name="twitter:site" content="@miiitomi">
+    <meta name="twitter:creator" content="@miiitomi"><meta name="twitter:title" content="プレゼントを公平に配る最適なくじ引きを作ろう！🎁">
+<meta name="twitter:description" content="PSルールと最適くじ引きアプリのご紹介"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://miiitomi.github.io/images/optimal-lottery/optimal-lottery.png' />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-D93SYWPPB4"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-D93SYWPPB4');
+        }
+      </script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="/images/avatar.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">miiitomi</a></h1>
+            <h2 class="site-description">みーとみブログ</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/miiitomi/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/miiitomi/'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/app/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>App</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/matching/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>Matching</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#はじめに">はじめに</a>
+      <ol>
+        <li><a href="#目次">目次</a></li>
+      </ol>
+    </li>
+    <li><a href="#プレゼント割り当て問題">プレゼント割り当て問題</a></li>
+    <li><a href="#よくある方法">よくある方法</a>
+      <ol>
+        <li><a href="#プレゼントごとのくじ引き">プレゼントごとのくじ引き</a></li>
+        <li><a href="#受け取り手優先順序のくじ引き">受け取り手優先順序のくじ引き</a></li>
+      </ol>
+    </li>
+    <li><a href="#最適くじ引きpsルール">最適くじ引き：PSルール</a></li>
+    <li><a href="#最適くじ引きアプリ">最適くじ引きアプリ</a></li>
+    <li><a href="#プレゼント配り以外の応用例">プレゼント配り以外の応用例</a></li>
+    <li><a href="#まとめ">まとめ</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/optimal-lottery/">
+                
+                    <img src="/images/optimal-lottery/optimal-lottery.png" loading="lazy" alt="Featured image of post プレゼントを公平に配る最適なくじ引きを作ろう！🎁" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%E7%90%86%E8%AB%96/" >
+                マッチング理論
+            </a>
+        
+            <a href="/categories/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/" >
+                マーケットデザイン
+            </a>
+        
+            <a href="/categories/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/" >
+                アルゴリズム
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/optimal-lottery/">プレゼントを公平に配る最適なくじ引きを作ろう！🎁</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            PSルールと最適くじ引きアプリのご紹介
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 16, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    3 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>本記事は <a class="link" href="https://adventar.org/calendars/10254"  target="_blank" rel="noopener"
+    >CyberAgent AI Lab Advent Calendar 2024</a> 16日目の記事として執筆しております！🎄</p>
+<h2 id="はじめに">はじめに
+</h2><p>メリークリスマス！
+サイバーエージェント AI Lab 経済学社会実装チームの冨田／みーとみ（<a class="link" href="https://x.com/miiitomi"  target="_blank" rel="noopener"
+    >@miiitomi</a>）です。</p>
+<p>もうすぐクリスマスということで、イベントで子どもたちにプレゼントを配ったり、パーティでプレゼント交換をする機会のある方もいらっしゃるかもしれません。
+人によって有利不利があると不公平なので参加者間で公平にプレゼントを配りたい一方で、プレゼントが数種類ある場合には人によって欲しいプレゼントが異なることもあるでしょう。
+そのような状況では、どのようなルールでプレゼントを配ると良いのでしょうか？</p>
+<p>本記事では、プレゼントを配るときに使える最適なくじ引きを作成するアルゴリズムと、それを簡単に実行できる自作ウェブアプリをご紹介したいと思います。</p>
+<p>説明はいいから早くそのアプリを触ってみたいという方は<a class="link" href="https://miiitomi.github.io/optimal-lottery"  target="_blank" rel="noopener"
+    ><strong>こちら</strong></a>をどうぞ！
+アルゴリズムが気になる方はぜひ本記事をご覧ください。</p>
+<blockquote>
+<h3 id="目次">目次
+</h3><ul>
+<li><a class="link" href="#%e3%83%97%e3%83%ac%e3%82%bc%e3%83%b3%e3%83%88%e5%89%b2%e3%82%8a%e5%bd%93%e3%81%a6%e5%95%8f%e9%a1%8c" >プレゼント割り当て問題</a></li>
+<li><a class="link" href="#%e3%82%88%e3%81%8f%e3%81%82%e3%82%8b%e6%96%b9%e6%b3%95" >よくある方法</a>
+<ul>
+<li><a class="link" href="#%e3%83%97%e3%83%ac%e3%82%bc%e3%83%b3%e3%83%88%e3%81%94%e3%81%a8%e3%81%ae%e3%81%8f%e3%81%98%e5%bc%95%e3%81%8d" >プレゼントごとのくじ引き</a></li>
+<li><a class="link" href="#%e5%8f%97%e3%81%91%e5%8f%96%e3%82%8a%e6%89%8b%e5%84%aa%e5%85%88%e9%a0%86%e5%ba%8f%e3%81%ae%e3%81%8f%e3%81%98%e5%bc%95%e3%81%8d" >受け取り手優先順序のくじ引き</a></li>
+</ul>
+</li>
+<li><a class="link" href="#%e6%9c%80%e9%81%a9%e3%81%8f%e3%81%98%e5%bc%95%e3%81%8dps%e3%83%ab%e3%83%bc%e3%83%ab" >最適くじ引き：PSルール</a></li>
+<li><a class="link" href="#%e6%9c%80%e9%81%a9%e3%81%8f%e3%81%98%e5%bc%95%e3%81%8d%e3%82%a2%e3%83%97%e3%83%aa" >最適くじ引きアプリ</a></li>
+<li><a class="link" href="#%e3%83%97%e3%83%ac%e3%82%bc%e3%83%b3%e3%83%88%e9%85%8d%e3%82%8a%e4%bb%a5%e5%a4%96%e3%81%ae%e5%bf%9c%e7%94%a8%e4%be%8b" >プレゼント配り以外の応用例</a></li>
+<li><a class="link" href="#%e3%81%be%e3%81%a8%e3%82%81" >まとめ</a></li>
+</ul>
+</blockquote>
+<h2 id="プレゼント割り当て問題">プレゼント割り当て問題
+</h2><p>ここで私たちが考えたい問題は、以下のようなものになります。</p>
+<blockquote>
+<p><strong>プレゼント割り当て問題</strong></p>
+<ul>
+<li>プレゼントは $P$ 種類あり、$j$ 種類目のプレゼントは $q_j$ 個ある。</li>
+<li>プレゼントの受け取り手は $R$ 人いる。</li>
+<li>各受け取り手には、欲しいプレゼントの希望順序がある。
+<ul>
+<li>希望の例：「第 $1$ 希望：プレゼント $3$、第 $2$ 希望：プレゼント $1$、それ以外は希望しない」など。</li>
+</ul>
+</li>
+<li>各受け取り手に 1 人最大 1 つずつ、プレゼントを配りたい。</li>
+</ul>
+</blockquote>
+<p>全員が納得するようにプレゼントを公平に配るには、どのようなルールで配ると良いでしょうか？</p>
+<h2 id="よくある方法">よくある方法
+</h2><p>プレゼントが全て十分な数あるか、受け取り手が皆違うプレゼントを希望しているなら、それぞれに好きなものを配れば良いでしょう。
+そうでない場合に、受け取り手全員を公平に扱ってプレゼントを配るには、くじ引きなど何らかの方法でランダムに配る必要があります。
+このような状況でよく使われている方法がいくつかあるので、まずそれらを検討してみましょう。</p>
+<h3 id="プレゼントごとのくじ引き">プレゼントごとのくじ引き
+</h3><p>よくある方法一つ目の「プレゼントごとのくじ引き」では、以下のようなルールでプレゼントを割り当てます。</p>
+<blockquote>
+<p><strong>ルール 1：プレゼントごとのくじ引き</strong></p>
+<ul>
+<li>$1$ 種類目のプレゼントから $P$ 種類目のプレゼントまで順に、以下を行う。
+<ul>
+<li>今配ろうとしているプレゼントは $j$ 種類目で、$q_j$ 個あるとする。</li>
+<li>まだプレゼントを貰っていない人のうち $q_j$ 人までの人をくじ引きで選び、プレゼント $j$ を渡す。</li>
+<li>プレゼントを貰っていない人がいなくなったら終了する。そうでなければ次のプレゼントに進む。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>このようなくじ引きによるプレゼント配りは広く使われていますし、またイベントにおいてはくじ引きのワクワク感により盛り上がるでしょう。
+しかし、参加者の希望を一切考慮せずに割り当てを行なっているため、以下のような不納得感が残ってしまう可能性があります。</p>
+<blockquote>
+<p><strong>例 1：プレゼントごとのくじ引きの非効率性</strong></p>
+<p>プレゼントは A, B, C, D の$4$種類で、それぞれ $1$ つずつります。
+参加者は 1, 2, 3, 4 の $4$ 人で、希望は以下の通りです。</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">第1希望</th>
+          <th style="text-align: center">第2希望</th>
+          <th style="text-align: center">第3希望</th>
+          <th style="text-align: center">第4希望</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><strong>1 さん</strong></td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">B</td>
+          <td style="text-align: center">C</td>
+          <td style="text-align: center">D</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>2 さん</strong></td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">B</td>
+          <td style="text-align: center">C</td>
+          <td style="text-align: center">D</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>3 さん</strong></td>
+          <td style="text-align: center">B</td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">D</td>
+          <td style="text-align: center">C</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>4 さん</strong></td>
+          <td style="text-align: center">B</td>
+          <td style="text-align: center">A</td>
+          <td style="text-align: center">D</td>
+          <td style="text-align: center">C</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>いま、くじ引きによってプレゼントが割り当てられ、結果は以下のようになったとします。</p>
+<ul>
+<li>プレゼントA：3 さん</li>
+<li>プレゼントB：1 さん</li>
+<li>プレゼントC：4 さん</li>
+<li>プレゼントD：2 さん</li>
+</ul>
+<p>このとき、以下のように受け取り手に不納得感が残ってしまいます。</p>
+<ul>
+<li>3 さんと 1 さんについて、プレゼント A を貰った 3 さんはプレゼント B の方が良かったと思っており、プレゼント B を貰った 1 さんはプレゼント A の方が良かったと思っています。したがって、「二人の貰うプレゼントが逆だったなら、二人ともより嬉しかったはず」という意味で、この割り当ては非効率的です。</li>
+<li>4 さんと 2 さんについても同様。</li>
+</ul>
+</blockquote>
+<p>プレゼントごとのくじ引きでは受け取り手の希望を考慮せずに割り当てを行うため、例 1 のように全員の希望をより叶える余地の残る<strong>非効率的な割り当て</strong>となってしまう可能性があります。</p>
+<p>プレゼント配りが少人数で友人同士の間で行われているのであれば、例のような非効率性が残っても後で交換すればいいかもしれません。
+しかし、ある程度の参加者人数がいたり、皆が友人同士というわけではない場合には、後から交換によって非効率性を解消することは困難です。
+したがって、このような非効率性を残さないルールを用いる方が、受け取り手の納得感の観点から考えると望ましいでしょう。</p>
+<h3 id="受け取り手優先順序のくじ引き">受け取り手優先順序のくじ引き
+</h3><p>次は受け取り手の希望を考慮した、次のようなルールを考えてみます。</p>
+<blockquote>
+<p><strong>ルール 2：受け取り手優先順序のくじ引き</strong></p>
+<ul>
+<li>$R$ 人の受け取り手それぞれの優先順序を、第 $1$ 優先から第 $R$ 優先までくじ引きによって決める。</li>
+<li>第 $1$ 優先の受け取り手から順に、以下を行う。
+<ul>
+<li>残っているプレゼントのうち希望するものがあれば、そのうち最も希望するプレゼントを貰う。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>このルールは受け取り手の希望を考慮しており、一見良さそうに見えます。
+全員が受け取れる可能性のあるもののうち最も希望するものを貰っているため、プレゼントの割り当て後に非効率性が残ってしまうこともありません。</p>
+<p>しかし、事前の「受け取るプレゼントの確率分布」の割り当ての意味では、これも非効率となってしまう状況があります。以下の例を見てみましょう。</p>
+<blockquote>
+<p><strong>例 2：受け取り手優先順序のくじ引きの事前の非効率性</strong></p>
+<p>プレゼントと受け取り手・希望は例 1.と同様とします。
+例えば受け取り手優先順序が 1, 2, 3, 4 の順に決まったとすると、割り当ては以下のようになります。</p>
+<ul>
+<li>優先順序1位：1 さん - プレゼントA</li>
+<li>優先順序2位：2 さん - プレゼントB</li>
+<li>優先順序3位：3 さん - プレゼントD</li>
+<li>優先順序4位：4 さん - プレゼントC</li>
+</ul>
+<p>受け取り手の優先順序の決め方は全部で $4! = 24$ 通りあり、それぞれで決まる割り当てを数えると、各受け取り手が各プレゼントを貰う確率を計算することができます。</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">プレゼントA</th>
+          <th style="text-align: center">プレゼントB</th>
+          <th style="text-align: center">プレゼントC</th>
+          <th style="text-align: center">プレゼントD</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><strong>1 さん</strong></td>
+          <td style="text-align: center">$5 \over 12$</td>
+          <td style="text-align: center">$1 \over 12$</td>
+          <td style="text-align: center">$5 \over 12$</td>
+          <td style="text-align: center">$1 \over 12$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>2 さん</strong></td>
+          <td style="text-align: center">$5 \over 12$</td>
+          <td style="text-align: center">$1 \over 12$</td>
+          <td style="text-align: center">$5 \over 12$</td>
+          <td style="text-align: center">$1 \over 12$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>3 さん</strong></td>
+          <td style="text-align: center">$1 \over 12$</td>
+          <td style="text-align: center">$5 \over 12$</td>
+          <td style="text-align: center">$1 \over 12$</td>
+          <td style="text-align: center">$5 \over 12$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>4 さん</strong></td>
+          <td style="text-align: center">$1 \over 12$</td>
+          <td style="text-align: center">$5 \over 12$</td>
+          <td style="text-align: center">$1 \over 12$</td>
+          <td style="text-align: center">$5 \over 12$</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>しかし、この「貰うプレゼントの確率分布」の割り当ては、以下のように非効率です。</p>
+<ul>
+<li>いま、くじを引く前に、1 さんと 3 さんが「 1 さんがプレゼント B を得るか、もしくは 3 さんがプレゼント A を得た場合、1 さんと 3 さんはプレゼントを交換する」という約束をしたとします。このとき、二人の貰うプレゼントの確率分布は以下のように変わります。
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">プレゼントA</th>
+          <th style="text-align: center">プレゼントB</th>
+          <th style="text-align: center">プレゼントC</th>
+          <th style="text-align: center">プレゼントD</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><strong>1</strong></td>
+          <td style="text-align: center">$1 \over 2$</td>
+          <td style="text-align: center">$0$</td>
+          <td style="text-align: center">$5 \over 12$</td>
+          <td style="text-align: center">$1 \over 12$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>3</strong></td>
+          <td style="text-align: center">$0$</td>
+          <td style="text-align: center">$1 \over 2$</td>
+          <td style="text-align: center">$1 \over 12$</td>
+          <td style="text-align: center">$5 \over 12$</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+<li>二人とも第 2 希望のプレゼントを貰う確率が減って、その分第 1 希望のプレゼントを貰う確率が上がっているため、二人ともこの約束によってより希望が叶えられるようになります。</li>
+</ul>
+<p>したがって、元の貰うプレゼント確率分布の割り当ては、「誰も損することなく一部の人がより希望を叶えられる余地を残していた」という意味で非効率的です。</p>
+</blockquote>
+<p>よって、受け取り手優先順序のくじ引きによる事前の「貰うプレゼントの事前の確率分布の割り当て」は、皆の希望をより叶える余地を残していた非効率な割り当てとなる可能性があります。
+この<strong>事前の非効率性</strong>は、当事者同士の約束によって割り当て前に事前に解消することは、少人数であっても困難でしょう。
+皆の希望を最大限叶える公平で最適なプレゼント配りルールを作るためには、この事前の非効率性も生じない方が望ましいと考えられます。</p>
+<h2 id="最適くじ引きpsルール">最適くじ引き：PSルール
+</h2><p>では、事前の非効率性も生まない公平で最適なくじ引きを作るには、どのようにしたら良いでしょうか？</p>
+<p>それは <a class="link" href="https://doi.org/10.1006/jeth.2000.2710"  target="_blank" rel="noopener"
+    >Bogomolnaia and Moulin (2001)</a> によって提案された<strong>PSルール</strong>（<strong>Probabilistic Serial rule</strong>）によって実現することができます。
+PSルールは、受け取り手が希望するプレゼントを貰う割合を少しづつ「食べていく（eating）」という表現を使って、以下のように説明されます。</p>
+<blockquote>
+<p><strong>ルール 3：PSルール</strong></p>
+<ul>
+<li>最初、各プレゼント $j$ の量は $q_j$ ある。</li>
+<li>$t = 0$ 秒から $t = 1$ 秒までの $1$ 秒間、各参加者 $i$ は以下を行う。
+<ul>
+<li>今の $t \in [0, 1]$ 秒時点において、残っている量が $0$ より大きいプレゼントのうち最も希望するプレゼントを、秒速 $1$ で食べていく。
+<ul>
+<li>あるプレゼントを複数の人で食べている時は、それぞれが同時に秒速 $1$ でそれを食べる。</li>
+<li>今食べているプレゼントの量が $0$ になった瞬間に、残っているプレゼントのうち次に希望するプレゼントを食べ始める。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>$1$ 秒間に $i$ さんがプレゼント $j$ を食べた量を $e_{i,j}$ とし、それを $i$ さんがプレゼント $j$ を貰う確率とする。</li>
+</ul>
+</blockquote>
+<p>上の説明ではやや分かりにくいと思うので、例を見てみましょう。</p>
+<blockquote>
+<p><strong>例 3：PSルールの適用</strong></p>
+<p>プレゼントと受け取り手・希望は例 1 と同様とします。
+この例に対しPSルールを適用すると、以下のようになります。</p>
+<ul>
+<li>$t =  0$ 秒目、1 さんと 2 さんは A を、3 さんと 4 さんは B を食べ始める。</li>
+<li>$t = {1 \over 2}$ 秒後、1 さんと 2 さんはそれぞれ A を $1 \over 2$ ずつ食べて A は無くなり、同時に 3 さんと 4 さんも B を $1\over 2$ ずつ食べて B も無くなる。</li>
+<li>1 さんと 2 さんは C を食べ始め、3 さんと 4 さんは D を食べ始める。</li>
+<li>$t = 1$ 時点で、1 さんと 2 さんはそれぞれ C を $1 \over 2$ ずつ食べて C は無くなり、同時に 3 さんと 4 さんも D を $1 \over 2$ ずつ食べて D も無くなる。</li>
+</ul>
+<p>よって、各受け取り手が貰うプレゼントの確率分布は、以下のようになる。</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">プレゼントA</th>
+          <th style="text-align: center">プレゼントB</th>
+          <th style="text-align: center">プレゼントC</th>
+          <th style="text-align: center">プレゼントD</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><strong>1</strong></td>
+          <td style="text-align: center">$1 \over 2$</td>
+          <td style="text-align: center">$0$</td>
+          <td style="text-align: center">$1 \over 2$</td>
+          <td style="text-align: center">$0$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>2</strong></td>
+          <td style="text-align: center">$1 \over 2$</td>
+          <td style="text-align: center">$0$</td>
+          <td style="text-align: center">$1 \over 2$</td>
+          <td style="text-align: center">$0$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>3</strong></td>
+          <td style="text-align: center">$0$</td>
+          <td style="text-align: center">$1 \over 2$</td>
+          <td style="text-align: center">$0$</td>
+          <td style="text-align: center">$1 \over 2$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>4</strong></td>
+          <td style="text-align: center">$0$</td>
+          <td style="text-align: center">$1 \over 2$</td>
+          <td style="text-align: center">$0$</td>
+          <td style="text-align: center">$1 \over 2$</td>
+      </tr>
+  </tbody>
+</table></div>
+</blockquote>
+<p>PSルールによって作られる貰う確率分布の割り当ては、事前の非効率性のない、皆の希望を最大限叶える効率的なものとなります（詳細は<a class="link" href="https://doi.org/10.1006/jeth.2000.2710"  target="_blank" rel="noopener"
+    >元論文</a>、または日本語では <a class="link" href="https://www.nippyo.co.jp/shop/book/9362.html"  target="_blank" rel="noopener"
+    >小島・河田 (2024)</a> の 7 章を参照）。</p>
+<p>また、PSルールが行うのは上記のような貰うプレゼント確率分布の表を作るところまでですが、<a class="link" href="https://en.wikipedia.org/wiki/Birkhoff_algorithm"  target="_blank" rel="noopener"
+    >Birkhoff-von-Neumannの定理</a>を用いることで実際にくじを引いてプレゼントの割り当てを決定することができます。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<h2 id="最適くじ引きアプリ">最適くじ引きアプリ
+</h2><p>PSルールによる公平な最適なくじ引きは理論的にとても良い性質を持っていますが、手作業で実際にこの最適くじ引きを実行するのは簡単ではありません。</p>
+<p>そこで私は、このPSルールによる最適くじ引きを簡単に実行できる<a class="link" href="https://miiitomi.github.io/optimal-lottery/"  target="_blank" rel="noopener"
+    ><strong>こちらのウェブアプリ</strong></a>を作成してみました！
+直感的に簡単に使えるように作ったので、興味を持った人はぜひこちらを使ってみてください！</p>
+<figure><a href="/optimal-lottery/"><img src="/images/optimal-lottery/optimal-lottery.png" width="800"></a>
+</figure>
+
+<h2 id="プレゼント配り以外の応用例">プレゼント配り以外の応用例
+</h2><p>これまでプレゼント配りの状況を例に説明してきましたが、日常生活において類似の問題は数多くあります。</p>
+<ul>
+<li>4 人家族でケーキを 4 種類買ってきた。それぞれの希望をもとに、食べるケーキをくじで決めたい。</li>
+<li>学校のクラスの委員決めで、生徒の希望と各委員の定員をもとに、一人一つの委員に決定したい。</li>
+<li>会社のある部署で、メンバーが毎週持ち回りで一人半年に一回、プロジェクトの進捗状況を発表している。半年間の候補日の中で各メンバーの担当日時を、それぞれの希望をもとに決定したい。</li>
+</ul>
+<p>このような状況でも、PSルールによって割り当てを決定することができます。
+ちなみに 3 点目については、私たちサイバーエージェント AI Labの「進捗共有会」という会で、実際にPSルールを用いてメンバーの担当日決めを行っています。</p>
+<h2 id="まとめ">まとめ
+</h2><p>経済学とコンピュータサイエンスの知見を用いて、人と人やものをマッチさせる良い方法を理論的に考える分野に<strong>マッチング理論</strong>という分野があり、それらの理論的考察から実際の市場・制度設計を行う実践的な分野に<strong>マーケットデザイン</strong>と呼ばれる分野があります。
+マッチング理論・マーケットデザインの学術的知見は、近年国内外の多くの分野で広く応用されるようになりました。
+本記事で紹介した<strong>確率的割り当て問題</strong>（<strong>Random Assignment Problem</strong>）とPSルールも、これらの分野で研究されてきた問題です。</p>
+<p>サイバーエージェント AI Lab 経済学社会実装チームでもマッチング理論・マーケットデザインの研究・社会実装プロジェクトを行なっています。一例として、東京大学マーケットデザインセンター（UTMD）と自治体と取り組んでいる<strong>保育所利用調整</strong>の社会実装プロジェクトについては、今回のCyberAgent AI Lab Advent Calendar 10日目の竹浪さんの記事<a class="link" href="https://note.com/ryaukwan/n/n888456d98606"  target="_blank" rel="noopener"
+    ><strong>「社会実装されたらいいなと思っていたら、自分も一緒に実現していた話」</strong></a>で紹介されています。ちなみに、マッチング理論の分野でより一般に広く知られている、<strong>DAアルゴリズム</strong>によって男性と女性のマッチングができる<a class="link" href="/matching/" ><strong>こちらのアプリ</strong></a>も作ってるので、こちらもよかったらご覧ください。</p>
+<p>本記事やアプリを通して、マッチング理論・マーケットデザインや私たちの取り組みに興味を持っていただける方がいましたら大変嬉しいです。</p>
+<p>今年の冬はぜひ最適くじ引きアプリでプレゼント交換をして、素敵なクリスマスをお過ごしください！🤶</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>では常にPSルールを用いるのがベストかというと、必ずしもそうではない状況もあるかもしれません。PSルールは満たさないが受け取り手優先順序のくじ引きは満たす良い性質として、「受け取り手が自身の希望を偽って申告することによって得することが絶対にない」という<strong>耐戦略性</strong>と呼ばれる性質があります。参加者が少なく互いの希望がある程度予想されるため、希望申告の戦略的駆け引きが深刻になりうる状況や、主催者にとって正しい希望情報データを引き出すこと自体に価値がある状況では、事前の効率性を犠牲にして耐戦略性を満たすルールを使う方が良い場合も考えられます。今回は、受け取り手優先順序のくじ引きは実施が比較的容易であることを考えて、手作業で実施するのがより困難なPSルールをアプリとして実装してみることにしました。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%E7%90%86%E8%AB%96/">マッチング理論</a>
+        
+            <a href="/tags/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/">マーケットデザイン</a>
+        
+            <a href="/tags/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/">アルゴリズム</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/matching/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">マッチングアルゴリズムの解説</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/scarf/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Scarf&#39;s lemmaとその実装</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/ec23/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/images/conferences/ec23/nametag.jpg" loading="lazy" data-key="ec23" data-hash="/images/conferences/ec23/nametag.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">EC&#39;23参加メモ</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/app/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">App</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/matching/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Matching</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2021 - 
+        
+        2024 miiitomi
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

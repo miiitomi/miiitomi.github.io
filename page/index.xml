@@ -6,7 +6,7 @@
         <description>Recent content in Pages on miiitomi</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Thu, 24 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>About</title>
         <link>https://miiitomi.github.io/about/</link>
         <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
@@ -233,10 +233,16 @@
         
         <guid>https://miiitomi.github.io/app/</guid>
         <description>&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/matching&#34; &gt;Matching&lt;/a&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/matching&#34; &gt;&lt;strong&gt;マッチング&lt;/strong&gt;&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;男性と女性のマッチングを行うDAアルゴリズムの実行ができます。&lt;/li&gt;
 &lt;li&gt;DAアルゴリズム（Gale-Shapleyアルゴリズム）の解説は&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/p/matching&#34; &gt;こちら&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/optimal-lottery/&#34; &gt;&lt;strong&gt;最適くじ引き&lt;/strong&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;「プレゼントを1人最大1つずつ、皆の希望を最大限叶えるように公平に配りたい！」 そんなときに使える「最適なくじ引き」を作ることができます。&lt;/li&gt;
+&lt;li&gt;最適くじ引きを作るPSルール（Probabilistic Serial rule）についての解説は&lt;a class=&#34;link&#34; href=&#34;https://miiitomi.github.io/p/optimal-lottery/&#34; &gt;こちら&lt;/a&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

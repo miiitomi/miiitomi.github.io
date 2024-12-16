@@ -6,7 +6,31 @@
         <description>Recent content in Categories on miiitomi</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Sun, 17 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>アルゴリズム</title>
+        <link>https://miiitomi.github.io/categories/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</link>
+        <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/categories/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>マーケットデザイン</title>
+        <link>https://miiitomi.github.io/categories/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</link>
+        <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/categories/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>マッチング理論</title>
+        <link>https://miiitomi.github.io/categories/%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%E7%90%86%E8%AB%96/</link>
+        <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/categories/%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%E7%90%86%E8%AB%96/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>小説</title>
         <link>https://miiitomi.github.io/categories/%E5%B0%8F%E8%AA%AC/</link>
         <pubDate>Fri, 19 Jul 2024 23:52:04 +0900</pubDate>
@@ -55,14 +79,6 @@
         <description></description>
         </item>
         <item>
-        <title>マーケットデザイン</title>
-        <link>https://miiitomi.github.io/categories/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</link>
-        <pubDate>Wed, 19 Jul 2023 14:27:45 +0900</pubDate>
-        
-        <guid>https://miiitomi.github.io/categories/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>映画</title>
         <link>https://miiitomi.github.io/categories/%E6%98%A0%E7%94%BB/</link>
         <pubDate>Tue, 20 Jun 2023 23:18:23 +0900</pubDate>
@@ -87,22 +103,6 @@
         <description></description>
         </item>
         <item>
-        <title>Market Design</title>
-        <link>https://miiitomi.github.io/categories/market-design/</link>
-        <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
-        
-        <guid>https://miiitomi.github.io/categories/market-design/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Matching Theory</title>
-        <link>https://miiitomi.github.io/categories/matching-theory/</link>
-        <pubDate>Fri, 11 Feb 2022 00:00:00 +0000</pubDate>
-        
-        <guid>https://miiitomi.github.io/categories/matching-theory/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>シリアスTSF</title>
         <link>https://miiitomi.github.io/categories/%E3%82%B7%E3%83%AA%E3%82%A2%E3%82%B9tsf/</link>
         <pubDate>Thu, 30 Dec 2021 11:09:50 +0900</pubDate>
@@ -116,14 +116,6 @@
         <pubDate>Thu, 30 Dec 2021 11:09:50 +0900</pubDate>
         
         <guid>https://miiitomi.github.io/categories/%E6%BC%AB%E7%94%BB/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Algorithm</title>
-        <link>https://miiitomi.github.io/categories/algorithm/</link>
-        <pubDate>Sat, 25 Dec 2021 10:53:40 +0900</pubDate>
-        
-        <guid>https://miiitomi.github.io/categories/algorithm/</guid>
         <description></description>
         </item>
         <item>

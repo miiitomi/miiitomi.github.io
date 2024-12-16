@@ -2,29 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://miiitomi.github.io/categories/</loc>
+    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/</loc>
+    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/post/</loc>
+    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/tags/</loc>
+    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/tags/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</loc>
+    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/categories/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</loc>
+    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/p/optimal-lottery/</loc>
+    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/tags/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</loc>
+    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/categories/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</loc>
+    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/tags/%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%E7%90%86%E8%AB%96/</loc>
+    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://miiitomi.github.io/categories/%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%E7%90%86%E8%AB%96/</loc>
+    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://miiitomi.github.io/about/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://miiitomi.github.io/about_en/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://miiitomi.github.io/</loc>
-    <lastmod>2024-11-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://miiitomi.github.io/page/</loc>
-    <lastmod>2024-10-24T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://miiitomi.github.io/p/ichibannokoibito/</loc>
     <lastmod>2024-07-19T23:52:04+09:00</lastmod>
-  </url><url>
-    <loc>https://miiitomi.github.io/categories/</loc>
-    <lastmod>2024-11-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://miiitomi.github.io/post/</loc>
-    <lastmod>2024-11-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://miiitomi.github.io/tags/</loc>
-    <lastmod>2024-11-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://miiitomi.github.io/tags/%E5%B0%8F%E8%AA%AC/</loc>
     <lastmod>2024-07-19T23:52:04+09:00</lastmod>
@@ -87,12 +108,6 @@
     <lastmod>2023-11-23T11:35:53+09:00</lastmod>
   </url><url>
     <loc>https://miiitomi.github.io/p/ec23/</loc>
-    <lastmod>2023-07-19T14:27:45+09:00</lastmod>
-  </url><url>
-    <loc>https://miiitomi.github.io/tags/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</loc>
-    <lastmod>2023-07-19T14:27:45+09:00</lastmod>
-  </url><url>
-    <loc>https://miiitomi.github.io/categories/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</loc>
     <lastmod>2023-07-19T14:27:45+09:00</lastmod>
   </url><url>
     <loc>https://miiitomi.github.io/p/mattingu/</loc>
@@ -171,21 +186,9 @@
     <lastmod>2022-12-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://miiitomi.github.io/app/</loc>
-    <lastmod>2022-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://miiitomi.github.io/tags/market-design/</loc>
-    <lastmod>2022-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://miiitomi.github.io/categories/market-design/</loc>
-    <lastmod>2022-02-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://miiitomi.github.io/matching/</loc>
-    <lastmod>2022-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://miiitomi.github.io/tags/matching-theory/</loc>
-    <lastmod>2022-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://miiitomi.github.io/categories/matching-theory/</loc>
     <lastmod>2022-02-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://miiitomi.github.io/p/matching/</loc>
@@ -208,12 +211,6 @@
   </url><url>
     <loc>https://miiitomi.github.io/categories/%E6%BC%AB%E7%94%BB/</loc>
     <lastmod>2021-12-30T11:09:50+09:00</lastmod>
-  </url><url>
-    <loc>https://miiitomi.github.io/tags/algorithm/</loc>
-    <lastmod>2021-12-25T10:53:40+09:00</lastmod>
-  </url><url>
-    <loc>https://miiitomi.github.io/categories/algorithm/</loc>
-    <lastmod>2021-12-25T10:53:40+09:00</lastmod>
   </url><url>
     <loc>https://miiitomi.github.io/tags/python/</loc>
     <lastmod>2021-12-25T10:53:40+09:00</lastmod>
