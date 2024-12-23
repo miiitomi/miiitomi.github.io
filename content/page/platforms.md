@@ -1,7 +1,7 @@
 ---
 title: 'Reading Group: The Economics of Platforms'
 slug: platforms
-description: 'Belleflamme and Peitz (2001) "The Economics of Platforms" の輪読会用ページ'
+description: 'Belleflamme and Peitz (2021) "The Economics of Platforms" の輪読会用ページ'
 date: 2024-12-23
 menu:
     main: 
@@ -10,7 +10,7 @@ menu:
             icon: tag
 ---
 
-[Belleflamme and Peitz (2001) "The Economics of Platforms"](https://www.cambridge.org/core/books/economics-of-platforms/1465A930513786676D369128B0AF9D21) の輪読会を企画しています。
+[Belleflamme and Peitz (2021) "The Economics of Platforms"](https://www.cambridge.org/core/books/economics-of-platforms/1465A930513786676D369128B0AF9D21) の輪読会を企画しています。
 参加希望の方は以下をご確認の上、下記の希望フォームからご登録ください。
 
 
