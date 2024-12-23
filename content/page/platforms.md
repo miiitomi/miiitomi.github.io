@@ -54,6 +54,6 @@ menu:
 
 ## 参加希望フォーム
 
-[**こちらのリンク**](https://docs.google.com/forms/d/e/1FAIpQLSfRRmiVxYatnqTUcXdZ7-ZcLeo7IPTkn-LOK8PKwSpSYMiIqw/viewform?usp=header) からご登録ください。
+[**こちらのリンク**](https://docs.google.com/forms/d/e/1FAIpQLSfRRmiVxYatnqTUcXdZ7-ZcLeo7IPTkn-LOK8PKwSpSYMiIqw/viewform?usp=header) から **12/30(月)** までご登録ください。
 登録いただいたメールアドレスに後日冨田より詳細を連絡いたします。
 
