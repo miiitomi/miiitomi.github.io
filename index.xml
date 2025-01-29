@@ -6,7 +6,182 @@
         <description>Recent content on miiitomi</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Sun, 19 Jan 2025 13:22:51 +0900</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 29 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://miiitomi.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AHC041の復習</title>
+        <link>https://miiitomi.github.io/p/ahc041/</link>
+        <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://miiitomi.github.io/p/ahc041/</guid>
+        <description>&lt;img src="https://miiitomi.github.io/images/ahc041/vis.png" alt="Featured image of post AHC041の復習" /&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;%28https://atcoder.jp/contests/ahc041%29&#34; &gt;AHC041（ALGO ARTIS プログラミングコンテスト2025 冬）&lt;/a&gt;の復習を今回はかなり気合入れてやってみたので、自分用の備忘録としてまとめてみる。
+ちなみに本番の自分自身の順位は344位で大惨敗でした。&lt;/p&gt;
+&lt;h2 id=&#34;問題&#34;&gt;問題
+&lt;/h2&gt;&lt;p&gt;問題について詳細は&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/tasks/ahc041_a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;リンク&lt;/a&gt;を参照。要約は以下の通り。&lt;/p&gt;
+&lt;p&gt;$N$ 頂点 $M$ 辺の連結単純無向グラフ $G$ があり、各頂点 $u$ には数 $A_u$ が書かれている。
+$G$ の部分グラフで最大高さ $H$ 以下の根付き木からなる森について、その森のスコアは各頂点 $u$ の高さを $h_u$ としたとき $1 + \sum_{u = 1}^{N} (h_u + 1) A_u$ となる。
+スコアを極力大きくするような最大高さ $H$ 以下の森を出力せよ。&lt;/p&gt;
+&lt;h3 id=&#34;制約&#34;&gt;制約
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;$N = 1000, ~ 1000 \le M \le 3000, ~ H = 10, ~ 1 \le A_u \le 100$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;&lt;img src=&#34;https://miiitomi.github.io/images/ahc041/vis.png&#34;
+    alt=&#34;ビジュアライズ。本記事最後の提出コードのseed0への解で511886点&#34; width=&#34;400&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;ビジュアライズ。本記事最後の提出コードのseed0への解で511886点&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;解法&#34;&gt;解法
+&lt;/h2&gt;&lt;p&gt;Writerのスライド、コンテスト後のX、優勝者のブログ、上位者の提出コードなどを参考に書いてみた解法をまとめていく。
+Xに投稿したツリーはこちら。&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;AHC041復習ツリー🌲&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1881305413360194030?ref_src=twsrc%5Etfw&#34;&gt;January 20, 2025&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;h3 id=&#34;自明解954位相当&#34;&gt;自明解：954位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;全頂点を根にする。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/61897490&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;bfs741位相当&#34;&gt;BFS：741位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;適当に根を決め、そこから距離 $H$ までで到達できる点までBFSで辿っていく。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/61897732&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;dfs455位相当&#34;&gt;DFS：455位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;同じことをDFSでやる。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/61897969&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;昇順dfs259位相当&#34;&gt;昇順DFS：259位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;DFSで、辿る頂点は $A_u$ の値が小さい方を優先的に探索する。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/61898205&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;昇順dfs--根全探索146位相当&#34;&gt;昇順DFS + 根全探索：146位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;基本は昇順DFS。新しく根を選ぶときは、まだ未到達の頂点を根とした場合をすべて試し、新しい木のスコア/頂点数が大きくなるものを選ぶ。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/61898994&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;昇順dfs--根の順番焼きなまし65位相当&#34;&gt;昇順DFS + 根の順番焼きなまし：65位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;基本は昇順DFSで、新しく根を選ぶときはあらかじめ決められた優先順位でもっとも早いものを根とする。&lt;/li&gt;
+&lt;li&gt;その優先順位を焼きなましする。近傍は優先順位リスト内の二点スワップ。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/61903468&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;高さ焼きなまし42位相当&#34;&gt;高さ焼きなまし：42位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;高さ配列 $h_u$ を状態として持って焼きなましをする。
+&lt;ul&gt;
+&lt;li&gt;頂点 $u$ を一つランダムにとり、$u$ の親候補 $p$ を $u$ の隣接点と $-1$ ( $u$ 自身を根にする) から一つランダムに選ぶ。&lt;/li&gt;
+&lt;li&gt;$u$ の高さを $h_p + 1$ とする近傍を考える。
+&lt;ul&gt;
+&lt;li&gt;その遷移が可能かは、頂点 $u$ の全隣接点に適切な親候補がいるかを確認すれば良い。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/61923091&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;高さ焼きなまし--温度調整高速化7位相当&#34;&gt;高さ焼きなまし + 温度調整・高速化：7位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;温度パラメータの調整
+&lt;ul&gt;
+&lt;li&gt;初期温度200、最終温度0.1として線形に温度を落としていく。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;高速化
+&lt;ul&gt;
+&lt;li&gt;焼きなましループ内で毎回時間計測してると遅いので、ループ1万回に1回時間計測にする。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/61977720&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;部分木付け替え焼きなまし12位相当&#34;&gt;部分木付け替え焼きなまし：12位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;部分木付け替え焼きなまし
+&lt;ul&gt;
+&lt;li&gt;頂点 $u$ を1つをランダムにとり、$u$ を親とする部分木を丸ごと別の隣接点に付け替える（ $u$ の親だけ変える）/$u$自身を根にする近傍を考える。&lt;/li&gt;
+&lt;li&gt;$u$ の子孫で高さが $H$ を超えることがなければ遷移可能。&lt;/li&gt;
+&lt;li&gt;詳細はWriterの&lt;a class=&#34;link&#34; href=&#34;https://speakerdeck.com/terryu16/ahc041jie-shuo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;解説スライド&lt;/a&gt;参照。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/62002256&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;部分木付け替え焼きなまし--高さ違反許容4位相当&#34;&gt;部分木付け替え焼きなまし + 高さ違反許容：4位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;序盤は最大高さが $H$ を超えるのを許容する（30程度まで）。&lt;/li&gt;
+&lt;li&gt;高さ違反のペナルティを時間経過に伴って指数的に増やしていく。
+&lt;ul&gt;
+&lt;li&gt;詳細は同じくWriterの解説スライド参照。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;あとこちらでは焼きなまし温度も指数的に変化させるように変更。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/62004054&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;高さ違反許容部分木焼きなましの高速化3位相当&#34;&gt;高さ違反許容部分木焼きなましの高速化：3位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;高速化：擬似乱数生成をメルセンヌツイスタ（mt19937_64）ではなく&lt;a class=&#34;link&#34; href=&#34;https://ja.wikipedia.org/wiki/Xorshift&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Xorshift&lt;/a&gt;を使う。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/62010636&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;高さ-h-の小さい方から最小限の頂点を高さ-h-にしていく貪欲15位相当&#34;&gt;高さ $h$ の小さい方から最小限の頂点を高さ $h$ にしていく貪欲：15位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;高さ $h$ の小さい方から最小限の頂点を高さ $h$ にしていく。
+&lt;ul&gt;
+&lt;li&gt;ある頂点 $u$ を新たに高さ $h$ にしたとき、高さ $H$ 以下となりうる未達頂点の集合を $T_u$ とする。&lt;/li&gt;
+&lt;li&gt;$T_u$ のunionが未達頂点全ての集合に一致するように、最小限の頂点を高さ $h$ にする。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;詳細は優勝者の&lt;a class=&#34;link&#34; href=&#34;https://rsm9.hatenablog.com/entry/2025/01/22/213923&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ブログ&lt;/a&gt;参照。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/62014228&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ビームサーチ2位相当&#34;&gt;ビームサーチ：2位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;各高さ $h$ ごとに、高さリストを状態として持つビームサーチ。
+&lt;ul&gt;
+&lt;li&gt;各高さを決める時の貪欲法において、$A_u$ に適当に乱数を加算することで複数遷移を作る。&lt;/li&gt;
+&lt;li&gt;詳細は同じく優勝者のブログ参照。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/62159674&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ビームサーチ21位相当&#34;&gt;ビームサーチ2：1位相当
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;同じくビームサーチ
+&lt;ul&gt;
+&lt;li&gt;上の遷移に加え、高さ $h$ とする頂点を選んだ時に、ある点を別の頂点と変更するスワップによる遷移も追加。&lt;/li&gt;
+&lt;li&gt;詳細は同じく優勝者のブログ参照。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;乱数探索回数やビーム幅を適当に調整して本番1位相当に。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://atcoder.jp/contests/ahc041/submissions/62162564&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;上のビームサーチに新しく高さをhにする頂点の変更をする遷移を追加して、諸々調整したら本番1位相当出た！76952094点（本番1位相当）！&lt;br&gt;くぅ～疲れましたw これにてAHC041復習完結です！！&lt;a href=&#34;https://t.co/wU64sAs1IX&#34;&gt;https://t.co/wU64sAs1IX&lt;/a&gt; &lt;a href=&#34;https://t.co/TRS70F8XMd&#34;&gt;pic.twitter.com/TRS70F8XMd&lt;/a&gt;&lt;/p&gt;&amp;mdash; みーとみ (@miiitomi) &lt;a href=&#34;https://twitter.com/miiitomi/status/1883912901779653017?ref_src=twsrc%5Etfw&#34;&gt;January 27, 2025&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ
+&lt;/h2&gt;&lt;p&gt;Writer、上位入賞者、優勝者の解説を理解した上で提出コードも読み込んだらすごい勉強になった。
+今後もAHCごとにこんな感じで復習続けていって強くなりたい。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>【色変記事】AtCoderアルゴレートで黄色になりました！</title>
         <link>https://miiitomi.github.io/p/yellow/</link>
         <pubDate>Sun, 19 Jan 2025 13:22:51 +0900</pubDate>
