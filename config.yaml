@@ -1,7 +1,7 @@
 baseurl: https://miiitomi.github.io
 languageCode: ja
 theme: hugo-theme-stack
-paginate: 5
+pagination.pagerSize: 5
 title: miiitomi
 
 publishDir: docs
