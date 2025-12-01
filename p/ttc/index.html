@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="皆が納得する交換の仕方をTTCアルゴリズムによって簡単に見つけるWEBアプリを作ってみました。">
+<title>誰も損することなく皆が納得するようなグッズ交換の仕方を見つけよう！🎁</title>
+
+<link rel='canonical' href='https://miiitomi.github.io/p/ttc/'>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/scss/style.min.eddb5831811f423d0c42db61148da375ec1367cd9ea20f2c945ba0dc0fff144a.css"><meta property='og:title' content="誰も損することなく皆が納得するようなグッズ交換の仕方を見つけよう！🎁">
+<meta property='og:description' content="皆が納得する交換の仕方をTTCアルゴリズムによって簡単に見つけるWEBアプリを作ってみました。">
+<meta property='og:url' content='https://miiitomi.github.io/p/ttc/'>
+<meta property='og:site_name' content='miiitomi'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='マーケットデザイン' /><meta property='article:tag' content='マッチング理論' /><meta property='article:tag' content='TTCアルゴリズム' /><meta property='article:published_time' content='2025-11-30T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-11-30T00:00:00&#43;00:00'/><meta property='og:image' content='https://miiitomi.github.io/images/ttc/ttc_app.png' />
+<meta name="twitter:site" content="@miiitomi">
+    <meta name="twitter:creator" content="@miiitomi"><meta name="twitter:title" content="誰も損することなく皆が納得するようなグッズ交換の仕方を見つけよう！🎁">
+<meta name="twitter:description" content="皆が納得する交換の仕方をTTCアルゴリズムによって簡単に見つけるWEBアプリを作ってみました。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://miiitomi.github.io/images/ttc/ttc_app.png' />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-D93SYWPPB4"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-D93SYWPPB4');
+        }
+      </script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="/images/avatar.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">miiitomi</a></h1>
+            <h2 class="site-description">みーとみブログ</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/miiitomi/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/miiitomi/'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/app/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>App</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/matching/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>Matching</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/platforms/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>Reading Group: The Economics of Platforms</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#問題設定">問題設定</a></li>
+    <li><a href="#皆が納得するために必要な条件">皆が納得するために必要な条件</a>
+      <ol>
+        <li><a href="#条件1誰も損しない個人合理性">条件1.　誰も損しない（個人合理性）</a></li>
+        <li><a href="#条件2全員が同意できるようなそれ以上の改善はないパレート効率性">条件2.　全員が同意できるようなそれ以上の改善はない（パレート効率性）</a></li>
+        <li><a href="#条件3嘘をつくことで得をすることがなく皆が希望を正直に申告することが常に最適である耐戦略性">条件3.　嘘をつくことで得をすることがなく、皆が希望を正直に申告することが常に最適である（耐戦略性）</a></li>
+      </ol>
+    </li>
+    <li><a href="#ttcアルゴリズム">TTCアルゴリズム</a></li>
+    <li><a href="#最適交換アプリ">最適交換アプリ</a></li>
+    <li><a href="#おわりに">おわりに</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/ttc/">
+                
+                    <img src="/images/ttc/ttc_app.png" loading="lazy" alt="Featured image of post 誰も損することなく皆が納得するようなグッズ交換の仕方を見つけよう！🎁" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/" >
+                マーケットデザイン
+            </a>
+        
+            <a href="/categories/%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%E7%90%86%E8%AB%96/" >
+                マッチング理論
+            </a>
+        
+            <a href="/categories/ttc%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/" >
+                TTCアルゴリズム
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/ttc/">誰も損することなく皆が納得するようなグッズ交換の仕方を見つけよう！🎁</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            皆が納得する交換の仕方をTTCアルゴリズムによって簡単に見つけるWEBアプリを作ってみました。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 30, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>本記事は <a class="link" href="https://adventar.org/calendars/11573"  target="_blank" rel="noopener"
+    ><strong>CyberAgent AI Lab Advent Calendar 2025</strong></a> 第1日目の記事です。</p>
+<h2 id="はじめに">はじめに
+</h2><p>メリークリスマス！🎄🎅</p>
+<p>サイバーエージェント AI Lab Market &amp; Behavioral Design（MBD）チームのみーとみ（<a class="link" href="https://x.com/miiitomi/"  target="_blank" rel="noopener"
+    >@miiitomi</a>）です。
+ちなみに9月まで経済学社会実装（EconSI）チームという名前でしたが10月からチーム名が変更になりました。AI Lab MBDチームをよろしくお願いします🙇</p>
+<p>ところで皆さん、日常生活の中でこんな状況ありませんか！？（唐突）</p>
+<blockquote>
+<p>あるサッカーチームが、選手のグッズをランダムにファンに配りました。ファンはそれぞれグッズを受け取りましたが、ファンにはそれぞれ推し選手がおり、推し選手のグッズが得られている人もいれば、推し選手でない選手のグッズを受け取ったファンもいます。今日あるファンの呼びかけで、グッズを手にしたファン達が集まってグッズを交換することにしました。参加者が誰も損することなく皆が納得するようにグッズ交換するためにはどのようにしたら良いでしょうか？</p>
+</blockquote>
+<p>推し活のグッズ交換、クリスマスパーティのプレゼント交換など、参加者が1人1つ提供できるものを持っていて、それらを各々の希望に応じて交換したい、という状況はたまにあるかと思います。
+そのような状況で適切な交換方法を求める <strong>TTC（Top Torading Cycle）アルゴリズム</strong> という古典的なアルゴリズムが古くから知られています（Shapley and Scarf (1974)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>）。</p>
+<p>今回はそのTTCアルゴリズムを簡単に実行できるWEBアプリケーション「<a class="link" href="/ttc/" ><strong>最適交換アプリ</strong></a>」を作成してみました。以下ではそのTTCアルゴリズムを簡単に紹介しますので、ぜひアプリの方を試しながらお読みください。</p>
+<figure><a href="/ttc/"><img src="/images/ttc/ttc_app.png" width="600"></a>
+</figure>
+
+<h2 id="問題設定">問題設定
+</h2><p>考えたいのは、以下のような状況です。</p>
+<ul>
+<li>参加者が $N$ 人おり、それぞれ $1$ さん、$2$ さん、&hellip;、$N$ さんと呼ぶ。</li>
+<li>参加者はそれぞれ、提供できるものを1つずつ（$w_1$、$w_2$、&hellip;、$w_N$）用意している。</li>
+<li>参加者はそれぞれ、用意されたもの $N$ 個に対して希望順位を持っている。</li>
+</ul>
+<p>例えば、$5$ 人の場合では以下のような例が考えられます。</p>
+<blockquote>
+<p><strong>例1</strong></p>
+<ul>
+<li>参加者は $1$ さん、$2$ さん、$3$ さん、$4$ さん、$5$ さんの $5$ 人。それぞれ $w_1, w_2, w_3, w_4, w_5$ を用意してきた。</li>
+<li>それぞれの希望は以下の通り。
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">$1$ さん</th>
+          <th style="text-align: center">$2$ さん</th>
+          <th style="text-align: center">$3$ さん</th>
+          <th style="text-align: center">$4$ さん</th>
+          <th style="text-align: center">$5$ さん</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">第 $1$ 希望</td>
+          <td style="text-align: center">$w_3$</td>
+          <td style="text-align: center">$w_4$</td>
+          <td style="text-align: center">$w_4$</td>
+          <td style="text-align: center">$w_5$</td>
+          <td style="text-align: center">$w_3$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第 $2$ 希望</td>
+          <td style="text-align: center">$w_2$</td>
+          <td style="text-align: center">$w_1$</td>
+          <td style="text-align: center">$w_5$</td>
+          <td style="text-align: center">$w_1$</td>
+          <td style="text-align: center">$w_5$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第 $3$ 希望</td>
+          <td style="text-align: center">$w_1$</td>
+          <td style="text-align: center">$w_2$</td>
+          <td style="text-align: center">$w_3$</td>
+          <td style="text-align: center">$w_3$</td>
+          <td style="text-align: center">$w_1$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第 $4$ 希望</td>
+          <td style="text-align: center">$w_4$</td>
+          <td style="text-align: center">$w_5$</td>
+          <td style="text-align: center">$w_1$</td>
+          <td style="text-align: center">$w_2$</td>
+          <td style="text-align: center">$w_2$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">第 $5$ 希望</td>
+          <td style="text-align: center">$w_5$</td>
+          <td style="text-align: center">$w_3$</td>
+          <td style="text-align: center">$w_2$</td>
+          <td style="text-align: center">$w_4$</td>
+          <td style="text-align: center">$w_4$</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+</ul>
+</blockquote>
+<p>これに対して、私たちが欲しいのは以下のようなものです。</p>
+<ul>
+<li>$N$ 人がそれぞれ欲しいものの希望順位を提出したときに、その希望から誰も損せず皆が納得する交換の仕方を自動で計算してくれるもの。</li>
+</ul>
+<p>参加者が2-3人であれば話あって適切に交換することができるかもしれませんが、人数が多くなってくると皆が納得する交換の仕方を決めるのは容易ではないでしょう。
+それを自動で決めてくれるものが今回私たちが欲しいものです。</p>
+<h2 id="皆が納得するために必要な条件">皆が納得するために必要な条件
+</h2><p>「誰も損せず皆が納得する交換の仕方」を見つけたいと述べましたが、それは具体的にはどのようなものでしょうか？
+上述の例をもとに考えていきたいと思います。</p>
+<h3 id="条件1誰も損しない個人合理性">条件1.　誰も損しない（個人合理性）
+</h3><p>例1において、数字の小さい順に $1$ さんから好きなものを取っていく方法で交換の仕方を決めたとしましょう。すると次のようになります。</p>
+<blockquote>
+<p>それぞれが持っていくもの</p>
+<ul>
+<li>$1$ さん：$w_3$（第 $1$ 希望）</li>
+<li>$2$ さん：$w_4$（第 $1$ 希望）</li>
+<li>$3$ さん：$w_5$（第 $2$ 希望）</li>
+<li>$4$ さん：$w_1$（第 $2$ 希望）</li>
+<li>$5$ さん：$w_2$（第 $4$ 希望）</li>
+</ul>
+</blockquote>
+<p>この方法では順番が最後になる $5$ さんが著しく不利であり、さらに $5$ さんは自分が持ってきたものよりも希望度の低い $w_2$ を持ち帰ることになっています。
+このような状況では $5$ さんは交換に参加することでむしろ損をしており、このような交換の仕方は $5$ さんにとって納得できるものではないでしょう。</p>
+<p>したがって、交換の仕方が満たすべき条件の1つ目は次のようなものになります。</p>
+<blockquote>
+<p><strong>条件1.　個人合理性</strong></p>
+<p>参加者は皆、自身が持ってきたものか、またはそれ以上に希望するものを得る。</p>
+</blockquote>
+<h3 id="条件2全員が同意できるようなそれ以上の改善はないパレート効率性">条件2.　全員が同意できるようなそれ以上の改善はない（パレート効率性）
+</h3><p>例1において、$1$ さんと $2$ さんは話していて、二人が持ってきたものを交換することで二人とも得することに気が付きました。また、$3$ さんと $4$ さんも、二人のものを交換することに同意しました。
+よって $1$ さんと $2$ さん、$3$ さんと $4$ さんが交換すると、結果は以下のようになります。</p>
+<blockquote>
+<ul>
+<li>$1$ さん：$w_2$（第 $2$ 希望）</li>
+<li>$2$ さん：$w_1$（第 $2$ 希望）</li>
+<li>$3$ さん：$w_4$（第 $1$ 希望）</li>
+<li>$4$ さん：$w_3$（第 $3$ 希望）</li>
+<li>$5$ さん：$w_5$（第 $2$ 希望）</li>
+</ul>
+</blockquote>
+<p>ですが、この交換の仕方ではまだベストではないようです。$4$ さんが今持っている $w_3$と、$5$ さんの $w_5$ を交換すると、さらにまた二人とも得することができます。</p>
+<p>このような、誰も損することなく誰かが得できるような、全員が同意できる改善が存在するうちは、最適な交換とは言えないでしょう。よって、2つ目の条件は以下のようなものになります。</p>
+<blockquote>
+<p><strong>条件2.　パレート効率性</strong></p>
+<p>誰も損することなく誰かが得できるような、全員が同意できる今以上の改善はない。</p>
+</blockquote>
+<h3 id="条件3嘘をつくことで得をすることがなく皆が希望を正直に申告することが常に最適である耐戦略性">条件3.　嘘をつくことで得をすることがなく、皆が希望を正直に申告することが常に最適である（耐戦略性）
+</h3><p>条件3は例を用いて説明するには複雑になるので簡単に説明します。</p>
+<p>私たちが欲しいものは「$N$ 人がそれぞれ欲しいものの希望順位を提出したときに、その希望から誰も損せず皆が納得する交換の仕方を自動で計算してくれるもの」と説明しました。
+交換の主催者はもちろん参加者全員の希望を詳細に知っているとは限らず、参加者に希望を申告してもらう必要があります。</p>
+<p>ここで、「本当は $w_3$ が一番欲しいけど、人気そうだから $w_5$ を第一希望ってことにしとこう」などのように、本当の希望を申告しない人がいたらどうでしょうか？
+嘘の申告をすることで得することがありうるようなルールになっていると、交換結果が嘘の申告に基づくもののため本当の希望のもとで適切であるかどうかが分からないだけでなく、参加者は自分が得するためにはどのように申告するべきか戦略を考える負担がかかり、正直者が損をするような状況になっている場合もあり得ます。
+そのような状況はあまり望ましいものではなく、できれば参加者にとって本当の希望を正直に申告することが常に一番得であるようなルールであることが、参加者にとっても主催者にとっても望ましいでしょう。</p>
+<p>したがって、望ましいルールの条件の3つ目は以下のようなものになります。</p>
+<blockquote>
+<p><strong>条件3.　耐戦略性</strong></p>
+<p>参加者にとって本当の希望を正直に申告することが常に一番得であるようなルールである。</p>
+</blockquote>
+<h2 id="ttcアルゴリズム">TTCアルゴリズム
+</h2><p>いよいよ適切な交換の仕方を求める「TTCアルゴリズム」の説明にうつります。TTCアルゴリズムとは以下のようなものです。</p>
+<blockquote>
+<p><strong>TTC（Top Trading Cycle）アルゴリズム</strong></p>
+<ol>
+<li>$N$ 人の参加者それぞれに対応する点を持つ、有向グラフを作る。始め辺は張られていない。</li>
+<li>有向グラフに点が存在する限り、以下を繰り返す。
+<ul>
+<li>いま残っている参加者 $i$ それぞれについて、以下を行う。
+<ul>
+<li>$i$ から辺が張られていない場合、いま残っている参加者が用意してきたもののうち $i$ にとって最も希望度の高いものを $w_j$ とし、点 $i$ から点 $j$ に向けて有向辺を張る（$j = i$ の場合も起こり得る）。</li>
+</ul>
+</li>
+<li>有向グラフから閉路を見つけ、それを $i_1 \to i_2 \to &hellip; \to i_K \to i_1$ とする。</li>
+<li>参加者 $i_1$ は $w_{i_2}$ を、参加者 $i_2$ は $w_{i_3}$ を、&hellip; 参加者 $i_K$ は $w_{i_1}$ を得るものとし、その閉路に含まれる点とその点が含まれる辺を全てグラフから取り除く。</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<p>例1に対してこのTTCアルゴリズムを適用すると、結果は次のようになります。</p>
+<blockquote>
+<ul>
+<li>点 $1$ から 点 $3$、点 $2$ から 点 $4$、点 $3$ から点 $4$、点 $4$ から点 $5$、点 $5$ から点 $3$ に有向辺が張られる。</li>
+<li>$3 \to 4 \to 5 \to 3$ の閉路ができたため、参加者 $3$ が $w_4$ を、参加者 $4$ が $w_5$ を、参加者 $5$ が $w_3$ を得て、グラフから取り除かれる。</li>
+<li>点 $1$ から 点 $2$、点 $2$ から点 $1$ に有向辺が張られる。</li>
+<li>$1 \to 2 \to 1$ の閉路ができたため、参加者 $1$ が $w_2$ を、参加者 $2$ が $w_1$ を得て、グラフから取り除かれる。</li>
+<li>グラフが空になっため終了し、結果は以下となる。
+<ul>
+<li>$1$ さん：$w_2$（第 $2$ 希望）</li>
+<li>$2$ さん：$w_1$（第 $2$ 希望）</li>
+<li>$3$ さん：$w_4$（第 $1$ 希望）</li>
+<li>$4$ さん：$w_5$（第 $1$ 希望）</li>
+<li>$5$ さん：$w_3$（第 $1$ 希望）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>この結果は、条件1（個人合理性）と、条件2（パレート効率性）を満たしています。</p>
+<p>証明は省略しますが、この例に限らず、TTCアルゴリズムは条件1と条件2を満たす全員が納得する交換の仕方を結果として返します。
+またTTCアルゴリズムを用いて交換するルールは、条件3の耐戦略性を満たす、つまり参加者は皆自身の本当の希望を正直に申告することが常に参加者にとって最適であることが知られています。</p>
+<h2 id="最適交換アプリ">最適交換アプリ
+</h2><p>はじめにでも述べたとおり、この<strong>TTCアルゴリズム</strong>を簡単に実行できる<a class="link" href="/ttc/" ><strong>最適交換アプリ</strong></a>を作成しました。
+ぜひ参加者同士で用意したものを交換したい状況でお使いください！</p>
+<p>上の例1を実行してみると以下のようになります（ちなみにTTCアルゴリズムでは自分自身の用意してきたもの以下の希望順位は必要ないため、アプリでは自分自身のものより希望するもののみを入力させるようにしています）。</p>
+<figure><img src="/images/ttc/ttc_example1.png" width="600">
+</figure>
+
+<h2 id="おわりに">おわりに
+</h2><p>今回のように、人や人・人やものを人々の希望に応じて適切にマッチさせる方法を考える分野として「マッチング理論」という分野があり、マッチング理論などの知見を現実の市場・制度の設計に活用しようという分野として「マーケットデザイン」という分野があります。
+私たちAI Lab Market &amp; Behavioral Designチームでは、このマッチング理論・マーケットデザインの分野において研究して論文を発表するとともに、保育所利用調整における保育所と児童のマッチングなど、実際のマッチング制度の設計・開発も行っています。
+ちなみに私たちのチームの保育所利用調整マッチングにおける取り組みは、この度書籍 「<a class="link" href="https://www.amazon.co.jp/dp/453554087X"  target="_blank" rel="noopener"
+    ><strong>［AIと経済学］で もっとよくなる保育政策</strong></a>」としてまとめましたので、ご興味のある方はよかったらご覧ください。</p>
+<p>また、マッチング理論における他のアルゴリズムである、2グループ間の人を希望に応じて適切にマッチさせるDAアルゴリズムは <a class="link" href="/matching/" ><strong>こちら</strong></a>、希望に応じてものを公平に配るための最適なくじ引きを作るPSアルゴリズムは <a class="link" href="/optimal-lottery/" ><strong>こちら</strong></a> で実行できるアプリを用意していますので、そちらも合わせてお試しいただけると嬉しいです。</p>
+<p>明日の<a class="link" href="https://adventar.org/calendars/11573"  target="_blank" rel="noopener"
+    ><strong>CyberAgent AI Lab Advent Calendar 2025</strong></a>は同じチームの竹浪さんから、同じくマッチングネタで「よいマッチングのために、あえて「マッチング」しないアプローチ」についての記事とのことです！
+お楽しみに〜〜🎄</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Lloyd Shapley and Herbert Scarf. &ldquo;On cores and indivisibility.&rdquo; <em>Journal of mathematical economics</em> 1.1 (1974): 23-37.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/">マーケットデザイン</a>
+        
+            <a href="/tags/%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%E7%90%86%E8%AB%96/">マッチング理論</a>
+        
+            <a href="/tags/ttc%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/">TTCアルゴリズム</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/optimal-lottery/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/images/optimal-lottery/optimal-lottery.png" loading="lazy" data-key="optimal-lottery" data-hash="/images/optimal-lottery/optimal-lottery.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">プレゼントを公平に配る最適なくじ引きを作ろう！🎁</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/ec23/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/images/conferences/ec23/nametag.jpg" loading="lazy" data-key="ec23" data-hash="/images/conferences/ec23/nametag.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">EC&#39;23参加メモ</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/app/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">App</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/matching/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Matching</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/matching/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">マッチングアルゴリズムの解説</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2021 - 
+        
+        2025 miiitomi
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
