@@ -1001,10 +1001,27 @@ PSルールは、受け取り手が希望するプレゼントを貰う割合を
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;論文 (peer-reviewed)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, and Daisuke Moriwaki. 2022. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3523227.3547406&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Matching Theory-based Recommender Systems in Online Dating.&lt;/a&gt; Proceedings of the 16th ACM Conference on Recommender Systems (RecSys&#39;22). Industrial Track.
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt; and Tomohiko Yokoyama. 2026. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3793538&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Balancing Fairness and High Match Rates in Reciprocal Recommender Systems: A Nash Social Welfare Approach.&lt;/a&gt; ACM Transactions on Recommender Systems(TORS), forthcoming.
 &lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cyberagent.co.jp/news/detail/id=27897&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2601.13609&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arxiv&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Ren Kishimoto, Rikiya Takehi, Koichi Tanaka, Masahiro Nomura, Riku Togashi, &lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Yuta Saito. 2026. &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2602.15752&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching.&lt;/a&gt; ICLR2026.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt; and Tomohiko Yokoyama. 2024. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3640457.3688130&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fair Reciprocal Recommendation in Matching Markets.&lt;/a&gt; Proceedings of the 18th ACM Conference on Recommender Systems (RecSys&#39;24).
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cyberagent.co.jp/news/detail/id=30810&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;プレスリリース&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;RecSys&#39;24の&lt;strong&gt;Best full paper候補&lt;/strong&gt;6本に入りました.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, Yuriko Hashizume, and Naoto Ohsaka. 2023. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3604915.3608774&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fast and Examination-agnostic Reciprocal Recommendation in Matching Markets.&lt;/a&gt; Proceedings of the 17th ACM Conference on Recommender Systems (RecSys&#39;23).
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cyberagent.co.jp/news/detail/id=29237&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;プレスリリース&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -1015,19 +1032,11 @@ PSルールは、受け取り手が希望するプレゼントを貰う割合を
     &gt;プレスリリース&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, Yuriko Hashizume, and Naoto Ohsaka. 2023. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3604915.3608774&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Fast and Examination-agnostic Reciprocal Recommendation in Matching Markets.&lt;/a&gt; Proceedings of the 17th ACM Conference on Recommender Systems (RecSys&#39;23).
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, and Daisuke Moriwaki. 2022. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3523227.3547406&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Matching Theory-based Recommender Systems in Online Dating.&lt;/a&gt; Proceedings of the 16th ACM Conference on Recommender Systems (RecSys&#39;22). Industrial Track.
 &lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cyberagent.co.jp/news/detail/id=29237&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cyberagent.co.jp/news/detail/id=27897&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;プレスリリース&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt; and Tomohiko Yokoyama. 2024. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3640457.3688130&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Fair Reciprocal Recommendation in Matching Markets.&lt;/a&gt; Proceedings of the 18th ACM Conference on Recommender Systems (RecSys&#39;24).
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cyberagent.co.jp/news/detail/id=30810&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;プレスリリース&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;RecSys&#39;24のBest full paper候補6本に入りました.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1151,18 +1160,27 @@ PSルールは、受け取り手が希望するプレゼントを貰う割合を
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Papers (peer-reviewed)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, and Daisuke Moriwaki. 2022. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3523227.3547406&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Matching Theory-based Recommender Systems in Online Dating.&lt;/a&gt; Proceedings of the 16th ACM Conference on Recommender Systems (RecSys&#39;22). Industrial Track.&lt;/li&gt;
-&lt;li&gt;Zhaohong Sun, Yoshihiro Takenami, Daisuke Moriwaki, &lt;strong&gt;Yoji Tomita&lt;/strong&gt;, and Makoto Yokoo. 2023. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1609/aaai.v37i12.26694&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Daycare Matching in Japan: Transfers and Siblings.&lt;/a&gt; Proceedings of the 37th AAAI Conference on Artificial Intelligence (AAAI-23).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, Yuriko Hashizume, and Naoto Ohsaka. 2023. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3604915.3608774&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Fast and Examination-agnostic Reciprocal Recommendation in Matching Markets.&lt;/a&gt; Proceedings of the 17th ACM Conference on Recommender Systems (RecSys&#39;23).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt; and Tomohiko Yokoyama. 2026. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3793538&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Balancing Fairness and High Match Rates in Reciprocal Recommender Systems: A Nash Social Welfare Approach.&lt;/a&gt; ACM Transactions on Recommender Systems(TORS), forthcoming.
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2601.13609&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arxiv&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Ren Kishimoto, Rikiya Takehi, Koichi Tanaka, Masahiro Nomura, Riku Togashi, &lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Yuta Saito. 2026. &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2602.15752&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching.&lt;/a&gt; ICLR2026.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt; and Tomohiko Yokoyama. 2024. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3640457.3688130&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Fair Reciprocal Recommendation in Matching Markets.&lt;/a&gt; Proceedings of the 18th ACM Conference on Recommender Systems (RecSys&#39;24).
 &lt;ul&gt;
 &lt;li&gt;shortlisted for 6 best full paper candidates in RecSys&#39;24&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, Yuriko Hashizume, and Naoto Ohsaka. 2023. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3604915.3608774&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fast and Examination-agnostic Reciprocal Recommendation in Matching Markets.&lt;/a&gt; Proceedings of the 17th ACM Conference on Recommender Systems (RecSys&#39;23).&lt;/li&gt;
+&lt;li&gt;Zhaohong Sun, Yoshihiro Takenami, Daisuke Moriwaki, &lt;strong&gt;Yoji Tomita&lt;/strong&gt;, and Makoto Yokoo. 2023. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1609/aaai.v37i12.26694&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Daycare Matching in Japan: Transfers and Siblings.&lt;/a&gt; Proceedings of the 37th AAAI Conference on Artificial Intelligence (AAAI-23).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Yoji Tomita&lt;/strong&gt;, Riku Togashi, and Daisuke Moriwaki. 2022. &lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1145/3523227.3547406&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Matching Theory-based Recommender Systems in Online Dating.&lt;/a&gt; Proceedings of the 16th ACM Conference on Recommender Systems (RecSys&#39;22). Industrial Track.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Contacts&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
