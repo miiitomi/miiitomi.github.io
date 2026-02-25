@@ -34,15 +34,19 @@ My profile in English is **[here](/about_en/)**.
  - 2020年4月- サイバーエージェント AI Lab.
 
 **論文 (peer-reviewed)**
-- **Yoji Tomita**, Riku Togashi, and Daisuke Moriwaki. 2022. [Matching Theory-based Recommender Systems in Online Dating.](https://doi.org/10.1145/3523227.3547406) Proceedings of the 16th ACM Conference on Recommender Systems (RecSys'22). Industrial Track.
-    - [プレスリリース](https://www.cyberagent.co.jp/news/detail/id=27897).
-- Zhaohong Sun, Yoshihiro Takenami, Daisuke Moriwaki, **Yoji Tomita**, and Makoto Yokoo. 2023. [Daycare Matching in Japan: Transfers and Siblings.](https://doi.org/10.1609/aaai.v37i12.26694) Proceedings of the 37th AAAI Conference on Artificial Intelligence (AAAI-23).
-    - [プレスリリース](https://www.cyberagent.co.jp/news/detail/id=28487).
-- **Yoji Tomita**, Riku Togashi, Yuriko Hashizume, and Naoto Ohsaka. 2023. [Fast and Examination-agnostic Reciprocal Recommendation in Matching Markets.](https://doi.org/10.1145/3604915.3608774) Proceedings of the 17th ACM Conference on Recommender Systems (RecSys'23).
-    - [プレスリリース](https://www.cyberagent.co.jp/news/detail/id=29237).
+- **Yoji Tomita** and Tomohiko Yokoyama. 2026. [Balancing Fairness and High Match Rates in Reciprocal Recommender Systems: A Nash Social Welfare Approach.](https://doi.org/10.1145/3793538) ACM Transactions on Recommender Systems(TORS), forthcoming.
+    - [arxiv](https://arxiv.org/abs/2601.13609).
+- Ren Kishimoto, Rikiya Takehi, Koichi Tanaka, Masahiro Nomura, Riku Togashi, **Yoji Tomita**, Yuta Saito. 2026. [Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching.](https://arxiv.org/abs/2602.15752) ICLR2026.
 - **Yoji Tomita** and Tomohiko Yokoyama. 2024. [Fair Reciprocal Recommendation in Matching Markets.](https://doi.org/10.1145/3640457.3688130) Proceedings of the 18th ACM Conference on Recommender Systems (RecSys'24).
     - [プレスリリース](https://www.cyberagent.co.jp/news/detail/id=30810).
-    - RecSys'24のBest full paper候補6本に入りました.
+    - RecSys'24の**Best full paper候補**6本に入りました.
+- **Yoji Tomita**, Riku Togashi, Yuriko Hashizume, and Naoto Ohsaka. 2023. [Fast and Examination-agnostic Reciprocal Recommendation in Matching Markets.](https://doi.org/10.1145/3604915.3608774) Proceedings of the 17th ACM Conference on Recommender Systems (RecSys'23).
+    - [プレスリリース](https://www.cyberagent.co.jp/news/detail/id=29237).
+- Zhaohong Sun, Yoshihiro Takenami, Daisuke Moriwaki, **Yoji Tomita**, and Makoto Yokoo. 2023. [Daycare Matching in Japan: Transfers and Siblings.](https://doi.org/10.1609/aaai.v37i12.26694) Proceedings of the 37th AAAI Conference on Artificial Intelligence (AAAI-23).
+    - [プレスリリース](https://www.cyberagent.co.jp/news/detail/id=28487).
+- **Yoji Tomita**, Riku Togashi, and Daisuke Moriwaki. 2022. [Matching Theory-based Recommender Systems in Online Dating.](https://doi.org/10.1145/3523227.3547406) Proceedings of the 16th ACM Conference on Recommender Systems (RecSys'22). Industrial Track.
+    - [プレスリリース](https://www.cyberagent.co.jp/news/detail/id=27897).
+
 
 
 **寄稿論文**
