@@ -87,7 +87,7 @@ My profile in English is **[here](/about_en/)**.
 
 **連絡先**
 - Email tomita_yoji[at]cyberagent.co.jp
-- X [miiitomi](https://twitter.com/miiitomi/)
+- X [miiitomi](https://x.com/miiitomi/)
 - GitHub [miiitomi](https://github.com/miiitomi/)
 - Linkedin [Yoji Tomita](https://www.linkedin.com/in/yoji-tomita/)
 - AtCoder [miiitomi](https://atcoder.jp/user/miiitomi)

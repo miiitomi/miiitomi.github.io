@@ -8,7 +8,7 @@ categories:
     - マッチング理論
     - TTCアルゴリズム
 tags: [マーケットデザイン, マッチング理論, TTCアルゴリズム]
-image: images/ttc/ttc_app.png
+image: /images/ttc/ttc_app.png
 ---
 
 本記事は [**CyberAgent AI Lab Advent Calendar 2025**](https://adventar.org/calendars/11573) 第1日目の記事です。

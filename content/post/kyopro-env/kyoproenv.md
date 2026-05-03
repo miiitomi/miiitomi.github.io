@@ -3,7 +3,7 @@ title: VSCode+DockerによるAtCoder用C++/Python環境設定
 description: 
 slug: kyopro-env
 date: 2024-01-27
-image: images/kyopro-env/test.png
+image: /images/kyopro-env/test.png
 categories:
     - 競プロ
 tags: [競プロ,]

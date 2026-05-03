@@ -3,7 +3,7 @@ title: 『オレが私になるまで』
 description: おすすめシリアスTSFその1
 slug: oregawatashininarumade
 date: 2021-12-30T11:09:50+09:00
-image: images/oregawatashininarumade/fig4.jpg
+image: /images/oregawatashininarumade/fig4.jpg
 categories:
     - 漫画
     - シリアスTSF
@@ -17,7 +17,7 @@ tags: [漫画, シリアスTSF]
 
 僕なりに定義してみると、シリアスTSFとは「ギャグ要素やエロ要素ではなく、TSに伴う登場人物の内面の葛藤や周りの人間関係の変化といったシリアス要素に物語の重きを置いた、ヒューマンドラマとしてのTSF（Trans-Sexual Fiction/性転換もの）」である。
 
-{{< tweet user=miiitomi id=1452270640241672198 >}}
+{{< x user=miiitomi id=1452270640241672198 >}}
 
 現実にはあり得ない状況における少年・少女たちの戸惑い、葛藤が魅力のこのジャンルの作品を、
 これから1つずつ~~僕が飽きるまで~~紹介していきたいと思う。

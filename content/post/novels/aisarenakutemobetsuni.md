@@ -1,7 +1,7 @@
 ---
 title: 『愛されなくても別に』武田綾乃
 description: 
-image: images/novels/aisarenakutemobetsuni.jpg
+image: /images/novels/aisarenakutemobetsuni.jpg
 slug: aisarenakutemobetsuni
 date: 2024-06-22T23:18:37+09:00
 categories:

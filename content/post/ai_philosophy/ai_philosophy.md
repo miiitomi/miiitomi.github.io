@@ -1,6 +1,6 @@
 ---
 title: 『人工知能の哲学入門』鈴木貴之
-image: images/ai_philosophy/ai_philosophy.jpg
+image: /images/ai_philosophy/ai_philosophy.jpg
 description: 
 slug: ai_philosophy
 date: 2024-03-31T22:51:33+09:00
