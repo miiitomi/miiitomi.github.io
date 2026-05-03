@@ -3,7 +3,7 @@ title: 『マッチング！』加藤千恵
 description: 
 slug: mattingu
 date: 2023-07-08T19:20:43+09:00
-image: images/novels/mattingu.jpg
+image: /images/novels/mattingu.jpg
 categories:
     - 小説
     - 読書記録

@@ -9,7 +9,7 @@ categories:
     - マーケットデザイン
     - アルゴリズム
 tags: [マッチング理論, マーケットデザイン, アルゴリズム]
-image: images/optimal-lottery/optimal-lottery.png
+image: /images/optimal-lottery/optimal-lottery.png
 ---
 
 本記事は [CyberAgent AI Lab Advent Calendar 2024](https://adventar.org/calendars/10254) 16日目の記事として執筆しております！🎄

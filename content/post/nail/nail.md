@@ -3,7 +3,7 @@ title: 20代後半男子がメンズネイルを始めてみた話
 description: 
 slug: nail
 date: 2022-12-29
-image: images/nail/blue_onecolor.jpeg
+image: /images/nail/blue_onecolor.jpeg
 categories:
     - 雑記
     - ネイル

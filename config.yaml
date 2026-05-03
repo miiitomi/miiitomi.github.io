@@ -42,10 +42,7 @@ params:
     sidebar:
         emoji: 
         subtitle: みーとみブログ
-        avatar:
-            enabled: true
-            local: false
-            src: /images/avatar.png
+        avatar: /images/avatar.png
 
     article:
         math: true
@@ -145,7 +142,7 @@ params:
 
     opengraph:
         twitter:
-            # Your Twitter username
+            # Your X username
             site: miiitomi
 
             # Available values: summary, summary_large_image
@@ -191,9 +188,9 @@ menu:
           params:
             icon: brand-github
             
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com/miiitomi/
+        - identifier: x
+          name: X
+          url: https://x.com/miiitomi/
           params:
             icon: brand-twitter
 
