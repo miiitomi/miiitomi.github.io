@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="プレゼントを公平に配る最適なくじ引きを作ろう！🎁">
+<link rel="stylesheet" href="/scss/style.min.c83371737b615f1496280121c6bc17ed5f2e875e3c1e2e506178b0038e35b1a9.css"><meta property='og:title' content="プレゼントを公平に配る最適なくじ引きを作ろう！🎁">
 <meta property='og:description' content="PSルールと最適くじ引きアプリのご紹介">
 <meta property='og:url' content='https://miiitomi.github.io/p/optimal-lottery/'>
 <meta property='og:site_name' content='miiitomi'>
@@ -529,45 +529,45 @@
 <p>プレゼントは A, B, C, D の$4$種類で、それぞれ $1$ つずつります。
 参加者は 1, 2, 3, 4 の $4$ 人で、希望は以下の通りです。</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: center"></th>
-          <th style="text-align: center">第1希望</th>
-          <th style="text-align: center">第2希望</th>
-          <th style="text-align: center">第3希望</th>
-          <th style="text-align: center">第4希望</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center"><strong>1 さん</strong></td>
-          <td style="text-align: center">A</td>
-          <td style="text-align: center">B</td>
-          <td style="text-align: center">C</td>
-          <td style="text-align: center">D</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>2 さん</strong></td>
-          <td style="text-align: center">A</td>
-          <td style="text-align: center">B</td>
-          <td style="text-align: center">C</td>
-          <td style="text-align: center">D</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>3 さん</strong></td>
-          <td style="text-align: center">B</td>
-          <td style="text-align: center">A</td>
-          <td style="text-align: center">D</td>
-          <td style="text-align: center">C</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>4 さん</strong></td>
-          <td style="text-align: center">B</td>
-          <td style="text-align: center">A</td>
-          <td style="text-align: center">D</td>
-          <td style="text-align: center">C</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: center"></th>
+					<th style="text-align: center">第1希望</th>
+					<th style="text-align: center">第2希望</th>
+					<th style="text-align: center">第3希望</th>
+					<th style="text-align: center">第4希望</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center"><strong>1 さん</strong></td>
+					<td style="text-align: center">A</td>
+					<td style="text-align: center">B</td>
+					<td style="text-align: center">C</td>
+					<td style="text-align: center">D</td>
+			</tr>
+			<tr>
+					<td style="text-align: center"><strong>2 さん</strong></td>
+					<td style="text-align: center">A</td>
+					<td style="text-align: center">B</td>
+					<td style="text-align: center">C</td>
+					<td style="text-align: center">D</td>
+			</tr>
+			<tr>
+					<td style="text-align: center"><strong>3 さん</strong></td>
+					<td style="text-align: center">B</td>
+					<td style="text-align: center">A</td>
+					<td style="text-align: center">D</td>
+					<td style="text-align: center">C</td>
+			</tr>
+			<tr>
+					<td style="text-align: center"><strong>4 さん</strong></td>
+					<td style="text-align: center">B</td>
+					<td style="text-align: center">A</td>
+					<td style="text-align: center">D</td>
+					<td style="text-align: center">C</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>いま、くじ引きによってプレゼントが割り当てられ、結果は以下のようになったとします。</p>
 <ul>
@@ -618,75 +618,75 @@
 </ul>
 <p>受け取り手の優先順序の決め方は全部で $4! = 24$ 通りあり、それぞれで決まる割り当てを数えると、各受け取り手が各プレゼントを貰う確率を計算することができます。</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: center"></th>
-          <th style="text-align: center">プレゼントA</th>
-          <th style="text-align: center">プレゼントB</th>
-          <th style="text-align: center">プレゼントC</th>
-          <th style="text-align: center">プレゼントD</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center"><strong>1 さん</strong></td>
-          <td style="text-align: center">$5 \over 12$</td>
-          <td style="text-align: center">$1 \over 12$</td>
-          <td style="text-align: center">$5 \over 12$</td>
-          <td style="text-align: center">$1 \over 12$</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>2 さん</strong></td>
-          <td style="text-align: center">$5 \over 12$</td>
-          <td style="text-align: center">$1 \over 12$</td>
-          <td style="text-align: center">$5 \over 12$</td>
-          <td style="text-align: center">$1 \over 12$</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>3 さん</strong></td>
-          <td style="text-align: center">$1 \over 12$</td>
-          <td style="text-align: center">$5 \over 12$</td>
-          <td style="text-align: center">$1 \over 12$</td>
-          <td style="text-align: center">$5 \over 12$</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>4 さん</strong></td>
-          <td style="text-align: center">$1 \over 12$</td>
-          <td style="text-align: center">$5 \over 12$</td>
-          <td style="text-align: center">$1 \over 12$</td>
-          <td style="text-align: center">$5 \over 12$</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: center"></th>
+					<th style="text-align: center">プレゼントA</th>
+					<th style="text-align: center">プレゼントB</th>
+					<th style="text-align: center">プレゼントC</th>
+					<th style="text-align: center">プレゼントD</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center"><strong>1 さん</strong></td>
+					<td style="text-align: center">$5 \over 12$</td>
+					<td style="text-align: center">$1 \over 12$</td>
+					<td style="text-align: center">$5 \over 12$</td>
+					<td style="text-align: center">$1 \over 12$</td>
+			</tr>
+			<tr>
+					<td style="text-align: center"><strong>2 さん</strong></td>
+					<td style="text-align: center">$5 \over 12$</td>
+					<td style="text-align: center">$1 \over 12$</td>
+					<td style="text-align: center">$5 \over 12$</td>
+					<td style="text-align: center">$1 \over 12$</td>
+			</tr>
+			<tr>
+					<td style="text-align: center"><strong>3 さん</strong></td>
+					<td style="text-align: center">$1 \over 12$</td>
+					<td style="text-align: center">$5 \over 12$</td>
+					<td style="text-align: center">$1 \over 12$</td>
+					<td style="text-align: center">$5 \over 12$</td>
+			</tr>
+			<tr>
+					<td style="text-align: center"><strong>4 さん</strong></td>
+					<td style="text-align: center">$1 \over 12$</td>
+					<td style="text-align: center">$5 \over 12$</td>
+					<td style="text-align: center">$1 \over 12$</td>
+					<td style="text-align: center">$5 \over 12$</td>
+			</tr>
+	</tbody>
 </table></div>
 <p>しかし、この「貰うプレゼントの確率分布」の割り当ては、以下のように非効率です。</p>
 <ul>
 <li>いま、くじを引く前に、1 さんと 3 さんが「 1 さんがプレゼント B を得るか、もしくは 3 さんがプレゼント A を得た場合、1 さんと 3 さんはプレゼントを交換する」という約束をしたとします。このとき、二人の貰うプレゼントの確率分布は以下のように変わります。
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: center"></th>
-          <th style="text-align: center">プレゼントA</th>
-          <th style="text-align: center">プレゼントB</th>
-          <th style="text-align: center">プレゼントC</th>
-          <th style="text-align: center">プレゼントD</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center"><strong>1</strong></td>
-          <td style="text-align: center">$1 \over 2$</td>
-          <td style="text-align: center">$0$</td>
-          <td style="text-align: center">$5 \over 12$</td>
-          <td style="text-align: center">$1 \over 12$</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>3</strong></td>
-          <td style="text-align: center">$0$</td>
-          <td style="text-align: center">$1 \over 2$</td>
-          <td style="text-align: center">$1 \over 12$</td>
-          <td style="text-align: center">$5 \over 12$</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: center"></th>
+					<th style="text-align: center">プレゼントA</th>
+					<th style="text-align: center">プレゼントB</th>
+					<th style="text-align: center">プレゼントC</th>
+					<th style="text-align: center">プレゼントD</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center"><strong>1</strong></td>
+					<td style="text-align: center">$1 \over 2$</td>
+					<td style="text-align: center">$0$</td>
+					<td style="text-align: center">$5 \over 12$</td>
+					<td style="text-align: center">$1 \over 12$</td>
+			</tr>
+			<tr>
+					<td style="text-align: center"><strong>3</strong></td>
+					<td style="text-align: center">$0$</td>
+					<td style="text-align: center">$1 \over 2$</td>
+					<td style="text-align: center">$1 \over 12$</td>
+					<td style="text-align: center">$5 \over 12$</td>
+			</tr>
+	</tbody>
 </table></div>
 </li>
 <li>二人とも第 2 希望のプレゼントを貰う確率が減って、その分第 1 希望のプレゼントを貰う確率が上がっているため、二人ともこの約束によってより希望が叶えられるようになります。</li>
@@ -735,45 +735,45 @@ PSルールは、受け取り手が希望するプレゼントを貰う割合を
 </ul>
 <p>よって、各受け取り手が貰うプレゼントの確率分布は、以下のようになる。</p>
 <div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th style="text-align: center"></th>
-          <th style="text-align: center">プレゼントA</th>
-          <th style="text-align: center">プレゼントB</th>
-          <th style="text-align: center">プレゼントC</th>
-          <th style="text-align: center">プレゼントD</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center"><strong>1</strong></td>
-          <td style="text-align: center">$1 \over 2$</td>
-          <td style="text-align: center">$0$</td>
-          <td style="text-align: center">$1 \over 2$</td>
-          <td style="text-align: center">$0$</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>2</strong></td>
-          <td style="text-align: center">$1 \over 2$</td>
-          <td style="text-align: center">$0$</td>
-          <td style="text-align: center">$1 \over 2$</td>
-          <td style="text-align: center">$0$</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>3</strong></td>
-          <td style="text-align: center">$0$</td>
-          <td style="text-align: center">$1 \over 2$</td>
-          <td style="text-align: center">$0$</td>
-          <td style="text-align: center">$1 \over 2$</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>4</strong></td>
-          <td style="text-align: center">$0$</td>
-          <td style="text-align: center">$1 \over 2$</td>
-          <td style="text-align: center">$0$</td>
-          <td style="text-align: center">$1 \over 2$</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: center"></th>
+					<th style="text-align: center">プレゼントA</th>
+					<th style="text-align: center">プレゼントB</th>
+					<th style="text-align: center">プレゼントC</th>
+					<th style="text-align: center">プレゼントD</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center"><strong>1</strong></td>
+					<td style="text-align: center">$1 \over 2$</td>
+					<td style="text-align: center">$0$</td>
+					<td style="text-align: center">$1 \over 2$</td>
+					<td style="text-align: center">$0$</td>
+			</tr>
+			<tr>
+					<td style="text-align: center"><strong>2</strong></td>
+					<td style="text-align: center">$1 \over 2$</td>
+					<td style="text-align: center">$0$</td>
+					<td style="text-align: center">$1 \over 2$</td>
+					<td style="text-align: center">$0$</td>
+			</tr>
+			<tr>
+					<td style="text-align: center"><strong>3</strong></td>
+					<td style="text-align: center">$0$</td>
+					<td style="text-align: center">$1 \over 2$</td>
+					<td style="text-align: center">$0$</td>
+					<td style="text-align: center">$1 \over 2$</td>
+			</tr>
+			<tr>
+					<td style="text-align: center"><strong>4</strong></td>
+					<td style="text-align: center">$0$</td>
+					<td style="text-align: center">$1 \over 2$</td>
+					<td style="text-align: center">$0$</td>
+					<td style="text-align: center">$1 \over 2$</td>
+			</tr>
+	</tbody>
 </table></div>
 
     </blockquote>

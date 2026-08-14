@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="ABC159 F - Knapsack for All Segments：別解解説">
+<link rel="stylesheet" href="/scss/style.min.c83371737b615f1496280121c6bc17ed5f2e875e3c1e2e506178b0038e35b1a9.css"><meta property='og:title' content="ABC159 F - Knapsack for All Segments：別解解説">
 <meta property='og:description' content="ABC159のF問題について、解説にある公式解説・ユーザー解説のどれとも発想が異なりそうな解法を思い付いたので、解法解説らしきものを書いてみます。\n問題 問題はこちら。 解説 まず $\\Theta(N^2S)$ の愚直解法を説明し、後でそれを $\\Theta(NS)$ に高速化する解法を示します（以下「998244353で割ったあまりを」の部分は無視して説明します）。\n1. 愚直解法：$\\Theta(N^2S)$ この解法は以下の2ステップからなります。\nステップ1：まず $L = 1$ で固定してナップサックDPテーブルを求める。 通常のナップサックDPのように、$dp[i][w] =$ 「数列の $i$ 番目まで（$A_1,\\dots,A_i$）のうち、いくつかを使って和を $w$ にする方法の数」（ただし $0 \\le i\\le N,~0 \\le w \\le S$）とします。 これは、 $$ \\begin{align*} dp[1][w] &amp;= \\begin{cases} 1 &amp; \\mathrm{if} ~ w = 0 \\\\ 0 &amp; \\mathrm{otherwise}\\end{cases}, \\\\ dp[i][w] &amp;= \\begin{cases} dp[i-1][w] + dp[i-1][w-A_i]&amp; \\mathrm{if}~w-A_i \\ge 0 \\\\ dp[i-1][w] &amp; \\mathrm{otherwise} \\end{cases}, \\end{align*} $$ とすることで、$\\Theta(NS)$ で列挙できます。このとき、 $$ f(1, R) = dp[R][S] $$ のため、$L = 1$ のときの和はこのテーブルの $S$ 列目の和を取ることで求められます。\n">
 <meta property='og:url' content='https://miiitomi.github.io/p/abc159f/'>
 <meta property='og:site_name' content='miiitomi'>
