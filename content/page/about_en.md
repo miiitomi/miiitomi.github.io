@@ -24,8 +24,8 @@ lastmod: '2024-10-24'
 - Ph.D. student in Economics, University of Tokyo. 2019-2020 (Incomplete).
 
 **Papers (peer-reviewed)**
-- **Yoji Tomita** and Tomohiko Yokoyama. 2026. [Balancing Fairness and High Match Rates in Reciprocal Recommender Systems: A Nash Social Welfare Approach.](https://doi.org/10.1145/3793538) ACM Transactions on Recommender Systems(TORS), forthcoming.
-    - [arxiv](https://arxiv.org/abs/2601.13609).
+- **Yoji Tomita**. 2026. [MODE: Mutual Optimality in Direct Effects of Reciprocal Recommendations in Matching Markets.](https://arxiv.org/abs/2608.01731) RecSys'26.
+- **Yoji Tomita** and Tomohiko Yokoyama. 2026. [Balancing Fairness and High Match Rates in Reciprocal Recommender Systems: A Nash Social Welfare Approach.](https://doi.org/10.1145/3793538) ACM Transactions on Recommender Systems(TORS),  4, 4, Article 56 (December 2026), 33 pages.
 - Ren Kishimoto, Rikiya Takehi, Koichi Tanaka, Masahiro Nomura, Riku Togashi, **Yoji Tomita**, Yuta Saito. 2026. [Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching.](https://arxiv.org/abs/2602.15752) ICLR2026.
 - **Yoji Tomita** and Tomohiko Yokoyama. 2024. [Fair Reciprocal Recommendation in Matching Markets.](https://doi.org/10.1145/3640457.3688130) Proceedings of the 18th ACM Conference on Recommender Systems (RecSys'24).
     - shortlisted for 6 best full paper candidates in RecSys'24
